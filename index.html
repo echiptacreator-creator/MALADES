@@ -8,20 +8,25 @@
 <style>
 @font-face{font-family:'MonumentExtended';src:url('shrift/MonumentExtended-Medium.ttf') format('truetype');font-weight:700;font-display:swap}@font-face{font-family:'MonumentExtended';src:url('shrift/MonumentExtended-Regular.ttf') format('truetype');font-weight:400;font-display:swap}
 :root{
-  --fon:#0F1115;
-  --qatlam:#161A20;
-  --chiziq:#232830;
+  --fon:#08090B;
+  --qatlam:#0E1014;
+  --chiziq:rgba(255,255,255,.075);
   --matn:#F4F6F8;
   --xira:#8B93A1;
-  --urgu:#FF5500;
-  --urgu-toq:#CC4400;
+  --urgu:#FF5A0A;
+  --urgu-toq:#E01B24;
   --ikki:#00E5FF;
   --ijobiy:#2ED573;
   --salbiy:#FF4757;
-  --r:16px;
-  --r-katta:22px;
+  --qatlam2:#14161B;
+  --chiziq2:rgba(255,255,255,.14);
+  --cho:#FFB067;
+  --olov-gr:linear-gradient(96deg,#FF5A0A,#E01B24);
+  --r:18px;
+  --r-katta:24px;
   --sarlavha:'MonumentExtended','Space Grotesk','Gilroy',sans-serif;
   --matn-shrift:'Inter','Gilroy',-apple-system,'Segoe UI',system-ui,sans-serif;
+  --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
 }
 
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -34,39 +39,62 @@ button{font-family:inherit;cursor:pointer}
 .bolim{display:none}
 .bolim.faol{display:block}
 
+/* ---------- MIKRO YOZUV ----------
+   Monospace + katta oraliq. Bo'lim nomi, holat, o'lchov - hammasi shu
+   yozuvda. Ko'z uni "tizim aytyapti" deb o'qiydi, sarlavha deb emas. */
+.mikro{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--xira)}
+
 /* ---------- HERO ---------- */
 .hero{position:relative;overflow:hidden;padding:26px 18px 18px}
-.nur{position:absolute;inset:-60% -30% auto -30%;height:200%;
-  pointer-events:none;
-  background:radial-gradient(closest-side,rgba(255,85,0,.22),transparent 72%);
-  animation:suz 9s ease-in-out infinite alternate}
-.nur2{position:absolute;right:-40%;top:-30%;width:110%;height:150%;
-  pointer-events:none;
-  background:radial-gradient(closest-side,rgba(0,229,255,.13),transparent 70%);
-  animation:suz2 11s ease-in-out infinite alternate}
-@keyframes suz{from{transform:translate3d(-6%,0,0) scale(1)}
-  to{transform:translate3d(8%,4%,0) scale(1.12)}}
-@keyframes suz2{from{transform:translate3d(4%,0,0)}
-  to{transform:translate3d(-8%,6%,0)}}
+/* Olov yuqoridan tushadi, to'r esa uni ushlab turadi. Ikkalasi
+   ham qimirlamaydi - sakrab turgan fon o'qishga xalaqit beradi. */
+.nur{position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(180deg,rgba(255,90,10,.16),transparent 44%),
+    radial-gradient(620px 260px at 82% -12%,rgba(224,27,36,.32),transparent 66%)}
+.nur2{position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:
+    linear-gradient(var(--chiziq) 1px,transparent 1px),
+    linear-gradient(90deg,var(--chiziq) 1px,transparent 1px);
+  background-size:56px 56px;
+  -webkit-mask-image:radial-gradient(360px 220px at 50% 0%,#000,transparent 74%);
+  mask-image:radial-gradient(360px 220px at 50% 0%,#000,transparent 74%)}
+
+/* ---------- BURCHAK BELGILARI ----------
+   Kiber his uchun uchta vositadan biri (to'r, monospace, burchak).
+   Panelga `.tik` qo'ysang - burchaklari olovda yonadi. */
+.tik{position:relative}
+.tik::before,.tik::after{content:"";position:absolute;width:10px;height:10px;
+  border-color:var(--urgu);opacity:.55;pointer-events:none}
+.tik::before{top:8px;left:8px;border-top:1.5px solid;border-left:1.5px solid;
+  border-top-left-radius:4px}
+.tik::after{bottom:8px;right:8px;border-bottom:1.5px solid;
+  border-right:1.5px solid;border-bottom-right-radius:4px}
 .mark{display:flex;align-items:baseline;gap:8px;position:relative}
 .mark .nom{font-family:var(--sarlavha);font-size:22px;letter-spacing:-.6px;
   font-weight:700}
 .mark .nuqta{width:7px;height:7px;border-radius:2px;background:var(--urgu);
   transform:translateY(-3px);box-shadow:0 0 14px rgba(255,85,0,.9)}
-.kasb{margin-top:7px;font-size:10px;color:var(--xira);letter-spacing:2.8px;
+.kasb{margin-top:8px;font-family:var(--mono);font-size:9.5px;
+  color:var(--xira);letter-spacing:.17em;
   text-transform:uppercase;position:relative}
 .dava{position:relative;margin:18px 0 4px;font-family:var(--sarlavha);
   font-size:26px;line-height:1.14;letter-spacing:-.8px;font-weight:700}
-.dava em{font-style:normal;color:var(--urgu)}
+/* Urg'u so'z olov gradientida - bitta rangdan ko'ra tirikroq, lekin
+   baribir BITTA urg'u. Ikkinchi olov so'z hech qayerda yo'q. */
+.dava em{font-style:normal;background:var(--olov-gr);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
 .dava-izoh{position:relative;margin-top:10px;font-size:13.5px;line-height:1.5;
   color:#aeb6c2;max-width:23em}
 .raqamlar{display:flex;gap:10px;margin-top:18px;position:relative}
-.raqam{flex:1;background:rgba(255,255,255,.035);border:1px solid var(--chiziq);
-  border-radius:14px;padding:11px 10px}
+.raqam{flex:1;background:var(--qatlam);border:1px solid var(--chiziq);
+  border-radius:14px;padding:12px 11px}
 .raqam b{display:block;font-family:var(--sarlavha);font-size:20px;
   font-weight:700;letter-spacing:-.7px;line-height:1}
-.raqam span{display:block;margin-top:5px;font-size:9px;color:var(--xira);
-  letter-spacing:1.3px;text-transform:uppercase}
+.raqam span{display:block;margin-top:6px;font-family:var(--mono);
+  font-size:8.5px;color:var(--xira);
+  letter-spacing:.15em;text-transform:uppercase}
 
 /* ---------- ISHONCH ---------- */
 .ishonch{position:relative}
@@ -103,8 +131,10 @@ button{font-family:inherit;cursor:pointer}
   align-items:center;gap:6px;white-space:nowrap}
 .tug i{font-style:normal;font-size:10.5px;opacity:.6}
 .tug.faol{background:var(--matn);color:#0b0d10;border-color:var(--matn)}
-.tug.urgu{border-color:var(--urgu);color:var(--urgu)}
-.tug.urgu.faol{background:var(--urgu);color:#fff;border-color:var(--urgu)}
+.tug.faol i{opacity:.55}
+.tug.urgu{border-color:rgba(255,90,10,.5);color:var(--urgu)}
+.tug.urgu.faol{background:var(--olov-gr);color:#fff;border-color:transparent;
+  box-shadow:0 6px 20px -8px rgba(255,90,10,.75)}
 
 /* ---------- TO'R ---------- */
 .tor{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:0 18px}
@@ -215,9 +245,10 @@ button{font-family:inherit;cursor:pointer}
 .amal:active{transform:scale(.96)}
 .amal.bosilgan{background:rgba(255,85,0,.14);border-color:var(--urgu);
   color:var(--urgu)}
-.katta{width:100%;margin-top:10px;padding:14px;border-radius:13px;
-  background:var(--urgu);color:#fff;border:0;font-weight:700;font-size:14.5px}
-.katta:active{background:var(--urgu-toq)}
+.katta{width:100%;margin-top:10px;padding:15px;border-radius:14px;
+  background:var(--olov-gr);color:#fff;border:0;font-weight:700;
+  font-size:14.5px;box-shadow:0 10px 28px -12px rgba(255,90,10,.8)}
+.katta:active{filter:brightness(.92);box-shadow:none}
 .ikkilamchi{width:100%;margin-top:8px;padding:13px;border-radius:13px;
   background:var(--qatlam);border:1px solid var(--chiziq);color:var(--matn);
   font-weight:600;font-size:14px}
@@ -249,7 +280,7 @@ button{font-family:inherit;cursor:pointer}
     linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
   background-size:46px 46px}
 .pr-belgi{position:absolute;right:14px;top:calc(16px + env(safe-area-inset-top));
-  z-index:3;width:52px;height:52px;border-radius:16px;background:var(--urgu);
+  z-index:3;width:52px;height:52px;border-radius:16px;background:var(--olov-gr);
   display:flex;align-items:center;justify-content:center;
   font-family:var(--sarlavha);font-size:20px;font-weight:700;color:#0a0a0c;
   box-shadow:0 12px 34px rgba(255,85,0,.34)}
@@ -351,7 +382,8 @@ button{font-family:inherit;cursor:pointer}
 .tarif .ol{width:100%;padding:13px;border-radius:12px;
   border:1px solid var(--chiziq);background:#1a1f27;color:var(--matn);
   font-weight:700;font-size:14px}
-.tarif.tavsiya .ol{background:var(--urgu);border-color:var(--urgu);color:#fff}
+.tarif.tavsiya .ol{background:var(--olov-gr);border-color:transparent;
+  color:#fff;box-shadow:0 8px 22px -10px rgba(255,90,10,.8)}
 .shart{border:1px dashed var(--chiziq);border-radius:15px;padding:15px 17px;
   font-size:12.8px;line-height:1.6;color:#a2aab6}
 .shart b{color:var(--ikki);display:block;font-size:9.5px;letter-spacing:2px;
@@ -415,8 +447,9 @@ button{font-family:inherit;cursor:pointer}
   flex-direction:column;align-items:center;gap:4px;line-height:1}
 .nav button s{text-decoration:none;font-size:16px}
 .nav button.faol{color:var(--matn)}
-.nav button.buyurtma{background:var(--urgu);color:#fff;font-weight:700;
-  flex:0 0 auto;min-width:76px;padding:9px 10px}
+.nav button.buyurtma{background:var(--olov-gr);color:#fff;font-weight:700;
+  flex:0 0 auto;min-width:76px;padding:9px 10px;
+  box-shadow:0 8px 22px -10px rgba(255,90,10,.85)}
 
 
 /* ---------- VIDEOLAR ---------- */
@@ -455,7 +488,7 @@ button{font-family:inherit;cursor:pointer}
 .vq-nom{font-size:19px;font-weight:800;letter-spacing:-.2px}
 .vq-izoh{font-size:13px;color:#C9CBD2;margin-top:4px}
 .vq-tug{margin-top:13px;width:100%;padding:14px;border:0;border-radius:14px;
-  background:var(--urgu);color:#fff;font-weight:700;font-size:14px;
+  background:var(--olov-gr);color:#fff;font-weight:700;font-size:14px;
   display:flex;align-items:center;justify-content:center;gap:7px}
 .vq-yop{position:absolute;top:calc(10px + env(safe-area-inset-top));
   left:12px;z-index:4;width:38px;height:38px;border-radius:50%;border:0;
@@ -560,7 +593,8 @@ button{font-family:inherit;cursor:pointer}
   border-radius:18px;padding:14px 15px;margin-bottom:10px}
 .ovoz-bosh{display:flex;align-items:center;gap:12px}
 .ovoz-tugma{width:46px;height:46px;flex:0 0 auto;border-radius:15px;
-  background:var(--urgu);border:0;color:#fff;display:flex;
+  background:var(--olov-gr);border:0;color:#fff;display:flex;
+  box-shadow:0 8px 22px -10px rgba(255,90,10,.8);
   align-items:center;justify-content:center}
 .ovoz-tugma.ijro{background:var(--qatlam);border:1px solid var(--urgu)}
 .ovoz-matn{flex:1;min-width:0}
@@ -856,7 +890,7 @@ var BOT_NOM = "malades_bolabot";
 var QIZIQISH = {"Labsearch": 1};
 if (TG) {
   TG.ready(); TG.expand();
-  try { TG.setHeaderColor("#0F1115"); TG.setBackgroundColor("#0F1115"); }
+  try { TG.setHeaderColor("#08090B"); TG.setBackgroundColor("#08090B"); }
   catch (e) {}
 }
 function titra(t){ try{ TG.HapticFeedback.impactOccurred(t||"light"); }catch(e){} }
