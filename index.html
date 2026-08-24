@@ -106,7 +106,13 @@ button{font-family:inherit;cursor:pointer}
 .oqim b{flex:0 0 auto;font-size:11.5px;font-weight:600;padding:7px 11px;
   border-radius:9px;background:var(--qatlam);border:1px solid var(--chiziq);
   color:#c3cad4;white-space:nowrap}
-.oqim b:first-child{border-color:rgba(0,229,255,.4);color:var(--ikki)}
+/* Logo bo'lsa - oq plita. Logo qora fonda ko'rinmaydi, shuning
+   uchun u har doim oq ustida turadi. */
+.oqim b.logo{background:#fff;border-color:transparent;padding:0;
+  width:112px;height:54px;display:flex;align-items:center;
+  justify-content:center;overflow:hidden;border-radius:12px}
+.oqim b.logo img{max-width:84%;max-height:72%;width:auto;height:auto;
+  object-fit:contain}
 
 /* ---------- QIDIRUV VA FILTR ---------- */
 .qidiruv{padding:14px 18px 10px;position:relative}
@@ -358,32 +364,72 @@ button{font-family:inherit;cursor:pointer}
 .pr-imzo b{font-family:var(--sarlavha);font-size:15px;letter-spacing:-.4px}
 .pr-imzo span{font-size:11px;color:var(--xira)}
 
-/* ---------- NARX / JARAYON ---------- */
-.tarif{border:1px solid var(--chiziq);border-radius:var(--r-katta);
-  padding:19px;margin-bottom:12px;background:var(--qatlam);position:relative;
-  overflow:hidden}
-.tarif.tavsiya{border-color:var(--urgu)}
-.tarif.tavsiya::before{content:"KO'P TANLANADI";position:absolute;top:15px;
-  right:0;background:var(--urgu);color:#fff;font-size:8.5px;font-weight:800;
-  letter-spacing:1.2px;padding:5px 11px 5px 9px;border-radius:8px 0 0 8px}
-.tarif h3{margin:0;font-family:var(--sarlavha);font-size:15px;font-weight:700}
-.tarif .kim{margin:6px 0 0;font-size:12px;color:var(--xira)}
-.tarif .baho{margin:14px 0 2px;font-family:var(--sarlavha);font-size:24px;
-  font-weight:700;color:var(--urgu);letter-spacing:-.8px}
-.tarif .som{font-size:13px;font-weight:600;color:var(--xira);margin-left:5px;
+/* ---------- NARX / JARAYON ----------
+   Tavsiya etilgan tarif butunlay olovda yonadi - chegara emas, to'la
+   gradient. Ko'z darhol o'sha kartaga tushadi va tanlash osonlashadi. */
+.tarif{border:1px solid var(--chiziq);border-radius:26px;
+  padding:24px 22px 22px;margin-bottom:14px;background:var(--qatlam);
+  position:relative;overflow:hidden}
+.tarif.tavsiya{border:0;
+  background:linear-gradient(158deg,#FF6A00 -6%,#E01B24 56%,#8A0F14)}
+.tarif.tavsiya::before{content:"KO'P TANLANADI";position:absolute;top:0;
+  right:0;background:rgba(0,0,0,.28);color:#fff;font-family:var(--mono);
+  font-size:8.5px;letter-spacing:.14em;padding:7px 13px;
+  border-radius:0 26px 0 12px}
+.tarif h3{margin:0;font-family:var(--sarlavha);font-size:20px;font-weight:700;
+  letter-spacing:-.4px}
+.tarif .kim{margin:5px 0 0;font-size:12.5px;color:var(--xira)}
+.tarif.tavsiya .kim{color:rgba(255,255,255,.82)}
+.tarif .baho{margin:18px 0 2px;font-family:var(--sarlavha);font-size:27px;
+  font-weight:700;color:var(--matn);letter-spacing:-1px}
+.tarif.tavsiya .baho{color:#fff}
+.tarif .som{font-size:13px;font-weight:600;color:var(--xira);margin-left:6px;
   font-family:var(--matn-shrift);letter-spacing:0}
-.tarif .kun{font-size:11px;color:var(--xira);letter-spacing:1.4px;
-  text-transform:uppercase;margin-bottom:14px}
-.tarif ul{list-style:none;margin:0 0 16px;padding:0}
-.tarif li{font-size:13.5px;line-height:1.5;color:#c3cad4;padding-left:18px;
-  position:relative;margin-bottom:7px}
-.tarif li::before{content:"";position:absolute;left:0;top:8px;width:8px;
-  height:2px;background:var(--urgu);border-radius:2px}
-.tarif .ol{width:100%;padding:13px;border-radius:12px;
-  border:1px solid var(--chiziq);background:#1a1f27;color:var(--matn);
-  font-weight:700;font-size:14px}
-.tarif.tavsiya .ol{background:var(--olov-gr);border-color:transparent;
-  color:#fff;box-shadow:0 8px 22px -10px rgba(255,90,10,.8)}
+.tarif.tavsiya .som{color:rgba(255,255,255,.8)}
+.tarif .kun{font-family:var(--mono);font-size:9.5px;color:var(--xira);
+  letter-spacing:.15em;text-transform:uppercase}
+/* Ajratuvchi chiziq: narx tugadi, endi ro'yxat boshlanadi. */
+.tarif .ajrat{height:1px;background:var(--chiziq);margin:19px 0 16px}
+.tarif.tavsiya .ajrat{background:rgba(255,255,255,.24)}
+.tarif .sarl{font-size:12.5px;font-weight:700;color:var(--matn);
+  margin-bottom:13px}
+.tarif.tavsiya .sarl{color:#fff}
+.tarif ul{list-style:none;margin:0 0 4px;padding:0}
+.tarif li{font-size:13.5px;line-height:1.45;color:#C8CEd8;padding-left:26px;
+  position:relative;margin-bottom:12px}
+.tarif.tavsiya li{color:#fff}
+/* Halqa ichida nuqta - "kiritilgan" degani. Belgi bir xil, rang
+   kartaga qarab o'zgaradi. */
+.tarif li::before{content:"";position:absolute;left:0;top:2px;width:15px;
+  height:15px;border-radius:50%;border:1.4px solid var(--urgu)}
+.tarif li::after{content:"";position:absolute;left:4.6px;top:6.6px;width:6px;
+  height:6px;border-radius:50%;background:var(--urgu)}
+.tarif.tavsiya li::before{border-color:rgba(255,255,255,.9)}
+.tarif.tavsiya li::after{background:#fff}
+.tarif .ol{width:100%;margin-top:18px;padding:14px 16px;border-radius:999px;
+  border:1px solid var(--chiziq2);background:var(--qatlam2);color:var(--matn);
+  font-weight:650;font-size:14px;display:flex;align-items:center;
+  justify-content:space-between;gap:10px}
+.tarif .ol s{text-decoration:none;width:26px;height:26px;border-radius:999px;
+  background:var(--olov-gr);color:#fff;display:flex;align-items:center;
+  justify-content:center;font-size:12px;flex:0 0 auto}
+.tarif.tavsiya .ol{background:#0B0C0E;border-color:transparent;color:#fff;
+  box-shadow:0 10px 26px -12px rgba(0,0,0,.9)}
+.tarif.tavsiya .ol s{background:#fff;color:#E01B24}
+
+/* Pastdagi tasma: tarif tanlay olmaganlar uchun. Qizil gradient -
+   sahifadagi oxirgi va eng baland ovoz. */
+.hisob{position:relative;margin:22px 0 4px;border-radius:26px;padding:30px 22px;
+  text-align:center;overflow:hidden;
+  background:radial-gradient(120% 130% at 50% 118%,#FF4A08,#B0111A 46%,
+    #2A0507 82%)}
+.hisob h4{margin:0;font-family:var(--sarlavha);font-size:19px;font-weight:700;
+  line-height:1.28;letter-spacing:-.4px}
+.hisob p{margin:9px 0 0;font-size:13.5px;color:rgba(255,255,255,.88)}
+.hisob button{margin-top:18px;padding:14px 22px;border-radius:999px;border:0;
+  background:#fff;color:#12140F;font-weight:700;font-size:14px;
+  display:inline-flex;align-items:center;gap:9px}
+.hisob button s{text-decoration:none;font-size:13px}
 .shart{border:1px dashed var(--chiziq);border-radius:15px;padding:15px 17px;
   font-size:12.8px;line-height:1.6;color:#a2aab6}
 .shart b{color:var(--ikki);display:block;font-size:9.5px;letter-spacing:2px;
@@ -670,7 +716,7 @@ button{font-family:inherit;cursor:pointer}
 
   <div class="ishonch">
     <div class="sarl">Ishonch bildirganlar</div>
-    <div class="oqim"><b>O'zbekiston futzal assotsiatsiyasi</b><b>Andijon FK</b><b>AZUR Samarqand</b><b>Sherdor</b><b>SonicX</b><b>PDP School</b><b>echipta</b><b>Tovarim.uz</b></div>
+    <div class="oqim"><b class="logo"><img loading="lazy" src="rasm/andijon-fk/oq.jpg" alt="Andijon FK"></b><b class="logo"><img loading="lazy" src="rasm/sherdor/oq.jpg" alt="Sherdor"></b><b class="logo"><img loading="lazy" src="rasm/sonicx-mfc/oq.jpg" alt="SonicX"></b><b class="logo"><img loading="lazy" src="rasm/pdp-school/oq.jpg" alt="PDP School"></b><b class="logo"><img loading="lazy" src="rasm/echipta/oq.jpg" alt="echipta"></b><b class="logo"><img loading="lazy" src="rasm/tovarim-uz/oq.jpg" alt="Tovarim.uz"></b></div>
   </div>
 
   <div class="qidiruv" id="q-quti">
@@ -1859,14 +1905,28 @@ function narxChiz(){
       '<p class="kim">' + t.kim + "</p>" +
       '<div class="baho">' + t.baho + '<span class="som">so\'m' +
       (t.dan ? "dan" : "") + "</span></div>" +
-      '<div class="kun">' + t.kun + "</div><ul>" +
+      '<div class="kun">' + t.kun + "</div>" +
+      '<div class="ajrat"></div>' +
+      '<div class="sarl">Nimalar kiradi:</div><ul>' +
       t.ich.map(function(x){ return "<li>" + x + "</li>"; }).join("") +
-      '</ul><button class="ol">Shu paketni tanlash</button>';
+      '</ul><button class="ol">Shu paketni tanlash<s>\u2197</s></button>';
     el.querySelector(".ol").onclick = function(){
       titra("medium"); yubor({amal:"buyurtma", paket:t.nom});
     };
     ich.appendChild(el);
   });
+  var hi = document.createElement("div");
+  hi.className = "hisob";
+  hi.innerHTML = "<h4>Qaysi tarifni tanlashni bilmayapsizmi?<br>" +
+    "Bepul hisob-kitob qilib beramiz</h4>" +
+    "<p>Brendingizni ayting \u2014 nima kerakligini va qancha " +
+    "turishini o'zim aytaman.</p>" +
+    "<button>Bepul hisob-kitob<s>\u2197</s></button>";
+  hi.querySelector("button").onclick = function(){
+    titra("medium"); yubor({amal:"buyurtma", paket:"hisob-kitob"});
+  };
+  ich.appendChild(hi);
+
   var sh = document.createElement("div");
   sh.className = "shart";
   sh.innerHTML = "<b>Shartlar</b>Avans 50%, qolgani fayllarni topshirishdan " +
