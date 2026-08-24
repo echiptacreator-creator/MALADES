@@ -120,6 +120,15 @@ button{font-family:inherit;cursor:pointer}
   background:linear-gradient(transparent,rgba(6,8,11,.92))}
 .karta.och .nom{background:linear-gradient(transparent,rgba(255,255,255,.95));
   color:#0f1115}
+/* ---------- OQ MUQOVA ----------
+   Bosh sahifada logo toza oq fonda turadi. Rasm kesilmaydi (contain),
+   chunki logoning cheti kesilsa u boshqa logo bo'lib qoladi. */
+.karta.oq{background:#fff;border-color:rgba(255,255,255,.14)}
+.karta.oq img{object-fit:contain;background:#fff}
+.karta.oq .nom{background:linear-gradient(rgba(255,255,255,0),
+  rgba(255,255,255,.97) 42%);color:#0f1115}
+.karta.oq .kadr-son{background:rgba(15,17,21,.08);color:#4a5058}
+.karta.oq .nishon{box-shadow:0 2px 10px rgba(0,0,0,.14)}
 .nishon{position:absolute;top:8px;left:8px;font-size:8.5px;font-weight:800;
   letter-spacing:.8px;padding:4px 8px;border-radius:999px;
   text-transform:uppercase;color:#fff}
@@ -844,7 +853,7 @@ var ADMIN = 515902673;
 var PROFIL = {"ism": "Sardorbek", "taxallus": "malades.bola", "kasb": "brend va sport identikasi dizayneri", "shahar": "Andijon / Toshkent", "yillar": 5, "haqida": "Brend va sport identikasi bilan 5 yildan beri ishlayman. Ishim shablon tanlash emas — har konsept ortida biznes mantiqi turadi va mijozga nega shunday qilinganini tushuntirib beraman.", "raqamlar": [["110+", "tayyorlangan ish"], ["25", "klub gerbi"], ["5", "yil tajriba"]], "loyihalar": [{"nom": "echipta", "rol": "Asoschi", "izoh": "Chipta xizmati — g'oyadan brendgacha o'zim qurdim.", "turi": "asoschi", "rang": "#332688", "logo": "rasm/profil/echipta.png", "toq": true}, {"nom": "kissam", "rol": "Asoschi", "izoh": "Kontent va dizayn yo'nalishi.", "turi": "asoschi", "rang": "#1B2A6B", "logo": "rasm/profil/kissam.png", "toq": false}, {"nom": "Andijon FK", "rol": "Brend identikasi", "izoh": "Klub gerbi, forma brendingi va matchday dizayn tizimi.", "turi": "mijoz", "rang": "#DC2228", "logo": "rasm/profil/Andijon_FK.png", "toq": true}, {"nom": "O'zbekiston futzal assotsiatsiyasi", "rol": "Identika", "izoh": "Federatsiya darajasidagi vizual tizim.", "turi": "mijoz", "rang": "#0A3D91"}], "xizmatlar": ["Logo va brend identikasi", "Sport klublari uchun gerb va forma brendingi", "Brendbuk va qo'llanish tizimi", "Ijtimoiy tarmoq dizayn tizimi"]};
 var ALOQA = {"telegram": "@khamilofff", "kanal": "t.me/maladesbola", "instagram": "instagram.com/malades.bola", "behance": "behance.net/maladesbola", "telefon": "+998 88 472 77 72"};
 var BOT_NOM = "malades_bolabot";
-var QIZIQISH = {"Labsearch": 1, "Tekshiruv brendi": 1};
+var QIZIQISH = {"Labsearch": 1};
 if (TG) {
   TG.ready(); TG.expand();
   try { TG.setHeaderColor("#0F1115"); TG.setBackgroundColor("#0F1115"); }
@@ -941,7 +950,10 @@ function filtrChiz(){
 
 function kartaYasa(nom, v){
   var k = document.createElement("div");
-  k.className = "karta" + (v.tema === "oq" ? " och" : "");
+  /* Ro'yxatda logoning O'ZI oq fonda turadi - bezakli kadrlar
+     ichkarida. Shunda 123 ta ish bir xil ko'rinadi va logo o'qiladi. */
+  var oqmi = !!v.oq;
+  k.className = "karta" + (oqmi ? " oq" : (v.tema === "oq" ? " och" : ""));
   var birinchi = v.kadrlar.length ? v.kadrlar[0].fayl : "";
   var h = holati(v);
   var nomi = {buyurtma:"buyurtma", taklif:"taklif", konsept:"konsept"}[h];
@@ -961,7 +973,7 @@ function kartaYasa(nom, v){
   var rb = (rk.olov || rk.like)
     ? '<div class="reaksiya-belgi">' + ikon("olov", 11, "#fff") +
       (rk.olov + rk.like) + '</div>' : "";
-  var muq = v.muqova || birinchi;
+  var muq = v.oq || v.muqova || birinchi;
   k.innerHTML = '<img loading="lazy" src="rasm/' + v.papka + '/' + muq +
     '" alt="' + nom + '"><div class="nishon ' + h + '">' + nomi + '</div>' +
     son + reb + vid + rb + tb + '<div class="nom">' + nom + '</div>';
