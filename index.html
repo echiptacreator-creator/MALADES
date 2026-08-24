@@ -284,17 +284,25 @@ button{font-family:inherit;cursor:pointer}
   letter-spacing:2.2px;text-transform:uppercase}
 .loyiha{margin:0 18px 9px;padding:15px 16px;border-radius:16px;
   background:var(--qatlam);border:1px solid var(--chiziq);position:relative;
-  overflow:hidden}
-.loyiha.asoschi{border-color:rgba(255,85,0,.35)}
-.loyiha.asoschi::before{content:"";position:absolute;left:0;top:0;bottom:0;
-  width:3px;background:var(--urgu)}
+  overflow:hidden;display:flex;gap:13px;align-items:flex-start}
+.loyiha::before{content:"";position:absolute;left:0;top:0;bottom:0;
+  width:3px;background:var(--brend, var(--urgu))}
+.loyiha .ich{flex:1;min-width:0}
+.loyiha .belgi-quti{flex:0 0 56px;height:56px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;padding:9px;
+  background:var(--brend-fon, rgba(255,255,255,.05));
+  border:1px solid var(--brend-chiziq, var(--chiziq))}
+.loyiha .belgi-quti img{max-width:100%;max-height:100%;object-fit:contain;
+  display:block}
 .loyiha .qator1{display:flex;align-items:center;justify-content:space-between;
   gap:10px}
-.loyiha h4{margin:0;font-size:15.5px;font-weight:700;letter-spacing:-.2px}
+.loyiha h4{margin:0;font-size:15.5px;font-weight:700;letter-spacing:-.2px;
+  color:var(--brend-matn, var(--matn))}
 .loyiha .rol{font-size:9.5px;font-weight:800;letter-spacing:1.2px;
   text-transform:uppercase;padding:4px 9px;border-radius:999px;
   background:rgba(255,255,255,.06);color:var(--xira);white-space:nowrap}
-.loyiha.asoschi .rol{background:rgba(255,85,0,.16);color:var(--urgu)}
+.loyiha .rol{background:var(--brend-yorliq, rgba(255,255,255,.06));
+  color:var(--brend-matn, var(--xira))}
 .loyiha p{margin:7px 0 0;font-size:13px;line-height:1.5;color:#a6aeba}
 .xizmat{display:flex;gap:10px;align-items:flex-start;padding:9px 18px;
   font-size:13.5px;color:#c0c7d2;line-height:1.5}
@@ -830,12 +838,13 @@ function ikon(nom, olcham, rang){
     '" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter">' +
     ich + '</svg>';
 }
+var BITTA_KADR = true;   /* katalogda 1 ta variant */
 var TG = window.Telegram ? window.Telegram.WebApp : null;
 var ADMIN = 515902673;
-var PROFIL = {"ism": "Sardorbek", "taxallus": "malades.bola", "kasb": "brend va sport identikasi dizayneri", "shahar": "Andijon / Toshkent", "yillar": 5, "haqida": "Brend va sport identikasi bilan 5 yildan beri ishlayman. Ishim shablon tanlash emas — har konsept ortida biznes mantiqi turadi va mijozga nega shunday qilinganini tushuntirib beraman.", "raqamlar": [["110+", "tayyorlangan ish"], ["25", "klub gerbi"], ["5", "yil tajriba"]], "loyihalar": [{"nom": "Andijon FK", "rol": "Brend identikasi", "izoh": "Klub gerbi, forma brendingi va matchday dizayn tizimi.", "turi": "mijoz"}, {"nom": "O'zbekiston futzal assotsiatsiyasi", "rol": "Identika", "turi": "mijoz", "izoh": "Federatsiya darajasidagi vizual tizim."}, {"nom": "echipta", "rol": "Asoschi", "turi": "asoschi", "izoh": "Chipta xizmati — g'oyadan brendgacha o'zim qurdim."}, {"nom": "kissam", "rol": "Asoschi", "turi": "asoschi", "izoh": "Kontent va dizayn yo'nalishi."}], "xizmatlar": ["Logo va brend identikasi", "Sport klublari uchun gerb va forma brendingi", "Brendbuk va qo'llanish tizimi", "Ijtimoiy tarmoq dizayn tizimi"]};
+var PROFIL = {"ism": "Sardorbek", "taxallus": "malades.bola", "kasb": "brend va sport identikasi dizayneri", "shahar": "Andijon / Toshkent", "yillar": 5, "haqida": "Brend va sport identikasi bilan 5 yildan beri ishlayman. Ishim shablon tanlash emas — har konsept ortida biznes mantiqi turadi va mijozga nega shunday qilinganini tushuntirib beraman.", "raqamlar": [["110+", "tayyorlangan ish"], ["25", "klub gerbi"], ["5", "yil tajriba"]], "loyihalar": [{"nom": "echipta", "rol": "Asoschi", "izoh": "Chipta xizmati — g'oyadan brendgacha o'zim qurdim.", "turi": "asoschi", "rang": "#332688", "logo": "rasm/profil/echipta.png", "toq": true}, {"nom": "kissam", "rol": "Asoschi", "izoh": "Kontent va dizayn yo'nalishi.", "turi": "asoschi", "rang": "#1B2A6B", "logo": "rasm/profil/kissam.png", "toq": false}, {"nom": "Andijon FK", "rol": "Brend identikasi", "izoh": "Klub gerbi, forma brendingi va matchday dizayn tizimi.", "turi": "mijoz", "rang": "#DC2228", "logo": "rasm/profil/Andijon_FK.png", "toq": true}, {"nom": "O'zbekiston futzal assotsiatsiyasi", "rol": "Identika", "izoh": "Federatsiya darajasidagi vizual tizim.", "turi": "mijoz", "rang": "#0A3D91"}], "xizmatlar": ["Logo va brend identikasi", "Sport klublari uchun gerb va forma brendingi", "Brendbuk va qo'llanish tizimi", "Ijtimoiy tarmoq dizayn tizimi"]};
 var ALOQA = {"telegram": "@khamilofff", "kanal": "t.me/maladesbola", "instagram": "instagram.com/malades.bola", "behance": "behance.net/maladesbola", "telefon": "+998 88 472 77 72"};
 var BOT_NOM = "malades_bolabot";
-var QIZIQISH = {"Labsearch": 1};
+var QIZIQISH = {"Labsearch": 1, "Tekshiruv brendi": 1};
 if (TG) {
   TG.ready(); TG.expand();
   try { TG.setHeaderColor("#0F1115"); TG.setBackgroundColor("#0F1115"); }
@@ -1162,6 +1171,10 @@ function oqBrend(nom){
   yon.className = "oq-yon";
   var kadrlar = v.kadrlar && v.kadrlar.length ? v.kadrlar
     : [{fayl: "", variant: ""}];
+  /* Hozircha bitta kadr: yonboshga surish chalkash chiqdi va rang
+     versiyalari hali to'g'rilanmagan. Ranglar tayyor bo'lgach
+     BITTA_KADR ni false qilamiz - qolgan kod o'z joyida turibdi. */
+  if (BITTA_KADR) kadrlar = kadrlar.slice(0, 1);
 
   kadrlar.forEach(function(k, i){
     var el = document.createElement("div");
@@ -1863,14 +1876,42 @@ function profilChiz(){
     return "<div><b>" + x[0] + "</b><span>" + x[1] + "</span></div>";
   }).join("");
 
+  function rgba(hex, a){
+    var h = (hex || "#FF5A0A").replace("#", "");
+    if (h.length !== 6) return "rgba(255,90,10," + a + ")";
+    return "rgba(" + parseInt(h.slice(0,2),16) + "," +
+      parseInt(h.slice(2,4),16) + "," + parseInt(h.slice(4,6),16) +
+      "," + a + ")";
+  }
+  function yorugmi(hex){
+    var h = (hex || "").replace("#", "");
+    if (h.length !== 6) return false;
+    var r = parseInt(h.slice(0,2),16), g = parseInt(h.slice(2,4),16),
+        b = parseInt(h.slice(4,6),16);
+    return (0.2126*r + 0.7152*g + 0.0722*b) > 150;
+  }
   function loyihalar(turi, joy){
     var e = document.getElementById(joy);
     e.innerHTML = PROFIL.loyihalar.filter(function(l){
       return l.turi === turi;
     }).map(function(l){
+      var c = l.rang || "#FF5A0A";
+      /* To'q brend rangi qora fonda o'qilmaydi - unda oqqa o'tamiz */
+      var matn = yorugmi(c) ? c : (rgba(c, 1) === c ? c : c);
+      /* To'q logo to'q plitada yo'qoladi - unga oq plita beramiz */
+      var plitaFon = l.toq ? "#FFFFFF" : rgba(c, .16);
+      var plitaChiziq = l.toq ? rgba(c, .55) : rgba(c, .40);
+      var uslub = "--brend-yorliq:" + rgba(c, .18) +
+        ";--brend:" + c + ";--brend-fon:" + plitaFon +
+        ";--brend-chiziq:" + plitaChiziq + ";--brend-matn:" +
+        (yorugmi(c) ? c : "#FFFFFF");
       return '<div class="loyiha' + (turi === "asoschi" ? " asoschi" : "") +
-        '"><div class="qator1"><h4>' + l.nom + '</h4><span class="rol">' +
-        l.rol + "</span></div><p>" + l.izoh + "</p></div>";
+        '" style="' + uslub + '">' +
+        (l.logo ? '<div class="belgi-quti"><img src="' + l.logo +
+                  '" alt="' + l.nom + '"></div>' : '') +
+        '<div class="ich"><div class="qator1"><h4>' + l.nom +
+        '</h4><span class="rol">' + l.rol + "</span></div><p>" +
+        l.izoh + "</p></div></div>";
     }).join("");
   }
   loyihalar("asoschi", "p-asoschi");
