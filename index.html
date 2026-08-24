@@ -1895,18 +1895,43 @@ if (TG) TG.BackButton.onClick(function(){
   varaqYop();
 });
 
+/* Telegram ?start= yorlig'ida FAQAT A-Z a-z 0-9 _ - ruxsat etiladi.
+   Brend nomlarining 74 tasida bo'sh joy yoki nuqta bor edi -
+   encodeURIComponent bergan foiz belgisi havolani buzardi va mijoz
+   "shu uslubda buyurtma" bosganda hech qayerga tushmasdi. Endi nom
+   base64url bilan o'raladi (u2_ / p2_ / b2_ old qo'shimchalari). */
+function b64u(s){
+  var u = new TextEncoder().encode(String(s)), t = "", i;
+  for (i = 0; i < u.length; i++) t += String.fromCharCode(u[i]);
+  return btoa(t).replace(/\+/g, "-").replace(/\//g, "_")
+                .replace(/=+$/, "");
+}
+
+function yorliq(m){
+  if (!m) return "sayt";
+  if (m.oxshash) return "u2_" + b64u(m.oxshash);
+  if (m.xizmat)  return "x_" + String(m.xizmat)
+                       .replace(/[^A-Za-z0-9_-]/g, "");
+  if (m.paket)   return "p2_" + b64u(m.paket);
+  if (m.tur)     return "b2_" + String(m.tur).replace(/[^A-Za-z0-9]/g, "") +
+                       (m.manba ? "_" + b64u(m.manba) : "");
+  return "sayt";
+}
+
 function yubor(malumotlar){
-  /* Mini app ichidan botga xabar berishning ishonchli yo'li - chuqur
-     havola. sendData faqat klaviatura tugmasidan ochilgan mini appda
-     ishlaydi, inline tugmadan ochilganida jim qoladi. */
-  if (malumotlar && malumotlar.oxshash && BOT_NOM) {
-    var h = "https://t.me/" + BOT_NOM + "?start=uslub_" +
-            encodeURIComponent(malumotlar.oxshash);
+  /* Botga xabar berishning ishonchli yo'li - chuqur havola. sendData
+     faqat klaviatura tugmasidan ochilgan mini appda ishlaydi; inline
+     tugmadan ochilganida ham, oddiy brauzerda saytga kirganda ham jim
+     qoladi. Buyurtma tugmasi jim qolsa - mijoz yo'qoladi. */
+  var m = malumotlar || {};
+  if (m.amal === "buyurtma" && BOT_NOM) {
+    var h = "https://t.me/" + BOT_NOM + "?start=" + yorliq(m);
     if (TG && TG.openTelegramLink) { TG.openTelegramLink(h); return; }
     window.open(h, "_blank");
     return;
   }
-  if (TG && TG.sendData) { TG.sendData(JSON.stringify(malumotlar)); TG.close(); }
+  if (TG && TG.sendData) { TG.sendData(JSON.stringify(m)); TG.close(); }
+  else if (BOT_NOM) window.open("https://t.me/" + BOT_NOM, "_blank");
 }
 
 
@@ -2025,13 +2050,6 @@ fetch("videolar.json").then(function(x){ return x.json(); })
 function buyurt(tur, nom){
   /* Poster, logo, ovoz, video - qaysi bo'limdan bosilgani ham
      yoziladi. Shunda qaysi ish ko'proq buyurtma keltirgani ko'rinadi. */
-  if (BOT_NOM) {
-    var h = "https://t.me/" + BOT_NOM + "?start=b_" + tur +
-            (nom ? "_" + encodeURIComponent(nom) : "");
-    if (TG && TG.openTelegramLink) { TG.openTelegramLink(h); return; }
-    window.open(h, "_blank");
-    return;
-  }
   yubor({amal: "buyurtma", tur: tur, manba: nom || ""});
 }
 
