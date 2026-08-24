@@ -49,10 +49,15 @@ button{font-family:inherit;cursor:pointer}
 .hero{position:relative;overflow:hidden;padding:26px 18px 18px}
 /* Olov yuqoridan tushadi, to'r esa uni ushlab turadi. Ikkalasi
    ham qimirlamaydi - sakrab turgan fon o'qishga xalaqit beradi. */
+/* Gradient matn USTIDAN emas, ORTIDAN chiqadi: o'ng yuqori
+   burchakdan tushadi va sarlavha turgan chap tomonni bo'sh qoldiradi.
+   Shunda oq matn hech qayerda rangga botmaydi. */
 .nur{position:absolute;inset:0;pointer-events:none;
   background:
-    linear-gradient(180deg,rgba(255,90,10,.16),transparent 44%),
-    radial-gradient(620px 260px at 82% -12%,rgba(224,27,36,.32),transparent 66%)}
+    radial-gradient(760px 320px at 92% -18%,rgba(224,27,36,.34),
+      transparent 62%),
+    radial-gradient(420px 220px at 78% 4%,rgba(255,90,10,.24),
+      transparent 68%)}
 .nur2{position:absolute;inset:0;pointer-events:none;opacity:.5;
   background-image:
     linear-gradient(var(--chiziq) 1px,transparent 1px),
@@ -87,9 +92,15 @@ button{font-family:inherit;cursor:pointer}
   -webkit-background-clip:text;background-clip:text;color:transparent}
 .dava-izoh{position:relative;margin-top:10px;font-size:13.5px;line-height:1.5;
   color:#aeb6c2;max-width:23em}
-.raqamlar{display:flex;gap:10px;margin-top:18px;position:relative}
-.raqam{flex:1;background:var(--qatlam);border:1px solid var(--chiziq);
-  border-radius:14px;padding:12px 11px}
+/* Uchta quti o'rniga bitta qator: qutilar orasidagi chegara ko'zni
+   bo'lib tashlardi. Endi ular bitta blok ichida nozik chiziq bilan
+   ajratiladi - raqamlar birga o'qiladi. */
+.raqamlar{display:flex;margin-top:20px;position:relative;
+  border:1px solid var(--chiziq);border-radius:16px;
+  background:var(--qatlam);overflow:hidden}
+.raqam{flex:1;padding:13px 12px;position:relative}
+.raqam + .raqam::before{content:"";position:absolute;left:0;top:22%;
+  bottom:22%;width:1px;background:var(--chiziq)}
 .raqam b{display:block;font-family:var(--sarlavha);font-size:20px;
   font-weight:700;letter-spacing:-.7px;line-height:1}
 .raqam span{display:block;margin-top:6px;font-family:var(--mono);
@@ -158,19 +169,41 @@ button{font-family:inherit;cursor:pointer}
   color:#0f1115}
 /* ---------- OQ MUQOVA ----------
    Bosh sahifada logo toza oq fonda turadi. Rasm kesilmaydi (contain),
-   chunki logoning cheti kesilsa u boshqa logo bo'lib qoladi. */
-.karta.oq{background:#fff;border-color:rgba(255,255,255,.14)}
-.karta.oq img{object-fit:contain;background:#fff}
-.karta.oq .nom{background:linear-gradient(rgba(255,255,255,0),
-  rgba(255,255,255,.97) 42%);color:#0f1115}
-.karta.oq .kadr-son{background:rgba(15,17,21,.08);color:#4a5058}
-.karta.oq .nishon{box-shadow:0 2px 10px rgba(0,0,0,.14)}
-.nishon{position:absolute;top:8px;left:8px;font-size:8.5px;font-weight:800;
-  letter-spacing:.8px;padding:4px 8px;border-radius:999px;
-  text-transform:uppercase;color:#fff}
-.nishon.buyurtma{background:rgba(255,85,0,.94)}
-.nishon.taklif{background:rgba(0,229,255,.9);color:#04222b}
-.nishon.konsept{background:rgba(140,148,162,.85)}
+   chunki logoning cheti kesilsa u boshqa logo bo'lib qoladi.
+
+   Oq plita qora fonda qattiq chegara bo'lib turmasin: ustidan pastga
+   sezilmas kulrang o'tish beriladi va ostiga yumshoq soya. Karta
+   suzib turgandek ko'rinadi. */
+.karta.oq{background:linear-gradient(#fff 62%,#F4F5F7);
+  border-color:rgba(255,255,255,.1);
+  box-shadow:0 10px 26px -16px rgba(0,0,0,.9)}
+.karta.oq img{object-fit:contain;background:transparent}
+.karta.oq .nom{background:linear-gradient(rgba(244,245,247,0),
+  #F4F5F7 44%);color:#0f1115}
+.karta.oq .kadr-son{background:rgba(15,17,21,.07);color:#575E69}
+/* Sichqoncha bor qurilmalarda: karta ko'tariladi va soyasi olovga
+   bo'yaladi - bosiladigani shundan bilinadi. Telefonda bu yo'q,
+   u yerda bosish o'zi ko'rinadi. */
+@media (pointer:fine){
+  .karta{transition:transform .18s,box-shadow .18s}
+  .karta.oq:hover{transform:translateY(-3px);
+    box-shadow:0 18px 34px -18px rgba(255,90,10,.55),
+               0 6px 16px -10px rgba(0,0,0,.8)}
+}
+/* Yorliq logodan baland ovoz chiqarmasin: to'la to'ldirilgan olov
+   dog'i o'rniga - shaffof plita, olov chegarasi va olov yozuvi.
+   Ko'z avval logoga tushadi, keyin yorliqqa. */
+.nishon{position:absolute;top:8px;left:8px;font-family:var(--mono);
+  font-size:8px;font-weight:600;letter-spacing:.12em;padding:4px 8px;
+  border-radius:999px;text-transform:uppercase;
+  background:rgba(255,255,255,.86);backdrop-filter:blur(4px)}
+.nishon.buyurtma{color:#D8330C;border:1px solid rgba(255,90,10,.42)}
+.nishon.taklif{color:#0083A6;border:1px solid rgba(0,229,255,.5)}
+.nishon.konsept{color:#5C6472;border:1px solid rgba(92,100,114,.32)}
+/* To'q kartochkalarda (poster, video) yorliq to'q plitada turadi */
+.karta:not(.oq) .nishon{background:rgba(10,12,16,.72);color:#fff}
+.karta:not(.oq) .nishon.buyurtma{border-color:rgba(255,90,10,.62);
+  color:#FFB067}
 .rebrend-belgi{position:absolute;top:30px;left:8px;font-size:8.5px;
   font-weight:800;letter-spacing:.8px;padding:4px 8px;border-radius:999px;
   text-transform:uppercase;background:rgba(0,229,255,.92);color:#04222b;
@@ -610,9 +643,14 @@ button{font-family:inherit;cursor:pointer}
 .oq-amal button.asos{background:var(--urgu);border-color:var(--urgu)}
 .oq-amal button.bosilgan{background:rgba(255,85,0,.22);
   border-color:var(--urgu);color:#ffb38a}
-.oq-tepa{position:absolute;top:0;left:0;right:0;z-index:3;
+/* MUHIM: `fixed`, `absolute` emas. `.reels` o'zi suriladi - absolute
+   bo'lsa yuqori panel kontent bilan birga surilib ketardi va pastga
+   tushgach yopish tugmasi umuman ko'rinmasdi (2026-08-25). */
+.oq-tepa{position:fixed;top:0;left:0;right:0;z-index:6;
   padding:calc(12px + env(safe-area-inset-top)) 14px 30px;
-  background:none;display:flex;align-items:center;gap:10px}
+  background:linear-gradient(rgba(0,0,0,.55),transparent);
+  display:flex;align-items:center;gap:10px;pointer-events:none}
+.oq-tepa > *{pointer-events:auto}
 .oq-yop{width:38px;height:38px;border-radius:12px;flex:0 0 auto;
   background:rgba(0,0,0,.42);border:1px solid rgba(255,255,255,.16);
   color:#fff;display:flex;align-items:center;justify-content:center}
@@ -670,8 +708,8 @@ button{font-family:inherit;cursor:pointer}
   .hero .dava{font-size:44px;line-height:1.12}
   .hero .kasb{font-size:12px}
   .dava-izoh{max-width:34em;font-size:15px}
-  .raqamlar{gap:14px;max-width:620px}
-  .raqam{padding:16px 18px}
+  .raqamlar{max-width:620px}
+  .raqam{padding:17px 20px}
   .raqam b{font-size:30px}
   .raqam span{font-size:10px;margin-top:7px}
   .ishonch,.qidiruv,.filtr{padding-left:40px;padding-right:40px}
@@ -692,6 +730,39 @@ button{font-family:inherit;cursor:pointer}
 }
 @media (min-width:1280px){
   .tor{grid-template-columns:repeat(5,1fr)}
+}
+
+/* ---------- REELS: KOMPYUTERDA ----------
+   Katta ekranda logo butun kenglikka yoyilib, atrofi bo'sh qolardi.
+   Endi u markazdagi sahnada turadi - telefondagi kabi, lekin
+   kompyuterga mos. Tugmalar sahnaning chetiga yopishadi. */
+@media (min-width:820px) and (pointer:fine){
+  .oq-kadr{padding:76px 40px 132px}
+  .oq-kadr > img{max-width:min(72vw,600px);max-height:calc(100dvh - 230px);
+    border-radius:22px}
+  /* Kadrning o'zida brend nomi va imzo yozilgan - pastdagi panel
+     uni takrorlamasin. Kompyuterda u shunchaki amallar qatoriga
+     aylanadi va markazda turadi. */
+  .oq-past{left:50%;right:auto;transform:translateX(-50%);
+    width:min(92vw,600px);background:none;padding:14px 0 26px;
+    display:flex;flex-direction:column;align-items:center;text-align:center}
+  .oq-past.och{background:none}
+  .oq-past .oq-nom,.oq-past .oq-var{display:none}
+  .oq-past .oq-izoh{max-width:44ch;margin-bottom:10px;color:#aab2be}
+  .oq-past.och .oq-izoh{color:#4a5058}
+  .oq-past .oq-teg{justify-content:center}
+  .oq-past .oq-amal{justify-content:center}
+  .oq-past .oq-amal button{padding:12px 18px;font-size:13.5px}
+  .oq-past .oq-amal button.asos{background:var(--olov-gr);
+    border-color:transparent;
+    box-shadow:0 10px 26px -12px rgba(255,90,10,.85)}
+  .oq-yonlik{bottom:calc(158px + env(safe-area-inset-bottom))}
+  .oq-oq{width:46px;height:46px}
+  .oq-oq.chap{left:max(14px,calc(50% - 372px))}
+  .oq-oq.ong{right:max(14px,calc(50% - 372px))}
+  .oq-tepa{padding-left:24px;padding-right:24px}
+  /* Sichqoncha bilan g'ildiraklaganda snap qattiq bo'lsa sakraydi */
+  .reels{scroll-snap-type:y proximity}
 }
 
 </style>
@@ -1443,6 +1514,37 @@ document.getElementById("oq-yop").onclick = function(){ oqimYop(); };
 document.getElementById("reels").addEventListener("scroll", function(){
   clearTimeout(window._oqT);
   window._oqT = setTimeout(oqimHisob, 90);
+});
+
+/* Kompyuterda barmoq bilan surib bo'lmaydi - klaviatura kerak.
+   Esc yopadi, yuqori/past brenddan brendga, chap/o'ng shu brendning
+   versiyalari bo'ylab yuradi. */
+document.addEventListener("keydown", function(e){
+  var q = document.getElementById("reels");
+  if (!q.classList.contains("ochiq")) return;
+  var b = q.querySelectorAll(".oq-brend");
+  var i = Math.round(q.scrollTop / window.innerHeight);
+
+  if (e.key === "Escape") { e.preventDefault(); oqimYop(); return; }
+
+  if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+    e.preventDefault();
+    var y = i + (e.key === "ArrowDown" ? 1 : -1);
+    y = Math.max(0, Math.min(b.length - 1, y));
+    if (b[y]) q.scrollTo({top: b[y].offsetTop, behavior: "smooth"});
+    return;
+  }
+
+  if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+    e.preventDefault();
+    var yon = b[i] && b[i].querySelector(".oq-yon");
+    if (!yon) return;
+    var en = yon.clientWidth;
+    var j = Math.round(yon.scrollLeft / en) + (e.key === "ArrowRight" ? 1 : -1);
+    var soni = yon.querySelectorAll(".oq-kadr").length;
+    j = Math.max(0, Math.min(soni - 1, j));
+    yon.scrollTo({left: j * en, behavior: "smooth"});
+  }
 });
 
 /* ---------- ISH OYNASI ---------- */
