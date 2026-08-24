@@ -262,7 +262,7 @@ button{font-family:inherit;cursor:pointer}
 .pr-lenta span{font-size:11px;font-weight:800;letter-spacing:2.6px;
   color:#0a0a0c;text-transform:uppercase;padding:0 14px}
 @keyframes pr-yur{from{transform:translateX(0)}
-  to{transform:translateX(-33.34%%)}}
+  to{transform:translateX(-33.34%)}}
 @media (prefers-reduced-motion:reduce){.pr-lenta i{animation:none}}
 .pr-raqam{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;
   padding:20px 18px 4px}
@@ -402,10 +402,53 @@ button{font-family:inherit;cursor:pointer}
   flex:0 0 auto;min-width:76px;padding:9px 10px}
 
 
+/* ---------- VIDEOLAR ---------- */
+.vid-royxat{padding:0 14px 16px;display:grid;gap:12px;
+  grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.vid{position:relative;border-radius:16px;overflow:hidden;
+  background:#0F0F14;border:1px solid var(--chiziq);aspect-ratio:9/16;
+  cursor:pointer}
+.vid img{width:100%;height:100%;object-fit:cover;display:block}
+.vid.gor{aspect-ratio:16/9}
+.vid-yozuv{position:absolute;left:0;right:0;bottom:0;padding:26px 11px 10px;
+  background:linear-gradient(180deg,transparent,rgba(0,0,0,.86));
+  font-size:12.5px;font-weight:700;line-height:1.25}
+.vid-vaqt{position:absolute;top:8px;right:8px;background:rgba(0,0,0,.62);
+  backdrop-filter:blur(6px);border-radius:99px;padding:3px 8px;
+  font-size:11px;font-weight:700}
+.vid-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:44px;height:44px;border-radius:50%;background:rgba(255,85,0,.92);
+  display:flex;align-items:center;justify-content:center}
+.vid-play:after{content:"";border-left:13px solid #fff;
+  border-top:8px solid transparent;border-bottom:8px solid transparent;
+  margin-left:4px}
+.vq{position:fixed;inset:0;z-index:130;background:#000;display:none;
+  overflow-y:auto;scroll-snap-type:y mandatory;scrollbar-width:none;
+  overscroll-behavior:contain;touch-action:pan-y}
+.vq::-webkit-scrollbar{display:none}
+.vq.ochiq{display:block}
+.vq-kadr{position:relative;height:100dvh;min-height:100dvh;
+  scroll-snap-align:start;scroll-snap-stop:always;display:flex;
+  align-items:center;justify-content:center;background:#000;
+  overflow:hidden}
+.vq-kadr video{width:100%;height:100%;object-fit:contain;background:#000}
+.vq-past{position:absolute;left:0;right:0;bottom:0;
+  padding:60px 18px calc(20px + env(safe-area-inset-bottom));
+  background:linear-gradient(180deg,transparent,rgba(0,0,0,.9))}
+.vq-nom{font-size:19px;font-weight:800;letter-spacing:-.2px}
+.vq-izoh{font-size:13px;color:#C9CBD2;margin-top:4px}
+.vq-tug{margin-top:13px;width:100%;padding:14px;border:0;border-radius:14px;
+  background:var(--urgu);color:#fff;font-weight:700;font-size:14px;
+  display:flex;align-items:center;justify-content:center;gap:7px}
+.vq-yop{position:absolute;top:calc(10px + env(safe-area-inset-top));
+  left:12px;z-index:4;width:38px;height:38px;border-radius:50%;border:0;
+  background:rgba(0,0,0,.5);backdrop-filter:blur(8px);color:#fff;
+  font-size:17px}
+
 /* ---------- REELS ---------- */
 .reels{position:fixed;inset:0;z-index:120;background:#000;display:none;
   overflow-y:auto;scroll-snap-type:y mandatory;scrollbar-width:none;
-  overscroll-behavior:contain}
+  overscroll-behavior:contain;touch-action:pan-y}
 .reels::-webkit-scrollbar{display:none}
 .reels.ochiq{display:block}
 /* Vertikal — brenddan brendga. Gorizontal — shu brend versiyalari. */
@@ -413,7 +456,8 @@ button{font-family:inherit;cursor:pointer}
   scroll-snap-align:start;scroll-snap-stop:always;overflow:hidden}
 .oq-yon{position:absolute;inset:0;display:flex;overflow-x:auto;
   overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;
-  overscroll-behavior-x:contain}
+  overscroll-behavior:contain;touch-action:pan-x;
+  -webkit-overflow-scrolling:touch}
 .oq-yon::-webkit-scrollbar{display:none}
 .oq-kadr{position:relative;flex:0 0 100%;width:100%;height:100%;
   scroll-snap-align:start;scroll-snap-stop:always;display:flex;
@@ -428,6 +472,13 @@ button{font-family:inherit;cursor:pointer}
   background:rgba(255,255,255,.28)}
 .oq-yonlik i.faol{background:var(--urgu);width:26px}
 .oq-yoq{color:#8b93a1;font-size:13px;text-align:center;line-height:1.7}
+.oq-oq{position:absolute;top:50%;transform:translateY(-50%);z-index:5;
+  width:42px;height:42px;border-radius:50%;border:0;color:#fff;
+  background:rgba(0,0,0,.45);display:flex;align-items:center;
+  justify-content:center;font-size:22px;line-height:1}
+.oq-kadr.och ~ .oq-oq{background:rgba(0,0,0,.28)}
+.oq-oq.chap{left:10px}
+.oq-oq.ong{right:10px}
 .oq-ishora{position:absolute;right:14px;top:50%;transform:translateY(-50%);
   z-index:4;font-size:10.5px;letter-spacing:1.2px;color:#cfd6e0;
   background:rgba(0,0,0,.42);padding:8px 10px;border-radius:11px;
@@ -508,6 +559,11 @@ button{font-family:inherit;cursor:pointer}
 .ovoz-chiziq i{display:block;height:100%;width:0;background:var(--urgu);
   border-radius:3px}
 .ovoz-izoh{font-size:12.5px;color:#aab2be;line-height:1.5;margin-top:10px}
+.ovoz-buyurt{margin-top:11px;width:100%;padding:11px;border:0;
+  border-radius:12px;background:rgba(255,85,0,.14);color:var(--urgu);
+  font-weight:700;font-size:13px;display:flex;align-items:center;
+  justify-content:center;gap:7px}
+.ovoz-buyurt:active{background:rgba(255,85,0,.24)}
 
 /* ---------- KATTA EKRAN: sayt ko'rinishi ---------- */
 @media (min-width:820px){
@@ -601,6 +657,24 @@ button{font-family:inherit;cursor:pointer}
   </div>
   <div class="ovoz-royxat" id="ovoz-royxat"></div>
   <div style="height:16px"></div>
+</div>
+
+<!-- ================= VIDEOLAR ================= -->
+<div class="bolim" id="b-videolar">
+  <div class="hero" style="padding-bottom:6px">
+    <div class="nur"></div>
+    <div class="dava" style="margin-top:6px">Videolar</div>
+    <div class="dava-izoh">Logo animatsiyasi, reels va taqdimot videolari.
+      Bosing — to'liq ekranda ochiladi, pastga surib keyingisiga o'tasiz.</div>
+  </div>
+  <div class="vid-royxat" id="vid-royxat"></div>
+  <div style="height:16px"></div>
+</div>
+
+<!-- ================= VIDEO OQIMI ================= -->
+<div class="vq" id="vq">
+  <button class="vq-yop" id="vq-yop">&times;</button>
+  <div id="vq-ich"></div>
 </div>
 
 <!-- ================= OQIM (reels) ================= -->
@@ -738,6 +812,7 @@ button{font-family:inherit;cursor:pointer}
     <button class="faol" data-b="ishlar"><s data-i="ishlar"></s>Ishlar</button>
     <button data-b="posterlar"><s data-i="posterlar"></s>Posterlar</button>
     <button data-b="ovozlar" id="nav-ovoz" style="display:none"><s data-i="ovoz"></s>Ovozlar</button>
+    <button data-b="videolar" id="nav-video" style="display:none"><s data-i="video"></s>Videolar</button>
 
     <button data-b="profil"><s data-i="profil"></s>Profil</button>
   </div>
@@ -975,8 +1050,14 @@ function ovozChiz(){
         '<div class="ovoz-vaqt">' + (o.vaqt || "") + '</div>' +
       '</div>' +
       '<div class="ovoz-chiziq"><i></i></div>' +
-      (o.izoh ? '<div class="ovoz-izoh">' + o.izoh + '</div>' : '');
+      (o.izoh ? '<div class="ovoz-izoh">' + o.izoh + '</div>' : '') +
+      '<button class="ovoz-buyurt">' + ikon("buyurtma", 13, "#fff") +
+        'Shu ovozda kerak</button>';
 
+    var buyurtTug = el.querySelector(".ovoz-buyurt");
+    if (buyurtTug) buyurtTug.onclick = function(e){
+      e.stopPropagation(); titra("medium"); buyurt("ovoz", o.nom);
+    };
     var tugma = el.querySelector(".ovoz-tugma");
     var chiziq = el.querySelector(".ovoz-chiziq");
     var bar = el.querySelector(".ovoz-chiziq i");
@@ -1113,6 +1194,25 @@ function oqBrend(nom){
     ish.textContent = "← versiyalar";
     bolim.appendChild(ish);
 
+    /* Barmoq bilan surish qiyin bo'lsa - tugma bilan ham o'tsin */
+    function surish(yon2){
+      var w = yon.clientWidth || 1;
+      var i3 = Math.round(yon.scrollLeft / w) + yon2;
+      i3 = Math.max(0, Math.min(kadrlar.length - 1, i3));
+      yon.scrollTo({left: i3 * w, behavior: "smooth"});
+      titra();
+    }
+    var chap = document.createElement("button");
+    chap.className = "oq-oq chap";
+    chap.innerHTML = "‹";
+    chap.onclick = function(e){ e.stopPropagation(); surish(-1); };
+    var ong = document.createElement("button");
+    ong.className = "oq-oq ong";
+    ong.innerHTML = "›";
+    ong.onclick = function(e){ e.stopPropagation(); surish(1); };
+    bolim.appendChild(chap);
+    bolim.appendChild(ong);
+
     yon.addEventListener("scroll", function(){
       clearTimeout(yon._t);
       yon._t = setTimeout(function(){
@@ -1205,6 +1305,7 @@ function oqimOch(nom){
   });
   var q = document.getElementById("reels");
   q.classList.add("ochiq");
+  tarixQosh();
   document.body.style.overflow = "hidden";
   if (nishon) q.scrollTop = nishon.offsetTop;
   oqimHisob();
@@ -1221,7 +1322,8 @@ function oqimHisob(){
     joy > 0 ? joy + " / " + oqimRoyxat.length : "";
 }
 
-function oqimYop(){
+function oqimYop(tarixdan){
+  if (!tarixdan) { try { history.back(); return; } catch (e) {} }
   var q = document.getElementById("reels");
   q.classList.remove("ochiq");
   q.scrollTop = 0;
@@ -1231,7 +1333,7 @@ function oqimYop(){
   torChiz();
 }
 
-document.getElementById("oq-yop").onclick = oqimYop;
+document.getElementById("oq-yop").onclick = function(){ oqimYop(); };
 
 document.getElementById("reels").addEventListener("scroll", function(){
   clearTimeout(window._oqT);
@@ -1392,9 +1494,24 @@ var stek = [];
 function varaqOch(id){
   document.getElementById(id).classList.add("ochiq");
   stek.push(id);
+  tarixQosh();
   if (TG) TG.BackButton.show();
 }
-function varaqYop(){
+
+/* Telefondagi "orqaga" imo-ishorasi va brauzer tugmasi ham yopsin.
+   Ilgari faqat Telegramning o'z tugmasi ishlardi - saytda chiqib
+   ketib qolardi. */
+function tarixQosh(){
+  try { history.pushState({app: 1}, ""); } catch (e) {}
+}
+window.addEventListener("popstate", function(){
+  if (videoYop()) return;
+  var q = document.getElementById("reels");
+  if (q && q.classList.contains("ochiq")) { oqimYop(true); return; }
+  if (stek.length) { varaqYop(true); return; }
+});
+function varaqYop(tarixdan){
+  if (!tarixdan) { try { history.back(); return; } catch (e) {} }
   var id = stek.pop();
   if (id) document.getElementById(id).classList.remove("ochiq");
   if (TG && !stek.length) TG.BackButton.hide();
@@ -1424,9 +1541,135 @@ function yubor(malumotlar){
   if (TG && TG.sendData) { TG.sendData(JSON.stringify(malumotlar)); TG.close(); }
 }
 
+
+/* ---------- VIDEOLAR ---------- */
+var videolar = [];
+
+function videoChiz(){
+  var tor = document.getElementById("vid-royxat");
+  if (!tor) return;
+  tor.innerHTML = "";
+  if (!videolar.length) {
+    tor.innerHTML = '<div class="yuk" style="grid-column:1/-1">' +
+      'Video hali qo\'shilmagan.' +
+      (menmi() ? '<br><br>video/ papkasiga MP4 tashlang va videolar.py ' +
+       'ni yurgizing.' : '') + '</div>';
+    return;
+  }
+  videolar.forEach(function(v, i){
+    var el = document.createElement("div");
+    el.className = "vid" + (v.vertikal ? "" : " gor");
+    el.innerHTML =
+      (v.muqova ? '<img src="' + v.muqova + '" loading="lazy" alt="">' : '') +
+      '<div class="vid-play"></div>' +
+      (v.vaqt ? '<div class="vid-vaqt">' + v.vaqt + '</div>' : '') +
+      '<div class="vid-yozuv">' + v.nom + '</div>';
+    el.onclick = function(){ titra(); videoOch(i); };
+    tor.appendChild(el);
+  });
+}
+
+function videoOch(bosh){
+  var q = document.getElementById("vq");
+  var ich = document.getElementById("vq-ich");
+  if (!q || !ich) return;
+  ich.innerHTML = "";
+  videolar.forEach(function(v){
+    var k = document.createElement("div");
+    k.className = "vq-kadr";
+    k.innerHTML =
+      '<video src="' + v.fayl + '" playsinline loop preload="none"' +
+        (v.muqova ? ' poster="' + v.muqova + '"' : '') + '></video>' +
+      '<div class="vq-past">' +
+        '<div class="vq-nom">' + v.nom + '</div>' +
+        (v.izoh ? '<div class="vq-izoh">' + v.izoh + '</div>' : '') +
+        '<button class="vq-tug">' + ikon("buyurtma", 15, "#fff") +
+          'Shunday video kerak</button>' +
+      '</div>';
+    k.querySelector(".vq-tug").onclick = function(e){
+      e.stopPropagation();
+      titra("medium");
+      buyurt("video", v.nom);
+    };
+    var vd = k.querySelector("video");
+    k.onclick = function(){
+      if (vd.paused) { vd.play(); } else { vd.pause(); }
+    };
+    ich.appendChild(k);
+  });
+
+  q.classList.add("ochiq");
+  document.body.style.overflow = "hidden";
+  var kadrlar = ich.querySelectorAll(".vq-kadr");
+  if (kadrlar[bosh]) q.scrollTop = kadrlar[bosh].offsetTop;
+  videoOynat(q);
+  try { history.pushState({vq: 1}, ""); } catch (e) {}
+}
+
+function videoOynat(q){
+  /* Ko'rinib turgan videoni o'ynatamiz, qolganini to'xtatamiz.
+     Aks holda telefon bir necha videoni birdan yuklab, qiziydi. */
+  var kadrlar = q.querySelectorAll(".vq-kadr");
+  for (var i = 0; i < kadrlar.length; i++) {
+    var vd = kadrlar[i].querySelector("video");
+    if (!vd) continue;
+    var yaqin = Math.abs(kadrlar[i].offsetTop - q.scrollTop) < 60;
+    if (yaqin) {
+      vd.muted = false;
+      var p = vd.play();
+      if (p && p.catch) p.catch(function(){ vd.muted = true; vd.play(); });
+    } else if (!vd.paused) {
+      vd.pause();
+    }
+  }
+}
+
+function videoYop(){
+  var q = document.getElementById("vq");
+  if (!q || !q.classList.contains("ochiq")) return false;
+  q.querySelectorAll("video").forEach(function(v){ v.pause(); });
+  q.classList.remove("ochiq");
+  document.body.style.overflow = "";
+  return true;
+}
+
+(function(){
+  var q = document.getElementById("vq");
+  if (!q) return;
+  var kut = null;
+  q.addEventListener("scroll", function(){
+    clearTimeout(kut);
+    kut = setTimeout(function(){ videoOynat(q); }, 130);
+  });
+  var y = document.getElementById("vq-yop");
+  if (y) y.onclick = function(){ titra(); videoYop(); };
+})();
+
+fetch("videolar.json").then(function(x){ return x.json(); })
+  .then(function(d){
+    videolar = d || [];
+    var t = document.getElementById("nav-video");
+    if (t && videolar.length) t.style.display = "";
+    if (document.querySelector("#b-videolar.faol")) videoChiz();
+  }).catch(function(){});
+
+/* ---------- HAR BO'LIMDAN BUYURTMA ---------- */
+function buyurt(tur, nom){
+  /* Poster, logo, ovoz, video - qaysi bo'limdan bosilgani ham
+     yoziladi. Shunda qaysi ish ko'proq buyurtma keltirgani ko'rinadi. */
+  if (BOT_NOM) {
+    var h = "https://t.me/" + BOT_NOM + "?start=b_" + tur +
+            (nom ? "_" + encodeURIComponent(nom) : "");
+    if (TG && TG.openTelegramLink) { TG.openTelegramLink(h); return; }
+    window.open(h, "_blank");
+    return;
+  }
+  yubor({amal: "buyurtma", tur: tur, manba: nom || ""});
+}
+
 /* ---------- BO'LIMLAR ---------- */
 function bolimGa(nom){
-  ["ishlar","posterlar","ovozlar","profil"].concat(QOSH_KALIT)
+  ["ishlar","posterlar","ovozlar","videolar","profil"].concat(QOSH_KALIT)
     .forEach(function(b){
     var e = document.getElementById("b-" + b);
     if (e) e.className = "bolim" + (b === nom ? " faol" : "");
@@ -1440,6 +1683,7 @@ function bolimGa(nom){
   window.scrollTo(0, 0);
   if (nom === "posterlar") posterChiz();
   else if (nom === "ovozlar") ovozChiz();
+  else if (nom === "videolar") videoChiz();
   else if (QOSH_KALIT.indexOf(nom) >= 0) qoshChiz(nom);
 }
 document.querySelectorAll(".nav button[data-b]").forEach(function(b){
