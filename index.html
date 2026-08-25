@@ -472,6 +472,8 @@ button{font-family:inherit;cursor:pointer}
   padding:3px 6px;border-radius:6px;color:var(--xira);
   background:rgba(255,255,255,.05);white-space:nowrap}
 .sg svg{width:10px;height:10px}
+/* Ko'rishlar — eng ishonarli signal, shuning uchun oq va aniq */
+.sg-kor{color:#DDE3EB;background:rgba(255,255,255,.09);font-weight:700}
 .sg-reels{color:#FFB88A;background:rgba(255,90,10,.13)}
 .sg-ovoz{color:#7FE9FF;background:rgba(0,229,255,.11)}
 .sg-men{color:#FFC79A;background:rgba(255,90,10,.10)}
@@ -529,6 +531,11 @@ button{font-family:inherit;cursor:pointer}
   font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:#fff;
   padding:3px 6px;border-radius:5px;background:rgba(0,229,255,.28);
   backdrop-filter:blur(5px)}
+.pst-kor{position:absolute;bottom:54px;right:9px;z-index:4;
+  display:inline-flex;align-items:center;gap:4px;font-size:10px;
+  font-weight:700;color:#fff;padding:4px 8px;border-radius:8px;
+  background:rgba(8,9,11,.62);backdrop-filter:blur(5px)}
+.karta.pst .oyna ~ .pst-kor{bottom:92px}
 .pst-past{position:absolute;left:0;right:0;bottom:0;z-index:3;
   padding:30px 11px 10px;display:flex;align-items:flex-end;gap:8px;
   background:linear-gradient(transparent,rgba(6,8,11,.94))}
@@ -1555,9 +1562,9 @@ var ADMIN = 515902673;
 var PROFIL = {"ism": "Sardorbek", "taxallus": "malades.bola", "kasb": "brend va sport identikasi dizayneri", "shahar": "Andijon / Toshkent", "yillar": 5, "haqida": "Brend va sport identikasi bilan 5 yildan beri ishlayman. Ishim shablon tanlash emas — har konsept ortida biznes mantiqi turadi va mijozga nega shunday qilinganini tushuntirib beraman.", "raqamlar": [["110+", "tayyorlangan ish"], ["25", "klub gerbi"], ["5", "yil tajriba"]], "loyihalar": [{"nom": "echipta", "rol": "Asoschi", "izoh": "Chipta xizmati — g'oyadan brendgacha o'zim qurdim.", "turi": "asoschi", "rang": "#332688", "logo": "rasm/profil/echipta.png", "toq": true}, {"nom": "kissam", "rol": "Asoschi", "izoh": "Kontent va dizayn yo'nalishi.", "turi": "asoschi", "rang": "#1B2A6B", "logo": "rasm/profil/kissam.png", "toq": false}, {"nom": "Andijon FK", "rol": "Brend identikasi", "izoh": "Klub gerbi, forma brendingi va matchday dizayn tizimi.", "turi": "mijoz", "rang": "#DC2228", "logo": "rasm/profil/Andijon_FK.png", "toq": true}, {"nom": "O'zbekiston futzal assotsiatsiyasi", "rol": "Identika", "izoh": "Federatsiya darajasidagi vizual tizim.", "turi": "mijoz", "rang": "#0A3D91"}], "xizmatlar": ["Logo va brend identikasi", "Sport klublari uchun gerb va forma brendingi", "Brendbuk va qo'llanish tizimi", "Ijtimoiy tarmoq dizayn tizimi"]};
 var ALOQA = {"telegram": "@khamilofff", "kanal": "t.me/maladesbola", "instagram": "instagram.com/malades.bola", "behance": "behance.net/maladesbola", "telefon": "+998 88 472 77 72"};
 var BOT_NOM = "malades_bolabot";
-var QIZIQISH = {"ADC ingliz tili kurslari posterlari": 1, "Ananas Travel": 3, "Bek Aviakassa": 4, "Finlit.uz": 1, "Labsearch": 1, "Sinov": 12};
+var QIZIQISH = {"ADC ingliz tili kurslari posterlari": 1, "Ananas Travel": 4, "Bek Aviakassa": 5, "Finlit.uz": 1, "Labsearch": 1, "Sinov": 16};
 /* Saytdagi haqiqiy reaksiyalar: {brend: {olov: n, ulash: n}} */
-var SANOQ = {};
+var SANOQ = {"Andijon FK": {"korish": 1, "olov": 1}, "Bek Aviakassa": {"korish": 1, "olov": 1}, "Biznes Pechat": {"olov": 1}, "Chorva Foyda": {"olov": 1}, "Eleven": {"olov": 1}, "Everest Muzlari": {"olov": 1}, "Farovon Marg'ilon": {"olov": 1}, "Finlit.uz": {"korish": 1, "olov": 1, "ulash": 1}, "Instaff": {"olov": 1}, "Labsearch": {"olov": 1}, "Salman School": {"olov": 1}};
 var ADMIN_API = "https://admin.maladesbola.uz";
 
 /* Reaksiyani serverga yuboradi. Ishlamasa — jimgina o'tadi:
@@ -1573,6 +1580,23 @@ function sanoqYubor(nom, tur){
   } catch (x) {}
   var s = SANOQ[nom] || (SANOQ[nom] = {});
   s[tur] = (s[tur] || 0) + 1;
+}
+
+/* 1200 -> "1,2 ming". Uzun raqam kartochkada joy egallaydi va
+   o'qilmaydi. */
+/* Ko'z belgisi — "ko'rildi" degani uchun eng tushunarli shakl.
+   Ikonlar to'plamida yo'q, shuning uchun shu yerda. */
+var KOZ = '<svg viewBox="0 0 24 24" width="11" height="11">' +
+  '<path fill="currentColor" d="M12 5c5 0 9.3 3.4 11 7-1.7 3.6-6 7-11 ' +
+  '7S2.7 15.6 1 12c1.7-3.6 6-7 11-7zm0 3a4 4 0 100 8 4 4 0 000-8zm0 ' +
+  '2.2a1.8 1.8 0 110 3.6 1.8 1.8 0 010-3.6z"/></svg>';
+
+function qisqaSon(n){
+  n = n || 0;
+  if (n < 1000) return String(n);
+  if (n < 10000) return (n / 1000).toFixed(1).replace(".", ",") + " ming";
+  if (n < 1000000) return Math.round(n / 1000) + " ming";
+  return (n / 1000000).toFixed(1).replace(".", ",") + " mln";
 }
 
 function sanoqOl(nom, tur){
@@ -1741,8 +1765,14 @@ function pulMatni(n){
 }
 
 function kartaSignal(nom, v){
-  /* Kartaning pastki qatori: nima borligini bir qarashda aytadi */
+  /* Kartaning pastki qatori: nima borligini bir qarashda aytadi.
+     Birinchi bo'lib KO'RISHLAR turadi — u eng ishonarli signal:
+     "buni ko'pchilik ko'rgan" degani hech qanday reklama gapidan
+     kuchliroq. Raqam haqiqiy, serverda yig'iladi. */
   var h = "";
+  var kor = sanoqOl(nom, "korish");
+  if (kor) h += '<span class="sg sg-kor">' + KOZ +
+    qisqaSon(kor) + '</span>';
   if (v.video) h += '<span class="sg sg-reels">' +
     ikon("video", 10, "currentColor") + 'Reels</span>';
   if (ovozlimi(nom)) h += '<span class="sg sg-ovoz">' +
@@ -1905,10 +1935,14 @@ function posterKarta(nom, v){
   var ovz = ovozlimi(nom)
     ? '<b class="pst-ovoz">' + ikon("ovoz", 10, "#fff") + 'ovoz</b>' : "";
 
+  var kor = sanoqOl(nom, "korish");
+  var pk = kor ? '<b class="pst-kor">' + KOZ +
+    qisqaSon(kor) + '</b>' : "";
+
   k.innerHTML =
     '<img loading="lazy" src="rasm/' + v.papka + '/' + muq +
     '" alt="' + nom + '">' +
-    '<b class="pst-teg">Poster</b>' + son + oyna + ovz +
+    '<b class="pst-teg">Poster</b>' + son + oyna + ovz + pk +
     '<div class="pst-past"><div class="nom">' + nom + '</div>' +
     '<button class="karta-ol pst-ol" type="button">' +
     ikon("buyurtma", 12, "#fff") + '</button></div>';
@@ -1923,16 +1957,57 @@ function posterKarta(nom, v){
   return k;
 }
 
+/* ---------- SARALASH ----------
+   Ko'p ko'rilgan ish oldinda turadi: odamlar nimani ko'rayotganini
+   o'zi ko'rsatib beradi va yangi kelgan ham eng kuchli ishlardan
+   boshlaydi.
+   Qo'lda "tanlangan" deb belgilangan ishlar baribir birinchi —
+   dizaynerning qarori raqamdan ustun turadi.
+   Ko'rish soni teng bo'lsa (masalan hammasi nol) — eski tartib:
+   buyurtma bo'lgan ishlar, keyin alifbo bo'yicha. */
+/* Hali ko'rilmagan ishlar uchun KUNLIK aralashtirish.
+
+   Muammo: faqat ko'rish soni bo'yicha saralasak, tepadagi ishlar
+   yana ko'riladi va yana tepada qoladi. Pastdagi ish esa hech
+   qachon ko'rinmaydi — ko'rilmagani uchun pastda, pastda bo'lgani
+   uchun ko'rilmaydi. Yangi qo'shilgan ish umuman chiqmay ketadi.
+
+   Yechim: noldan ko'rilgan ishlar har kuni boshqa tartibda
+   aralashadi. Kun davomida tartib o'zgarmaydi (odam adashmaydi),
+   lekin ertaga boshqa ishlar tepaga chiqadi. */
+function kunlikIz(nom){
+  var d = new Date();
+  var urug = d.getFullYear() * 1000 + d.getMonth() * 40 + d.getDate();
+  var h = urug;
+  for (var i = 0; i < nom.length; i++)
+    h = (h * 31 + nom.charCodeAt(i)) % 100000;
+  return h;
+}
+
+function saralash(a, b){
+  var x = malumot[a], y = malumot[b];
+  var xt = x.tanlangan ? 0 : 1, yt = y.tanlangan ? 0 : 1;
+  if (xt !== yt) return xt - yt;
+
+  var xk = sanoqOl(a, "korish"), yk = sanoqOl(b, "korish");
+  if (xk !== yk) return yk - xk;
+
+  /* Ikkalasi ham ko'rilmagan bo'lsa — kunlik aralashtirish */
+  if (!xk && !yk) {
+    var xi = kunlikIz(a), yi = kunlikIz(b);
+    if (xi !== yi) return xi - yi;
+  }
+
+  var xa = holati(x) === "buyurtma" ? 0 : 1;
+  var ya = holati(y) === "buyurtma" ? 0 : 1;
+  if (xa !== ya) return xa - ya;
+  return a.localeCompare(b);
+}
+
 function torChiz(){
   var tor = document.getElementById("tor");
   tor.innerHTML = "";
-  var nomlar = Object.keys(malumot).sort(function(a, b){
-    var x = malumot[a], y = malumot[b];
-    var xa = x.tanlangan ? 0 : (holati(x) === "buyurtma" ? 1 : 2);
-    var ya = y.tanlangan ? 0 : (holati(y) === "buyurtma" ? 1 : 2);
-    if (xa !== ya) return xa - ya;
-    return a.localeCompare(b);
-  });
+  var nomlar = Object.keys(malumot).sort(saralash);
   var bor = 0;
   nomlar.forEach(function(nom){
     var v = malumot[nom];
@@ -1954,11 +2029,16 @@ function posterChiz(){
   var tor = document.getElementById("tor-poster");
   tor.innerHTML = "";
   var bor = 0;
-  Object.keys(malumot).sort().forEach(function(nom){
+  Object.keys(malumot).sort(saralash).forEach(function(nom){
     var v = malumot[nom];
     if (!posterli(v)) return;
+    var k = kartaYasa(nom, v);
+    if (bor < 8) {
+      k.classList.add("kir");
+      k.style.animationDelay = (bor * 55) + "ms";
+    }
     bor++;
-    tor.appendChild(kartaYasa(nom, v));
+    tor.appendChild(k);
   });
   if (!bor) tor.innerHTML = '<div class="yuk">Posterlar hali qo\'shilmagan.' +
     (menmi() ? '<br><br>poster papkasiga tashlang yoki boshqaruvdan ' +
@@ -2021,11 +2101,16 @@ function qoshChiz(kalit){
   if (!tor) return;
   tor.innerHTML = "";
   var bor = 0;
-  Object.keys(malumot).sort().forEach(function(nom){
+  Object.keys(malumot).sort(saralash).forEach(function(nom){
     var v = malumot[nom];
     if (v.bolim !== kalit) return;
+    var k = kartaYasa(nom, v);
+    if (bor < 8) {
+      k.classList.add("kir");
+      k.style.animationDelay = (bor * 55) + "ms";
+    }
     bor++;
-    tor.appendChild(kartaYasa(nom, v));
+    tor.appendChild(k);
   });
   if (!bor) tor.innerHTML = '<div class="yuk">Bu bo\'limda hali ish yo\'q.' +
     '</div>';
@@ -2142,23 +2227,25 @@ function oqimNomlari(nom){
   var b = document.querySelector(".bolim.faol");
   var id = b ? b.id : "b-ishlar";
   var nomlar = [];
+  /* Tartib gridnikidek bo'lishi SHART: odam ekranda ko'rgan
+     ketma-ketlikni ichkarida ham kutadi. Boshqacha bo'lsa
+     "adashdim" degan his paydo bo'ladi. */
   if (id === "b-posterlar") {
-    Object.keys(malumot).sort().forEach(function(n){
+    Object.keys(malumot).sort(saralash).forEach(function(n){
       if (posterli(malumot[n])) nomlar.push(n);
+    });
+  } else if (id === "b-sotuv") {
+    Object.keys(malumot).sort(saralash).forEach(function(n){
+      if (sotuvda(malumot[n])) nomlar.push(n);
     });
   } else if (id.indexOf("b-") === 0 && QOSH_KALIT.indexOf(id.slice(2)) >= 0) {
     var k = id.slice(2);
-    Object.keys(malumot).sort().forEach(function(n){
+    Object.keys(malumot).sort(saralash).forEach(function(n){
       if (malumot[n].bolim === k) nomlar.push(n);
     });
   } else {
-    nomlar = Object.keys(malumot).sort(function(a, b2){
-      var x = malumot[a], y = malumot[b2];
-      var xa = x.tanlangan ? 0 : (holati(x) === "buyurtma" ? 1 : 2);
-      var ya = y.tanlangan ? 0 : (holati(y) === "buyurtma" ? 1 : 2);
-      if (xa !== ya) return xa - ya;
-      return a.localeCompare(b2);
-    }).filter(function(n){ return mos(n, malumot[n], false); });
+    nomlar = Object.keys(malumot).sort(saralash)
+      .filter(function(n){ return mos(n, malumot[n], false); });
   }
   if (nomlar.indexOf(nom) < 0) nomlar.unshift(nom);
   return nomlar;
