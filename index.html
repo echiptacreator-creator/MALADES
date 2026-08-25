@@ -171,6 +171,55 @@ button{font-family:inherit;cursor:pointer}
   position:relative;margin-bottom:9px}
 .xiz li::before{content:"";position:absolute;left:0;top:6px;width:9px;
   height:9px;border-radius:50%;border:1.5px solid var(--urgu)}
+/* ---------- MIJOZLAR FIKRI ----------
+   Narx ko'rgan odamning ichida bitta savol qoladi: "ishonsam
+   bo'ladimi?" Javob shu yerda, aynan narxdan keyin turishi kerak. */
+.fikr-sarl{padding:22px 18px 10px;font-family:var(--mono);font-size:9px;
+  letter-spacing:2.2px;text-transform:uppercase;color:var(--xira)}
+.fikrlar{padding:0 18px 8px;display:grid;gap:10px}
+.fikr{border:1px solid var(--chiziq);border-radius:16px;
+  background:var(--qatlam);padding:15px 16px;position:relative}
+.fikr p{margin:0;font-size:14px;line-height:1.55;color:#D6DBE3}
+.fikr p::before{content:"\201C";font-family:var(--sarlavha);
+  font-size:26px;line-height:0;color:var(--urgu);
+  margin-right:5px;vertical-align:-4px}
+.fikr-kim{margin-top:11px;display:flex;align-items:baseline;gap:8px;
+  flex-wrap:wrap}
+.fikr-kim b{font-size:12.5px;font-weight:650}
+.fikr-kim span{font-family:var(--mono);font-size:9.5px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--xira)}
+.fikr-baho{margin-left:auto;font-size:11px;color:var(--urgu);
+  letter-spacing:1px;flex:0 0 auto}
+@media (min-width:820px){
+  .fikrlar{grid-template-columns:1fr 1fr;gap:14px;padding:0 40px 8px}
+  .fikr-sarl{padding-left:40px}
+}
+
+/* ---------- BOSQICHLAR ----------
+   Hamma mijozga bitta paket sotilmaydi: kichik do'kon bilan klinikaning
+   ehtiyoji ham, puli ham boshqa. Uchta bosqich ko'rinib tursa, mijoz
+   "qimmat ekan" deb ketmaydi — o'ziga to'g'ri kelganini tanlaydi. */
+.xiz-bosqich{margin:14px 0 0;border:1px solid var(--chiziq);
+  border-radius:14px;overflow:hidden;background:rgba(255,255,255,.02)}
+.xiz-b{display:flex;align-items:baseline;gap:10px;padding:10px 13px;
+  position:relative}
+.xiz-b + .xiz-b{border-top:1px solid var(--chiziq)}
+.xiz-b.tavsiya{background:rgba(255,90,10,.07)}
+.xiz-b.tavsiya::before{content:"";position:absolute;left:0;top:0;bottom:0;
+  width:2px;background:var(--olov-gr)}
+.xiz-b i{font-style:normal;font-size:12.5px;font-weight:650;
+  flex:0 0 auto;min-width:64px}
+.xiz-b.tavsiya i{color:var(--urgu)}
+.xiz-b u{text-decoration:none;font-size:11px;color:var(--xira);
+  line-height:1.3}
+.xiz-b b{margin-left:auto;font-family:var(--mono);font-size:11.5px;
+  font-weight:700;white-space:nowrap;flex:0 0 auto}
+/* Shart — narxdan keyin aytilsa mijoz aldangandek his qiladi.
+   Shuning uchun kartochkaning o'zida, narx yonida turadi. */
+.xiz-shart{margin-top:10px;font-size:11.5px;line-height:1.4;
+  color:var(--xira);padding-left:18px;position:relative}
+.xiz-shart::before{content:"!";position:absolute;left:0;top:0;
+  font-family:var(--mono);font-weight:700;color:var(--urgu)}
 /* Natija — kartochkaning eng kuchli qatori, shuning uchun ajratilgan */
 .xiz-natija{margin-top:14px;padding:12px 14px;border-radius:13px;
   background:rgba(255,90,10,.09);border:1px solid rgba(255,90,10,.22);
@@ -972,6 +1021,7 @@ button{font-family:inherit;cursor:pointer}
       olsa bo'ladi.</div>
   </div>
   <div class="xiz-royxat" id="xiz-royxat"></div>
+  <div id="fikr-blok"></div>
   <div style="height:18px"></div>
 </div>
 
@@ -1127,7 +1177,7 @@ var ADMIN = 515902673;
 var PROFIL = {"ism": "Sardorbek", "taxallus": "malades.bola", "kasb": "brend va sport identikasi dizayneri", "shahar": "Andijon / Toshkent", "yillar": 5, "haqida": "Brend va sport identikasi bilan 5 yildan beri ishlayman. Ishim shablon tanlash emas — har konsept ortida biznes mantiqi turadi va mijozga nega shunday qilinganini tushuntirib beraman.", "raqamlar": [["110+", "tayyorlangan ish"], ["25", "klub gerbi"], ["5", "yil tajriba"]], "loyihalar": [{"nom": "echipta", "rol": "Asoschi", "izoh": "Chipta xizmati — g'oyadan brendgacha o'zim qurdim.", "turi": "asoschi", "rang": "#332688", "logo": "rasm/profil/echipta.png", "toq": true}, {"nom": "kissam", "rol": "Asoschi", "izoh": "Kontent va dizayn yo'nalishi.", "turi": "asoschi", "rang": "#1B2A6B", "logo": "rasm/profil/kissam.png", "toq": false}, {"nom": "Andijon FK", "rol": "Brend identikasi", "izoh": "Klub gerbi, forma brendingi va matchday dizayn tizimi.", "turi": "mijoz", "rang": "#DC2228", "logo": "rasm/profil/Andijon_FK.png", "toq": true}, {"nom": "O'zbekiston futzal assotsiatsiyasi", "rol": "Identika", "izoh": "Federatsiya darajasidagi vizual tizim.", "turi": "mijoz", "rang": "#0A3D91"}], "xizmatlar": ["Logo va brend identikasi", "Sport klublari uchun gerb va forma brendingi", "Brendbuk va qo'llanish tizimi", "Ijtimoiy tarmoq dizayn tizimi"]};
 var ALOQA = {"telegram": "@khamilofff", "kanal": "t.me/maladesbola", "instagram": "instagram.com/malades.bola", "behance": "behance.net/maladesbola", "telefon": "+998 88 472 77 72"};
 var BOT_NOM = "malades_bolabot";
-var QIZIQISH = {"Labsearch": 1};
+var QIZIQISH = {"Ananas Travel": 1, "Bek Aviakassa": 1, "Labsearch": 1};
 if (TG) {
   TG.ready(); TG.expand();
   try { TG.setHeaderColor("#08090B"); TG.setBackgroundColor("#08090B"); }
@@ -2054,7 +2104,22 @@ function buyurt(tur, nom){
 }
 
 /* ---------- XIZMATLAR ---------- */
-var XIZMATLAR = [{"kalit": "brending", "nom": "Brending", "tag": "Noldan brend yoki rebrending", "narx": "1 500 000", "dan": true, "davr": "7-20 kun", "kim": "yangi biznes, rebrending qilayotganlar", "ich": ["Logo va uning barcha versiyalari", "Rang palitrasi va shrift tizimi", "Vizitka, blank, qadoq maketlari", "Brendbuk — qanday ishlatiladi", "To'liq vektor fayllar"], "natija": "Brendingiz hamma joyda bir xil ko'rinadi"}, {"kalit": "smm", "nom": "SMM", "tag": "Ijtimoiy tarmoqlarni yuritish", "narx": "2 500 000", "dan": true, "davr": "oyiga", "kim": "sahifasi bor, lekin vaqti yo'q bizneslar", "ich": ["Oyiga 12 ta post + 20 ta storis", "Kontent reja — oldindan kelishiladi", "Dizayn va matn bizdan", "Izohlar va yozuvlarga javob", "Oylik hisobot: nima ishladi, nima yo'q"], "natija": "Sahifa tirik bo'ladi va mijoz keladi"}, {"kalit": "marketing", "nom": "Marketing", "tag": "Reklama va o'sish", "narx": "3 500 000", "dan": true, "davr": "oyiga", "kim": "sotuvni oshirmoqchi bo'lganlar", "ich": ["Auditoriya va raqobatchilar tahlili", "Target reklama (Instagram, Facebook)", "Reklama kreativlari — dizayn bizdan", "Haftalik natija tahlili", "Byudjet alohida hisoblanadi"], "natija": "Har so'm qayerga ketgani ko'rinib turadi"}, {"kalit": "kontent", "nom": "Kontent", "tag": "Suratga olish va montaj", "narx": "1 200 000", "dan": true, "davr": "1 kun", "kim": "mahsuloti bor, rasmi yo'qlar", "ich": ["Bir kunlik suratga olish", "10 ta reels yoki 20 ta surat", "Montaj, rang va ovoz", "Diktor ovozi (kerak bo'lsa)", "Tayyor formatlarda topshiriladi"], "natija": "Bir oylik kontent bir kunda tayyor"}];
+var XIZMATLAR = [{"kalit": "brending", "nom": "Brending", "tag": "Noldan brend yoki rebrending", "narx": "1 000 000", "dan": true, "davr": "3-20 kun", "kim": "yangi biznes, rebrending qilayotganlar", "ich": ["Logo va uning barcha versiyalari", "Rang palitrasi va shrift tizimi", "Vizitka, blank, qadoq maketlari", "Brendbuk — qanday ishlatiladi", "To'liq vektor fayllar"], "bosqich": [{"nom": "Logo", "narx": "1 000 000", "izoh": "logo + versiyalari + fayllar"}, {"nom": "Brend", "narx": "2 800 000", "izoh": "logo + palitra + shrift + maketlar", "tavsiya": true}, {"nom": "Tizim", "narx": "7 000 000", "izoh": "to'liq brendbuk va qo'llash tizimi"}, {"nom": "Klub gerbi", "narx": "12 000 000", "izoh": "sport klubi identikasi"}], "natija": "Brendingiz hamma joyda bir xil ko'rinadi"}, {"kalit": "smm", "nom": "SMM", "tag": "Ijtimoiy tarmoqlarni yuritish", "narx": "1 800 000", "dan": true, "davr": "oyiga", "kim": "sahifasi bor, lekin vaqti yo'q bizneslar", "ich": ["Kontent reja — oldindan kelishiladi", "Post dizayni va matni bizdan", "Reels montaji (Asosiy va To'liqda)", "Sahifani yuritish (To'liqda)", "Oylik hisobot: nima ishladi, nima yo'q"], "bosqich": [{"nom": "Start", "narx": "1 800 000", "izoh": "8 post + kontent-plan"}, {"nom": "Asosiy", "narx": "3 200 000", "izoh": "12 post + 4 reels + matnlar", "tavsiya": true}, {"nom": "To'liq", "narx": "5 500 000", "izoh": "16 post + 6 reels + sahifani yuritish"}], "shart": "Eng kami 2 oy — SMM bir oyda natija bermaydi", "natija": "Sahifa tirik bo'ladi va mijoz keladi"}, {"kalit": "marketing", "nom": "Target reklama", "tag": "Reklamani boshqarish va o'sish", "narx": "2 500 000", "dan": false, "davr": "oyiga", "kim": "sotuvni oshirmoqchi bo'lganlar", "ich": ["Auditoriya va raqobatchilar tahlili", "Reklama sozlash (Instagram, Facebook)", "Reklama kreativlari — dizayn bizdan", "Haftalik natija tahlili"], "shart": "Reklama byudjeti alohida — uni siz to'laysiz", "natija": "Har so'm qayerga ketgani ko'rinib turadi"}, {"kalit": "kontent", "nom": "Kontent kuni", "tag": "Suratga olish va montaj", "narx": "1 500 000", "dan": false, "davr": "1 kun", "kim": "mahsuloti bor, rasmi yo'qlar", "ich": ["Bir kunlik suratga olish", "10 ta reels yoki 20 ta surat", "Montaj, rang va ovoz", "Diktor ovozi (kerak bo'lsa)", "Tayyor formatlarda topshiriladi"], "natija": "Bir oylik kontent bir kunda tayyor"}];
+var FIKRLAR = [];
+
+function fikrChiz(){
+  var blok = document.getElementById("fikr-blok");
+  if (!blok || blok.children.length || !FIKRLAR.length) return;
+  var h = '<div class="fikr-sarl">Mijozlar aytadi</div><div class="fikrlar">';
+  FIKRLAR.forEach(function(f){
+    h += '<div class="fikr"><p>' + f.matn + '</p><div class="fikr-kim">' +
+         '<b>' + f.kim + '</b>' +
+         (f.nima ? '<span>' + f.nima + '</span>' : "") +
+         '<i class="fikr-baho">' +
+         new Array((f.baho || 5) + 1).join("\u2605") + '</i></div></div>';
+  });
+  blok.innerHTML = h + '</div>';
+}
 
 function xizmatChiz(){
   var ich = document.getElementById("xiz-royxat");
@@ -2067,9 +2132,17 @@ function xizmatChiz(){
       '<p class="xiz-tag">' + x.tag + '</p></div>' +
       '<div class="xiz-narx"><b>' + x.narx + (x.dan ? "+" : "") +
       '</b><span>so\'m / ' + x.davr + '</span></div></div>' +
-      '<div class="xiz-kim">Kimga: ' + x.kim + '</div><ul>' +
+      '<div class="xiz-kim">Kimga: ' + x.kim + '</div>' +
+      ((x.bosqich && x.bosqich.length) ? '<div class="xiz-bosqich">' +
+        x.bosqich.map(function(b){
+          return '<div class="xiz-b' + (b.tavsiya ? " tavsiya" : "") + '">' +
+                 '<i>' + b.nom + '</i><u>' + b.izoh + '</u>' +
+                 '<b>' + b.narx + '</b></div>';
+        }).join("") + '</div>' : "") +
+      '<ul>' +
       x.ich.map(function(q){ return "<li>" + q + "</li>"; }).join("") +
       '</ul>' +
+      (x.shart ? '<div class="xiz-shart">' + x.shart + '</div>' : "") +
       (x.natija ? '<div class="xiz-natija">' + x.natija + '</div>' : "") +
       '<button class="xiz-tug">Shu xizmatni olish<s>\u2197</s></button>';
     el.querySelector(".xiz-tug").onclick = function(){
@@ -2097,7 +2170,7 @@ function bolimGa(nom){
   if (nom === "posterlar") posterChiz();
   else if (nom === "ovozlar") ovozChiz();
   else if (nom === "videolar") videoChiz();
-  else if (nom === "xizmatlar") xizmatChiz();
+  else if (nom === "xizmatlar") { xizmatChiz(); fikrChiz(); }
   else if (QOSH_KALIT.indexOf(nom) >= 0) qoshChiz(nom);
 }
 document.querySelectorAll(".nav button[data-b]").forEach(function(b){
