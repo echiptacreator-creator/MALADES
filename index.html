@@ -365,6 +365,38 @@ button{font-family:inherit;cursor:pointer}
 /* ---------- TO'R ---------- */
 .tor{display:grid;grid-template-columns:1fr 1fr;gap:11px;padding:0 18px}
 
+/* ---------- PROFIL YAKUNI ----------
+   Profilni oxirigacha o'qigan odam — eng qizigan odam. Shu yerda
+   taklif bo'lmasa, u shunchaki chiqib ketadi va biz uni boshqa
+   ko'rmaymiz. */
+.pr-yakun{margin:22px 18px 6px;padding:1px;border-radius:22px;
+  background:linear-gradient(140deg,rgba(255,90,10,.5),
+    rgba(224,27,36,.18) 45%,rgba(255,255,255,.06))}
+.pr-yakun-ich{border-radius:21px;padding:20px 18px;
+  background:radial-gradient(120% 100% at 0% 0%,#17110E,#0B0C0F 62%)}
+.pr-yakun .kasb{font-family:var(--mono);font-size:9px;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--urgu)}
+.pr-yakun h3{margin:8px 0 0;font-family:var(--sarlavha);font-size:22px;
+  font-weight:700;line-height:1.15;letter-spacing:-.6px}
+.pr-yakun p{margin:9px 0 0;font-size:13.5px;line-height:1.55;
+  color:var(--xira);max-width:30em}
+.pr-yakun .vada{margin-top:14px}
+.pr-tug{width:100%;margin-top:16px;padding:15px 18px;border-radius:14px;
+  border:none;background:var(--olov-gr);color:#fff;font-weight:750;
+  font-size:14.5px;display:flex;align-items:center;
+  justify-content:center;gap:9px;
+  box-shadow:0 12px 28px -14px rgba(255,90,10,.85)}
+.pr-tug s{text-decoration:none;font-size:16px}
+.pr-tug:active{transform:scale(.985)}
+@media (min-width:820px){
+  .pr-yakun{margin:26px 40px 6px}
+  .pr-yakun-ich{padding:28px 30px}
+  .pr-yakun h3{font-size:28px}
+  .pr-tug{width:auto;align-self:flex-start;padding:15px 30px}
+  .pr-yakun-ich{display:flex;flex-direction:column;align-items:flex-start}
+  .pr-yakun .vada{width:100%;max-width:620px}
+}
+
 /* ---------- YUKLANISH ----------
    Bo'sh ekran kutish uzoq tuyuladi. Skelet esa "keldi, tayyorlanyapti"
    deydi va kutish qisqa his qilinadi. Premium his aynan shunday
@@ -743,10 +775,27 @@ button{font-family:inherit;cursor:pointer}
   font-size:13.5px;color:#c0c7d2;line-height:1.5}
 .xizmat s{text-decoration:none;color:var(--urgu);font-weight:800;
   font-size:11px;padding-top:2px}
-.aloqa{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:6px 18px 0}
-.aloqa a{padding:14px;border-radius:14px;background:var(--qatlam);
+.aloqa{display:grid;grid-template-columns:1fr 1fr;gap:9px;
+  padding:6px 18px 0}
+.aloqa .al{padding:13px 14px;border-radius:14px;background:var(--qatlam);
   border:1px solid var(--chiziq);color:var(--matn);text-decoration:none;
-  font-size:13.5px;font-weight:600;text-align:center}
+  display:flex;flex-direction:column;gap:3px;transition:border-color .18s,
+  background .18s}
+.aloqa .al b{font-size:13.5px;font-weight:650}
+.aloqa .al span{font-family:var(--mono);font-size:8.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--xira)}
+/* Telegram — asosiy yo'l, ko'z birinchi shunga tushsin */
+.aloqa .al.asos{background:rgba(255,90,10,.1);
+  border-color:rgba(255,90,10,.36)}
+.aloqa .al.asos b{color:#FFB88A}
+.aloqa .al.asos span{color:rgba(255,184,138,.7)}
+@media (pointer:fine){
+  .aloqa .al:hover{border-color:rgba(255,90,10,.4);
+    background:rgba(255,90,10,.07)}
+}
+@media (min-width:820px){
+  .aloqa{grid-template-columns:repeat(4,1fr);padding:6px 40px 0}
+}
 .pr-imzo{margin:26px 18px 8px;padding-top:16px;
   border-top:1px solid var(--chiziq);display:flex;align-items:center;
   justify-content:space-between;gap:12px}
@@ -1440,6 +1489,22 @@ button{font-family:inherit;cursor:pointer}
   <div class="bolim-sarl">Bog'lanish</div>
   <div class="aloqa" id="p-aloqa"></div>
 
+  <!-- YAKUNIY CHAQIRIQ.
+       Odam profilni oxirigacha o'qidi — demak qiziqdi. Shu joyda
+       hech narsa taklif qilinmasa, u shunchaki chiqib ketadi.
+       Eng qizigan odamni aynan shu yerda yo'qotib qo'yish mumkin. -->
+  <div class="pr-yakun">
+    <div class="pr-yakun-ich">
+      <div class="kasb">Keyingi qadam</div>
+      <h3>Loyihangiz haqida gaplashamizmi?</h3>
+      <p>Bitta xabar yozing — brend nomi va nima kerakligi.
+         Qolganini birga aniqlaymiz.</p>
+      <div class="vada"><div><b>Tezkor javob</b><span>yozganingizdan keyin uzoq kutmaysiz</span></div><div><b>Har kuni</b><span>dam olish kunlari ham yozsangiz bo&#x27;ladi</span></div><div><b>Avans 50%</b><span>qolgani fayllar topshirilishidan oldin</span></div></div>
+      <button class="pr-tug" id="pr-buyurtma">
+        Buyurtma berish<s>&#8599;</s></button>
+    </div>
+  </div>
+
   <div class="pr-imzo">
     <b>malades.bola</b>
     <span id="pr-yil"></span>
@@ -1562,9 +1627,9 @@ var ADMIN = 515902673;
 var PROFIL = {"ism": "Sardorbek", "taxallus": "malades.bola", "kasb": "brend va sport identikasi dizayneri", "shahar": "Andijon / Toshkent", "yillar": 5, "haqida": "Brend va sport identikasi bilan 5 yildan beri ishlayman. Ishim shablon tanlash emas — har konsept ortida biznes mantiqi turadi va mijozga nega shunday qilinganini tushuntirib beraman.", "raqamlar": [["110+", "tayyorlangan ish"], ["25", "klub gerbi"], ["5", "yil tajriba"]], "loyihalar": [{"nom": "echipta", "rol": "Asoschi", "izoh": "Chipta xizmati — g'oyadan brendgacha o'zim qurdim.", "turi": "asoschi", "rang": "#332688", "logo": "rasm/profil/echipta.png", "toq": true}, {"nom": "kissam", "rol": "Asoschi", "izoh": "Kontent va dizayn yo'nalishi.", "turi": "asoschi", "rang": "#1B2A6B", "logo": "rasm/profil/kissam.png", "toq": false}, {"nom": "Andijon FK", "rol": "Brend identikasi", "izoh": "Klub gerbi, forma brendingi va matchday dizayn tizimi.", "turi": "mijoz", "rang": "#DC2228", "logo": "rasm/profil/Andijon_FK.png", "toq": true}, {"nom": "O'zbekiston futzal assotsiatsiyasi", "rol": "Identika", "izoh": "Federatsiya darajasidagi vizual tizim.", "turi": "mijoz", "rang": "#0A3D91"}], "xizmatlar": ["Logo va brend identikasi", "Sport klublari uchun gerb va forma brendingi", "Brendbuk va qo'llanish tizimi", "Ijtimoiy tarmoq dizayn tizimi"]};
 var ALOQA = {"telegram": "@khamilofff", "kanal": "t.me/maladesbola", "instagram": "instagram.com/malades.bola", "behance": "behance.net/maladesbola", "telefon": "+998 88 472 77 72"};
 var BOT_NOM = "malades_bolabot";
-var QIZIQISH = {"ADC ingliz tili kurslari posterlari": 1, "Ananas Travel": 4, "Bek Aviakassa": 5, "Finlit.uz": 1, "Labsearch": 1, "Sinov": 16};
+var QIZIQISH = {"ADC ingliz tili kurslari posterlari": 1, "Bek Aviakassa": 1, "Finlit.uz": 1, "Labsearch": 1};
 /* Saytdagi haqiqiy reaksiyalar: {brend: {olov: n, ulash: n}} */
-var SANOQ = {"Andijon FK": {"korish": 1, "olov": 1}, "Bek Aviakassa": {"korish": 1, "olov": 1}, "Biznes Pechat": {"olov": 1}, "Chorva Foyda": {"olov": 1}, "Eleven": {"olov": 1}, "Everest Muzlari": {"olov": 1}, "Farovon Marg'ilon": {"olov": 1}, "Finlit.uz": {"korish": 1, "olov": 1, "ulash": 1}, "Instaff": {"olov": 1}, "Labsearch": {"olov": 1}, "Salman School": {"olov": 1}};
+var SANOQ = {"Andijon FK": {"korish": 2, "olov": 2}, "Bek Aviakassa": {"korish": 1, "olov": 1}, "Biznes Pechat": {"olov": 1}, "Chorva Foyda": {"olov": 1}, "Eleven": {"olov": 1}, "Everest Muzlari": {"olov": 1}, "Farovon Marg'ilon": {"olov": 1}, "Finlit.uz": {"korish": 1, "olov": 1, "ulash": 1}, "Instaff": {"olov": 1}, "Labsearch": {"olov": 1}, "Salman School": {"olov": 1}};
 var ADMIN_API = "https://admin.maladesbola.uz";
 
 /* Reaksiyani serverga yuboradi. Ishlamasa — jimgina o'tadi:
@@ -3124,6 +3189,11 @@ function bolimGa(nom){
 document.querySelectorAll(".nav button[data-b]").forEach(function(b){
   b.onclick = function(){ titra(); bolimGa(b.dataset.b); };
 });
+var prTug = document.getElementById("pr-buyurtma");
+if (prTug) prTug.onclick = function(){
+  titra("medium"); yubor({amal: "buyurtma"});
+};
+
 document.getElementById("buyurtma").onclick = function(){
   titra("medium"); yubor({amal: "buyurtma"});
 };
@@ -3358,12 +3428,21 @@ function profilChiz(){
       return '<div class="xizmat"><s>—</s><div>' + x + "</div></div>";
     }).join("");
 
+  /* Aloqa tugmalari bir xil bo'lsa, ko'z qaysi biri muhimligini
+     bilmaydi. Telegram — asosiy yo'l (u yerda men javob beraman),
+     qolganlari ko'rish uchun. Har birida nima borligi yozilgan. */
   var a = ALOQA;
+  function aloqaTug(havola, nom, izoh, asos){
+    return '<a class="al' + (asos ? " asos" : "") + '" href="' +
+      havola + '" target="_blank" rel="noopener">' +
+      '<b>' + nom + '</b><span>' + izoh + '</span></a>';
+  }
   document.getElementById("p-aloqa").innerHTML =
-    '<a href="https://t.me/' + a.telegram.replace("@","") + '">Telegram</a>' +
-    '<a href="https://' + a.instagram + '">Instagram</a>' +
-    '<a href="https://' + a.behance + '">Behance</a>' +
-    '<a href="https://' + a.kanal + '">Kanal</a>';
+    aloqaTug("https://t.me/" + a.telegram.replace("@", ""), "Telegram",
+             "shu yerda yozing", true) +
+    aloqaTug("https://" + a.instagram, "Instagram", "kunlik ishlar") +
+    aloqaTug("https://" + a.behance, "Behance", "to'liq loyihalar") +
+    aloqaTug("https://" + a.kanal, "Kanal", "yangi ishlar");
 }
 
 /* ---------- BOSHQARUV ---------- */
