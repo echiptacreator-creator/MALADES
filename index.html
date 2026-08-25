@@ -182,6 +182,31 @@ button{font-family:inherit;cursor:pointer}
   position:relative;margin-bottom:9px}
 .xiz li::before{content:"";position:absolute;left:0;top:6px;width:9px;
   height:9px;border-radius:50%;border:1.5px solid var(--urgu)}
+/* ---------- FON RANGI TANLASH (boshqaruv) ----------
+   Rangni raqam bilan tanlab bo'lmaydi. Shuning uchun tepada katta
+   ko'rgich turadi: logo AYNAN o'sha fonda, aynan kartochkadagidek.
+   Ranglar esa logoning o'zidan olinadi — fon brendning o'z
+   palitrasidan chiqsa, tabiiy ko'rinadi. */
+.fon-tanla{padding:0 18px}
+.fon-kor{position:relative;aspect-ratio:1/1;max-width:220px;margin:8px auto 0;
+  border-radius:18px;overflow:hidden;display:flex;align-items:center;
+  justify-content:center;background:#fff;
+  border:1px solid rgba(255,255,255,.12)}
+.fon-kor img{max-width:74%;max-height:64%;width:auto;height:auto;
+  object-fit:contain;position:relative;z-index:2;
+  filter:drop-shadow(0 8px 18px rgba(0,0,0,.18))}
+.fon-ranglar{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;
+  margin-top:12px}
+.fon-ranglar b{width:34px;height:34px;border-radius:10px;cursor:pointer;
+  border:1px solid rgba(255,255,255,.16);transition:transform .12s}
+.fon-ranglar b:active{transform:scale(.9)}
+.fon-ranglar b.faol{outline:2px solid var(--urgu);outline-offset:2px;
+  border-color:transparent}
+.fon-qol{display:flex;gap:8px;align-items:center;margin-top:12px;
+  justify-content:center}
+.fon-kir{width:44px;height:34px;padding:0;border:1px solid var(--chiziq2);
+  border-radius:9px;background:var(--qatlam)}
+
 /* ---------- SOTUVDAGI TAYYOR LOGO ----------
    Bu bo'limda mijoz odatdagidan boshqacha narsa sotib oladi va uni
    TUSHUNMASA sotib olmaydi. Shuning uchun bu yerda dizayn emas,
@@ -339,6 +364,30 @@ button{font-family:inherit;cursor:pointer}
 
 /* ---------- TO'R ---------- */
 .tor{display:grid;grid-template-columns:1fr 1fr;gap:11px;padding:0 18px}
+
+/* ---------- YUKLANISH ----------
+   Bo'sh ekran kutish uzoq tuyuladi. Skelet esa "keldi, tayyorlanyapti"
+   deydi va kutish qisqa his qilinadi. Premium his aynan shunday
+   mayda joylardan yig'iladi. */
+.skelet{border-radius:var(--r);overflow:hidden;
+  border:1px solid var(--chiziq);background:var(--qatlam);
+  display:flex;flex-direction:column}
+.skelet i{display:block;aspect-ratio:1/1;
+  background:linear-gradient(100deg,rgba(255,255,255,.04) 30%,
+    rgba(255,255,255,.09) 50%,rgba(255,255,255,.04) 70%);
+  background-size:220% 100%;animation:tolqin 1.4s linear infinite}
+.skelet u{display:block;height:56px;
+  background:linear-gradient(100deg,rgba(255,255,255,.02) 30%,
+    rgba(255,255,255,.05) 50%,rgba(255,255,255,.02) 70%);
+  background-size:220% 100%;animation:tolqin 1.4s linear infinite}
+@keyframes tolqin{0%{background-position:120% 0}
+  100%{background-position:-120% 0}}
+
+/* Kartalar navbat bilan chiqadi — birdaniga "pat" etib emas.
+   Ko'z ularni birma-bir ko'radi va ish ko'proq tuyuladi. */
+@keyframes kartaKir{from{opacity:0;transform:translateY(14px)}
+  to{opacity:1;transform:none}}
+.karta.kir{animation:kartaKir .42s cubic-bezier(.22,.9,.3,1) backwards}
 
 /* ---------- LOGO KARTOCHKASI ----------
    Mahsulot kartochkasi mantiqi: tepada BUYUM (oq plitada logo),
@@ -1230,7 +1279,12 @@ button{font-family:inherit;cursor:pointer}
   </div>
 
   <div class="filtr" id="filtr"></div>
-  <div class="tor" id="tor"></div>
+  <div class="tor" id="tor">
+    <div class="skelet"><i></i><u></u></div>
+    <div class="skelet"><i></i><u></u></div>
+    <div class="skelet"><i></i><u></u></div>
+    <div class="skelet"><i></i><u></u></div>
+  </div>
 </div>
 
 <!-- ================= POSTERLAR ================= -->
@@ -1502,6 +1556,28 @@ var PROFIL = {"ism": "Sardorbek", "taxallus": "malades.bola", "kasb": "brend va 
 var ALOQA = {"telegram": "@khamilofff", "kanal": "t.me/maladesbola", "instagram": "instagram.com/malades.bola", "behance": "behance.net/maladesbola", "telefon": "+998 88 472 77 72"};
 var BOT_NOM = "malades_bolabot";
 var QIZIQISH = {"ADC ingliz tili kurslari posterlari": 1, "Ananas Travel": 3, "Bek Aviakassa": 4, "Finlit.uz": 1, "Labsearch": 1, "Sinov": 12};
+/* Saytdagi haqiqiy reaksiyalar: {brend: {olov: n, ulash: n}} */
+var SANOQ = {};
+var ADMIN_API = "https://admin.maladesbola.uz";
+
+/* Reaksiyani serverga yuboradi. Ishlamasa — jimgina o'tadi:
+   layk bosgan odam xato ko'rmasligi kerak. */
+function sanoqYubor(nom, tur){
+  try {
+    fetch(ADMIN_API + "/api/reaksiya", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({nom: nom, tur: tur}),
+      keepalive: true
+    }).catch(function(){});
+  } catch (x) {}
+  var s = SANOQ[nom] || (SANOQ[nom] = {});
+  s[tur] = (s[tur] || 0) + 1;
+}
+
+function sanoqOl(nom, tur){
+  return ((SANOQ[nom] || {})[tur]) || 0;
+}
 /* Reklama ovozi yozilgan brendlar */
 var OVOZLI = ["Andijon FK"];
 if (TG) {
@@ -1676,13 +1752,68 @@ function kartaSignal(nom, v){
   if (TOPLAR.indexOf(nom) >= 0) h += '<span class="sg sg-top">TOP</span>';
   var t = (QIZIQISH && QIZIQISH[nom]) || 0;
   if (t >= 3) h += '<span class="sg">' + t + ' tanlagan</span>';
-  var rk = r(nom);
-  if (rk.olov || rk.like) h += '<span class="sg sg-men">' +
-    ikon("olov", 10, "currentColor") + 'Yoqdi</span>';
+  /* Raqamlar HAQIQIY: serverda yig'iladi. Nol bo'lsa
+     ko'rsatilmaydi — o'ylab topilgan raqam yozilmaydi. */
+  var yoq = sanoqOl(nom, "olov");
+  if (yoq) h += '<span class="sg sg-men">' +
+    ikon("olov", 10, "currentColor") + yoq + '</span>';
+  var ul = sanoqOl(nom, "ulash");
+  if (ul) h += '<span class="sg">' + ul + ' ulashildi</span>';
   return h;
 }
 
 /* Fon yorug'mi — yorliq va yozuv rangi shunga qarab tanlanadi */
+/* Rasmdagi asosiy ranglarni olib beradi — canvas orqali, serverga
+   so'rov yubormasdan. */
+var _rangKesh = {};
+function ranglarniOl(yol, javob){
+  if (_rangKesh[yol]) { javob(_rangKesh[yol]); return; }
+  var im = new Image();
+  im.crossOrigin = "anonymous";
+  im.onload = function(){
+    var q = 64, c = document.createElement("canvas");
+    c.width = q; c.height = q;
+    var x = c.getContext("2d");
+    try {
+      x.drawImage(im, 0, 0, q, q);
+      var d = x.getImageData(0, 0, q, q).data;
+    } catch (e) { javob([]); return; }
+    var sanoq = {};
+    for (var i = 0; i < d.length; i += 4) {
+      if (d[i + 3] < 140) continue;
+      var k = (Math.round(d[i] / 26) * 26) + "," +
+              (Math.round(d[i + 1] / 26) * 26) + "," +
+              (Math.round(d[i + 2] / 26) * 26);
+      sanoq[k] = (sanoq[k] || 0) + 1;
+    }
+    var royxat = Object.keys(sanoq).sort(function(a, b){
+      return sanoq[b] - sanoq[a]; }).slice(0, 9).map(function(k){
+      var p = k.split(",");
+      return "#" + p.map(function(n){
+        return ("0" + Math.min(255, parseInt(n, 10)).toString(16))
+          .slice(-2).toUpperCase(); }).join("");
+    });
+    _rangKesh[yol] = royxat;
+    javob(royxat);
+  };
+  im.onerror = function(){ javob([]); };
+  im.src = yol;
+}
+
+/* Rangni to'qlashtiradi yoki ochlashtiradi (k < 1 to'q, k > 1 och) */
+function rangKuchi(hex, k){
+  var q = hex.replace("#", "");
+  var r = parseInt(q.slice(0, 2), 16),
+      g = parseInt(q.slice(2, 4), 16),
+      b = parseInt(q.slice(4, 6), 16);
+  function c(x){
+    var y = k <= 1 ? x * k : x + (255 - x) * (k - 1);
+    return ("0" + Math.max(0, Math.min(255, Math.round(y))).toString(16))
+      .slice(-2).toUpperCase();
+  }
+  return "#" + c(r) + c(g) + c(b);
+}
+
 function yorugFon(hex){
   if (!hex) return true;
   var q = hex.replace("#", "");
@@ -1806,8 +1937,15 @@ function torChiz(){
   nomlar.forEach(function(nom){
     var v = malumot[nom];
     if (!mos(nom, v, false)) return;
+    var k = kartaYasa(nom, v);
+    /* Faqat birinchi ekrandagilarga animatsiya — pastdagilarga
+       ham bersak, surilganda hammasi bir vaqtda "sakraydi". */
+    if (bor < 8) {
+      k.classList.add("kir");
+      k.style.animationDelay = (bor * 55) + "ms";
+    }
     bor++;
-    tor.appendChild(kartaYasa(nom, v));
+    tor.appendChild(k);
   });
   if (!bor) tor.innerHTML = '<div class="yuk">Topilmadi</div>';
 }
@@ -2175,6 +2313,11 @@ function oqBrend(nom){
     return t;
   }
 
+  function ustunYangila(t, belgi, tur, izoh){
+    var n = sanoqOl(nom, tur);
+    t.innerHTML = '<s>' + belgi + '</s><u>' + (n ? n : izoh) + '</u>';
+  }
+
   var YUR = '<svg viewBox="0 0 24 24" width="23" height="23">' +
     '<path fill="currentColor" d="M12 21s-7.5-4.7-9.6-9C.9 8.6 2.6 5 6 ' +
     '4.2 8.1 3.7 10.3 4.6 12 6.5c1.7-1.9 3.9-2.8 6-2.3 3.4.8 5.1 4.4 ' +
@@ -2190,16 +2333,20 @@ function oqBrend(nom){
     'c-.2.5-.9.5-1.1 0l-1-3.2 3.5-1z"/></svg>';
 
   var tYoq = ustunTugma(YUR, "Yoqdi", !!rk.olov);
+  ustunYangila(tYoq, YUR, "olov", "Yoqdi");
   tYoq.onclick = function(e){
     e.stopPropagation();
+    var oldin = rk.olov;
     rk.olov = rk.olov ? 0 : 1;
     reaksiyaYoz(); titra("medium");
     tYoq.className = "us" + (rk.olov ? " bosilgan" : "");
-    if (rk.olov) {
+    if (rk.olov && !oldin) {
+      sanoqYubor(nom, "olov");
       tYoq.classList.add("urdi");
       setTimeout(function(){ tYoq.classList.remove("urdi"); }, 480);
       yurakUch(tYoq);
     }
+    ustunYangila(tYoq, YUR, "olov", "Yoqdi");
   };
   ustun.appendChild(tYoq);
 
@@ -2211,10 +2358,13 @@ function oqBrend(nom){
   ustun.appendChild(tFikr);
 
   var tUlash = ustunTugma(SAM, "Ulash", false);
+  ustunYangila(tUlash, SAM, "ulash", "Ulash");
   tUlash.onclick = function(e){
     e.stopPropagation(); titra();
     tUlash.classList.add("uchdi");
     setTimeout(function(){ tUlash.classList.remove("uchdi"); }, 520);
+    sanoqYubor(nom, "ulash");
+    ustunYangila(tUlash, SAM, "ulash", "Ulash");
     ulash(nom);
   };
   ustun.appendChild(tUlash);
@@ -2272,6 +2422,11 @@ function oqimOch(nom){
     ich.appendChild(el);
     if (n === nom && !nishon) nishon = el;
   });
+  /* Ko'rish soni ham haqiqiy: ish ochilganda bir marta yoziladi.
+     Kuniga bir odam bir ish uchun bir marta sanaladi (server
+     takrorni o'zi to'sadi). */
+  sanoqYubor(nom, "korish");
+
   var q = document.getElementById("reels");
   q.classList.add("ochiq");
   q.classList.remove("toza");
@@ -3185,6 +3340,82 @@ function tahrirIch(nom, joy){
   };
   mv.appendChild(inpv);
   ich.appendChild(mv);
+
+  /* ---------- FON RANGI ----------
+     Rang tanlashda AYNAN natijani ko'rib turish kerak: logo shu
+     fonda qanday chiqadi. Raqamdan (#1A2B3C) hech narsa
+     tushunilmaydi, ko'zdan esa hammasi ma'lum. Shuning uchun
+     tepada katta ko'rgich, ostida logoning O'Z ranglari. */
+  if (v.oq) {
+    var mf = document.createElement("div");
+    mf.className = "guruh fon-tanla";
+    mf.innerHTML = '<div class="sarl">Logo ortidagi fon</div>' +
+      '<div class="fon-kor"><i class="yaltir"></i>' +
+      '<img src="rasm/' + v.papka + '/' + v.oq + '" alt=""></div>' +
+      '<div class="fon-ranglar"></div>' +
+      '<div class="fon-qol">' +
+      '<input type="color" class="fon-kir">' +
+      '<button class="tug fon-avto">Avtomatga qaytar</button></div>';
+
+    var kor = mf.querySelector(".fon-kor");
+    var qator = mf.querySelector(".fon-ranglar");
+    var kir = mf.querySelector(".fon-kir");
+
+    function fonQoy(rang, saqla){
+      kor.style.background = rang;
+      kor.className = "fon-kor" + (yorugFon(rang) ? " och" : "");
+      try { kir.value = rang; } catch (x) {}
+      qator.querySelectorAll("b").forEach(function(b){
+        b.className = (b.dataset.rang === rang.toUpperCase())
+          ? "faol" : "";
+      });
+      if (saqla) {
+        ozgar(nom, "fon_rang", rang.toUpperCase());
+        v.fon = rang.toUpperCase();
+        torChiz();
+      }
+    }
+
+    function tanlov(rang, nomi){
+      var b = document.createElement("b");
+      b.dataset.rang = rang.toUpperCase();
+      b.style.background = rang;
+      b.title = nomi || rang;
+      b.onclick = function(){ titra(); fonQoy(rang, true); };
+      qator.appendChild(b);
+    }
+
+    /* Logoning O'Z ranglari — shulardan tanlash eng to'g'ri yo'l:
+       fon brendning o'z palitrasidan chiqadi, tashqaridan emas. */
+    ranglarniOl("rasm/" + v.papka + "/" + v.oq, function(royxat){
+      tanlov("#FFFFFF", "oq");
+      tanlov("#F4F5F7", "sut");
+      tanlov("#EDEFF3", "kul-oq");
+      /* Logoning har rangidan uchta variant: o'zi, to'qrog'i va
+         ochrog'i. Shunda brend rangida qolib, lekin logo
+         ko'rinadigan fon topish oson bo'ladi. */
+      var korildi = {};
+      royxat.slice(0, 5).forEach(function(rr){
+        [1, 0.34, 0.16, 1.55].forEach(function(k){
+          var q = rangKuchi(rr, k);
+          if (korildi[q]) return;
+          korildi[q] = 1;
+          tanlov(q);
+        });
+      });
+      tanlov("#0E1014", "qora");
+      tanlov("#08090B", "chuqur qora");
+      fonQoy(v.fon || "#FFFFFF", false);
+    });
+
+    kir.oninput = function(){ fonQoy(kir.value, true); };
+    mf.querySelector(".fon-avto").onclick = function(){
+      titra();
+      ozgar(nom, "fon_rang", "");
+      xabarBer("Saqlagandan keyin tizim o'zi tanlaydi");
+    };
+    ich.appendChild(mf);
+  }
 
   /* ---------- SOTUV ----------
      O'tmagan ish shunchaki portfolioda yotibdi. Narx qo'yilsa u
