@@ -712,6 +712,31 @@ button{font-family:inherit;cursor:pointer}
   font-family:var(--sarlavha);font-size:20px;font-weight:700;color:#0a0a0c;
   box-shadow:0 12px 34px rgba(255,85,0,.34)}
 .pr-ich{position:relative;z-index:2}
+
+/* ---------- PROFIL SARLAVHASI: KATTA EKRAN ----------
+   Telefonda surat butun sarlavhani to'ldiradi va bu to'g'ri —
+   ekran baland, yuz to'liq ko'rinadi. Kompyuterda esa ekran keng
+   va past: `cover` suratni shunday kesadiki, faqat sochning
+   tepasi qoladi. Shuning uchun bu yerda surat ALOHIDA kartochka
+   bo'lib o'ng tomonda turadi — jurnal sahifasi kabi. */
+@media (min-width:820px){
+  .pr-bosh{min-height:auto;padding:56px 40px 26px;
+    display:grid;grid-template-columns:1.1fr .9fr;gap:38px;
+    align-items:center}
+  .pr-bosh.suratsiz{display:block;padding-top:80px}
+  .pr-fon{position:relative;inset:auto;grid-column:2;grid-row:1;
+    justify-self:end;width:100%;max-width:400px;aspect-ratio:4/5;
+    border-radius:22px;overflow:hidden;
+    border:1px solid rgba(255,255,255,.1);
+    box-shadow:0 30px 60px -30px rgba(0,0,0,.9),
+               0 0 0 1px rgba(255,90,10,.14)}
+  .pr-fon img{opacity:1;object-position:center 16%}
+  /* Kartochkada pastki gradient yengil bo'lsin — u yerda yozuv yo'q */
+  .pr-fon::after{background:linear-gradient(transparent 62%,
+    rgba(8,9,12,.42))}
+  .pr-ich{grid-column:1;grid-row:1}
+  .pr-belgi{top:34px;right:40px}
+}
 .pr-yorliq{display:inline-flex;align-items:center;gap:7px;font-size:9.5px;
   font-weight:800;letter-spacing:1.8px;text-transform:uppercase;
   color:var(--urgu);margin-bottom:10px}
