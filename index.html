@@ -138,13 +138,24 @@ button{font-family:inherit;cursor:pointer}
 .oqim b{flex:0 0 auto;font-size:11.5px;font-weight:600;padding:7px 11px;
   border-radius:9px;background:var(--qatlam);border:1px solid var(--chiziq);
   color:#c3cad4;white-space:nowrap}
-/* Logo bo'lsa - oq plita. Logo qora fonda ko'rinmaydi, shuning
-   uchun u har doim oq ustida turadi. */
-.oqim b.logo{background:#fff;border-color:transparent;padding:0;
-  width:112px;height:54px;display:flex;align-items:center;
-  justify-content:center;overflow:hidden;border-radius:12px}
-.oqim b.logo img{max-width:84%;max-height:72%;width:auto;height:auto;
-  object-fit:contain}
+/* ISHONCH QATORI — bu yerda logolar QAHRAMON EMAS.
+   Ular "shular ishondi" degan pichirlash bo'lishi kerak, baqirish
+   emas. Oq plitalar qatori ko'zni tortib, asosiy ishlardan diqqatni
+   olib qo'yardi. Endi rangsiz va xira: ko'z ularni ko'radi, lekin
+   ularda to'xtamaydi. Ustiga borsa — rangi qaytadi. */
+.oqim b.logo{background:rgba(255,255,255,.045);
+  border:1px solid var(--chiziq);padding:0;
+  width:104px;height:50px;display:flex;align-items:center;
+  justify-content:center;overflow:hidden;border-radius:12px;
+  transition:background .25s,border-color .25s}
+.oqim b.logo img{max-width:76%;max-height:64%;width:auto;height:auto;
+  object-fit:contain;
+  filter:grayscale(1) brightness(2.4) contrast(.55) opacity(.5);
+  transition:filter .25s}
+@media (pointer:fine){
+  .oqim b.logo:hover{background:#fff;border-color:transparent}
+  .oqim b.logo:hover img{filter:none}
+}
 
 /* ---------- XIZMATLAR BO'LIMI ----------
    Har xizmat bitta kartochka: nima, kimga, qancha, nima kiradi va
@@ -171,6 +182,50 @@ button{font-family:inherit;cursor:pointer}
   position:relative;margin-bottom:9px}
 .xiz li::before{content:"";position:absolute;left:0;top:6px;width:9px;
   height:9px;border-radius:50%;border:1.5px solid var(--urgu)}
+/* ---------- SOTUVDAGI TAYYOR LOGO ----------
+   Bu bo'limda mijoz odatdagidan boshqacha narsa sotib oladi va uni
+   TUSHUNMASA sotib olmaydi. Shuning uchun bu yerda dizayn emas,
+   TUSHUNTIRISH birinchi o'rinda: uch qadam va aniq va'da. */
+.stz{padding:14px 18px 4px;display:grid;gap:10px}
+.stz-b{display:flex;gap:12px;align-items:flex-start;padding:13px 14px;
+  border:1px solid var(--chiziq);border-radius:16px;
+  background:var(--qatlam)}
+.stz-b > b{flex:0 0 auto;width:26px;height:26px;border-radius:9px;
+  background:var(--olov-gr);color:#fff;font-family:var(--mono);
+  font-size:12px;display:flex;align-items:center;justify-content:center}
+.stz-b h4{margin:0;font-size:13.5px;font-weight:650}
+.stz-b p{margin:4px 0 0;font-size:12.5px;line-height:1.5;
+  color:var(--xira)}
+/* Va'da qutisi — sotuvning eng muhim qismi. Mijoz "bu logo boshqa
+   birovga ham sotiladimi?" deb o'ylaydi; javob shu yerda turadi. */
+.vada-quti{margin:12px 18px 4px;padding:15px 16px;border-radius:16px;
+  border:1px solid rgba(255,90,10,.28);background:rgba(255,90,10,.07)}
+.vq-sarl{font-family:var(--mono);font-size:9px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--urgu);margin-bottom:9px}
+.vada-quti ul{list-style:none;margin:0;padding:0}
+.vada-quti li{position:relative;padding-left:20px;margin-bottom:8px;
+  font-size:13px;line-height:1.5;color:#E4E8EE}
+.vada-quti li:last-child{margin-bottom:0}
+.vada-quti li::before{content:"";position:absolute;left:2px;top:7px;
+  width:7px;height:7px;border-radius:2px;background:var(--olov-gr)}
+.vada-quti b{color:#FFC79A}
+
+/* Kartochkadagi sotuv yorlig'i — narx bilan, ko'rinadigan joyda */
+.sotuv-teg{position:absolute;left:8px;bottom:8px;z-index:3;
+  display:inline-flex;align-items:baseline;gap:5px;padding:5px 9px;
+  border-radius:9px;background:var(--olov-gr);color:#fff;
+  box-shadow:0 4px 14px rgba(255,90,10,.42)}
+.sotuv-teg i{font-style:normal;font-family:var(--mono);font-size:7.5px;
+  letter-spacing:.14em;text-transform:uppercase;opacity:.9}
+.sotuv-teg b{font-size:11.5px;font-weight:800;letter-spacing:-.2px}
+.karta.plita .sotuv-teg{left:8px;bottom:8px}
+.sg-sotuv{color:#0a0b0d;background:var(--olov-gr);font-weight:800}
+
+@media (min-width:820px){
+  .stz{grid-template-columns:repeat(3,1fr);padding:16px 40px 4px}
+  .vada-quti{margin:14px 40px 4px}
+}
+
 /* ---------- MIJOZLAR FIKRI ----------
    Narx ko'rgan odamning ichida bitta savol qoladi: "ishonsam
    bo'ladimi?" Javob shu yerda, aynan narxdan keyin turishi kerak. */
@@ -304,13 +359,57 @@ button{font-family:inherit;cursor:pointer}
    Shuning uchun `contain` kerak emas — u kadr ichida yana bir oq
    to'rtburchak chizib qo'yardi. `cover` uni to'liq to'ldiradi,
    logo esa markazda bo'lgani uchun kesilmaydi. */
-/* oq.jpg nisbati 4:5 — kadrni ham shunday qilamiz. Shunda rasm
-   na kesiladi, na ichida ikkinchi oq to'rtburchak chiziladi:
-   logo to'liq va KATTA turadi. */
-.karta.oq .kadr{aspect-ratio:4/5;background:#fff;
-  border-bottom:1px solid rgba(255,255,255,.08)}
-.karta.oq img{object-fit:cover;background:#fff}
-.karta.och .kadr{background:#EDEFF3}
+/* ---------- PLITA ----------
+   Logo shaffof PNG, fon rangi har logoga alohida tanlangan
+   (ps/_web_tayyor.py -> fon_tanla). Shu sabab bu yerda `contain`:
+   logo o'z nisbatida, kesilmasdan, plitaning o'rtasida turadi. */
+.karta.plita .kadr{aspect-ratio:1/1;overflow:hidden}
+.karta.plita img{object-fit:contain;padding:17% 13%;
+  filter:drop-shadow(0 8px 18px rgba(0,0,0,.16))}
+.karta.och-fon.plita img{
+  filter:drop-shadow(0 8px 16px rgba(0,0,0,.13))}
+
+/* Yaltiroq — plitaning yuqori burchagidan tushadigan yumshoq
+   yorug'lik. Tekis rang arzon ko'rinadi; bitta nozik yorug'lik
+   uni chuqur va qimmat qiladi. */
+.yaltir{position:absolute;inset:0;pointer-events:none;z-index:1;
+  background:
+    radial-gradient(120% 80% at 18% 0%,rgba(255,255,255,.22),
+      transparent 58%),
+    radial-gradient(90% 60% at 100% 100%,rgba(0,0,0,.14),
+      transparent 62%)}
+.karta.och-fon .yaltir{background:
+    radial-gradient(120% 80% at 18% 0%,rgba(255,255,255,.9),
+      transparent 55%),
+    radial-gradient(90% 60% at 100% 100%,rgba(0,0,0,.06),
+      transparent 60%)}
+/* Plita chetiga nozik ichki chiziq va pastda yumshoq soya —
+   plita bilan to'q tasma orasidagi o'tish keskin bo'lmasin.
+   Keskin chegara arzon ko'rinadi; yumshoq o'tish qimmat. */
+.karta.plita .kadr::after{content:"";position:absolute;inset:0;
+  z-index:2;pointer-events:none;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14),
+             inset 0 -22px 26px -22px rgba(0,0,0,.5)}
+.karta.och-fon .kadr::after{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9),
+             inset 0 -20px 24px -22px rgba(0,0,0,.28)}
+
+/* Donadorlik — juda nozik. Tekis rang ekranda "yassi" turadi;
+   sezilmas don unga chuqurlik va matolik beradi. */
+.karta.plita .kadr{background-blend-mode:normal}
+.yaltir::after{content:"";position:absolute;inset:0;opacity:.4;
+  background-image:radial-gradient(rgba(0,0,0,.16) .5px,transparent .5px);
+  background-size:3px 3px}
+.karta:not(.och-fon) .yaltir::after{
+  background-image:radial-gradient(rgba(255,255,255,.09) .5px,
+    transparent .5px)}
+
+/* Brend rangidan nozik chiziq — har karta o'z brendining rangiga
+   ega bo'ladi. Bitta detal, lekin qatorni jonlantiradi. */
+.karta .past{position:relative}
+.karta .past::before{content:"";position:absolute;left:11px;top:0;
+  width:22px;height:2px;border-radius:0 0 2px 2px;
+  background:var(--brend,var(--urgu));opacity:.9}
 
 /* ---------- PASTKI TASMA ---------- */
 .karta .past{padding:10px 11px 11px;display:flex;flex-direction:column;
@@ -400,9 +499,13 @@ button{font-family:inherit;cursor:pointer}
 .nishon.buyurtma{color:#D8330C;border:1px solid rgba(255,90,10,.42)}
 .nishon.taklif{color:#0083A6;border:1px solid rgba(0,229,255,.5)}
 .nishon.konsept{color:#5C6472;border:1px solid rgba(92,100,114,.32)}
-.karta:not(.oq):not(.och) .nishon{background:rgba(10,12,16,.72);color:#fff}
-.karta:not(.oq):not(.och) .nishon.buyurtma{
+.karta:not(.och-fon) .nishon{background:rgba(10,12,16,.62);color:#fff;
+  backdrop-filter:blur(6px)}
+.karta:not(.och-fon) .nishon.buyurtma{
   border-color:rgba(255,90,10,.62);color:#FFB067}
+.karta:not(.och-fon) .nishon.konsept{color:#AEB6C2;
+  border-color:rgba(255,255,255,.18)}
+.karta:not(.och-fon) .nishon.taklif{color:#7FE9FF}
 .rebrend-belgi{position:absolute;top:30px;left:8px;font-size:8px;
   font-weight:800;letter-spacing:.8px;padding:3px 7px;border-radius:999px;
   text-transform:uppercase;background:rgba(0,229,255,.92);color:#04222b;
@@ -423,8 +526,8 @@ button{font-family:inherit;cursor:pointer}
 .kadr-son{position:absolute;top:8px;right:8px;font-size:9.5px;
   font-weight:700;padding:4px 7px;border-radius:999px;z-index:2;
   background:rgba(8,10,13,.62);backdrop-filter:blur(6px);color:#fff}
-.karta.oq .kadr-son{background:rgba(15,17,21,.07);color:#5A616C}
-.karta.och .kadr-son{background:rgba(255,255,255,.78);color:#0f1115}
+.karta.och-fon .kadr-son{background:rgba(15,17,21,.09);color:#5A616C}
+.karta.och-fon .nishon{background:rgba(255,255,255,.9)}
 .yuk{padding:56px 20px;text-align:center;color:var(--xira);font-size:14px;
   grid-column:1/-1}
 .skelet{aspect-ratio:4/5;border-radius:var(--r);background:var(--qatlam);
@@ -794,13 +897,46 @@ button{font-family:inherit;cursor:pointer}
   overscroll-behavior:contain;touch-action:pan-x;
   -webkit-overflow-scrolling:touch}
 .oq-yon::-webkit-scrollbar{display:none}
+/* Kadrning O'ZIDA brend nomi va imzo yozilgan. Ustidan yana izoh,
+   teglar va tugmalar tushsa — ikkita yozuv bir-birini bosadi va
+   ish ko'rinmay qoladi. Shuning uchun pastdan JOY AJRATILADI:
+   rasm o'sha joyning ustida to'liq turadi, yozuvlar tegmaydi. */
 .oq-kadr{position:relative;flex:0 0 100%;width:100%;height:100%;
   scroll-snap-align:start;scroll-snap-stop:always;display:flex;
   align-items:center;justify-content:center;overflow:hidden;
-  background:#08090c}
+  background:#08090c;
+  padding-bottom:calc(168px + env(safe-area-inset-bottom));
+  padding-top:46px;box-sizing:border-box}
 .oq-kadr.och{background:#eef0f3}
+/* Logoning o'z kadri — shaffof PNG, mos fon, yumshoq yorug'lik */
+.oq-kadr.toza-kadr>img{max-width:74%;max-height:58%;
+  filter:drop-shadow(0 14px 30px rgba(0,0,0,.22))}
+.oq-kadr.toza-kadr.och>img{
+  filter:drop-shadow(0 14px 26px rgba(0,0,0,.16))}
+.oq-kadr .yaltir{z-index:0}
 .oq-kadr>img{max-width:100%;max-height:100%;width:auto;height:auto;
-  object-fit:contain}
+  object-fit:contain;transition:transform .25s}
+
+/* Rasmni bosganda hamma yozuv yo'qoladi — faqat ish qoladi.
+   Yana bossa qaytadi. Mijoz "menga yozuv emas, ISH kerak"
+   deganda shu ishlaydi. */
+.reels.toza .oq-past,
+.reels.toza .oq-ustun,
+.reels.toza .oq-tepa,
+.reels.toza .oq-nuqta,
+.reels.toza .oq-yonlik{opacity:0;pointer-events:none}
+.reels .oq-past,.reels .oq-ustun,.reels .oq-tepa,
+.reels .oq-nuqta,.reels .oq-yonlik{transition:opacity .22s}
+.reels.toza .oq-kadr{padding-bottom:24px;padding-top:24px}
+/* "Bosing" maslahati — bir marta, birinchi ochilganda */
+.toza-eslatma{position:fixed;left:50%;transform:translateX(-50%);
+  bottom:calc(210px + env(safe-area-inset-bottom));z-index:7;
+  font-family:var(--mono);font-size:9px;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(255,255,255,.55);
+  background:rgba(0,0,0,.4);padding:6px 12px;border-radius:999px;
+  pointer-events:none;animation:eslat 4s ease forwards}
+@keyframes eslat{0%{opacity:0}15%{opacity:1}70%{opacity:1}
+  100%{opacity:0}}
 .oq-yonlik{position:absolute;left:0;right:0;bottom:calc(150px + env(safe-area-inset-bottom));
   display:flex;justify-content:center;gap:6px;z-index:4;pointer-events:none}
 .oq-yonlik i{width:16px;height:3px;border-radius:2px;
@@ -848,15 +984,47 @@ button{font-family:inherit;cursor:pointer}
   display:flex;flex-direction:column;align-items:center;gap:13px}
 .oq-ustun .us{background:none;border:none;padding:0;color:#fff;
   display:flex;flex-direction:column;align-items:center;gap:4px}
-.oq-ustun .us s{text-decoration:none;width:42px;height:42px;
+.oq-ustun .us s{text-decoration:none;width:44px;height:44px;
   border-radius:50%;display:flex;align-items:center;justify-content:center;
   background:rgba(10,12,16,.5);border:1px solid rgba(255,255,255,.14);
-  backdrop-filter:blur(6px);transition:transform .14s,background .14s}
-.oq-ustun .us:active s{transform:scale(.9)}
+  backdrop-filter:blur(6px);color:#fff;
+  transition:transform .16s cubic-bezier(.3,1.6,.5,1),background .14s,
+             color .14s}
+.oq-ustun .us:active s{transform:scale(.86)}
+/* Yoqdi bosilganda yurak bir sakraydi — javob berdi degani */
+.oq-ustun .us.urdi s{animation:yurakUr .48s cubic-bezier(.3,1.6,.5,1)}
+@keyframes yurakUr{
+  0%{transform:scale(1)}
+  32%{transform:scale(1.38)}
+  60%{transform:scale(.92)}
+  100%{transform:scale(1)}
+}
+/* Ulash — samolyot uchib ketadi */
+.oq-ustun .us.uchdi s svg{animation:samUch .52s ease-in}
+@keyframes samUch{
+  0%{transform:translate(0,0) rotate(0);opacity:1}
+  55%{transform:translate(22px,-20px) rotate(18deg);opacity:0}
+  56%{transform:translate(-18px,16px) rotate(-8deg);opacity:0}
+  100%{transform:translate(0,0) rotate(0);opacity:1}
+}
+/* Uchib chiqadigan yuraklar.
+   DIQQAT: sinf nomi `uchqun` BO'LMASIN — u boshqa effekt uchun
+   allaqachon band va ikkalasi bir-birini buzadi (xuddi `reels`
+   bilan bo'lgani kabi, 2026-08-25). */
+.yurakcha{position:fixed;z-index:120;width:13px;height:13px;
+  pointer-events:none;background:var(--olov-gr);
+  clip-path:path("M6.5 12S0 8 0 4.2C0 2 1.7.6 3.4 1 4.6 1.3 5.9 2.2 6.5 3.3 7.1 2.2 8.4 1.3 9.6 1c1.7-.4 3.4 1 3.4 3.2C13 8 6.5 12 6.5 12z");
+  animation:yurakcha .95s ease-out forwards}
+@keyframes yurakcha{
+  0%{transform:translate(-50%,0) scale(.3);opacity:0}
+  18%{opacity:1}
+  100%{transform:translate(calc(-50% + var(--x)),-96px)
+       scale(var(--k));opacity:0}
+}
 .oq-ustun .us u{text-decoration:none;font-family:var(--mono);font-size:8px;
   letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.72)}
-.oq-ustun .us.bosilgan s{background:rgba(255,90,10,.28);
-  border-color:rgba(255,90,10,.6)}
+.oq-ustun .us.bosilgan s{background:var(--olov-gr);color:#fff;
+  border-color:transparent;box-shadow:0 4px 18px rgba(255,90,10,.5)}
 .oq-ustun .us.bosilgan u{color:#FFB38A}
 /* Instagram halqasi — oddiy tugma emas, aylanadigan olov doirasi */
 .us-halqa{background:none;border:none;padding:0;color:#fff;
@@ -872,11 +1040,17 @@ button{font-family:inherit;cursor:pointer}
   letter-spacing:.1em;text-transform:uppercase;color:#FFC79A}
 .us-halqa:active i{transform:scale(.92)}
 @keyframes halqa{to{transform:rotate(360deg)}}
-/* Och fonli kadrda ustun qora bo'ladi */
-.oq-past.och ~ .oq-ustun .us s{background:rgba(255,255,255,.7);
-  border-color:rgba(0,0,0,.1)}
-.oq-past.och ~ .oq-ustun .us s svg{filter:invert(1)}
-.oq-past.och ~ .oq-ustun .us u{color:rgba(20,24,30,.7)}
+/* Och fonli kadrda ustun qora bo'ladi — aks holda oq ikonka
+   oq fonda ko'rinmaydi. */
+.oq-brend[data-tema="och"] .oq-ustun .us s{background:rgba(12,14,18,.07);
+  border-color:rgba(0,0,0,.1);color:#14181e}
+.oq-brend[data-tema="och"] .oq-ustun .us u{color:rgba(20,24,30,.62)}
+.oq-brend[data-tema="och"] .oq-ustun .us.bosilgan s{color:#fff}
+.oq-brend[data-tema="och"] .us-halqa i{background:#fff}
+.oq-brend[data-tema="och"] .us-halqa i svg{color:#14181e}
+.oq-brend[data-tema="och"] .us-halqa u{color:#C2410C}
+.oq-brend[data-tema="och"] .oq-yop,
+.oq-brend[data-tema="och"] .oq-hisob{color:#14181e}
 
 .qisqa-xabar{position:fixed;left:50%;bottom:96px;transform:
   translateX(-50%) translateY(14px);z-index:99;padding:10px 16px;
@@ -1045,7 +1219,7 @@ button{font-family:inherit;cursor:pointer}
 
   <div class="ishonch">
     <div class="sarl">Ishonch bildirganlar</div>
-    <div class="oqim"><b class="logo"><img loading="lazy" src="rasm/andijon-fk/oq.jpg" alt="Andijon FK"></b><b class="logo"><img loading="lazy" src="rasm/sherdor/oq.jpg" alt="Sherdor"></b><b class="logo"><img loading="lazy" src="rasm/sonicx-mfc/oq.jpg" alt="SonicX"></b><b class="logo"><img loading="lazy" src="rasm/pdp-school/oq.jpg" alt="PDP School"></b><b class="logo"><img loading="lazy" src="rasm/echipta/oq.jpg" alt="echipta"></b><b class="logo"><img loading="lazy" src="rasm/tovarim-uz/oq.jpg" alt="Tovarim.uz"></b></div>
+    <div class="oqim"><b class="logo"><img loading="lazy" src="rasm/andijon-fk/logo.png" alt="Andijon FK"></b><b class="logo"><img loading="lazy" src="rasm/sherdor/logo.png" alt="Sherdor"></b><b class="logo"><img loading="lazy" src="rasm/sonicx-mfc/logo.png" alt="SonicX"></b><b class="logo"><img loading="lazy" src="rasm/pdp-school/logo.png" alt="PDP School"></b><b class="logo"><img loading="lazy" src="rasm/echipta/logo.png" alt="echipta"></b><b class="logo"><img loading="lazy" src="rasm/tovarim-uz/logo.png" alt="Tovarim.uz"></b></div>
   </div>
 
   <div class="qidiruv" id="q-quti">
@@ -1114,6 +1288,52 @@ button{font-family:inherit;cursor:pointer}
 
 <!-- ================= PROFIL ================= -->
 <!-- ================= XIZMATLAR ================= -->
+<div class="bolim" id="b-sotuv">
+  <div class="hero" style="padding-bottom:6px">
+    <div class="nur"></div><div class="nur2"></div>
+    <div class="kasb">Tayyor logolar</div>
+    <div class="dava">Chizilgan, lekin <em>ishlatilmagan</em></div>
+    <div class="dava-izoh">Bu logolar haqiqiy loyihalar uchun
+      chizilgan, lekin ish oxiriga yetmagan — mijoz fikridan qaytdi,
+      byudjet o'zgardi, loyiha to'xtadi. Logo esa tayyor turibdi.</div>
+  </div>
+
+  <div class="stz">
+    <div class="stz-b">
+      <b>1</b>
+      <div><h4>Sizga moslanadi</h4>
+        <p>Logodagi yozuv sizning nomingizga almashadi, rang
+          biznesingizga qarab sozlanadi. Shakl o'zgarmaydi —
+          aynan ko'rib turganingiz.</p></div>
+    </div>
+    <div class="stz-b">
+      <b>2</b>
+      <div><h4>To'liq fayllar</h4>
+        <p>Vektor (AI, SVG, PDF), PNG, qora-oq va negativ
+          versiyalar, ijtimoiy tarmoq formatlari.</p></div>
+    </div>
+    <div class="stz-b">
+      <b>3</b>
+      <div><h4>2-3 kunda</h4>
+        <p>Chizish ishi allaqachon qilingan. Noldan chizishga
+          7-10 kun ketadi, bu yerda faqat moslashtirish.</p></div>
+    </div>
+  </div>
+
+  <div class="vada-quti">
+    <div class="vq-sarl">Va'da</div>
+    <ul>
+      <li>Bu logo <b>hozir hech qayerda ishlatilmayapti</b></li>
+      <li>Sotilgach saytdan olib tashlanadi va boshqa hech kimga
+        sotilmaydi</li>
+      <li>Yagona egasi siz bo'lasiz — hujjat bilan topshiriladi</li>
+    </ul>
+  </div>
+
+  <div class="tor" id="tor-sotuv"></div>
+  <div style="height:18px"></div>
+</div>
+
 <div class="bolim" id="b-xizmatlar">
   <div class="hero" style="padding-bottom:6px">
     <div class="nur"></div><div class="nur2"></div>
@@ -1257,6 +1477,7 @@ button{font-family:inherit;cursor:pointer}
     <button data-b="ovozlar" id="nav-ovoz" style="display:none"><s data-i="ovoz"></s>Ovozlar</button>
     <button data-b="videolar" id="nav-video" style="display:none"><s data-i="video"></s>Videolar</button>
 
+    <button data-b="sotuv" id="nav-sotuv" style="display:none"><s data-i="narx"></s>Sotuvda</button>
     <button data-b="xizmatlar"><s data-i="xizmat"></s>Xizmatlar</button>
     <button data-b="profil"><s data-i="profil"></s>Profil</button>
   </div>
@@ -1280,7 +1501,7 @@ var ADMIN = 515902673;
 var PROFIL = {"ism": "Sardorbek", "taxallus": "malades.bola", "kasb": "brend va sport identikasi dizayneri", "shahar": "Andijon / Toshkent", "yillar": 5, "haqida": "Brend va sport identikasi bilan 5 yildan beri ishlayman. Ishim shablon tanlash emas — har konsept ortida biznes mantiqi turadi va mijozga nega shunday qilinganini tushuntirib beraman.", "raqamlar": [["110+", "tayyorlangan ish"], ["25", "klub gerbi"], ["5", "yil tajriba"]], "loyihalar": [{"nom": "echipta", "rol": "Asoschi", "izoh": "Chipta xizmati — g'oyadan brendgacha o'zim qurdim.", "turi": "asoschi", "rang": "#332688", "logo": "rasm/profil/echipta.png", "toq": true}, {"nom": "kissam", "rol": "Asoschi", "izoh": "Kontent va dizayn yo'nalishi.", "turi": "asoschi", "rang": "#1B2A6B", "logo": "rasm/profil/kissam.png", "toq": false}, {"nom": "Andijon FK", "rol": "Brend identikasi", "izoh": "Klub gerbi, forma brendingi va matchday dizayn tizimi.", "turi": "mijoz", "rang": "#DC2228", "logo": "rasm/profil/Andijon_FK.png", "toq": true}, {"nom": "O'zbekiston futzal assotsiatsiyasi", "rol": "Identika", "izoh": "Federatsiya darajasidagi vizual tizim.", "turi": "mijoz", "rang": "#0A3D91"}], "xizmatlar": ["Logo va brend identikasi", "Sport klublari uchun gerb va forma brendingi", "Brendbuk va qo'llanish tizimi", "Ijtimoiy tarmoq dizayn tizimi"]};
 var ALOQA = {"telegram": "@khamilofff", "kanal": "t.me/maladesbola", "instagram": "instagram.com/malades.bola", "behance": "behance.net/maladesbola", "telefon": "+998 88 472 77 72"};
 var BOT_NOM = "malades_bolabot";
-var QIZIQISH = {"ADC ingliz tili kurslari posterlari": 1, "Ananas Travel": 2, "Bek Aviakassa": 2, "Labsearch": 1, "Sinov": 8};
+var QIZIQISH = {"ADC ingliz tili kurslari posterlari": 1, "Ananas Travel": 3, "Bek Aviakassa": 4, "Finlit.uz": 1, "Labsearch": 1, "Sinov": 12};
 /* Reklama ovozi yozilgan brendlar */
 var OVOZLI = ["Andijon FK"];
 if (TG) {
@@ -1429,6 +1650,20 @@ var TOPLAR = (function(){
 
 function ovozlimi(nom){ return OVOZLI.indexOf(nom) >= 0; }
 
+/* Sotuvdagi tayyor logo — narxi qo'yilgan, hali sotilmagan ish */
+function sotuvda(v){ return !!(v && v.sotuv); }
+
+function pulMatni(n){
+  /* 1500000 -> "1 500 000" — o'qish oson bo'lsin */
+  var q = String(n || 0).split("").reverse();
+  var t = [];
+  for (var i = 0; i < q.length; i++) {
+    if (i && i % 3 === 0) t.push(" ");
+    t.push(q[i]);
+  }
+  return t.reverse().join("");
+}
+
 function kartaSignal(nom, v){
   /* Kartaning pastki qatori: nima borligini bir qarashda aytadi */
   var h = "";
@@ -1436,6 +1671,8 @@ function kartaSignal(nom, v){
     ikon("video", 10, "currentColor") + 'Reels</span>';
   if (ovozlimi(nom)) h += '<span class="sg sg-ovoz">' +
     ikon("ovoz", 10, "currentColor") + 'Ovoz</span>';
+  /* Sotuv narxi kadrning o'zida katta bo'lib turadi — pastda
+     yana takrorlash ortiqcha shovqin. */
   if (TOPLAR.indexOf(nom) >= 0) h += '<span class="sg sg-top">TOP</span>';
   var t = (QIZIQISH && QIZIQISH[nom]) || 0;
   if (t >= 3) h += '<span class="sg">' + t + ' tanlagan</span>';
@@ -1445,12 +1682,33 @@ function kartaSignal(nom, v){
   return h;
 }
 
+/* Fon yorug'mi — yorliq va yozuv rangi shunga qarab tanlanadi */
+function yorugFon(hex){
+  if (!hex) return true;
+  var q = hex.replace("#", "");
+  if (q.length !== 6) return true;
+  var r = parseInt(q.slice(0, 2), 16) / 255,
+      g = parseInt(q.slice(2, 4), 16) / 255,
+      b = parseInt(q.slice(4, 6), 16) / 255;
+  function y(c){ return c <= .03928 ? c / 12.92
+    : Math.pow((c + .055) / 1.055, 2.4); }
+  return (.2126 * y(r) + .7152 * y(g) + .0722 * y(b)) > .38;
+}
+
 function kartaYasa(nom, v){
   if (posterli(v)) return posterKarta(nom, v);
 
   var k = document.createElement("div");
+  /* Logo SHAFFOF png. Fon rangi har logoga alohida tanlangan:
+     oq to'g'ri kelsa oq, kelmasa logoning ikkinchi rangi, u ham
+     kelmasa qora. Shunda hech bir logo yo'qolmaydi va har karta
+     o'z brendining rangida turadi — bir xil oq plitalar qatoridan
+     ancha jonli. */
   var oqmi = !!v.oq;
-  k.className = "karta" + (oqmi ? " oq" : (v.tema === "oq" ? " och" : ""));
+  var fon = v.fon || "#FFFFFF";
+  var och = yorugFon(fon);
+  k.className = "karta" + (oqmi ? " plita" : "") + (och ? " och-fon" : "");
+  if (v.rang) k.style.setProperty("--brend", v.rang);
   var birinchi = v.kadrlar.length ? v.kadrlar[0].fayl : "";
   var muq = v.oq || v.muqova || birinchi;
   var h = holati(v);
@@ -1466,12 +1724,17 @@ function kartaYasa(nom, v){
   var oyna = v.video
     ? '<b class="oyna">' + ikon("video", 13, "#fff") + '</b>' : "";
   var sg = kartaSignal(nom, v);
+  var stz = sotuvda(v)
+    ? '<div class="sotuv-teg"><i>sotuvda</i><b>' +
+      pulMatni(v.sotuv) + '</b></div>' : "";
 
   k.innerHTML =
-    '<div class="kadr">' +
+    '<div class="kadr"' + (oqmi ? ' style="background:' + fon + '"' : '') +
+    '>' + (oqmi ? '<i class="yaltir"></i>' : '') +
       '<img loading="lazy" src="rasm/' + v.papka + '/' + muq +
       '" alt="' + nom + '">' +
       '<b class="nishon ' + h + '">' + nomi + '</b>' + son + reb + oyna +
+      stz +
     '</div>' +
     '<div class="past">' +
       '<div class="nom">' + nom + '</div>' +
@@ -1562,6 +1825,56 @@ function posterChiz(){
   if (!bor) tor.innerHTML = '<div class="yuk">Posterlar hali qo\'shilmagan.' +
     (menmi() ? '<br><br>poster papkasiga tashlang yoki boshqaruvdan ' +
      'ishni "poster" deb belgilang.' : '') + '</div>';
+}
+
+/* Sotuvda logo bo'lmasa bo'lim umuman ko'rinmaydi — bo'sh bo'lim
+   mijozga "bu yer tashlab qo'yilgan" degan taassurot beradi. */
+function sotuvNav(){
+  var bor = Object.keys(malumot).some(function(n){
+    return sotuvda(malumot[n]); });
+  var t = document.getElementById("nav-sotuv");
+  if (t) t.style.display = bor ? "" : "none";
+  return bor;
+}
+
+function sotuvChiz(){
+  var tor = document.getElementById("tor-sotuv");
+  if (!tor) return;
+  tor.innerHTML = "";
+  var bor = 0;
+  Object.keys(malumot).sort(function(a, b){
+    return (malumot[a].sotuv || 0) - (malumot[b].sotuv || 0);
+  }).forEach(function(nom){
+    var v = malumot[nom];
+    if (!sotuvda(v)) return;
+    bor++;
+    tor.appendChild(sotuvKarta(nom, v));
+  });
+  if (!bor) tor.innerHTML = '<div class="yuk">Hozircha sotuvda logo yo\'q.' +
+    '</div>';
+}
+
+function sotuvKarta(nom, v){
+  /* Sotuv kartasi — oddiy kartaning o'zi, lekin tugmasi boshqa:
+     "shu uslubda" emas, AYNAN SHU LOGONI olish. */
+  var k = kartaYasa(nom, v);
+  var tug = k.querySelector(".karta-ol");
+  if (tug) {
+    tug.innerHTML = 'Shu logoni olaman<s>' +
+      ikon("buyurtma", 11, "#fff") + '</s>';
+    tug.onclick = function(e){
+      e.stopPropagation(); titra("medium");
+      sotuvOl(nom);
+    };
+  }
+  return k;
+}
+
+function sotuvOl(nom){
+  if (!BOT_NOM) return;
+  var h = "https://t.me/" + BOT_NOM + "?start=s2_" + b64u(nom);
+  if (TG && TG.openTelegramLink) { TG.openTelegramLink(h); return; }
+  window.open(h, "_blank");
 }
 
 /* Papkadan kelgan bo'limlar - har papka alohida bo'lim */
@@ -1729,6 +2042,26 @@ function oqBrend(nom){
      BITTA_KADR ni false qilamiz - qolgan kod o'z joyida turibdi. */
   if (BITTA_KADR) kadrlar = kadrlar.slice(0, 1);
 
+  /* Ko'rgichning BIRINCHI kadri — logoning o'zi, o'ziga mos fonda.
+     Kartochkada nimani ko'rgan bo'lsa, ichkarida ham o'sha, faqat
+     kattaroq. Bezakli kadrlar undan keyin keladi. */
+  if (v.oq) {
+    var bosh = document.createElement("div");
+    var fonB = v.fon || "#FFFFFF";
+    bosh.className = "oq-kadr toza-kadr" +
+      (yorugFon(fonB) ? " och" : "");
+    bosh.style.background = fonB;
+    bosh.dataset.variant = "logo";
+    bosh.dataset.tema = yorugFon(fonB) ? "och" : "toq";
+    bosh.innerHTML = '<i class="yaltir"></i><img src="rasm/' +
+      v.papka + '/' + v.oq + '" alt="' + nom + '">';
+    bosh.addEventListener("click", function(e){
+      if (e.target.closest && e.target.closest("button")) return;
+      tozaAlmash();
+    });
+    yon.appendChild(bosh);
+  }
+
   kadrlar.forEach(function(k, i){
     var el = document.createElement("div");
     el.className = "oq-kadr" + (k.tema === "och" ? " och" : "");
@@ -1744,6 +2077,11 @@ function oqBrend(nom){
         nom + " · " + (k.variant || "") + "</small></div>";
     };
     el.appendChild(im);
+    /* Kadrni bosish — yozuvlarni yashiradi/qaytaradi. */
+    el.addEventListener("click", function(e){
+      if (e.target.closest && e.target.closest("button")) return;
+      tozaAlmash();
+    });
     yon.appendChild(el);
   });
   bolim.appendChild(yon);
@@ -1791,6 +2129,10 @@ function oqBrend(nom){
         if (ch && pastEl)
           pastEl.className = "oq-past" +
             (ch.dataset.tema === "och" ? " och" : "");
+        /* Ustundagi tugmalar ham fonga moslashsin: oq fonda oq
+           ikonka ko'rinmaydi. Sinf bo'limning O'ZIGA yoziladi —
+           ustun `.oq-past` dan OLDIN turgani uchun `~` ishlamaydi. */
+        if (ch) bolim.dataset.tema = ch.dataset.tema || "toq";
         if (i2 > 0) ish.style.opacity = "0";
       }, 80);
     });
@@ -1802,8 +2144,10 @@ function oqBrend(nom){
   var izoh = v.izoh || v.art_izoh || uslubi(nom) || "";
   if (v.xarakter) teglar = [v.xarakter].concat(teglar);
   /* Nom va variant kadrning O'ZIDA yozilgan - takrorlamaymiz. */
-  past.className = "oq-past" +
-    (kadrlar[0].tema === "och" ? " och" : "");
+  var boshTema = v.oq ? (yorugFon(v.fon || "#FFFFFF") ? "och" : "toq")
+                      : (kadrlar[0].tema === "och" ? "och" : "toq");
+  past.className = "oq-past" + (boshTema === "och" ? " och" : "");
+  bolim.dataset.tema = boshTema;
   past.innerHTML =
     (izoh ? '<div class="oq-izoh">' + izoh + '</div>' : '') +
     fikrIshi(nom) +
@@ -1820,36 +2164,57 @@ function oqBrend(nom){
   var ustun = document.createElement("div");
   ustun.className = "oq-ustun";
 
-  function ustunTugma(nomi, ikonNomi, izoh, bosildi){
+  /* Chiziqli ikonka sovuq turadi — bu yerda odam his bilan bosadi.
+     Shuning uchun to'ldirilgan, tanish shakllar: yurak, gap
+     pufagi, qog'oz samolyot. Ular bir qarashda tushunarli va
+     bosilganda jonli javob beradi. */
+  function ustunTugma(belgi, izoh, bosildi){
     var t = document.createElement("button");
     t.className = "us" + (bosildi ? " bosilgan" : "");
-    t.innerHTML = '<s>' + ikon(ikonNomi, 21, "#fff") + '</s><u>' +
-                  izoh + '</u>';
-    t.dataset.nomi = nomi;
+    t.innerHTML = '<s>' + belgi + '</s><u>' + izoh + '</u>';
     return t;
   }
 
-  var tYoq = ustunTugma("olov", "olov", "Yoqdi", !!rk.olov);
+  var YUR = '<svg viewBox="0 0 24 24" width="23" height="23">' +
+    '<path fill="currentColor" d="M12 21s-7.5-4.7-9.6-9C.9 8.6 2.6 5 6 ' +
+    '4.2 8.1 3.7 10.3 4.6 12 6.5c1.7-1.9 3.9-2.8 6-2.3 3.4.8 5.1 4.4 ' +
+    '3.6 7.8-2.1 4.3-9.6 9-9.6 9z"/></svg>';
+  var GAP = '<svg viewBox="0 0 24 24" width="22" height="22">' +
+    '<path fill="currentColor" d="M12 3c5 0 9 3.3 9 7.4 0 4.1-4 7.4-9 ' +
+    '7.4-1 0-2-.1-2.9-.4l-4.4 2.3c-.4.2-.9-.2-.8-.7l.9-3.5C2.5 14.4 ' +
+    '3 12.6 3 10.4 3 6.3 7 3 12 3z"/></svg>';
+  var SAM = '<svg viewBox="0 0 24 24" width="22" height="22">' +
+    '<path fill="currentColor" d="M21.4 3.1c.5-.2 1 .3.8.8l-6 16.6c-.2' +
+    '.5-.9.6-1.2.1l-3.3-5.2-5.2-3.3c-.5-.3-.4-1 .1-1.2l14.8-7.8z"/>' +
+    '<path fill="currentColor" opacity=".55" d="M11.7 15.4l-1.4 4.2' +
+    'c-.2.5-.9.5-1.1 0l-1-3.2 3.5-1z"/></svg>';
+
+  var tYoq = ustunTugma(YUR, "Yoqdi", !!rk.olov);
   tYoq.onclick = function(e){
     e.stopPropagation();
     rk.olov = rk.olov ? 0 : 1;
     reaksiyaYoz(); titra("medium");
     tYoq.className = "us" + (rk.olov ? " bosilgan" : "");
-    tYoq.innerHTML = '<s>' + ikon("olov", 21,
-      rk.olov ? "#FFB38A" : "#fff") + '</s><u>Yoqdi</u>';
+    if (rk.olov) {
+      tYoq.classList.add("urdi");
+      setTimeout(function(){ tYoq.classList.remove("urdi"); }, 480);
+      yurakUch(tYoq);
+    }
   };
   ustun.appendChild(tYoq);
 
-  var tFikr = ustunTugma("fikr", "tahrir", "Fikr", false);
+  var tFikr = ustunTugma(GAP, "Fikr", false);
   tFikr.onclick = function(e){
     e.stopPropagation(); titra();
     fikrYoz(nom);
   };
   ustun.appendChild(tFikr);
 
-  var tUlash = ustunTugma("ulash", "havola", "Ulash", false);
+  var tUlash = ustunTugma(SAM, "Ulash", false);
   tUlash.onclick = function(e){
     e.stopPropagation(); titra();
+    tUlash.classList.add("uchdi");
+    setTimeout(function(){ tUlash.classList.remove("uchdi"); }, 520);
     ulash(nom);
   };
   ustun.appendChild(tUlash);
@@ -1860,7 +2225,8 @@ function oqBrend(nom){
   if (v.video) {
     var halqa = document.createElement("button");
     halqa.className = "us-halqa";
-    halqa.innerHTML = '<i>' + ikon("video", 18, "#fff") + '</i><u>Reels</u>';
+    halqa.innerHTML = '<i>' + ikon("video", 18, "currentColor") +
+      '</i><u>Reels</u>';
     halqa.onclick = function(e){
       e.stopPropagation(); titra("medium");
       if (TG && TG.openLink) TG.openLink(v.video); else window.open(v.video);
@@ -1908,11 +2274,40 @@ function oqimOch(nom){
   });
   var q = document.getElementById("reels");
   q.classList.add("ochiq");
+  q.classList.remove("toza");
   tarixQosh();
   document.body.style.overflow = "hidden";
   if (nishon) q.scrollTop = nishon.offsetTop;
   oqimHisob();
+  tozaEslat();
   if (TG) { TG.BackButton.show(); }
+}
+
+/* Yozuvlarni yashirish/qaytarish. Kadrni bosish yetadi. */
+function tozaAlmash(){
+  var q = document.getElementById("reels");
+  if (!q) return;
+  q.classList.toggle("toza");
+  titra();
+}
+
+var tozaKorildi = false;
+function tozaEslat(){
+  if (tozaKorildi) return;
+  try {
+    if (window.localStorage &&
+        localStorage.getItem("toza_eslatma") === "1") {
+      tozaKorildi = true;
+      return;
+    }
+  } catch (x) {}
+  tozaKorildi = true;
+  var e = document.createElement("div");
+  e.className = "toza-eslatma";
+  e.textContent = "Rasmni bosing — yozuvlar yo'qoladi";
+  document.body.appendChild(e);
+  setTimeout(function(){ e.remove(); }, 4200);
+  try { localStorage.setItem("toza_eslatma", "1"); } catch (x) {}
 }
 
 function oqimHisob(){
@@ -2195,6 +2590,23 @@ function yorliq(m){
 /* Fikr botga boradi — u yerda men o'qib, ruxsat so'rab, keyin
    saytga qo'yaman. To'g'ridan-to'g'ri saytga chiqarsak, moderatsiya
    bo'lmaydi va istalgan odam istalgan narsa yozib qo'yadi. */
+/* Bosilganda yurak uchib chiqadi — kichkina narsa, lekin odam
+   "bosdim" deb his qiladi. His bo'lmasa, tugma o'lik. */
+function yurakUch(tugma){
+  var q = tugma.getBoundingClientRect();
+  for (var i = 0; i < 5; i++) {
+    var e = document.createElement("i");
+    e.className = "yurakcha";
+    e.style.left = (q.left + q.width / 2) + "px";
+    e.style.top = (q.top + 18) + "px";
+    e.style.setProperty("--x", (Math.random() * 60 - 30) + "px");
+    e.style.setProperty("--k", (0.5 + Math.random() * 0.7).toFixed(2));
+    e.style.animationDelay = (i * 45) + "ms";
+    document.body.appendChild(e);
+    setTimeout(function(el){ return function(){ el.remove(); }; }(e), 1000);
+  }
+}
+
 function fikrYoz(nom){
   if (!BOT_NOM) return;
   var h = "https://t.me/" + BOT_NOM + "?start=f2_" + b64u(nom);
@@ -2447,7 +2859,7 @@ function xizmatChiz(){
 
 /* ---------- BO'LIMLAR ---------- */
 function bolimGa(nom){
-  ["ishlar","posterlar","ovozlar","videolar","xizmatlar","profil"]
+  ["ishlar","posterlar","ovozlar","videolar","sotuv","xizmatlar","profil"]
     .concat(QOSH_KALIT)
     .forEach(function(b){
     var e = document.getElementById("b-" + b);
@@ -2463,6 +2875,7 @@ function bolimGa(nom){
   if (nom === "posterlar") posterChiz();
   else if (nom === "ovozlar") ovozChiz();
   else if (nom === "videolar") videoChiz();
+  else if (nom === "sotuv") sotuvChiz();
   else if (nom === "xizmatlar") { xizmatChiz(); fikrChiz(); }
   else if (QOSH_KALIT.indexOf(nom) >= 0) qoshChiz(nom);
 }
@@ -2773,6 +3186,45 @@ function tahrirIch(nom, joy){
   mv.appendChild(inpv);
   ich.appendChild(mv);
 
+  /* ---------- SOTUV ----------
+     O'tmagan ish shunchaki portfolioda yotibdi. Narx qo'yilsa u
+     sotuvga chiqadi. Buyurtma bo'lib ketgan ish sotilmaydi — u
+     mijozniki, ikkinchi marta sotib bo'lmaydi. */
+  if (holati(v) !== "buyurtma") {
+    var ms = document.createElement("div");
+    ms.className = "maydon";
+    ms.innerHTML = "<label>Sotuv narxi (so'm) — bo'sh bo'lsa " +
+      "sotuvda emas</label>";
+    var inps = document.createElement("input");
+    inps.type = "text";
+    inps.inputMode = "numeric";
+    inps.placeholder = "1500000";
+    inps.value = v.sotuv ? String(v.sotuv) : "";
+    inps.onchange = function(){
+      var raqam = inps.value.replace(/[^0-9]/g, "");
+      ozgar(nom, "sotuv_narx", raqam);
+      v.sotuv = raqam ? parseInt(raqam, 10) : 0;
+      torChiz(); sotuvNav();
+    };
+    ms.appendChild(inps);
+    ich.appendChild(ms);
+
+    if (v.sotuv) {
+      var mst = document.createElement("div");
+      mst.className = "maydon";
+      var b = document.createElement("button");
+      b.className = "tug";
+      b.textContent = "Sotildi — saytdan olib tashlansin";
+      b.onclick = function(){
+        ozgar(nom, "sotildi", 1);
+        titra("medium");
+        xabarBer("Saqlagandan keyin saytdan chiqadi");
+      };
+      mst.appendChild(b);
+      ich.appendChild(mst);
+    }
+  }
+
   var saqla = document.createElement("div");
   saqla.className = "ozgargan";
   var n = Object.keys(ozgarishlar).length;
@@ -2902,6 +3354,7 @@ fetch("malumot.json?v=" + Date.now()).then(function(x){ return x.json(); })
     sana(document.getElementById("s-ish"), ish);
     sana(document.getElementById("s-klub"), klub);
     filtrChiz(); torChiz(); narxChiz(); jarayonChiz(); profilChiz();
+    sotuvNav();
     ikonlarniQoy();
     if (menmi()) document.getElementById("admin-tug").className =
       "admin-tug bor";
