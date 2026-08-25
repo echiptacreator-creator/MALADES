@@ -148,12 +148,22 @@ button{font-family:inherit;cursor:pointer}
   width:104px;height:50px;display:flex;align-items:center;
   justify-content:center;overflow:hidden;border-radius:12px;
   transition:background .25s,border-color .25s}
+/* Logo TO'LIQ SILUETGA aylantiriladi, xiralashtirilmaydi.
+   Ilgari grayscale + brightness ishlatilardi va u faqat OCH
+   logolarda ishlardi: qora logoni yorug' qilib bo'lmaydi, nolni
+   ko'paytirsang ham nol. Natijada qora logolar qora fonda
+   ko'rinmay ketardi — qatorning yarmi bo'sh turardi.
+   brightness(0) invert(1) esa har qanday logoni bir xil oq
+   siluetga aylantiradi. Fayllar shaffof PNG bo'lgani uchun
+   forma saqlanadi. */
 .oqim b.logo img{max-width:76%;max-height:64%;width:auto;height:auto;
   object-fit:contain;
-  filter:grayscale(1) brightness(2.4) contrast(.55) opacity(.5);
+  filter:brightness(0) invert(1) opacity(.46);
   transition:filter .25s}
 @media (pointer:fine){
-  .oqim b.logo:hover{background:#fff;border-color:transparent}
+  /* Ustiga borsa asl rang qaytadi. Fon esa shu logoning O'ZIGA
+     tanlangan rangi — oq logo oq fonda yo'qolib qolmasin. */
+  .oqim b.logo:hover{background:var(--lfon,#fff);border-color:transparent}
   .oqim b.logo:hover img{filter:none}
 }
 
@@ -1349,7 +1359,7 @@ button{font-family:inherit;cursor:pointer}
 
   <div class="ishonch">
     <div class="sarl">Ishonch bildirganlar</div>
-    <div class="oqim"><b class="logo"><img loading="lazy" src="rasm/andijon-fk/logo.png" alt="Andijon FK"></b><b class="logo"><img loading="lazy" src="rasm/sherdor/logo.png" alt="Sherdor"></b><b class="logo"><img loading="lazy" src="rasm/sonicx-mfc/logo.png" alt="SonicX"></b><b class="logo"><img loading="lazy" src="rasm/pdp-school/logo.png" alt="PDP School"></b><b class="logo"><img loading="lazy" src="rasm/echipta/logo.png" alt="echipta"></b><b class="logo"><img loading="lazy" src="rasm/tovarim-uz/logo.png" alt="Tovarim.uz"></b></div>
+    <div class="oqim"><b class="logo" style="--lfon:#0E1014"><img loading="lazy" src="rasm/andijon-fk/logo.png" alt="Andijon FK"></b><b class="logo" style="--lfon:#0E1014"><img loading="lazy" src="rasm/sherdor/logo.png" alt="Sherdor"></b><b class="logo" style="--lfon:#0E1014"><img loading="lazy" src="rasm/sonicx-mfc/logo.png" alt="SonicX"></b><b class="logo" style="--lfon:#FFFFFF"><img loading="lazy" src="rasm/pdp-school/logo.png" alt="PDP School"></b><b class="logo" style="--lfon:#FFFFFF"><img loading="lazy" src="rasm/echipta/logo.png" alt="echipta"></b><b class="logo" style="--lfon:#FFFFFF"><img loading="lazy" src="rasm/tovarim-uz/logo.png" alt="Tovarim.uz"></b></div>
   </div>
 
   <div class="qidiruv" id="q-quti">
