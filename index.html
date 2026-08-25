@@ -3,7 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
-<title>malades.bola — portfolio</title>
+<title>malades.bola — brend va sport identikasi</title>
+<!-- ULASHISH KARTOCHKASI.
+     Ilgari saytning havolasi Telegramga tashlansa quruq matn
+     chiqardi: na rasm, na tavsif. Odam bosishdan oldin nima
+     ekanini bilmasdi. Endi har ulashishda logo, sarlavha va
+     bitta jumla ko'rinadi — havolaning o'zi reklama bo'ladi. -->
+<meta name="description" content="brend va sport identikasi. Shunchaki chiroyli emas,
+sababi bilan chiroyli. — logo, brend tizimi, sport identikasi va SMM.">
+<meta name="theme-color" content="#08090B">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="malades.bola">
+<meta property="og:title" content="malades.bola — brend va sport identikasi">
+<meta property="og:description" content="Shunchaki chiroyli emas, sababi bilan chiroyli.
+Har konsept ortida biznes mantiqi turadi.">
+<meta property="og:url" content="https://maladesbola.uz/">
+<meta property="og:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787690934">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="malades.bola — brend va sport identikasi">
+<meta name="twitter:description" content="Shunchaki chiroyli emas, sababi bilan chiroyli.">
+<meta name="twitter:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787690934">
+<link rel="canonical" href="https://maladesbola.uz/">
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>
 @font-face{font-family:'MonumentExtended';src:url('shrift/MonumentExtended-Medium.ttf') format('truetype');font-weight:700;font-display:swap}@font-face{font-family:'MonumentExtended';src:url('shrift/MonumentExtended-Regular.ttf') format('truetype');font-weight:400;font-display:swap}
@@ -52,19 +74,37 @@ button{font-family:inherit;cursor:pointer}
 /* Gradient matn USTIDAN emas, ORTIDAN chiqadi: o'ng yuqori
    burchakdan tushadi va sarlavha turgan chap tomonni bo'sh qoldiradi.
    Shunda oq matn hech qayerda rangga botmaydi. */
+/* NUR QUTIDAN CHIQIB KETMASLIGI SHART.
+   Ilgari ellips markazi 92% da, radiusi 760px edi. Konteyner
+   chetiga yetganda gradient hali ~0.27 shaffoflikda bo'lardi va
+   overflow:hidden uni TO'G'RI CHIZIQ bilan kesardi — ekranda
+   qizil TO'RTBURCHAK ko'rinardi, nur emas.
+
+   Endi hammasi FOIZDA va matematikasi tekshirilgan: markaz 66%,
+   radius 42%, shaffoflik 78% da tugaydi -> 0.66 + 0.78*0.42 = 0.99.
+   Ya'ni gradient qutining chetiga YETMASDAN nolga tushadi.
+   Ustiga niqob ham qo'yilgan: 0.66 + 0.73*0.45 = 0.99.
+   Har qanday ekran kengligida chetlar yumshoq qoladi. */
 .nur{position:absolute;inset:0;pointer-events:none;
   background:
-    radial-gradient(760px 320px at 92% -18%,rgba(224,27,36,.34),
-      transparent 62%),
-    radial-gradient(420px 220px at 78% 4%,rgba(255,90,10,.24),
-      transparent 68%)}
+    radial-gradient(42% 112% at 66% -12%,rgba(224,27,36,.40),
+      transparent 78%),
+    radial-gradient(26% 66% at 62% -2%,rgba(255,90,10,.26),
+      transparent 80%);
+  -webkit-mask-image:radial-gradient(45% 132% at 66% -10%,#000 20%,
+    transparent 73%);
+  mask-image:radial-gradient(45% 132% at 66% -10%,#000 20%,
+    transparent 73%)}
 .nur2{position:absolute;inset:0;pointer-events:none;opacity:.5;
   background-image:
     linear-gradient(var(--chiziq) 1px,transparent 1px),
     linear-gradient(90deg,var(--chiziq) 1px,transparent 1px);
   background-size:56px 56px;
-  -webkit-mask-image:radial-gradient(360px 220px at 50% 0%,#000,transparent 74%);
-  mask-image:radial-gradient(360px 220px at 50% 0%,#000,transparent 74%)}
+  /* Niqob ham foizda: piksel bo'lsa katta ekranda to'r markazda
+     kichkina dog' bo'lib qolardi. 0.52 + 0.76*0.46 = 0.87 — chetga
+     yetmasdan tugaydi. */
+  -webkit-mask-image:radial-gradient(46% 74% at 52% 0%,#000 8%,transparent 76%);
+  mask-image:radial-gradient(46% 74% at 52% 0%,#000 8%,transparent 76%)}
 
 /* ---------- BURCHAK BELGILARI ----------
    Kiber his uchun uchta vositadan biri (to'r, monospace, burchak).
@@ -132,8 +172,14 @@ button{font-family:inherit;cursor:pointer}
 .ishonch{position:relative}
 .ishonch .sarl{font-size:9px;color:var(--xira);letter-spacing:2.2px;
   text-transform:uppercase;padding:16px 18px 8px}
+/* Logolar qatori ham suriladi. Telefonda u ekran chetida shundoq
+   kesilardi — oxirgi plita yarmi ko'rinib turardi va bu "buzuq"
+   taassurot berardi. Niqob chetni yumshoq yo'qotadi: davomi
+   borligi bilinadi, kesilgan joy ko'rinmaydi. */
 .oqim{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;
-  padding:0 18px 4px}
+  padding:0 18px 4px;
+  -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 46px),transparent);
+  mask-image:linear-gradient(90deg,#000 calc(100% - 46px),transparent)}
 .oqim::-webkit-scrollbar{display:none}
 .oqim b{flex:0 0 auto;font-size:11.5px;font-weight:600;padding:7px 11px;
   border-radius:9px;background:var(--qatlam);border:1px solid var(--chiziq);
@@ -143,11 +189,11 @@ button{font-family:inherit;cursor:pointer}
    emas. Oq plitalar qatori ko'zni tortib, asosiy ishlardan diqqatni
    olib qo'yardi. Endi rangsiz va xira: ko'z ularni ko'radi, lekin
    ularda to'xtamaydi. Ustiga borsa — rangi qaytadi. */
-.oqim b.logo{background:rgba(255,255,255,.045);
-  border:1px solid var(--chiziq);padding:0;
-  width:104px;height:50px;display:flex;align-items:center;
+.oqim b.logo{background:rgba(255,255,255,.90);
+  border:1px solid rgba(255,255,255,.10);padding:0;
+  width:118px;height:58px;display:flex;align-items:center;
   justify-content:center;overflow:hidden;border-radius:12px;
-  transition:background .25s,border-color .25s}
+  transition:background .25s,border-color .25s,transform .25s}
 /* Ilgari grayscale + brightness ishlatilardi va u faqat OCH
    logolarda ishlardi: qora logoni yorug' qilib bo'lmaydi — nolni
    ko'paytirsang ham nol. Natijada qora logolar qora fonda
@@ -156,20 +202,31 @@ button{font-family:inherit;cursor:pointer}
    Hammasini siluetga aylantirish ham to'g'ri javob emas: ichki
    detal yo'qoladi, gerb shunchaki dog'ga aylanadi.
 
-   Shuning uchun logo O'ZIGA qarab ishlanadi. Har logoning fon
-   rangi allaqachon hisoblangan (kartochkalar uchun):
-     oq fon kerak    -> logo QORA  -> teskarilash kerak
-     to'q fon kerak  -> logo OCH   -> teskarilash SHART EMAS
-   Ikki holatda ham detal saqlanadi. */
-.oqim b.logo img{max-width:76%;max-height:64%;width:auto;height:auto;
+   Yechim boshqa joyda edi: muammo logoda emas, PLITADA. */
+/* O'lchab tekshirilgan: ishonch qatoridagi olti logoning HAMMASI
+   to'q (yorug'ligi 54..116, ya'ni 140 dan past). Shuning uchun
+   qorong'i plitada ularning uchtasi umuman ko'rinmasdi.
+   Och plitada esa hammasi o'qiladi. brightness biroz to'qroq
+   qiladi — mayda gerb detali kulrangda yo'qolib ketmasin. */
+.oqim b.logo img{max-width:78%;max-height:66%;width:auto;height:auto;
   object-fit:contain;
-  filter:grayscale(1) opacity(.5);
+  filter:grayscale(1) brightness(.72) contrast(1.1) opacity(.78);
   transition:filter .25s}
-.oqim b.logo.tesk img{filter:grayscale(1) invert(1) opacity(.5)}
+/* TESKARILASH ENDI KERAK EMAS.
+   Ilgari plita qorong'i edi, shuning uchun qora logolarni
+   teskarilash kerak bo'lardi. Lekin teskarilash gerbning ichki
+   detalini buzardi va rangli gerblar baribir fonga singib
+   ketardi — birinchi uchtasi ekranda umuman ko'rinmasdi.
+
+   Plita OCH bo'lgach muammoning ildizi yo'qoldi: qora ham,
+   rangli ham, oq ham — hammasi bir xil o'qiladi. Xiralik
+   grayscale bilan beriladi, ya'ni "pichirlash" saqlanadi,
+   lekin logo KO'RINADI. Ustiga borsa rangi qaytadi. */
+.oqim b.logo.tesk img{filter:grayscale(1) brightness(.72) contrast(1.1)
+  opacity(.78)}
 @media (pointer:fine){
-  /* Ustiga borsa asl rang qaytadi. Fon esa shu logoning O'ZIGA
-     tanlangan rangi — oq logo oq fonda yo'qolib qolmasin. */
-  .oqim b.logo:hover{background:var(--lfon,#fff);border-color:transparent}
+  .oqim b.logo:hover{background:#fff;border-color:rgba(255,255,255,.28);
+    transform:translateY(-2px)}
   .oqim b.logo:hover img{filter:none}
 }
 
@@ -357,9 +414,21 @@ button{font-family:inherit;cursor:pointer}
   transform:translateY(-38%);color:var(--xira);font-size:18px;display:none}
 .qidiruv.bor .toza{display:block}
 
-.filtr{display:flex;gap:7px;padding:0 18px 12px;overflow-x:auto;
-  scrollbar-width:none;position:sticky;top:0;z-index:20;
+/* FILTR QATORI SURILADI — LEKIN BU BILINISHI KERAK.
+   Ilgari qator ekran chetida shundoq kesilardi: odam o'ng tomonda
+   yana tugmalar borligini bilmasdi va "Sport", "Ta'lim" kabi
+   sohalar hech qachon bosilmasdi. Endi tashqi qobiq bor:
+   sticky fon va o'ng chetdagi yumshoq soya o'shanda turadi,
+   ichkaridagi qator esa uning ostidan surilib chiqadi. */
+.filtr-o{position:sticky;top:0;z-index:20;
   background:linear-gradient(var(--fon) 74%,transparent)}
+.filtr-o::after{content:"";position:absolute;top:0;right:0;bottom:10px;
+  width:66px;pointer-events:none;
+  background:linear-gradient(90deg,transparent,var(--fon) 72%);
+  opacity:0;transition:opacity .2s}
+.filtr-o.sur::after{opacity:1}
+.filtr{display:flex;gap:7px;padding:0 18px 12px;overflow-x:auto;
+  scrollbar-width:none}
 .filtr::-webkit-scrollbar{display:none}
 .tug{flex:0 0 auto;padding:8px 13px;border-radius:999px;font-size:12.5px;
   font-weight:600;background:var(--qatlam);color:var(--xira);
@@ -1264,7 +1333,11 @@ button{font-family:inherit;cursor:pointer}
 /* ---------- KATTA EKRAN: sayt ko'rinishi ---------- */
 @media (min-width:820px){
   body{padding-bottom:0;padding-top:78px}
-  .bolim.faol{max-width:1180px;margin:0 auto}
+  /* 1180px 1920px ekranda ikki yonda 370px dan bo'sh joy qoldirardi
+     va kartochkalar 207px ga siqilardi — logo ishini shunday
+     o'lchamda ko'rsatib bo'lmaydi. 1400px da kartochka ~316px
+     bo'ladi: logo nihoyat ish kabi ko'rinadi. */
+  .bolim.faol{max-width:1400px;margin:0 auto}
   .hero{padding:56px 40px 36px;border-radius:0 0 28px 28px}
   /* Brend nomi yuqori panelda turibdi - hero'da takrorlanmasin.
      Bo'shagan joy sarlavhaga ketadi. */
@@ -1280,7 +1353,8 @@ button{font-family:inherit;cursor:pointer}
   .raqam b{font-size:30px}
   .raqam span{font-size:10px;margin-top:7px}
   .ishonch,.qidiruv,.filtr{padding-left:40px;padding-right:40px}
-  .tor{grid-template-columns:repeat(4,1fr);gap:16px;padding:0 40px}
+  .filtr-o::after{right:0;width:64px}
+  .tor{grid-template-columns:repeat(3,1fr);gap:18px;padding:0 40px}
   .bolim-sarl{padding-left:40px;padding-right:40px}
   .haqida{padding-left:40px;padding-right:40px;max-width:46em}
   .aloqa{padding-left:40px;padding-right:40px}
@@ -1305,8 +1379,108 @@ button{font-family:inherit;cursor:pointer}
   .varaq.ochiq{transform:translate(-50%,0)}
   .kar-oyna{max-width:900px;left:50%;transform:translateX(-50%)}
 }
-@media (min-width:1280px){
-  .tor{grid-template-columns:repeat(5,1fr)}
+@media (min-width:1120px){
+  .tor{grid-template-columns:repeat(4,1fr)}
+}
+
+/* ---------- HERO: IKKI USTUN ----------
+   1024px dan katta ekranda sarlavha chap yarmida turardi, o'ng
+   yarmi esa butunlay bo'sh edi — sayt yarim yuklangandek
+   ko'rinardi. Endi o'ng ustunda raqamlar va va'da turadi:
+   yangi kontent yozilmadi, bor narsa joyiga qo'yildi.
+   Chapda "biz kimmiz", o'ngda "nega ishonasiz" — ko'z ikkalasini
+   bitta qarashda oladi. */
+@media (min-width:1024px){
+  /* Chap ustun kengroq: Monument Extended juda keng shrift,
+     teng ikki ustunda sarlavha to'rt qatorga bo'linib ketardi. */
+  .hero{display:grid;align-content:center;
+    grid-template-columns:minmax(0,1.30fr) minmax(0,.70fr);
+    column-gap:52px;padding:74px 40px 62px;
+    grid-template-areas:
+      "kasb  raqam"
+      "dava  raqam"
+      "izoh  vada"}
+  .hero .kasb{grid-area:kasb;align-self:end}
+  .hero .dava{grid-area:dava;margin:14px 0 0;
+    font-size:clamp(36px,3.05vw,44px)}
+  .hero .dava-izoh{grid-area:izoh;margin-top:16px;max-width:30em}
+  .hero .raqamlar{grid-area:raqam;align-self:end;max-width:none;margin:0}
+  .hero .vada{grid-area:vada;align-self:start;max-width:none;margin:16px 0 0}
+  /* Sarlavhasiz hero'larda (Posterlar, Ovozlar, Xizmatlar...)
+     o'ng ustun bo'sh — u yerda grid kerak emas. */
+  .hero:not(:has(.raqamlar)){display:block;padding:74px 40px 40px}
+  .hero:not(:has(.raqamlar)) .dava{font-size:52px}
+}
+
+/* ---------- FUTER ----------
+   Ilgari sayt shunday tugardi: kartochkalar qatori tugadi va
+   sahifa ham tugadi. Oxirigacha surib kelgan odam — eng qizigan
+   odam — bo'sh joyga urilardi. Na aloqa, na chaqiruv, na keyingi
+   qadam. Aynan o'sha yerda mijoz yo'qolardi.
+
+   Endi oxirida bitta chaqiruv va aloqa yo'llari turadi. Bu
+   bo'limlardan tashqarida — ya'ni Ishlar, Posterlar, Xizmatlar,
+   qaysi bo'limda bo'lsa ham futer joyida qoladi. */
+.futer{margin-top:34px;border-top:1px solid var(--chiziq);
+  background:linear-gradient(180deg,rgba(255,255,255,.018),transparent 60%)}
+.futer-ich{padding:34px 18px 26px;max-width:1400px;margin:0 auto}
+.futer-chaq{position:relative;overflow:hidden;
+  border:1px solid rgba(255,90,10,.26);border-radius:var(--r-katta);
+  background:
+    radial-gradient(46% 120% at 78% -20%,rgba(224,27,36,.20),transparent 76%),
+    var(--qatlam);
+  padding:26px 20px 22px}
+.futer-chaq .kasb{margin-top:0}
+.futer-chaq h3{margin:9px 0 0;font-family:var(--sarlavha);font-size:26px;
+  font-weight:700;letter-spacing:-.7px;line-height:1.16}
+.futer-chaq p{margin:10px 0 0;font-size:13.5px;line-height:1.55;
+  color:#aeb6c2;max-width:34em}
+.futer-tug{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px}
+.futer-tug button{border:0;border-radius:13px;padding:13px 20px;
+  font-size:13.5px;font-weight:700;background:var(--olov-gr);color:#fff;
+  display:flex;align-items:center;gap:8px;
+  box-shadow:0 10px 26px -12px rgba(255,90,10,.9)}
+.futer-tug button.ikki{background:transparent;color:var(--matn);
+  border:1px solid var(--chiziq);box-shadow:none}
+.futer-tug button s{text-decoration:none;font-size:15px}
+.futer-qator{margin-top:26px;display:grid;gap:9px;
+  grid-template-columns:repeat(2,minmax(0,1fr))}
+.futer-qator a{padding:12px 13px;border-radius:13px;background:var(--qatlam);
+  border:1px solid var(--chiziq);color:var(--matn);text-decoration:none;
+  display:flex;flex-direction:column;gap:3px;
+  transition:border-color .18s,background .18s}
+.futer-qator a b{font-size:13px;font-weight:650}
+.futer-qator a span{font-family:var(--mono);font-size:8.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--xira)}
+@media (pointer:fine){
+  .futer-qator a:hover{border-color:rgba(255,90,10,.36);
+    background:rgba(255,90,10,.06)}
+  .futer-tug button:hover{filter:brightness(1.07)}
+  .futer-tug button.ikki:hover{border-color:rgba(255,255,255,.24);
+    background:rgba(255,255,255,.04)}
+}
+.futer-past{margin-top:24px;padding-top:16px;
+  border-top:1px solid var(--chiziq);display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:space-between;gap:10px}
+.futer-past b{font-family:var(--sarlavha);font-size:15px;font-weight:700;
+  letter-spacing:-.4px;display:flex;align-items:center;gap:7px}
+.futer-past b i{width:6px;height:6px;border-radius:2px;
+  background:var(--olov-gr);font-style:normal;
+  box-shadow:0 0 12px rgba(255,85,0,.85)}
+.futer-past span{font-family:var(--mono);font-size:9px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--xira)}
+@media (min-width:820px){
+  .futer{margin-top:52px}
+  .futer-ich{padding:52px 40px 34px}
+  .futer-chaq{padding:38px 34px 32px;
+    display:grid;grid-template-columns:minmax(0,1fr) auto;
+    align-items:center;column-gap:40px}
+  .futer-chaq .kasb,.futer-chaq h3,.futer-chaq p{grid-column:1}
+  .futer-chaq h3{font-size:34px}
+  .futer-tug{grid-column:2;grid-row:1/4;margin-top:0;
+    flex-direction:column;align-items:stretch}
+  .futer-tug button{justify-content:center;padding:14px 26px}
+  .futer-qator{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 }
 
 /* ---------- REELS: KOMPYUTERDA ----------
@@ -1375,7 +1549,7 @@ button{font-family:inherit;cursor:pointer}
     <span class="toza" id="q-toza">×</span>
   </div>
 
-  <div class="filtr" id="filtr"></div>
+  <div class="filtr-o" id="filtr-o"><div class="filtr" id="filtr"></div></div>
   <div class="tor" id="tor">
     <div class="skelet"><i></i><u></u></div>
     <div class="skelet"><i></i><u></u></div>
@@ -1633,6 +1807,30 @@ button{font-family:inherit;cursor:pointer}
   <div class="varaq-ich" id="kar-ich"></div>
 </div>
 
+<!-- ================= FUTER =================
+     Bo'limlardan TASHQARIDA turadi: qaysi bo'lim ochiq bo'lsa ham
+     sahifa oxirida shu chaqiruv chiqadi. -->
+<div class="futer">
+  <div class="futer-ich">
+    <div class="futer-chaq">
+      <div class="kasb">Keyingi qadam</div>
+      <h3>Brendingizni birga yasaymizmi?</h3>
+      <p>Brend nomi va nima kerakligini yozing — bir kun ichida
+         konsept yo'nalishini va aniq narxni aytaman.
+         Avans 50%, qolgani fayllar topshirilishidan oldin.</p>
+      <div class="futer-tug">
+        <button id="f-buyurtma"><s>&#9998;</s>Buyurtma berish</button>
+        <button class="ikki" id="f-narx"><s>&#8599;</s>Narxlarni ko'rish</button>
+      </div>
+    </div>
+    <div class="futer-qator" id="f-aloqa"></div>
+    <div class="futer-past">
+      <b><span>malades.bola</span><i></i></b>
+      <span id="f-yil"></span>
+    </div>
+  </div>
+</div>
+
 <button class="admin-tug" id="admin-tug"></button>
 
 <div class="nav">
@@ -1668,9 +1866,9 @@ var ADMIN = 515902673;
 var PROFIL = {"ism": "Sardorbek", "taxallus": "malades.bola", "kasb": "brend va sport identikasi dizayneri", "shahar": "Andijon / Toshkent", "yillar": 5, "haqida": "Brend va sport identikasi bilan 5 yildan beri ishlayman. Ishim shablon tanlash emas — har konsept ortida biznes mantiqi turadi va mijozga nega shunday qilinganini tushuntirib beraman.", "raqamlar": [["110+", "tayyorlangan ish"], ["25", "klub gerbi"], ["5", "yil tajriba"]], "loyihalar": [{"nom": "echipta", "rol": "Asoschi", "izoh": "Chipta xizmati — g'oyadan brendgacha o'zim qurdim.", "turi": "asoschi", "rang": "#332688", "logo": "rasm/profil/echipta.png", "toq": true}, {"nom": "kissam", "rol": "Asoschi", "izoh": "Kontent va dizayn yo'nalishi.", "turi": "asoschi", "rang": "#1B2A6B", "logo": "rasm/profil/kissam.png", "toq": false}, {"nom": "Andijon FK", "rol": "Brend identikasi", "izoh": "Klub gerbi, forma brendingi va matchday dizayn tizimi.", "turi": "mijoz", "rang": "#DC2228", "logo": "rasm/profil/Andijon_FK.png", "toq": true}, {"nom": "O'zbekiston futzal assotsiatsiyasi", "rol": "Identika", "izoh": "Federatsiya darajasidagi vizual tizim.", "turi": "mijoz", "rang": "#0A3D91"}], "xizmatlar": ["Logo va brend identikasi", "Sport klublari uchun gerb va forma brendingi", "Brendbuk va qo'llanish tizimi", "Ijtimoiy tarmoq dizayn tizimi"]};
 var ALOQA = {"telegram": "@khamilofff", "kanal": "t.me/maladesbola", "instagram": "instagram.com/malades.bola", "behance": "behance.net/maladesbola", "telefon": "+998 88 472 77 72"};
 var BOT_NOM = "malades_bolabot";
-var QIZIQISH = {"ADC ingliz tili kurslari posterlari": 1, "Bek Aviakassa": 1, "Finlit.uz": 1, "Labsearch": 1};
+var QIZIQISH = {"ADC ingliz tili kurslari posterlari": 1, "Andijon FK tayyorlov markazlari": 1, "Bek Aviakassa": 1, "Finlit.uz": 1, "Labsearch": 1};
 /* Saytdagi haqiqiy reaksiyalar: {brend: {olov: n, ulash: n}} */
-var SANOQ = {"Andijon FK": {"korish": 2, "olov": 2}, "Bek Aviakassa": {"korish": 1, "olov": 1}, "Biznes Pechat": {"olov": 1}, "Chorva Foyda": {"olov": 1}, "Eleven": {"olov": 1}, "Everest Muzlari": {"olov": 1}, "Farovon Marg'ilon": {"olov": 1}, "Finlit.uz": {"korish": 1, "olov": 1, "ulash": 1}, "Instaff": {"olov": 1}, "Labsearch": {"olov": 1}, "Salman School": {"olov": 1}};
+var SANOQ = {"Andijon FK": {"korish": 2, "olov": 2}, "Anysoft": {"korish": 1}, "Bek Aviakassa": {"korish": 1, "olov": 1}, "Biznes Pechat": {"olov": 1}, "Chorva Foyda": {"olov": 1}, "Eleven": {"olov": 1}, "Everest Muzlari": {"olov": 1}, "Farovon Marg'ilon": {"olov": 1}, "Finlit.uz": {"korish": 1, "olov": 1, "ulash": 1}, "Instaff": {"olov": 1}, "Labsearch": {"olov": 1}, "Salman School": {"olov": 1}};
 var ADMIN_API = "https://admin.maladesbola.uz";
 
 /* Reaksiyani serverga yuboradi. Ishlamasa — jimgina o'tadi:
@@ -3239,6 +3437,52 @@ document.getElementById("buyurtma").onclick = function(){
   titra("medium"); yubor({amal: "buyurtma"});
 };
 
+/* ---------- FUTER ----------
+   Sahifa oxirigacha surib kelgan odam eng qizigan odam. Ilgari u
+   yerda hech nima yo'q edi. Endi chaqiruv, narx va aloqa yo'llari
+   turadi. Aloqa ma'lumoti profil bilan BITTA manbadan (ALOQA)
+   olinadi — ikki joyda ikki xil raqam turib qolmaydi. */
+(function(){
+  var a = ALOQA || {};
+  function tug(havola, nom, izoh){
+    return '<a href="' + havola + '" target="_blank" rel="noopener">' +
+      "<b>" + nom + "</b><span>" + izoh + "</span></a>";
+  }
+  var q = document.getElementById("f-aloqa");
+  if (q) q.innerHTML =
+    (a.telegram ? tug("https://t.me/" + a.telegram.replace("@", ""),
+                      "Telegram", "shu yerda yozing") : "") +
+    (a.instagram ? tug("https://" + a.instagram,
+                       "Instagram", "kunlik ishlar") : "") +
+    (a.behance ? tug("https://" + a.behance,
+                     "Behance", "to'liq loyihalar") : "") +
+    (a.kanal ? tug("https://" + a.kanal, "Kanal", "yangi ishlar") : "");
+  var y = document.getElementById("f-yil");
+  if (y) y.textContent = "Andijon \u00b7 " + new Date().getFullYear();
+  var b = document.getElementById("f-buyurtma");
+  if (b) b.onclick = function(){ titra("medium"); yubor({amal: "buyurtma"}); };
+  var n = document.getElementById("f-narx");
+  if (n) n.onclick = function(){ titra(); narxChiz(); varaqOch("narx-oyna"); };
+})();
+
+/* Filtr qatorining o'ng chetidagi soya. Ilgari qator shundoq
+   kesilardi va odam o'ngda yana sohalar borligini bilmasdi —
+   "Sport", "Ta'lim" hech qachon bosilmasdi. Soya bor bo'lsa
+   "davomi bor" degani; oxiriga yetganda o'chadi. */
+function filtrSoya(){
+  var o = document.getElementById("filtr-o");
+  var f = document.getElementById("filtr");
+  if (!o || !f) return;
+  var bor = f.scrollWidth - f.clientWidth - f.scrollLeft > 8;
+  o.classList.toggle("sur", bor);
+}
+(function(){
+  var f = document.getElementById("filtr");
+  if (!f) return;
+  f.addEventListener("scroll", filtrSoya, {passive: true});
+  window.addEventListener("resize", filtrSoya);
+})();
+
 /* ---------- FILTR VARAQASI ---------- */
 function filtrOch(){
   var ich = document.getElementById("filtr-ich");
@@ -3792,6 +4036,7 @@ fetch("malumot.json?v=" + Date.now()).then(function(x){ return x.json(); })
     sana(document.getElementById("s-ish"), ish);
     sana(document.getElementById("s-klub"), klub);
     filtrChiz(); torChiz(); narxChiz(); jarayonChiz(); profilChiz();
+    filtrSoya();
     sotuvNav();
     ikonlarniQoy();
     if (menmi()) document.getElementById("admin-tug").className =
