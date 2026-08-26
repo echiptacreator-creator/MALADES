@@ -16,13 +16,13 @@
 <meta property="og:title" content="malades.bola — brend va sport identikasi">
 <meta property="og:description" content="Shunchaki chiroyli emas, sababi bilan chiroyli. Har konsept ortida biznes mantiqi turadi.">
 <meta property="og:url" content="https://maladesbola.uz/">
-<meta property="og:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787742029">
+<meta property="og:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787745385">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="malades.bola — brend va sport identikasi">
 <meta name="twitter:description" content="Shunchaki chiroyli emas, sababi bilan chiroyli.">
-<meta name="twitter:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787742029">
+<meta name="twitter:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787745385">
 <link rel="canonical" href="https://maladesbola.uz/">
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>
@@ -1410,6 +1410,47 @@ button{font-family:inherit;cursor:pointer}
   .hero:not(:has(.raqamlar)) .dava{font-size:52px}
 }
 
+/* ---------- NAMUNA YORLIG'I ----------
+   Namuna HAQIQIY ma'lumotdan farq qilishi SHART. Aks holda
+   ertaga o'zim ham "bu haqiqiy fikrmidi?" deb adashaman, va
+   yomoni — to'qilgan gap mijozga haqiqiy bo'lib ko'rinadi.
+
+   Shuning uchun har namuna ustida yorliq turadi va bloki
+   ko'ndalang chiziqli fon oladi: uni tasodifan haqiqiy deb
+   o'qib bo'lmaydi. */
+.namuna-quti{position:relative}
+.namuna-quti::before{content:"";position:absolute;inset:0;
+  pointer-events:none;border-radius:inherit;z-index:3;
+  background:repeating-linear-gradient(135deg,
+    rgba(255,170,0,.055) 0 12px,transparent 12px 24px);
+  border:1px dashed rgba(255,170,0,.42);}
+.namuna-yorliq{display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--mono);font-size:8.5px;letter-spacing:.16em;
+  text-transform:uppercase;padding:5px 9px;border-radius:8px;
+  background:rgba(255,170,0,.14);border:1px solid rgba(255,170,0,.4);
+  color:#FFB020;margin-bottom:12px}
+.namuna-yorliq i{width:5px;height:5px;border-radius:50%;
+  background:#FFB020;font-style:normal}
+.namuna-izoh{margin:12px 0 0;font-size:11.5px;line-height:1.5;
+  color:#8A929E;border-top:1px dashed rgba(255,170,0,.28);
+  padding-top:10px}
+.namuna-izoh b{color:#FFB020;font-weight:650}
+/* Yuqoridagi lenta — namuna rejimi yoqilganini bildiradi.
+   U yuqori panelning USTIDA turadi (z-index panelnikidan katta),
+   panel esa lenta balandligicha pastga suriladi — aks holda
+   ikkalasi ustma-ust tushib, ikkalasi ham o'qilmaydi. */
+.namuna-lenta{display:none;position:fixed;top:0;left:0;right:0;
+  z-index:200;background:linear-gradient(90deg,#FFB020,#FF7A00);
+  color:#1a1200;font-size:11.5px;font-weight:700;text-align:center;
+  padding:9px 14px;letter-spacing:.02em;line-height:1.35}
+body.namuna .namuna-lenta{display:block}
+body.namuna{padding-top:36px}
+@media (min-width:820px){
+  body.namuna{padding-top:calc(78px + 36px)}
+  body.namuna .nav{top:36px}
+  body.namuna .filtr-o{top:36px}
+}
+
 /* ---------- SOTUV BANNERI ----------
    Tayyor logolar bo'limi nav'ning ichida ko'milib qolgan edi:
    odam u yerga borish uchun avval uning borligini bilishi kerak,
@@ -1449,6 +1490,7 @@ button{font-family:inherit;cursor:pointer}
   .sotuv-lenta{grid-column:2;grid-row:1/4;margin-top:0}
   .sotuv-lenta i{width:74px;height:74px}
   .sotuv-ban .ket{grid-column:1}
+  .sotuv-ban > #sb-namuna{grid-column:1/-1}
 }
 @media (pointer:fine){
   .sotuv-ban:hover{border-color:rgba(255,90,10,.55)}
@@ -1669,6 +1711,11 @@ button{font-family:inherit;cursor:pointer}
 </head>
 <body>
 
+<!-- Namuna rejimi yoqilganda ko'rinadi. Oddiy mijoz buni
+     hech qachon ko'rmaydi. -->
+<div class="namuna-lenta">NAMUNA REJIMI — sariq bloklar to'qilgan
+  misol, haqiqiy ma'lumot emas. Oddiy mijoz ularni ko'rmaydi.</div>
+
 <!-- ================= ISHLAR ================= -->
 <div class="bolim faol" id="b-ishlar">
   <div class="hero">
@@ -1707,6 +1754,7 @@ button{font-family:inherit;cursor:pointer}
       va bir kishiga sotiladi.</p>
     <div class="sotuv-lenta" id="sb-lenta"></div>
     <div class="ket">Ko'rish<s>&#8594;</s></div>
+    <div id="sb-namuna"></div>
   </div>
 
   <div class="filtr-o" id="filtr-o"><div class="filtr" id="filtr"></div></div>
@@ -2045,9 +2093,21 @@ var ALOQA = {"telegram": "@khamilofff", "kanal": "t.me/maladesbola", "instagram"
 var BOT_NOM = "malades_bolabot";
 var QIZIQISH = {"ADC ingliz tili kurslari posterlari": 1, "Andijon FK tayyorlov markazlari": 1, "Bek Aviakassa": 1, "Finlit.uz": 1, "Labsearch": 1};
 /* Saytdagi haqiqiy reaksiyalar: {brend: {olov: n, ulash: n}} */
-var SANOQ = {"Andijon FK": {"korish": 2, "olov": 2}, "Anysoft": {"korish": 1}, "Bek Aviakassa": {"korish": 1, "olov": 1}, "Biznes Pechat": {"olov": 1}, "Chorva Foyda": {"olov": 1}, "Eleven": {"olov": 1}, "Everest Muzlari": {"olov": 1}, "Farovon Marg'ilon": {"olov": 1}, "Finlit.uz": {"korish": 1, "olov": 1, "ulash": 1}, "Instaff": {"olov": 1}, "Labsearch": {"olov": 1}, "Salman School": {"olov": 1}};
+var SANOQ = {"Andijon FK": {"korish": 3, "olov": 2}, "Anysoft": {"korish": 1, "olov": 1}, "Bek Aviakassa": {"korish": 1, "olov": 1}, "Biznes Pechat": {"olov": 1}, "Chorva Foyda": {"olov": 1}, "Eleven": {"olov": 1}, "Everest Muzlari": {"olov": 1}, "Farovon Marg'ilon": {"olov": 1}, "Finlit.uz": {"korish": 1, "olov": 1, "ulash": 1}, "Instaff": {"olov": 1}, "Labsearch": {"olov": 1}, "Salman School": {"olov": 1}};
 /* {ish nomi: havola qismi} — har ishning o'z sahifasi uchun */
 var HAVOLA = {"\"Andijon\" FK futbolchilari statistikasi": "andijon-fk-futbolchilari-statistikasi", "77 Turdimurodov Andijon FC": "77-turdimurodov-andijon-fc", "ADC ingliz tili kurslari posterlari": "adc-ingliz-tili-kurslari-posterlari", "Abduqodir Xusanov Manchester City posteri": "abduqodir-xusanov-manchester-city-posteri", "Alidoorf": "alidoorf", "Ananas Travel": "ananas-travel", "Andijon FK": "andijon-fk", "Andijon FK - Samiyev posteri": "andijon-fk-samiyev-posteri", "Andijon FK Asosiy Tarkib Posteri": "andijon-fk-asosiy-tarkib-posteri", "Andijon FK Zarbalar Statistikasi": "andijon-fk-zarbalar-statistikasi", "Andijon FK asosiy tarkib posteri": "andijon-fk-asosiy-tarkib-posteri-2", "Andijon FK matchday posteri": "andijon-fk-matchday-posteri", "Andijon Gazon SMM posterlari": "andijon-gazon-smm-posterlari", "Andijon vs Vishista Krakov Matchday Posteri": "andijon-vs-vishista-krakov-matchday-posteri", "Andijon – Turon matchday posteri": "andijon-turon-matchday-posteri", "Andijonda Bor": "andijonda-bor", "Antech Electronics": "antech-electronics", "Anysoft": "anysoft", "Artel va Shona Texnika Katalogi": "artel-va-shona-texnika-katalogi", "Auto Dallol": "auto-dallol", "Aza Dent Clinic": "aza-dent-clinic", "Bek Aviakassa": "bek-aviakassa", "Bima": "bima", "Biznes Pechat": "biznes-pechat", "Bobur Junior": "bobur-junior", "Bozor.com": "bozor-com", "Bozorvoy": "bozorvoy", "Bukhara Smile": "bukhara-smile", "Bunyodkor": "bunyodkor", "Burgut ko'zi": "burgut-kozi", "Buxoro FK": "buxoro-fk", "Buxoro Uy Bozor": "buxoro-uy-bozor", "Canopus": "canopus", "Cheran — bosh oshpaz": "cheran-bosh-oshpaz", "Chorva Foyda": "chorva-foyda", "Climat Santex": "climat-santex", "Dehkon": "dehkon", "Dilya Nur": "dilya-nur", "Dinamo Samarqand": "dinamo-samarqand", "Ebox": "ebox", "Echipta — Mavsumiy chipta sotuvda": "echipta-mavsumiy-chipta-sotuvda", "Eleven": "eleven", "Eron - O'zbekiston Matchday Posteri": "eron-ozbekiston-matchday-posteri", "Everest Muzlari": "everest-muzlari", "FC Andijon XI Tarkib Posteri": "fc-andijon-xi-tarkib-posteri", "FC Andijon statistika posteri": "fc-andijon-statistika-posteri", "FC Andijon statistika posteri (poster)": "fc-andijon-statistika-posteri-poster", "FK Andijon — XI Tarkib posteri": "fk-andijon-xi-tarkib-posteri", "Farovon Marg'ilon": "farovon-margilon", "Favvora Film": "favvora-film", "Finlit.uz": "finlit-uz", "Grand Projects": "grand-projects", "HandPay": "handpay", "Havaskor Liga": "havaskor-liga", "Hayrullo Kasimov": "hayrullo-kasimov", "HomeWare": "homeware", "Hur Fikrlar": "hur-fikrlar", "IDEA Consulting Centre posterlar to'plami": "idea-consulting-centre-posterlar-toplami", "Instaff": "instaff", "Isam Snack": "isam-snack", "Jadoo": "jadoo", "Khan Restaurant": "khan-restaurant", "Koinot School": "koinot-school", "Kvadrat": "kvadrat", "La Pizza": "la-pizza", "LaMore": "lamore", "Labsearch": "labsearch", "Lal Anaar": "lal-anaar", "Langfy": "langfy", "Lokomotiv": "lokomotiv", "Lorry.uz": "lorry-uz", "Makro Farm tibbiy posterlar to'plami": "makro-farm-tibbiy-posterlar-toplami", "Maorif": "maorif", "Marjon": "marjon", "Mash'al": "mashal", "Match Day — burgut": "match-day-burgut", "Med Texnika Andijon posterlari": "med-texnika-andijon-posterlari", "Mendeleyev": "mendeleyev", "Metallurg Bekabad": "metallurg-bekabad", "Mirzayev's Life": "mirzayevs-life", "Moliyaviy Maslahatchi": "moliyaviy-maslahatchi", "Muhandislik Markazi": "muhandislik-markazi", "Naimix": "naimix", "Nasaf": "nasaf", "Nasiyachi": "nasiyachi", "Navbahor": "navbahor", "Neftchi Farg'ona": "neftchi-fargona", "O'FF": "off", "O'quv markaz kurslari uchun posterlar": "oquv-markaz-kurslari-uchun-posterlar", "O'yin kuni bugun": "oyin-kuni-bugun", "O'zMMB": "ozmmb", "O'zbekiston Kasaba Uyushmalari": "ozbekiston-kasaba-uyushmalari", "OK MK": "ok-mk", "Obod Makon Plast": "obod-makon-plast", "Olov va burgut": "olov-va-burgut", "Oltin Sohil": "oltin-sohil", "Oltin chaqmoq": "oltin-chaqmoq", "Orient Plast": "orient-plast", "Owntrainer": "owntrainer", "PDP School": "pdp-school", "PMU": "pmu", "PRO.uz": "pro-uz", "Paxtakor": "paxtakor", "Piyola": "piyola", "Pro Advokat": "pro-advokat", "Progress": "progress", "Qassob Markazi": "qassob-markazi", "Qassob Service": "qassob-service", "Qilich va yo'lbars": "qilich-va-yolbars", "Qizilqum": "qizilqum", "Qo'qon 1912": "qoqon-1912", "Ravshan": "ravshan", "Reja MFC": "reja-mfc", "RiSchool": "rischool", "Rieltor One": "rieltor-one", "Rohat Choyxona": "rohat-choyxona", "Ruscha": "ruscha", "SXIU Samarqand": "sxiu-samarqand", "Sado": "sado", "Sahifa Books": "sahifa-books", "Salid Light": "salid-light", "Salman School": "salman-school", "Sanitariya Markazi": "sanitariya-markazi", "Sara Music Show": "sara-music-show", "Saray Plastic": "saray-plastic", "Sarbon Home": "sarbon-home", "Shaxmat taktikasi": "shaxmat-taktikasi", "Shaxzod Azmiddinov": "shaxzod-azmiddinov", "Sherdor": "sherdor", "Shox Beton reklama posterlari": "shox-beton-reklama-posterlari", "Shurtan G'uzar": "shurtan-guzar", "Skat": "skat", "Sodiqov Sayfiddin": "sodiqov-sayfiddin", "Sog'diyona Jizzax": "sogdiyona-jizzax", "SonicX MFC": "sonicx-mfc", "Spiderjan": "spiderjan", "Spoon": "spoon", "Starboys": "starboys", "Superliga 1-tur: Qo'qon - Andijon": "superliga-1-tur-qoqon-andijon", "Surkhon Termez": "surkhon-termez", "TD": "td", "Tarix yozildi": "tarix-yozildi", "Tarkib XI — Mash'al": "tarkib-xi-mashal", "Tarkib XI — Turkiya": "tarkib-xi-turkiya", "Tarkib XI — qilich": "tarkib-xi-qilich", "Teacher Asqar": "teacher-asqar", "Texnobay": "texnobay", "TezPay": "tezpay", "To'p ilgich": "top-ilgich", "Tokatayev — xush kelibsiz": "tokatayev-xush-kelibsiz", "Toshkent Bozor": "toshkent-bozor", "Tovarim.uz": "tovarim-uz", "Turna": "turna", "Umar": "umar", "UmarMD": "umarmd", "Ustozaku": "ustozaku", "Uy belgisi (nomi aniqlanmagan)": "uy-belgisi-nomi-aniqlanmagan", "Vassiliev Vladislav statistikasi posteri": "vassiliev-vladislav-statistikasi-posteri", "Welcome Vladislav Vassilyev - Andijon FK": "welcome-vladislav-vassilyev-andijon-fk", "Welcome back": "welcome-back", "Welcome — Bozorov": "welcome-bozorov", "Welcome — Mozgovoy": "welcome-mozgovoy", "Welcome — Nasrullayev": "welcome-nasrullayev", "Wellrise Animal Health": "wellrise-animal-health", "Wester School": "wester-school", "Xalq Ta'limi Info": "xalq-talimi-info", "Xalqaro Festivallar Direksiyasi": "xalqaro-festivallar-direksiyasi", "Xaridor": "xaridor", "Xontire": "xontire", "Xorazm FK": "xorazm-fk", "Xorazm PFK": "xorazm-pfk", "echipta": "echipta"};
+
+/* ---------- NAMUNA REJIMI ----------
+   Keyslar, fikrlar va sotuv yasaldi, lekin hali to'ldirilmagan.
+   Bo'sh bo'lim ko'rinmaydi — ya'ni nima yasalganini ko'rish ham
+   imkonsiz. Namuna aynan shu bo'shliqni yopadi: "mana shunday
+   ko'rinadi, endi o'zingiznikini qo'shing".
+
+   FAQAT MENGA ko'rinadi (mini appda) yoki `?namuna=1` bilan.
+   Mijoz uchun sayt hech qanday o'zgarmaydi. */
+var NAMUNALAR = {"keys": {"brend": "Andijon FK", "mijoz": "Viloyat futbol klubi. Bolalar maktabi va katta jamoa, uy o'yinlari shahar stadionida o'tadi.", "muammo": "Eski gerbda oltita element bor edi: qalqon, lenta, sana, boshoq, tog' va yozuv. Formaga tikilganda yarmi ko'rinmasdi, avatarga qo'yilsa dog'ga aylanardi.", "goya": "Gerb emas, NISHON: bitta kuchli shakl uzoqdan ham, 40 pikselda ham tanilsin.", "qaror": "Ranglar klubning eski formasidan olindi — muxlis ularni allaqachon taniydi. Shakl qalqonga qaraganda formaga tikilganda cho'zilmaydi. Tashkil etilgan sana pastga, mayda yozuvga chiqarildi: u faqat yaqindan kerak.", "natija": "Forma, bayroq, avtobus va sahifaga chiqdi. Kichik o'lchamda ham tanib bo'ladigan bo'ldi — avatarni almashtirishga hojat qolmadi.", "fikr": "Bolalar yangi formani kiyganda o'zini boshqacha his qildi. Shuning o'zi yetarli.", "fikr_kim": "Namuna mijoz"}, "fikr": {"matn": "Logoni ko'rgan odam nima bilan shug'ullanishimizni darrov tushunadi. Do'kon oynasiga ham, xodimlar formasiga ham chiqdi — hamma joyda bir xil ko'rinadi.", "kim": "Namuna mijoz", "nima": "do'kon egasi", "xizmat": "brending", "ish": "Alidoorf"}, "sotuv": {"narx": 2500000, "brend": "Alidoorf"}};
+var NAMUNA = false;
+try { NAMUNA = /[?&]namuna=1/.test(location.search); } catch (e) {}
 var ADMIN_API = "https://admin.maladesbola.uz";
 
 /* Reaksiyani serverga yuboradi. Ishlamasa — jimgina o'tadi:
@@ -2096,6 +2156,22 @@ function titra(t){ try{ TG.HapticFeedback.impactOccurred(t||"light"); }catch(e){
 function menmi(){
   try { return ADMIN && TG.initDataUnsafe.user.id === ADMIN; }
   catch (e) { return false; }
+}
+
+/* Namuna rejimi: men ochganmanmi yoki ?namuna=1 havolasimi.
+   `menmi()` shu yerda ham tekshiriladi — mini appda havolaga
+   qo'shimcha yozib o'tirishning hojati yo'q. */
+function namunami(){
+  return NAMUNA || menmi();
+}
+
+function namunaYorliq(matn){
+  return '<div class="namuna-yorliq"><i></i>Namuna</div>' +
+    (matn ? '' : '');
+}
+
+function namunaIzoh(matn){
+  return '<div class="namuna-izoh"><b>Bu — namuna.</b> ' + matn + '</div>';
 }
 
 var malumot = {}, uslublar = {}, ochiq = null;
@@ -2546,9 +2622,27 @@ function sotuvNav(){
 function sotuvBanner(nomlar){
   var q = document.getElementById("sotuv-ban");
   if (!q) return;
+  var namuna = false;
+  if ((!nomlar || !nomlar.length) && namunami()) {
+    /* Hali birorta logoga narx qo'yilmagan. Namuna ko'rsatamiz —
+       banner qanday ko'rinishini bilish uchun. */
+    var n = NAMUNALAR && NAMUNALAR.sotuv;
+    if (n && n.brend && malumot[n.brend]) {
+      nomlar = [n.brend];
+      namuna = true;
+    }
+  }
   if (!nomlar || !nomlar.length) { q.className = "sotuv-ban"; return; }
   var sarl = document.getElementById("sb-sarl");
   if (sarl) sarl.textContent = nomlar.length + " ta tayyor logo sotuvda";
+  var izoh = document.getElementById("sb-namuna");
+  if (izoh) {
+    izoh.innerHTML = namuna
+      ? namunaIzoh('Hali birorta logoga narx qo\'yilmagan. Botdan ' +
+          '<b>/sotuv</b> \u2192 "Narx qo\'yishni boshlash" ' +
+          '\u2014 106 ta konsept ketma-ket chiqadi.')
+      : "";
+  }
   var lenta = document.getElementById("sb-lenta");
   if (lenta) {
     lenta.innerHTML = nomlar.slice(0, 4).map(function(n){
@@ -2558,7 +2652,7 @@ function sotuvBanner(nomlar){
         '<img src="rasm/' + v.papka + '/' + v.oq + '" alt="' + n + '"></i>';
     }).join("");
   }
-  q.className = "sotuv-ban bor";
+  q.className = "sotuv-ban bor" + (namuna ? " namuna-quti" : "");
   q.onclick = function(){ titra(); bolimGa("sotuv"); };
 }
 
@@ -3582,10 +3676,24 @@ var FIKRLAR = [];
    o'sha yerda turishi kerak, sahifaning oxirida emas. */
 function fikrIchi(kalit){
   var f = FIKRLAR.filter(function(x){ return x.xizmat === kalit; })[0];
+  var namuna = false;
+  if (!f && namunami()) {
+    /* Hali birorta fikr yo'q. Namuna ko'rsatamiz — blok narx
+       tagida qanday turishini ko'rish uchun. Gap HECH KIMGA
+       nisbat berilmaydi: "Namuna mijoz". */
+    var n = NAMUNALAR && NAMUNALAR.fikr;
+    if (n && n.xizmat === kalit) { f = n; namuna = true; }
+  }
   if (!f) return "";
-  return '<div class="fikr ichki"><p>' + f.matn + '</p>' +
+  return '<div class="fikr ichki' + (namuna ? " namuna-quti" : "") + '">' +
+         (namuna ? namunaYorliq() : "") +
+         '<p>' + f.matn + '</p>' +
          '<div class="fikr-kim"><b>' + f.kim + '</b>' +
-         (f.nima ? '<span>' + f.nima + '</span>' : "") + '</div></div>';
+         (f.nima ? '<span>' + f.nima + '</span>' : "") + '</div>' +
+         (namuna ? namunaIzoh('Haqiqiy fikr botdan keladi: ' +
+            '<b>/fikr</b> \u2192 "Mijozdan fikr so\'rash". ' +
+            'Mijoz yozadi, ruxsat beradi, siz tasdiqlaysiz.') : "") +
+         '</div>';
 }
 
 /* Ish ichidagi fikr — aynan shu brend egasi aytgan gap. */
@@ -3657,10 +3765,22 @@ function xizmatChiz(){
    aks holda ikki fayl bir-biriga mos kelmay qolardi. */
 var KEYSLAR = [];
 
+/* Namuna rejimida keys bo'lmasa bittasi ko'rsatiladi — shunda
+   bo'lim qanday ko'rinishini ko'rish mumkin. Haqiqiy keys
+   qo'shilgach namuna o'zi yo'qoladi. */
+function keysRoyxat(){
+  if (KEYSLAR.length) return KEYSLAR;
+  if (!namunami()) return [];
+  var n = NAMUNALAR && NAMUNALAR.keys;
+  if (!n || !n.brend || !malumot[n.brend]) return [];
+  return [Object.assign({namuna: true}, n)];
+}
+
 function keysNav(){
   var t = document.getElementById("nav-keys");
-  if (t) t.style.display = KEYSLAR.length ? "" : "none";
-  return KEYSLAR.length;
+  var bor = KEYSLAR.length || keysRoyxat().length;
+  if (t) t.style.display = bor ? "" : "none";
+  return bor;
 }
 
 /* Oldin/keyin surgichi. Sichqoncha ham, barmoq ham bir xil
@@ -3707,9 +3827,12 @@ function keysKarta(k){
   }
   el.appendChild(chap);
 
+  if (k.namuna) el.className = "keys namuna-quti";
+
   var ich = document.createElement("div");
   ich.className = "keys-ich";
-  var qism = '<div class="keys-ust"><div class="keys-nom">' + k.brend +
+  var qism = k.namuna ? namunaYorliq() : "";
+  qism += '<div class="keys-ust"><div class="keys-nom">' + k.brend +
     "</div>" + (k.eski ? '<span class="keys-tur">Rebrending</span>' : "") +
     "</div>";
   if (k.mijoz) qism += '<div class="keys-mijoz">' + k.mijoz + "</div>";
@@ -3729,6 +3852,12 @@ function keysKarta(k){
       (k.fikr_kim ? "<span>" + k.fikr_kim + "</span>" : "") + "</div>";
   }
   qism += '<button class="keys-tug">Shu ishni ko\'rish</button>';
+  if (k.namuna) {
+    qism += namunaIzoh('Matnni men yozdim, mijoz aytmagan. ' +
+      'O\'z keysingizni botdan qo\'shasiz: <b>/keys</b> \u2192 ' +
+      'Yangi keys \u2192 beshta savolga javob. Shundan keyin ' +
+      'namuna o\'zi yo\'qoladi.');
+  }
   ich.innerHTML = qism;
   ich.querySelector(".keys-tug").onclick = function(){
     titra();
@@ -3743,9 +3872,10 @@ function keysKarta(k){
 function keysChiz(){
   var q = document.getElementById("keys-royxat");
   if (!q) return;
+  var royxat = keysRoyxat();
   q.innerHTML = "";
-  KEYSLAR.forEach(function(k){ q.appendChild(keysKarta(k)); });
-  if (!KEYSLAR.length)
+  royxat.forEach(function(k){ q.appendChild(keysKarta(k)); });
+  if (!royxat.length)
     q.innerHTML = '<div class="yuk">Keyslar tayyorlanmoqda.</div>';
 }
 
@@ -4390,6 +4520,9 @@ fetch("malumot.json?v=" + Date.now()).then(function(x){ return x.json(); })
        Ilgari u bosh sahifaga tushardi va o'zi qidirishi kerak
        edi — ko'pchilik qidirmaydi va chiqib ketadi. */
     ochilsinmi();
+    /* Namuna rejimi yoqilgan bo'lsa yuqorida sariq lenta chiqadi —
+       "bu haqiqiy ma'lumot emas" degani doim ko'z oldida tursin. */
+    if (namunami()) document.body.classList.add("namuna");
     /* Keyslar alohida fayl: ular botdagi savol-javobdan keladi va
        katalogdan mustaqil o'zgaradi. Fayl bo'lmasa yoki bo'sh
        bo'lsa bo'lim umuman ko'rinmaydi — bo'sh bo'lim "bu yer
