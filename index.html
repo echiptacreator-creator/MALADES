@@ -16,13 +16,13 @@
 <meta property="og:title" content="malades.bola — brend va sport identikasi">
 <meta property="og:description" content="Shunchaki chiroyli emas, sababi bilan chiroyli. Har konsept ortida biznes mantiqi turadi.">
 <meta property="og:url" content="https://maladesbola.uz/">
-<meta property="og:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787747607">
+<meta property="og:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787748826">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="malades.bola — brend va sport identikasi">
 <meta name="twitter:description" content="Shunchaki chiroyli emas, sababi bilan chiroyli.">
-<meta name="twitter:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787747607">
+<meta name="twitter:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787748826">
 <link rel="canonical" href="https://maladesbola.uz/">
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>
@@ -397,6 +397,88 @@ button{font-family:inherit;cursor:pointer}
   justify-content:center;font-size:12px;flex:0 0 auto}
 @media (min-width:820px){
   .xiz-royxat{grid-template-columns:1fr 1fr;gap:16px;padding:0 40px 8px}
+}
+
+/* ---------- NARX KALKULYATORI ----------
+   Mijoz eng ko'p so'raydigan savol - "qancha turadi?".
+   Ilgari javob faqat suhbatda bo'lardi va ko'p odam
+   so'rashga uyalib chiqib ketardi. Kalkulyator o'sha
+   savolga uyalmasdan javob beradi. */
+.kalk{margin:0 18px 18px;padding:18px;border-radius:20px;
+  background:var(--qatlam);border:1px solid var(--chiziq);position:relative;
+  overflow:hidden}
+.kalk::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 90% at 88% -8%,rgba(255,90,10,.13),
+  transparent 72%)}
+.kalk-bosh{position:relative;margin-bottom:14px}
+.kalk-bosh h3{margin:0;font-size:18px;letter-spacing:-.02em}
+.kalk-bosh p{margin:5px 0 0;font-size:12.5px;line-height:1.5;
+  color:var(--xira)}
+.kalk-yorliq{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--olov);font-weight:700;margin-bottom:6px}
+.kalk-guruh{position:relative;margin-top:16px}
+.kalk-guruh>b{display:block;font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--xira);font-weight:700;
+  margin-bottom:9px}
+.kalk-paket{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.kalk-p{padding:12px;border-radius:14px;background:var(--qatlam2);
+  border:1px solid var(--chiziq);cursor:pointer;text-align:left;
+  color:var(--matn);font-family:inherit;transition:border-color .15s,
+  background .15s}
+.kalk-p:hover{border-color:var(--chiziq2)}
+.kalk-p.faol{border-color:rgba(255,90,10,.55);
+  background:rgba(255,90,10,.08)}
+.kalk-p i{display:block;font-style:normal;font-weight:700;font-size:13.5px;
+  margin-bottom:3px}
+.kalk-p u{display:block;text-decoration:none;font-size:11px;
+  color:var(--xira);line-height:1.4}
+.kalk-q{display:flex;align-items:flex-start;gap:10px;padding:10px 11px;
+  border-radius:12px;background:var(--qatlam2);border:1px solid var(--chiziq);
+  cursor:pointer;margin-bottom:7px;transition:border-color .15s}
+.kalk-q.faol{border-color:rgba(255,90,10,.45)}
+.kalk-q em{flex:0 0 auto;width:18px;height:18px;border-radius:6px;
+  border:1.5px solid var(--chiziq2);margin-top:1px;display:flex;
+  align-items:center;justify-content:center;font-style:normal;
+  font-size:11px;color:transparent}
+.kalk-q.faol em{background:var(--olov-gr);border-color:transparent;
+  color:#fff}
+.kalk-q span{flex:1;font-size:12.5px;line-height:1.4}
+.kalk-q span u{display:block;text-decoration:none;font-size:11px;
+  color:var(--xira);margin-top:2px}
+.kalk-q b{flex:0 0 auto;font-size:11.5px;color:var(--olov);
+  white-space:nowrap;margin-top:1px}
+.kalk-son{display:flex;align-items:center;gap:9px;margin:0 0 7px 38px}
+.kalk-son button{width:28px;height:28px;border-radius:9px;
+  background:var(--qatlam2);border:1px solid var(--chiziq);
+  color:var(--matn);font-size:15px;line-height:1;font-family:inherit}
+.kalk-son i{font-style:normal;font-size:12.5px;min-width:64px}
+.kalk-natija{position:relative;margin-top:18px;padding:15px;
+  border-radius:16px;background:rgba(255,255,255,.035);
+  border:1px solid var(--chiziq2)}
+.kalk-qator{display:flex;justify-content:space-between;gap:12px;
+  font-size:12.5px;padding:3px 0;color:var(--xira);line-height:1.4}
+.kalk-qator span{min-width:0}
+.kalk-qator b{white-space:nowrap;flex:0 0 auto}
+.kalk-qator.asosiy{color:var(--matn);font-weight:650}
+.kalk-jami{margin-top:11px;padding-top:11px;
+  border-top:1px dashed var(--chiziq2)}
+.kalk-jami .son{font-size:23px;font-weight:800;letter-spacing:-.03em;
+  line-height:1.2}
+.kalk-jami .kichik{font-size:11.5px;color:var(--xira);margin-top:4px;
+  line-height:1.5}
+.kalk-ogoh{margin-top:11px;padding:10px 12px;border-radius:12px;
+  background:rgba(255,90,10,.08);border:1px solid rgba(255,90,10,.20);
+  font-size:11.5px;line-height:1.5;color:#FFC79A}
+.kalk-tug{width:100%;margin-top:13px;padding:14px 16px;border-radius:999px;
+  border:none;background:var(--olov-gr);color:#fff;font-weight:700;
+  font-size:14px;font-family:inherit;display:flex;align-items:center;
+  justify-content:center;gap:8px}
+@media (min-width:820px){
+  .kalk{margin:0 40px 22px;padding:24px}
+  .kalk-paket{grid-template-columns:repeat(4,1fr)}
+  .kalk-ich{display:grid;grid-template-columns:minmax(0,1fr) 320px;
+    gap:22px;align-items:start}
+  .kalk-natija{margin-top:0;position:sticky;top:14px}
 }
 
 /* ---------- QIDIRUV VA FILTR ---------- */
@@ -1892,6 +1974,31 @@ body.namuna{padding-top:36px}
       sahifa yuritish, reklama, kontent. Bittasini ham, hammasini ham
       olsa bo'ladi.</div>
   </div>
+  <!-- NARX KALKULYATORI. Xizmatlar ro'yxatidan OLDIN turadi:
+       odam bu bo'limga "qancha turadi" degan savol bilan
+       kiradi, javob birinchi ko'rinishi kerak. -->
+  <div class="kalk" id="kalk">
+    <div class="kalk-bosh">
+      <div class="kalk-yorliq">Taxminiy hisob</div>
+      <h3>Qancha turadi?</h3>
+      <p>Kerakli narsalarni belgilang — taxminiy oraliqni
+         darrov ko'rasiz. So'rashga uyalmang, hisob shu yerda.</p>
+    </div>
+    <div class="kalk-ich">
+      <div>
+        <div class="kalk-guruh">
+          <b>Nima kerak</b>
+          <div class="kalk-paket" id="kalk-paket"></div>
+        </div>
+        <div class="kalk-guruh">
+          <b>Qo'shimchalar</b>
+          <div id="kalk-qosh"></div>
+        </div>
+      </div>
+      <div class="kalk-natija" id="kalk-natija"></div>
+    </div>
+  </div>
+
   <div class="xiz-royxat" id="xiz-royxat"></div>
   <div id="fikr-blok"></div>
   <div style="height:18px"></div>
@@ -3424,6 +3531,7 @@ function yorliq(m){
   if (m.oxshash) return "u2_" + b64u(m.oxshash);
   if (m.xizmat)  return "x_" + String(m.xizmat)
                        .replace(/[^A-Za-z0-9_-]/g, "");
+  if (m.narx_hisob) return "n2_" + b64u(m.narx_hisob);
   if (m.paket)   return "p2_" + b64u(m.paket);
   if (m.tur)     return "b2_" + String(m.tur).replace(/[^A-Za-z0-9]/g, "") +
                        (m.manba ? "_" + b64u(m.manba) : "");
@@ -3756,6 +3864,184 @@ function xizmatChiz(){
   });
 }
 
+/* ---------- NARX KALKULYATORI ----------
+   Narx narx_hisob.py dan keladi - sayt ham, bot ham bitta
+   manbadan oladi. Sayt statik (server yo'q), shuning uchun
+   formula JS da takrorlanadi; lekin RAQAMLAR takrorlanmaydi,
+   ular NARX obyektida serverdan keladi.
+
+   Muhim qaror: ANIQ raqam emas, ORALIQ ko'rsatiladi. Aniq
+   raqam aytilsa mijoz uni shartnoma deb o'ylaydi va keyingi
+   har bir qo'shimcha ish janjalga aylanadi. */
+var NARX = {"paketlar": [{"kalit": "logo", "nom": "Logo", "narx": 1500000, "kun_min": 7, "kun_max": 10, "izoh": "Logo, vektor fayllar, qora-oq versiya"}, {"kalit": "brend", "nom": "Brend", "narx": 4500000, "kun_min": 14, "kun_max": 20, "izoh": "Logo + rang, shrift, mini brendbuk"}, {"kalit": "tizim", "nom": "Brend tizimi", "narx": 12000000, "kun_min": 30, "kun_max": 45, "izoh": "To'liq brendbuk, neyming, maketlar"}, {"kalit": "klub", "nom": "Klub identikasi", "narx": 18000000, "kun_min": 30, "kun_max": 60, "izoh": "Gerb, forma, matchday shablonlari"}], "qoshimcha": [{"kalit": "shosh", "nom": "Shoshilinch", "tur": "foiz", "qiymat": 40, "izoh": "Muddat yarmiga qisqaradi, boshqa ishlar kutadi"}, {"kalit": "konsept", "nom": "Qo'shimcha konsept", "tur": "foiz", "qiymat": 25, "izoh": "Standart paketdagidan tashqari yo'nalish"}, {"kalit": "neyming", "nom": "Neyming — brend nomini o'ylash", "tur": "summa", "qiymat": 1500000, "izoh": "3 ta variant, ma'nosi bilan"}, {"kalit": "mockup", "nom": "Mockup to'plami", "tur": "summa", "qiymat": 900000, "izoh": "Vizitka, peshtaxta, forma, qadoq"}, {"kalit": "smm", "nom": "Ijtimoiy tarmoq shablonlari", "tur": "summa", "qiymat": 1200000, "izoh": "10 ta post va story shabloni"}, {"kalit": "patent", "nom": "Plagiat va patent tekshiruvi", "tur": "summa", "qiymat": 800000, "izoh": "O'xshash belgilar qidiriladi"}, {"kalit": "qollab", "nom": "30 kun qo'llab-quvvatlash", "tur": "summa", "qiymat": 700000, "izoh": "Kichik tuzatishlar bepul"}], "past": 0.9, "yuqori": 1.15, "pol": 1200000};
+var kalkPaket = "";
+var kalkQosh = {};
+var kalkKonsept = 1;
+
+function kalkPul(n){
+  n = Math.round(Number(n) || 0);
+  return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
+
+function kalkYumalat(n){
+  return Math.round(Number(n) / 100000) * 100000;
+}
+
+function kalkHisob(){
+  var p = null, i;
+  for (i = 0; i < NARX.paketlar.length; i++) {
+    if (NARX.paketlar[i].kalit === kalkPaket) { p = NARX.paketlar[i]; break; }
+  }
+  if (!p) p = NARX.paketlar[0];
+  if (!p) return null;
+
+  var asos = p.narx, jami = asos;
+  var kmin = p.kun_min, kmax = p.kun_max;
+  var qatorlar = [{nom: p.nom, summa: asos, asosiy: true}];
+
+  NARX.qoshimcha.forEach(function(q){
+    if (!kalkQosh[q.kalit]) return;
+    var summa;
+    if (q.kalit === "konsept") {
+      var son = Math.max(1, kalkKonsept);
+      summa = Math.round(asos * q.qiymat / 100) * son;
+      qatorlar.push({nom: q.nom + " × " + son, summa: summa});
+      jami += summa; kmin += 2 * son; kmax += 3 * son;
+    } else if (q.tur === "foiz") {
+      summa = Math.round(asos * q.qiymat / 100);
+      qatorlar.push({nom: q.nom, summa: summa});
+      jami += summa;
+      if (q.kalit === "shosh") {
+        kmin = Math.max(3, Math.round(kmin * 0.55));
+        kmax = Math.max(5, Math.round(kmax * 0.55));
+      }
+    } else {
+      qatorlar.push({nom: q.nom, summa: q.qiymat});
+      jami += q.qiymat; kmin += 2; kmax += 4;
+    }
+  });
+
+  if (jami < NARX.pol) jami = NARX.pol;
+  return {
+    paket: p.kalit, paket_nom: p.nom, jami: jami, qatorlar: qatorlar,
+    past: kalkYumalat(jami * NARX.past),
+    yuqori: kalkYumalat(jami * NARX.yuqori),
+    avans: kalkYumalat(jami * 0.5),
+    kun_min: kmin, kun_max: kmax
+  };
+}
+
+function kalkNatija(){
+  var el = document.getElementById("kalk-natija");
+  if (!el) return;
+  var h = kalkHisob();
+  if (!h) { el.innerHTML = ""; return; }
+
+  var s = "";
+  h.qatorlar.forEach(function(q){
+    s += '<div class="kalk-qator' + (q.asosiy ? " asosiy" : "") + '">' +
+         '<span>' + q.nom + '</span><b>' + kalkPul(q.summa) + '</b></div>';
+  });
+  s += '<div class="kalk-jami">' +
+       '<div class="son">' + kalkPul(h.past) + " – " +
+       kalkPul(h.yuqori) + " so'm</div>" +
+       '<div class="kichik">Muddat: ' + h.kun_min + "–" + h.kun_max +
+       " kun · avans " + kalkPul(h.avans) + " so'm (50%)</div></div>";
+  s += '<div class="kalk-ogoh">Bu — taxminiy oraliq. Aniq narx ' +
+       'brifdan keyin belgilanadi: ish hajmi aniqlashgach oshib ham, ' +
+       'kamayib ham ketishi mumkin.</div>';
+  s += '<button class="kalk-tug" id="kalk-tug">Shu hisob bilan ' +
+       'buyurtma berish</button>';
+  el.innerHTML = s;
+
+  var tug = document.getElementById("kalk-tug");
+  if (tug) tug.onclick = function(){
+    titra("medium");
+    yubor({amal: "buyurtma", paket: h.paket, narx_hisob: kalkYorliq(h)});
+  };
+}
+
+/* Hisobni qisqa satrga yig'adi: "brend|shosh,mockup|2".
+   Shu satr botga o'tadi va men mijoz nima tanlaganini ko'raman -
+   qaytadan so'rashning hojati qolmaydi. */
+function kalkYorliq(h){
+  var tanlangan = [];
+  NARX.qoshimcha.forEach(function(q){
+    if (kalkQosh[q.kalit]) tanlangan.push(q.kalit);
+  });
+  return h.paket + "|" + tanlangan.join(",") + "|" + kalkKonsept;
+}
+
+function kalkChiz(){
+  var pk = document.getElementById("kalk-paket");
+  var qs = document.getElementById("kalk-qosh");
+  if (!pk || !qs || !NARX.paketlar || !NARX.paketlar.length) return;
+  if (pk.children.length) return;
+
+  kalkPaket = kalkPaket || NARX.paketlar[0].kalit;
+
+  NARX.paketlar.forEach(function(p){
+    var b = document.createElement("button");
+    b.className = "kalk-p" + (p.kalit === kalkPaket ? " faol" : "");
+    b.innerHTML = "<i>" + p.nom + "</i><u>" + p.izoh + "</u>";
+    b.onclick = function(){
+      titra("light");
+      kalkPaket = p.kalit;
+      Array.prototype.forEach.call(pk.children, function(x){
+        x.classList.remove("faol");
+      });
+      b.classList.add("faol");
+      kalkNatija();
+    };
+    pk.appendChild(b);
+  });
+
+  NARX.qoshimcha.forEach(function(q){
+    var d = document.createElement("div");
+    d.className = "kalk-q";
+    var narx = q.tur === "foiz" ? ("+" + q.qiymat + "%")
+                                : ("+" + kalkPul(q.qiymat));
+    d.innerHTML = '<em>✓</em><span>' + q.nom +
+                  '<u>' + q.izoh + '</u></span><b>' + narx + '</b>';
+    d.onclick = function(){
+      titra("light");
+      kalkQosh[q.kalit] = !kalkQosh[q.kalit];
+      d.classList.toggle("faol", !!kalkQosh[q.kalit]);
+      if (q.kalit === "konsept") kalkSon();
+      kalkNatija();
+    };
+    qs.appendChild(d);
+    if (q.kalit === "konsept") {
+      var son = document.createElement("div");
+      son.className = "kalk-son";
+      son.id = "kalk-son";
+      son.style.display = "none";
+      son.innerHTML = '<button data-k="-">−</button>' +
+                      '<i id="kalk-son-i">1 ta qo\'shimcha</i>' +
+                      '<button data-k="+">+</button>';
+      son.onclick = function(e){
+        var t = e.target.getAttribute && e.target.getAttribute("data-k");
+        if (!t) return;
+        titra("light");
+        kalkKonsept = Math.min(5, Math.max(1,
+          kalkKonsept + (t === "+" ? 1 : -1)));
+        kalkSon();
+        kalkNatija();
+      };
+      qs.appendChild(son);
+    }
+  });
+  kalkNatija();
+}
+
+function kalkSon(){
+  var el = document.getElementById("kalk-son");
+  if (!el) return;
+  el.style.display = kalkQosh.konsept ? "flex" : "none";
+  var i = document.getElementById("kalk-son-i");
+  if (i) i.textContent = kalkKonsept + " ta qo'shimcha";
+}
+
 /* ---------- KEYSLAR ----------
    Sayt "sababi bilan chiroyli" deb va'da beradi. Keys — o'sha
    sababning o'zi: muammo, g'oya, qaror, natija.
@@ -3900,7 +4186,7 @@ function bolimGa(nom){
   else if (nom === "ovozlar") ovozChiz();
   else if (nom === "videolar") videoChiz();
   else if (nom === "sotuv") sotuvChiz();
-  else if (nom === "xizmatlar") { xizmatChiz(); fikrChiz(); }
+  else if (nom === "xizmatlar") { kalkChiz(); xizmatChiz(); fikrChiz(); }
   else if (QOSH_KALIT.indexOf(nom) >= 0) qoshChiz(nom);
 }
 document.querySelectorAll(".nav button[data-b]").forEach(function(b){
