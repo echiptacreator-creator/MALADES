@@ -16,13 +16,13 @@
 <meta property="og:title" content="malades.bola — brend va sport identikasi">
 <meta property="og:description" content="Shunchaki chiroyli emas, sababi bilan chiroyli. Har konsept ortida biznes mantiqi turadi.">
 <meta property="og:url" content="https://maladesbola.uz/">
-<meta property="og:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787740971">
+<meta property="og:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787742029">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="malades.bola — brend va sport identikasi">
 <meta name="twitter:description" content="Shunchaki chiroyli emas, sababi bilan chiroyli.">
-<meta name="twitter:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787740971">
+<meta name="twitter:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787742029">
 <link rel="canonical" href="https://maladesbola.uz/">
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>
@@ -1410,6 +1410,50 @@ button{font-family:inherit;cursor:pointer}
   .hero:not(:has(.raqamlar)) .dava{font-size:52px}
 }
 
+/* ---------- SOTUV BANNERI ----------
+   Tayyor logolar bo'limi nav'ning ichida ko'milib qolgan edi:
+   odam u yerga borish uchun avval uning borligini bilishi kerak,
+   bilmasa esa hech qachon bormaydi. Bu esa eng tez pul —
+   logo allaqachon chizilgan, faqat egasini kutyapti.
+
+   Banner bosh sahifada, ishlar to'ridan OLDIN turadi va faqat
+   sotuvda logo bo'lsa ko'rinadi. Bo'sh banner "do'kon yopiq"
+   degan taassurot beradi — undan ko'ra umuman bo'lmagani yaxshi. */
+.sotuv-ban{display:none;margin:4px 18px 14px;padding:16px 16px 14px;
+  border-radius:var(--r-katta);position:relative;overflow:hidden;
+  border:1px solid rgba(255,90,10,.3);
+  background:
+    radial-gradient(60% 130% at 88% -20%,rgba(224,27,36,.22),transparent 74%),
+    var(--qatlam);
+  cursor:pointer}
+.sotuv-ban.bor{display:block}
+.sotuv-ban .mikro{color:var(--urgu)}
+.sotuv-ban h3{margin:8px 0 0;font-family:var(--sarlavha);font-size:19px;
+  font-weight:700;letter-spacing:-.5px;line-height:1.15}
+.sotuv-ban p{margin:7px 0 0;font-size:12.5px;line-height:1.5;
+  color:#aeb6c2;max-width:32em}
+.sotuv-lenta{display:flex;gap:8px;margin-top:14px;overflow:hidden}
+.sotuv-lenta i{flex:0 0 auto;width:62px;height:62px;border-radius:13px;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+  border:1px solid rgba(255,255,255,.1)}
+.sotuv-lenta i img{max-width:70%;max-height:60%;width:auto;height:auto;
+  object-fit:contain}
+.sotuv-ban .ket{margin-top:14px;display:flex;align-items:center;gap:7px;
+  font-size:13px;font-weight:700;color:var(--urgu)}
+.sotuv-ban .ket s{text-decoration:none;font-size:15px}
+@media (min-width:820px){
+  .sotuv-ban{margin:4px 40px 18px;padding:22px 24px 20px;
+    display:none;align-items:center;column-gap:28px}
+  .sotuv-ban.bor{display:grid;grid-template-columns:minmax(0,1fr) auto}
+  .sotuv-ban h3{font-size:23px}
+  .sotuv-lenta{grid-column:2;grid-row:1/4;margin-top:0}
+  .sotuv-lenta i{width:74px;height:74px}
+  .sotuv-ban .ket{grid-column:1}
+}
+@media (pointer:fine){
+  .sotuv-ban:hover{border-color:rgba(255,90,10,.55)}
+}
+
 /* ---------- KEYSLAR ----------
    Portfolioda 123 ta logo yonma-yon turibdi va hech biri NEGA
    shunday qilinganini aytmaydi. Bosh sahifada esa "sababi bilan
@@ -1652,6 +1696,17 @@ button{font-family:inherit;cursor:pointer}
     <input id="qidir" type="search" placeholder="Brend nomi bo'yicha qidirish"
            autocomplete="off">
     <span class="toza" id="q-toza">×</span>
+  </div>
+
+  <!-- Tayyor logolar. Faqat sotuvda logo bo'lsa ko'rinadi. -->
+  <div class="sotuv-ban" id="sotuv-ban">
+    <div class="mikro">Tayyor logolar</div>
+    <h3 id="sb-sarl">Chizilgan, lekin ishlatilmagan</h3>
+    <p>Haqiqiy loyihalar uchun chizilgan, lekin ish oxiriga yetmagan
+      logolar. Nomi sizniki bo'ladi, rangi biznesingizga sozlanadi —
+      va bir kishiga sotiladi.</p>
+    <div class="sotuv-lenta" id="sb-lenta"></div>
+    <div class="ket">Ko'rish<s>&#8594;</s></div>
   </div>
 
   <div class="filtr-o" id="filtr-o"><div class="filtr" id="filtr"></div></div>
@@ -2476,11 +2531,35 @@ function posterChiz(){
 /* Sotuvda logo bo'lmasa bo'lim umuman ko'rinmaydi — bo'sh bo'lim
    mijozga "bu yer tashlab qo'yilgan" degan taassurot beradi. */
 function sotuvNav(){
-  var bor = Object.keys(malumot).some(function(n){
+  var nomlar = Object.keys(malumot).filter(function(n){
     return sotuvda(malumot[n]); });
   var t = document.getElementById("nav-sotuv");
-  if (t) t.style.display = bor ? "" : "none";
-  return bor;
+  if (t) t.style.display = nomlar.length ? "" : "none";
+  sotuvBanner(nomlar);
+  return nomlar.length > 0;
+}
+
+/* Bosh sahifadagi banner. Nav'dagi bo'lim ko'milib qolgan edi —
+   odam uning borligini bilmasa hech qachon bormaydi. Banner esa
+   ishlar to'ridan oldin turadi va ko'zga tashlanadi.
+   Sotuvda logo bo'lmasa umuman chizilmaydi. */
+function sotuvBanner(nomlar){
+  var q = document.getElementById("sotuv-ban");
+  if (!q) return;
+  if (!nomlar || !nomlar.length) { q.className = "sotuv-ban"; return; }
+  var sarl = document.getElementById("sb-sarl");
+  if (sarl) sarl.textContent = nomlar.length + " ta tayyor logo sotuvda";
+  var lenta = document.getElementById("sb-lenta");
+  if (lenta) {
+    lenta.innerHTML = nomlar.slice(0, 4).map(function(n){
+      var v = malumot[n];
+      if (!v.papka || !v.oq) return "";
+      return '<i style="background:' + (v.fon || "#fff") + '">' +
+        '<img src="rasm/' + v.papka + '/' + v.oq + '" alt="' + n + '"></i>';
+    }).join("");
+  }
+  q.className = "sotuv-ban bor";
+  q.onclick = function(){ titra(); bolimGa("sotuv"); };
 }
 
 function sotuvChiz(){
