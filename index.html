@@ -16,13 +16,13 @@
 <meta property="og:title" content="malades.bola — brend va sport identikasi">
 <meta property="og:description" content="Shunchaki chiroyli emas, sababi bilan chiroyli. Har konsept ortida biznes mantiqi turadi.">
 <meta property="og:url" content="https://maladesbola.uz/">
-<meta property="og:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787691214">
+<meta property="og:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787740320">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="malades.bola — brend va sport identikasi">
 <meta name="twitter:description" content="Shunchaki chiroyli emas, sababi bilan chiroyli.">
-<meta name="twitter:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787691214">
+<meta name="twitter:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787740320">
 <link rel="canonical" href="https://maladesbola.uz/">
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>
@@ -1410,6 +1410,113 @@ button{font-family:inherit;cursor:pointer}
   .hero:not(:has(.raqamlar)) .dava{font-size:52px}
 }
 
+/* ---------- KEYSLAR ----------
+   Portfolioda 123 ta logo yonma-yon turibdi va hech biri NEGA
+   shunday qilinganini aytmaydi. Bosh sahifada esa "sababi bilan
+   chiroyli" deb yozilgan — ya'ni sayt o'z va'dasini o'zi
+   bajarmayotgan edi.
+
+   Keys shuni yopadi. Chapda ISH ko'rinadi, o'ngda HIKOYA
+   o'qiladi: muammo -> g'oya -> nega shunday -> natija. Rasm
+   qimirlamaydi, matn esa surilib boradi — ko'z ishni ko'rib
+   turib sababini o'qiydi. */
+.keys-royxat{padding:0 18px 8px;display:grid;gap:18px}
+.keys{position:relative;border:1px solid var(--chiziq);
+  border-radius:var(--r-katta);background:var(--qatlam);overflow:hidden}
+.keys-kadr{position:relative;aspect-ratio:4/3;display:flex;
+  align-items:center;justify-content:center;background:#fff;overflow:hidden}
+.keys-kadr > img{max-width:62%;max-height:54%;width:auto;height:auto;
+  object-fit:contain}
+
+/* OLDIN / KEYIN.
+   Bitta shunday surgich o'n jumladan kuchliroq: odam eski va
+   yangi logoni O'ZI solishtiradi va xulosani o'zi chiqaradi —
+   ishontirishga urinmasang ishonch tezroq keladi. */
+.keys-sol{position:relative;aspect-ratio:4/3;overflow:hidden;
+  touch-action:none;user-select:none;-webkit-user-select:none;
+  cursor:ew-resize;background:#101216}
+.keys-sol .qat{position:absolute;inset:0;display:flex;
+  align-items:center;justify-content:center}
+.keys-sol .qat.keyin{clip-path:inset(0 0 0 var(--x,50%))}
+.keys-sol img{max-width:58%;max-height:50%;width:auto;height:auto;
+  object-fit:contain;pointer-events:none}
+.keys-sol .dast{position:absolute;top:0;bottom:0;left:var(--x,50%);
+  width:2px;background:rgba(255,255,255,.9);pointer-events:none;
+  box-shadow:0 0 14px rgba(0,0,0,.55)}
+.keys-sol .dast::after{content:"";position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;
+  background:var(--olov-gr);box-shadow:0 8px 22px -6px rgba(0,0,0,.85)}
+.keys-sol .dast::before{content:"";position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);width:11px;height:11px;
+  border-left:2px solid #fff;border-top:2px solid #fff;
+  rotate:-45deg;margin-left:1px;z-index:2}
+.keys-sol .teg{position:absolute;top:12px;font-family:var(--mono);
+  font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;
+  padding:5px 9px;border-radius:8px;background:rgba(8,9,11,.72);
+  color:#fff;pointer-events:none;backdrop-filter:blur(6px)}
+.keys-sol .teg.chap{left:12px}
+.keys-sol .teg.ong{right:12px}
+
+.keys-ich{padding:20px 18px 18px}
+.keys-ust{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.keys-nom{font-family:var(--sarlavha);font-size:23px;font-weight:700;
+  letter-spacing:-.6px;line-height:1.1}
+.keys-tur{font-family:var(--mono);font-size:8.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--urgu);padding:5px 9px;
+  border-radius:8px;background:rgba(255,90,10,.12);
+  border:1px solid rgba(255,90,10,.28)}
+.keys-mijoz{margin-top:11px;font-size:13.5px;line-height:1.55;
+  color:#aeb6c2}
+
+/* To'rt qadam. Har biri ikonka + mikro sarlavha + matn.
+   Ikonkalar ketma-ketlikni ko'rsatadi: tugun, uchqun, o'lchov,
+   o'sish — odam matnni o'qimasdan ham hikoya shaklini tushunadi. */
+.keys-blok{margin-top:20px;display:grid;gap:15px}
+.keys-b{position:relative;padding-left:34px}
+.keys-b > s{position:absolute;left:0;top:1px;width:24px;height:24px;
+  border-radius:8px;background:rgba(255,90,10,.11);
+  border:1px solid rgba(255,90,10,.26);color:var(--urgu);
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none}
+.keys-b > s svg{width:14px;height:14px}
+.keys-b b{display:block;font-family:var(--mono);font-size:9px;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--xira);
+  padding-top:4px}
+.keys-b p{margin:6px 0 0;font-size:14px;line-height:1.6;color:#C8CED8}
+
+/* Mijoz gapi — keysning eng ishonchli qismi, chunki uni MEN
+   emas, MIJOZ aytgan. Shuning uchun oxirida va alohida qutida. */
+.keys-fikr{margin-top:22px;padding:17px 16px 15px;border-radius:16px;
+  background:rgba(255,255,255,.032);border:1px solid var(--chiziq);
+  position:relative;overflow:hidden}
+.keys-fikr::before{content:"";position:absolute;left:0;top:0;bottom:0;
+  width:2px;background:var(--olov-gr)}
+.keys-fikr q{quotes:none;display:block;font-size:14.5px;line-height:1.62;
+  color:#DDE3EC}
+.keys-fikr span{display:block;margin-top:11px;font-family:var(--mono);
+  font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--xira)}
+.keys-tug{margin-top:18px;width:100%;padding:13px;border:0;
+  border-radius:13px;background:rgba(255,255,255,.05);color:var(--matn);
+  border:1px solid var(--chiziq);font-weight:650;font-size:13.5px;
+  display:flex;align-items:center;justify-content:center;gap:8px}
+.keys-tug:active{background:rgba(255,255,255,.09)}
+
+@media (min-width:900px){
+  .keys-royxat{padding:0 40px 8px;gap:24px}
+  .keys{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);
+    align-items:stretch}
+  .keys-kadr,.keys-sol{aspect-ratio:auto;height:100%;min-height:340px}
+  .keys-ich{padding:34px 32px 30px;align-self:center}
+  .keys-nom{font-size:28px}
+  .keys-blok{grid-template-columns:1fr 1fr;gap:18px 24px}
+  .keys-fikr{padding:20px 20px 18px}
+}
+@media (pointer:fine){
+  .keys-tug:hover{background:rgba(255,255,255,.08);
+    border-color:rgba(255,255,255,.2)}
+}
+
 /* ---------- FUTER ----------
    Ilgari sayt shunday tugardi: kartochkalar qatori tugadi va
    sahifa ham tugadi. Oxirigacha surib kelgan odam — eng qizigan
@@ -1554,6 +1661,22 @@ button{font-family:inherit;cursor:pointer}
     <div class="skelet"><i></i><u></u></div>
     <div class="skelet"><i></i><u></u></div>
   </div>
+</div>
+
+<!-- ================= KEYSLAR =================
+     Ish ortidagi hikoya. Bo'lim faqat tayyor keys bo'lsa
+     ko'rinadi — bo'sh bo'lim "bu yer tashlab qo'yilgan" degan
+     taassurot beradi. -->
+<div class="bolim" id="b-keyslar">
+  <div class="hero" style="padding-bottom:6px">
+    <div class="nur"></div>
+    <div class="kasb">Keyslar</div>
+    <div class="dava" style="margin-top:6px">Nega <em>shunday</em></div>
+    <div class="dava-izoh">Har ish ortida qaror turadi: mijoz nima bilan
+      keldi, qanday fikr topildi, nima o'zgardi. Logo — natija,
+      hikoya esa sabab.</div>
+  </div>
+  <div class="keys-royxat" id="keys-royxat"></div>
 </div>
 
 <!-- ================= POSTERLAR ================= -->
@@ -1836,6 +1959,7 @@ button{font-family:inherit;cursor:pointer}
     <span class="nom">malades.bola</span><i class="nuqta"></i></a>
   <div class="nav-oqim">
     <button class="faol" data-b="ishlar"><s data-i="ishlar"></s>Ishlar</button>
+    <button data-b="keyslar" id="nav-keys" style="display:none"><s data-i="goya"></s>Keyslar</button>
     <button data-b="posterlar"><s data-i="posterlar"></s>Posterlar</button>
     <button data-b="ovozlar" id="nav-ovoz" style="display:none"><s data-i="ovoz"></s>Ovozlar</button>
     <button data-b="videolar" id="nav-video" style="display:none"><s data-i="video"></s>Videolar</button>
@@ -1848,7 +1972,7 @@ button{font-family:inherit;cursor:pointer}
 </div>
 
 <script>
-var IKON = {"ishlar": "<path d=\"M3.5 3.5h7v7h-7zM13.5 3.5h7v7h-7zM3.5 13.5h7v7h-7zM13.5 13.5h7v7h-7z\"/>", "posterlar": "<path d=\"M4 3h11l5 5v13H4z\"/><path d=\"M15 3v5h5\"/><path d=\"M8 13h8M8 17h5\"/>", "profil": "<path d=\"M12 3.5a4 4 0 1 1 0 8 4 4 0 0 1 0-8z\"/><path d=\"M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5\"/>", "buyurtma": "<path d=\"M4 20l1-4.5L15.5 5l3.5 3.5L8.5 19z\"/><path d=\"M14 6.5L17.5 10\"/>", "qidiruv": "<circle cx=\"10.5\" cy=\"10.5\" r=\"6.5\"/><path d=\"M15.5 15.5L21 21\"/>", "filtr": "<path d=\"M3 5h18M6.5 12h11M10 19h4\"/>", "yop": "<path d=\"M5.5 5.5l13 13M18.5 5.5l-13 13\"/>", "orqaga": "<path d=\"M14.5 4.5L7 12l7.5 7.5\"/>", "oldinga": "<path d=\"M9.5 4.5L17 12l-7.5 7.5\"/>", "qosh": "<path d=\"M12 4.5v15M4.5 12h15\"/>", "papka": "<path d=\"M3 6.5h6l2 2.5h10v11H3z\"/><path d=\"M3 11h18\"/>", "ovoz": "<path d=\"M12 3.5a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0v-5a3 3 0 0 1 3-3z\"/><path d=\"M5.5 11a6.5 6.5 0 0 0 13 0\"/><path d=\"M12 17.5V21\"/><path d=\"M8.5 21h7\"/>", "toqim": "<path d=\"M4 12h2.5l2-6 3 12 2.5-9 2 5H20\"/>", "tahrir": "<path d=\"M4 20l1-4.5L15.5 5l3.5 3.5L8.5 19z\"/><path d=\"M14 6.5L17.5 10\"/>", "saqlash": "<path d=\"M12 3.5v11.5\"/><path d=\"M7.5 10.5L12 15l4.5-4.5\"/><path d=\"M4 18.5v2h16v-2\"/>", "yuklash": "<path d=\"M12 15.5V4\"/><path d=\"M7.5 8.5L12 4l4.5 4.5\"/><path d=\"M4 18.5v2h16v-2\"/>", "havola": "<path d=\"M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1\"/><path d=\"M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1\"/>", "olov": "<path d=\"M12 21c3.9 0 6.5-2.6 6.5-6 0-4.5-4.5-6.5-4-12C11 5 8 8 8 11c0-1.5-1-2.5-1-2.5C6 10 5.5 11.6 5.5 15c0 3.4 2.6 6 6.5 6z\"/>", "yulduz": "<path d=\"M12 3.5l2.6 5.5 6 .8-4.3 4.2 1 6-5.3-2.9L6.7 20l1-6L3.4 9.8l6-.8z\"/>", "video": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"4\"/><path d=\"M10.5 9.5l4.5 2.5-4.5 2.5z\"/>", "rebrend": "<path d=\"M2.5 5.5h8v13h-8z\"/><path d=\"M13.5 5.5h8v13h-8z\"/><path d=\"M10.5 12h3\"/><path d=\"M6.5 9.5v5M15.5 9.5h4M15.5 12h4M15.5 14.5h2.5\"/>", "narx": "<path d=\"M3.5 11V3.5H11L20.5 13l-7.5 7.5z\"/><path d=\"M7.5 7.5h.01\"/>", "jarayon": "<path d=\"M3.5 7.5h13l-3-3\"/><path d=\"M20.5 16.5h-13l3 3\"/>", "sport": "<path d=\"M12 3.5l7.5 3v5.5c0 4-3 7-7.5 8.5C7.5 19 4.5 16 4.5 12V6.5z\"/><path d=\"M9 12l2 2 4-4\"/>", "biznes": "<path d=\"M3.5 20.5v-11l8.5-6 8.5 6v11z\"/><path d=\"M9.5 20.5v-6h5v6\"/>", "talim": "<path d=\"M12 4L2.5 8.5 12 13l9.5-4.5z\"/><path d=\"M6.5 10.5v5c0 1.7 2.5 3 5.5 3s5.5-1.3 5.5-3v-5\"/>", "ovqat": "<path d=\"M6 3.5v8a2.5 2.5 0 0 0 5 0v-8\"/><path d=\"M8.5 3.5v17\"/><path d=\"M17 3.5c-1.5 2-2 4-2 6.5 0 1.5.7 2.5 2 2.5v8\"/>", "texno": "<rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"2\"/><rect x=\"9\" y=\"9\" width=\"6\" height=\"6\"/><path d=\"M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2\"/>", "sanoat": "<path d=\"M2.5 20.5v-9l5.5 3.5v-3.5l5.5 3.5v-3.5l5.5 3.5v5.5z\"/><path d=\"M19 15V3.5h-3.5v3\"/><path d=\"M2.5 20.5h19\"/>", "savdo": "<path d=\"M3 4h3l2.5 11h10L21 7H7\"/><circle cx=\"10\" cy=\"19.5\" r=\"1.4\"/><circle cx=\"18\" cy=\"19.5\" r=\"1.4\"/>", "sogliq": "<path d=\"M9.5 3.5h5v6h6v5h-6v6h-5v-6h-6v-5h6z\"/>", "gozallik": "<path d=\"M12 3.5c3.5 4 6 6.8 6 9.8a6 6 0 0 1-12 0c0-3 2.5-5.8 6-9.8z\"/><path d=\"M9 14a3 3 0 0 0 3 3\"/>", "moda": "<path d=\"M12 3.5a2 2 0 0 0 0 4\"/><path d=\"M12 7.5L3.5 13l2 2.5L8 14v6.5h8V14l2.5 1.5 2-2.5z\"/>", "qurilish": "<path d=\"M3.5 20.5h17\"/><path d=\"M6 20.5V9l12-4.5v16\"/><path d=\"M6 9l12-4.5\"/><path d=\"M10 20.5v-5h4v5\"/>", "kochmas": "<path d=\"M2.5 10.5L10 4.5l7.5 6v10h-15z\"/><path d=\"M7.5 20.5v-5h5v5\"/><circle cx=\"18.5\" cy=\"6\" r=\"2.5\"/><path d=\"M18.5 8.5v5M17 11.5h3\"/>", "qishloq": "<path d=\"M12 20.5V9\"/><path d=\"M12 12c0-3.5-2.5-6-6-60 3.5 2.5 6 6 6z\"/><path d=\"M12 15c0-3.5 2.5-6 6-60 3.5-2.5 6-6 6z\"/><path d=\"M4 20.5h16\"/>", "transport": "<path d=\"M2.5 6.5h11v9h-11z\"/><path d=\"M13.5 9.5h4l3 3.5v2.5h-7z\"/><circle cx=\"6.5\" cy=\"18\" r=\"1.8\"/><circle cx=\"17\" cy=\"18\" r=\"1.8\"/>", "moliya": "<path d=\"M3.5 20.5v-6h4v6zM10 20.5V9h4v11.5zM16.5 20.5V4h4v16.5z\"/>", "sayohat": "<path d=\"M2.5 13.5l19-7-5 8 1 6-4-4.5-4 2.5 1-5z\"/>", "media": "<rect x=\"2.5\" y=\"5.5\" width=\"19\" height=\"13\"/><path d=\"M10 9.5l5 2.5-5 2.5z\"/><path d=\"M6.5 2.5v3M17.5 2.5v3\"/>", "davlat": "<path d=\"M3 9.5L12 4l9 5.5\"/><path d=\"M4.5 20.5h15\"/><path d=\"M6.5 20.5v-9M10 20.5v-9M14 20.5v-9M17.5 20.5v-9\"/>", "xizmat": "<path d=\"M14.5 3.5a5 5 0 0 0-6.6 6.6L3 15v5h5l4.9-4.9a5 5 0 0 0 6.6-6.6l-3 3-2.5-.5-.5-2.5z\"/>", "shaxsiy": "<path d=\"M12 3.5a4 4 0 1 1 0 8 4 4 0 0 1 0-8z\"/><path d=\"M4.5 20.5c0-3.7 3.4-6 7.5-6s7.5 2.3 7.5 6\"/><path d=\"M17.5 3.5l1.2 2.4 2.6.4-1.9 1.8.5 2.6L17.5 9.5l-2.4 1.2.5-2.6-1.9-1.8 2.6-.4z\"/>", "buyurtma_holat": "<path d=\"M5 12.5l4.5 4.5L19 7\"/>", "taklif_holat": "<circle cx=\"12\" cy=\"12\" r=\"8.5\"/><path d=\"M12 7.5v5l3 2\"/>", "konsept_holat": "<path d=\"M9 18h6\"/><path d=\"M10 21h4\"/><path d=\"M12 3a6 6 0 0 1 3.5 10.9V15h-7v-1.1A6 6 0 0 1 12 3z\"/>"};
+var IKON = {"ishlar": "<path d=\"M3.5 3.5h7v7h-7zM13.5 3.5h7v7h-7zM3.5 13.5h7v7h-7zM13.5 13.5h7v7h-7z\"/>", "posterlar": "<path d=\"M4 3h11l5 5v13H4z\"/><path d=\"M15 3v5h5\"/><path d=\"M8 13h8M8 17h5\"/>", "profil": "<path d=\"M12 3.5a4 4 0 1 1 0 8 4 4 0 0 1 0-8z\"/><path d=\"M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5\"/>", "buyurtma": "<path d=\"M4 20l1-4.5L15.5 5l3.5 3.5L8.5 19z\"/><path d=\"M14 6.5L17.5 10\"/>", "qidiruv": "<circle cx=\"10.5\" cy=\"10.5\" r=\"6.5\"/><path d=\"M15.5 15.5L21 21\"/>", "filtr": "<path d=\"M3 5h18M6.5 12h11M10 19h4\"/>", "yop": "<path d=\"M5.5 5.5l13 13M18.5 5.5l-13 13\"/>", "orqaga": "<path d=\"M14.5 4.5L7 12l7.5 7.5\"/>", "oldinga": "<path d=\"M9.5 4.5L17 12l-7.5 7.5\"/>", "qosh": "<path d=\"M12 4.5v15M4.5 12h15\"/>", "papka": "<path d=\"M3 6.5h6l2 2.5h10v11H3z\"/><path d=\"M3 11h18\"/>", "ovoz": "<path d=\"M12 3.5a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0v-5a3 3 0 0 1 3-3z\"/><path d=\"M5.5 11a6.5 6.5 0 0 0 13 0\"/><path d=\"M12 17.5V21\"/><path d=\"M8.5 21h7\"/>", "toqim": "<path d=\"M4 12h2.5l2-6 3 12 2.5-9 2 5H20\"/>", "tahrir": "<path d=\"M4 20l1-4.5L15.5 5l3.5 3.5L8.5 19z\"/><path d=\"M14 6.5L17.5 10\"/>", "saqlash": "<path d=\"M12 3.5v11.5\"/><path d=\"M7.5 10.5L12 15l4.5-4.5\"/><path d=\"M4 18.5v2h16v-2\"/>", "yuklash": "<path d=\"M12 15.5V4\"/><path d=\"M7.5 8.5L12 4l4.5 4.5\"/><path d=\"M4 18.5v2h16v-2\"/>", "havola": "<path d=\"M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1\"/><path d=\"M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1\"/>", "olov": "<path d=\"M12 21c3.9 0 6.5-2.6 6.5-6 0-4.5-4.5-6.5-4-12C11 5 8 8 8 11c0-1.5-1-2.5-1-2.5C6 10 5.5 11.6 5.5 15c0 3.4 2.6 6 6.5 6z\"/>", "yulduz": "<path d=\"M12 3.5l2.6 5.5 6 .8-4.3 4.2 1 6-5.3-2.9L6.7 20l1-6L3.4 9.8l6-.8z\"/>", "video": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"4\"/><path d=\"M10.5 9.5l4.5 2.5-4.5 2.5z\"/>", "rebrend": "<path d=\"M2.5 5.5h8v13h-8z\"/><path d=\"M13.5 5.5h8v13h-8z\"/><path d=\"M10.5 12h3\"/><path d=\"M6.5 9.5v5M15.5 9.5h4M15.5 12h4M15.5 14.5h2.5\"/>", "narx": "<path d=\"M3.5 11V3.5H11L20.5 13l-7.5 7.5z\"/><path d=\"M7.5 7.5h.01\"/>", "jarayon": "<path d=\"M3.5 7.5h13l-3-3\"/><path d=\"M20.5 16.5h-13l3 3\"/>", "muammo": "<path d=\"M12 3.5L21 19.5H3z\"/><path d=\"M12 9.5v4.5\"/><path d=\"M12 17h.01\"/>", "goya": "<path d=\"M12 2.5l2.2 6.3 6.3 2.2-6.3 2.2L12 19.5l-2.2-6.3L3.5 11l6.3-2.2z\"/>", "qaror": "<path d=\"M12 3.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4z\"/><path d=\"M11 7.3L5.5 20.5\"/><path d=\"M13 7.3l5.5 13.2\"/><path d=\"M8 16h8\"/>", "natija": "<path d=\"M3.5 20.5h17\"/><path d=\"M7 20.5v-5M12 20.5v-9M17 20.5v-13\"/><path d=\"M14.5 5.5H17V8\"/>", "sport": "<path d=\"M12 3.5l7.5 3v5.5c0 4-3 7-7.5 8.5C7.5 19 4.5 16 4.5 12V6.5z\"/><path d=\"M9 12l2 2 4-4\"/>", "biznes": "<path d=\"M3.5 20.5v-11l8.5-6 8.5 6v11z\"/><path d=\"M9.5 20.5v-6h5v6\"/>", "talim": "<path d=\"M12 4L2.5 8.5 12 13l9.5-4.5z\"/><path d=\"M6.5 10.5v5c0 1.7 2.5 3 5.5 3s5.5-1.3 5.5-3v-5\"/>", "ovqat": "<path d=\"M6 3.5v8a2.5 2.5 0 0 0 5 0v-8\"/><path d=\"M8.5 3.5v17\"/><path d=\"M17 3.5c-1.5 2-2 4-2 6.5 0 1.5.7 2.5 2 2.5v8\"/>", "texno": "<rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"2\"/><rect x=\"9\" y=\"9\" width=\"6\" height=\"6\"/><path d=\"M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2\"/>", "sanoat": "<path d=\"M2.5 20.5v-9l5.5 3.5v-3.5l5.5 3.5v-3.5l5.5 3.5v5.5z\"/><path d=\"M19 15V3.5h-3.5v3\"/><path d=\"M2.5 20.5h19\"/>", "savdo": "<path d=\"M3 4h3l2.5 11h10L21 7H7\"/><circle cx=\"10\" cy=\"19.5\" r=\"1.4\"/><circle cx=\"18\" cy=\"19.5\" r=\"1.4\"/>", "sogliq": "<path d=\"M9.5 3.5h5v6h6v5h-6v6h-5v-6h-6v-5h6z\"/>", "gozallik": "<path d=\"M12 3.5c3.5 4 6 6.8 6 9.8a6 6 0 0 1-12 0c0-3 2.5-5.8 6-9.8z\"/><path d=\"M9 14a3 3 0 0 0 3 3\"/>", "moda": "<path d=\"M12 3.5a2 2 0 0 0 0 4\"/><path d=\"M12 7.5L3.5 13l2 2.5L8 14v6.5h8V14l2.5 1.5 2-2.5z\"/>", "qurilish": "<path d=\"M3.5 20.5h17\"/><path d=\"M6 20.5V9l12-4.5v16\"/><path d=\"M6 9l12-4.5\"/><path d=\"M10 20.5v-5h4v5\"/>", "kochmas": "<path d=\"M2.5 10.5L10 4.5l7.5 6v10h-15z\"/><path d=\"M7.5 20.5v-5h5v5\"/><circle cx=\"18.5\" cy=\"6\" r=\"2.5\"/><path d=\"M18.5 8.5v5M17 11.5h3\"/>", "qishloq": "<path d=\"M12 20.5V9\"/><path d=\"M12 12c0-3.5-2.5-6-6-60 3.5 2.5 6 6 6z\"/><path d=\"M12 15c0-3.5 2.5-6 6-60 3.5-2.5 6-6 6z\"/><path d=\"M4 20.5h16\"/>", "transport": "<path d=\"M2.5 6.5h11v9h-11z\"/><path d=\"M13.5 9.5h4l3 3.5v2.5h-7z\"/><circle cx=\"6.5\" cy=\"18\" r=\"1.8\"/><circle cx=\"17\" cy=\"18\" r=\"1.8\"/>", "moliya": "<path d=\"M3.5 20.5v-6h4v6zM10 20.5V9h4v11.5zM16.5 20.5V4h4v16.5z\"/>", "sayohat": "<path d=\"M2.5 13.5l19-7-5 8 1 6-4-4.5-4 2.5 1-5z\"/>", "media": "<rect x=\"2.5\" y=\"5.5\" width=\"19\" height=\"13\"/><path d=\"M10 9.5l5 2.5-5 2.5z\"/><path d=\"M6.5 2.5v3M17.5 2.5v3\"/>", "davlat": "<path d=\"M3 9.5L12 4l9 5.5\"/><path d=\"M4.5 20.5h15\"/><path d=\"M6.5 20.5v-9M10 20.5v-9M14 20.5v-9M17.5 20.5v-9\"/>", "xizmat": "<path d=\"M14.5 3.5a5 5 0 0 0-6.6 6.6L3 15v5h5l4.9-4.9a5 5 0 0 0 6.6-6.6l-3 3-2.5-.5-.5-2.5z\"/>", "shaxsiy": "<path d=\"M12 3.5a4 4 0 1 1 0 8 4 4 0 0 1 0-8z\"/><path d=\"M4.5 20.5c0-3.7 3.4-6 7.5-6s7.5 2.3 7.5 6\"/><path d=\"M17.5 3.5l1.2 2.4 2.6.4-1.9 1.8.5 2.6L17.5 9.5l-2.4 1.2.5-2.6-1.9-1.8 2.6-.4z\"/>", "buyurtma_holat": "<path d=\"M5 12.5l4.5 4.5L19 7\"/>", "taklif_holat": "<circle cx=\"12\" cy=\"12\" r=\"8.5\"/><path d=\"M12 7.5v5l3 2\"/>", "konsept_holat": "<path d=\"M9 18h6\"/><path d=\"M10 21h4\"/><path d=\"M12 3a6 6 0 0 1 3.5 10.9V15h-7v-1.1A6 6 0 0 1 12 3z\"/>"};
 
 function ikon(nom, olcham, rang){
   var ich = IKON[nom];
@@ -3401,9 +3525,111 @@ function xizmatChiz(){
   });
 }
 
+/* ---------- KEYSLAR ----------
+   Sayt "sababi bilan chiroyli" deb va'da beradi. Keys — o'sha
+   sababning o'zi: muammo, g'oya, qaror, natija.
+
+   Matn keyslar.json dan keladi (botdagi beshta savolning javobi),
+   rasm va rang esa malumot.json dan — ikkinchi nusxa saqlanmaydi,
+   aks holda ikki fayl bir-biriga mos kelmay qolardi. */
+var KEYSLAR = [];
+
+function keysNav(){
+  var t = document.getElementById("nav-keys");
+  if (t) t.style.display = KEYSLAR.length ? "" : "none";
+  return KEYSLAR.length;
+}
+
+/* Oldin/keyin surgichi. Sichqoncha ham, barmoq ham bir xil
+   ishlaydi: pointer hodisalari ikkalasini qamrab oladi. */
+function keysSurgich(el){
+  function qoy(e){
+    var r = el.getBoundingClientRect();
+    var x = ((e.clientX - r.left) / r.width) * 100;
+    el.style.setProperty("--x", Math.max(0, Math.min(100, x)) + "%");
+  }
+  el.addEventListener("pointerdown", function(e){
+    el.setPointerCapture(e.pointerId); qoy(e);
+  });
+  el.addEventListener("pointermove", function(e){
+    if (e.buttons || el.hasPointerCapture(e.pointerId)) qoy(e);
+  });
+}
+
+function keysKarta(k){
+  var v = malumot[k.brend] || {};
+  var el = document.createElement("div");
+  el.className = "keys";
+
+  /* Chap tomon: eski logo bo'lsa SURGICH, bo'lmasa oddiy kadr. */
+  var chap;
+  if (k.eski && v.papka && v.oq) {
+    chap = document.createElement("div");
+    chap.className = "keys-sol";
+    chap.innerHTML =
+      '<div class="qat oldin"><img src="' + k.eski + '" alt="oldin"></div>' +
+      '<div class="qat keyin" style="background:' + (v.fon || "#fff") +
+      '"><img src="rasm/' + v.papka + '/' + v.oq + '" alt="keyin"></div>' +
+      '<i class="dast"></i>' +
+      '<b class="teg chap">Oldin</b><b class="teg ong">Keyin</b>';
+    setTimeout(function(){ keysSurgich(chap); }, 0);
+  } else {
+    chap = document.createElement("div");
+    chap.className = "keys-kadr";
+    chap.style.background = v.fon || "#fff";
+    var manba = (v.papka && v.oq) ? ("rasm/" + v.papka + "/" + v.oq)
+      : (v.papka && v.muqova) ? ("rasm/" + v.papka + "/" + v.muqova) : "";
+    chap.innerHTML = manba
+      ? '<img src="' + manba + '" alt="' + k.brend + '">' : "";
+  }
+  el.appendChild(chap);
+
+  var ich = document.createElement("div");
+  ich.className = "keys-ich";
+  var qism = '<div class="keys-ust"><div class="keys-nom">' + k.brend +
+    "</div>" + (k.eski ? '<span class="keys-tur">Rebrending</span>' : "") +
+    "</div>";
+  if (k.mijoz) qism += '<div class="keys-mijoz">' + k.mijoz + "</div>";
+
+  var BLOK = [["muammo", "Muammo"], ["goya", "G'oya"],
+              ["qaror", "Nega shunday"], ["natija", "Natija"]];
+  var bloklar = "";
+  BLOK.forEach(function(b){
+    if (!k[b[0]]) return;
+    bloklar += '<div class="keys-b"><s>' + ikon(b[0], 14) + "</s><b>" +
+      b[1] + "</b><p>" + k[b[0]] + "</p></div>";
+  });
+  if (bloklar) qism += '<div class="keys-blok">' + bloklar + "</div>";
+
+  if (k.fikr) {
+    qism += '<div class="keys-fikr"><q>\u00ab' + k.fikr + '\u00bb</q>' +
+      (k.fikr_kim ? "<span>" + k.fikr_kim + "</span>" : "") + "</div>";
+  }
+  qism += '<button class="keys-tug">Shu ishni ko\'rish</button>';
+  ich.innerHTML = qism;
+  ich.querySelector(".keys-tug").onclick = function(){
+    titra();
+    /* Keysni o'qigan odam ishning O'ZINI ko'rmoqchi bo'ladi —
+       hikoya va kadrlar bir-birini to'ldiradi. */
+    try { oqimOch(k.brend); } catch (x) {}
+  };
+  el.appendChild(ich);
+  return el;
+}
+
+function keysChiz(){
+  var q = document.getElementById("keys-royxat");
+  if (!q) return;
+  q.innerHTML = "";
+  KEYSLAR.forEach(function(k){ q.appendChild(keysKarta(k)); });
+  if (!KEYSLAR.length)
+    q.innerHTML = '<div class="yuk">Keyslar tayyorlanmoqda.</div>';
+}
+
 /* ---------- BO'LIMLAR ---------- */
 function bolimGa(nom){
-  ["ishlar","posterlar","ovozlar","videolar","sotuv","xizmatlar","profil"]
+  ["ishlar","keyslar","posterlar","ovozlar","videolar","sotuv",
+   "xizmatlar","profil"]
     .concat(QOSH_KALIT)
     .forEach(function(b){
     var e = document.getElementById("b-" + b);
@@ -3416,7 +3642,8 @@ function bolimGa(nom){
       t[i].scrollIntoView({block: "nearest", inline: "center"});
   }
   window.scrollTo(0, 0);
-  if (nom === "posterlar") posterChiz();
+  if (nom === "keyslar") keysChiz();
+  else if (nom === "posterlar") posterChiz();
   else if (nom === "ovozlar") ovozChiz();
   else if (nom === "videolar") videoChiz();
   else if (nom === "sotuv") sotuvChiz();
@@ -4036,6 +4263,14 @@ fetch("malumot.json?v=" + Date.now()).then(function(x){ return x.json(); })
     filtrChiz(); torChiz(); narxChiz(); jarayonChiz(); profilChiz();
     filtrSoya();
     sotuvNav();
+    /* Keyslar alohida fayl: ular botdagi savol-javobdan keladi va
+       katalogdan mustaqil o'zgaradi. Fayl bo'lmasa yoki bo'sh
+       bo'lsa bo'lim umuman ko'rinmaydi — bo'sh bo'lim "bu yer
+       tashlab qo'yilgan" degan taassurot beradi. */
+    fetch("keyslar.json?v=" + Date.now())
+      .then(function(r){ return r.ok ? r.json() : []; })
+      .then(function(j){ KEYSLAR = Array.isArray(j) ? j : []; keysNav(); })
+      .catch(function(){ KEYSLAR = []; keysNav(); });
     ikonlarniQoy();
     if (menmi()) document.getElementById("admin-tug").className =
       "admin-tug bor";
