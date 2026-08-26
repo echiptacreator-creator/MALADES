@@ -8,7 +8,7 @@
   "vaqt": "0:06",
   "soniya": 6.0,
   "vertikal": true,
-  "mb": 0.4
+  "mb": 1.0
  },
  {
   "nom": "Bunyodkor",
@@ -19,7 +19,7 @@
   "vaqt": "0:06",
   "soniya": 6.0,
   "vertikal": true,
-  "mb": 0.4
+  "mb": 0.7
  },
  {
   "nom": "Buxoro FK",
@@ -30,7 +30,7 @@
   "vaqt": "0:06",
   "soniya": 6.0,
   "vertikal": true,
-  "mb": 0.4
+  "mb": 0.8
  },
  {
   "nom": "Dinamo Samarqand",
@@ -52,7 +52,7 @@
   "vaqt": "0:06",
   "soniya": 6.0,
   "vertikal": true,
-  "mb": 0.5
+  "mb": 0.8
  },
  {
   "nom": "Havaskor Liga",
@@ -63,7 +63,7 @@
   "vaqt": "0:06",
   "soniya": 6.0,
   "vertikal": true,
-  "mb": 0.3
+  "mb": 0.6
  },
  {
   "nom": "Lokomotiv",
@@ -74,7 +74,7 @@
   "vaqt": "0:06",
   "soniya": 6.0,
   "vertikal": true,
-  "mb": 0.5
+  "mb": 1.0
  },
  {
   "nom": "Maorif",
@@ -85,7 +85,7 @@
   "vaqt": "0:06",
   "soniya": 6.0,
   "vertikal": true,
-  "mb": 0.2
+  "mb": 0.4
  },
  {
   "nom": "Mash'al",
@@ -96,7 +96,7 @@
   "vaqt": "0:06",
   "soniya": 6.0,
   "vertikal": true,
-  "mb": 0.4
+  "mb": 0.7
  },
  {
   "nom": "Metallurg Bekabad",
@@ -107,6 +107,6 @@
   "vaqt": "0:06",
   "soniya": 6.0,
   "vertikal": true,
-  "mb": 0.4
+  "mb": 0.7
  }
 ]
