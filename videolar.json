@@ -1,1 +1,112 @@
-[]
+[
+ {
+  "nom": "Andijon FK",
+  "izoh": "tarixiy, shijoatli, milliy",
+  "teg": "logo animatsiyasi",
+  "fayl": "video/01_andijon-fk.mp4",
+  "muqova": "video/01_andijon-fk.jpg",
+  "vaqt": "0:06",
+  "soniya": 6.0,
+  "vertikal": true,
+  "mb": 0.4
+ },
+ {
+  "nom": "Bunyodkor",
+  "izoh": "sportcha, klassik, nufuzli",
+  "teg": "logo animatsiyasi",
+  "fayl": "video/02_bunyodkor.mp4",
+  "muqova": "video/02_bunyodkor.jpg",
+  "vaqt": "0:06",
+  "soniya": 6.0,
+  "vertikal": true,
+  "mb": 0.4
+ },
+ {
+  "nom": "Buxoro FK",
+  "izoh": "tarixiy, an'anaviy, sportcha",
+  "teg": "logo animatsiyasi",
+  "fayl": "video/03_buxoro-fk.mp4",
+  "muqova": "video/03_buxoro-fk.jpg",
+  "vaqt": "0:06",
+  "soniya": 6.0,
+  "vertikal": true,
+  "mb": 0.4
+ },
+ {
+  "nom": "Dinamo Samarqand",
+  "izoh": "sportcha, an'anaviy, kuchli",
+  "teg": "logo animatsiyasi",
+  "fayl": "video/04_dinamo-samarqand.mp4",
+  "muqova": "video/04_dinamo-samarqand.jpg",
+  "vaqt": "0:06",
+  "soniya": 6.0,
+  "vertikal": true,
+  "mb": 0.5
+ },
+ {
+  "nom": "Farovon Marg'ilon",
+  "izoh": "milliy, an'anaviy, etnik",
+  "teg": "logo animatsiyasi",
+  "fayl": "video/05_farovon-margilon.mp4",
+  "muqova": "video/05_farovon-margilon.jpg",
+  "vaqt": "0:06",
+  "soniya": 6.0,
+  "vertikal": true,
+  "mb": 0.5
+ },
+ {
+  "nom": "Havaskor Liga",
+  "izoh": "tezkor, sportcha, dinamik",
+  "teg": "logo animatsiyasi",
+  "fayl": "video/06_havaskor-liga.mp4",
+  "muqova": "video/06_havaskor-liga.jpg",
+  "vaqt": "0:06",
+  "soniya": 6.0,
+  "vertikal": true,
+  "mb": 0.3
+ },
+ {
+  "nom": "Lokomotiv",
+  "izoh": "sportcha, dinamik, tezkor",
+  "teg": "logo animatsiyasi",
+  "fayl": "video/07_lokomotiv.mp4",
+  "muqova": "video/07_lokomotiv.jpg",
+  "vaqt": "0:06",
+  "soniya": 6.0,
+  "vertikal": true,
+  "mb": 0.5
+ },
+ {
+  "nom": "Maorif",
+  "izoh": "akademik, rasmiy, ishonchli",
+  "teg": "logo animatsiyasi",
+  "fayl": "video/08_maorif.mp4",
+  "muqova": "video/08_maorif.jpg",
+  "vaqt": "0:06",
+  "soniya": 6.0,
+  "vertikal": true,
+  "mb": 0.2
+ },
+ {
+  "nom": "Mash'al",
+  "izoh": "sportcha, klassik, baquvvat",
+  "teg": "logo animatsiyasi",
+  "fayl": "video/09_mashal.mp4",
+  "muqova": "video/09_mashal.jpg",
+  "vaqt": "0:06",
+  "soniya": 6.0,
+  "vertikal": true,
+  "mb": 0.4
+ },
+ {
+  "nom": "Metallurg Bekabad",
+  "izoh": "sportcha, sanoat, baquvvat",
+  "teg": "logo animatsiyasi",
+  "fayl": "video/10_metallurg-bekabad.mp4",
+  "muqova": "video/10_metallurg-bekabad.jpg",
+  "vaqt": "0:06",
+  "soniya": 6.0,
+  "vertikal": true,
+  "mb": 0.4
+ }
+]
