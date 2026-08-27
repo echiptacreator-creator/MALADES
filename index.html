@@ -16,13 +16,13 @@
 <meta property="og:title" content="malades.bola — brend va sport identikasi">
 <meta property="og:description" content="Shunchaki chiroyli emas, sababi bilan chiroyli. Har konsept ortida biznes mantiqi turadi.">
 <meta property="og:url" content="https://maladesbola.uz/">
-<meta property="og:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787773530">
+<meta property="og:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787789614">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="malades.bola — brend va sport identikasi">
 <meta name="twitter:description" content="Shunchaki chiroyli emas, sababi bilan chiroyli.">
-<meta name="twitter:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787773530">
+<meta name="twitter:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787789614">
 <link rel="canonical" href="https://maladesbola.uz/">
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>
@@ -1836,6 +1836,86 @@ body.namuna{padding-top:36px}
 .bp-halol p{margin:0 0 8px;font-size:13.5px;line-height:1.6;opacity:.75}
 .bp-halol p:last-child{margin-bottom:0}
 .nav-bepul{color:#FFB347 !important}
+/* ---------- PROMPT GALEREYASI ---------- */
+.pg-filtr{display:flex;gap:7px;overflow-x:auto;padding:0 18px 14px;
+  scrollbar-width:none}
+.pg-filtr::-webkit-scrollbar{display:none}
+.pg-filtr button{flex:0 0 auto;padding:8px 14px;border-radius:999px;
+  border:1px solid var(--chiziq);background:transparent;
+  color:inherit;font:inherit;font-size:12.5px;cursor:pointer;
+  white-space:nowrap;opacity:.62;transition:opacity .15s ease}
+.pg-filtr button.faol{opacity:1;background:#fff;color:#0F1115;
+  border-color:#fff;font-weight:650}
+.pg-tor{display:grid;gap:14px;padding:0 18px 8px;
+  grid-template-columns:1fr}
+.pg-k{border:1px solid var(--chiziq);border-radius:18px;
+  overflow:hidden;background:rgba(255,255,255,.02);
+  display:flex;flex-direction:column}
+.pg-rasm{position:relative;aspect-ratio:4/5;background:#0B0C0F;
+  overflow:hidden}
+.pg-rasm img{width:100%;height:100%;object-fit:cover;display:block}
+.pg-tur{position:absolute;top:10px;left:10px;padding:4px 9px;
+  border-radius:8px;font-family:var(--mono);font-size:9px;
+  letter-spacing:.1em;text-transform:uppercase;
+  background:rgba(8,9,11,.72);backdrop-filter:blur(6px)}
+.pg-tur.surat{color:#7FE3FF}
+.pg-tur.noldan{color:#FFB347}
+.pg-ich{padding:13px 14px 14px;display:flex;flex-direction:column;
+  gap:9px;flex:1}
+.pg-nom{font-weight:650;font-size:14.5px;line-height:1.3}
+.pg-izoh{font-size:12.5px;line-height:1.5;opacity:.6}
+.pg-matn{font-family:var(--mono);font-size:10.5px;line-height:1.55;
+  color:#9AA3AF;background:rgba(0,0,0,.34);border-radius:10px;
+  padding:10px 11px;max-height:92px;overflow:auto;
+  white-space:pre-wrap;word-break:break-word}
+.pg-matn::-webkit-scrollbar{width:3px}
+.pg-matn::-webkit-scrollbar-thumb{background:#2A2F36;border-radius:3px}
+.pg-tug{margin-top:auto;display:flex;align-items:center;
+  justify-content:center;gap:7px;padding:12px;border-radius:12px;
+  border:0;cursor:pointer;font:inherit;font-size:13.5px;
+  font-weight:650;color:#0F1115;
+  background:linear-gradient(135deg,#FFB347,#FF7A18);
+  transition:transform .12s ease,filter .12s ease}
+.pg-tug:active{transform:scale(.985)}
+.pg-tug.olindi{background:#1E9E5A;color:#fff}
+
+/* Pullik prompt: matn hira, ustida qulf. Odam nima
+   olayotganini tushunadi, lekin o'qiy olmaydi. */
+.pg-matn.yopiq{position:relative;color:transparent;
+  text-shadow:0 0 7px rgba(200,210,225,.55);user-select:none;
+  max-height:78px;overflow:hidden}
+.pg-qulf{position:absolute;left:0;right:0;bottom:0;
+  padding:16px 0 8px;text-align:center;
+  font-family:var(--sarlavha);font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:#FFB347;text-shadow:none;
+  background:linear-gradient(180deg,transparent,rgba(11,12,15,.94) 60%)}
+.pg-tug.pg-sotib{display:block;text-decoration:none;
+  background:linear-gradient(135deg,#1E9E5A,#0E7C42);color:#fff}
+.pg-k.top{border-color:rgba(255,179,71,.3)}
+.pg-top{position:absolute;top:10px;right:10px;padding:4px 8px;
+  border-radius:8px;font-family:var(--mono);font-size:9px;
+  letter-spacing:.1em;font-weight:700;color:#0F1115;
+  background:#FFB347}
+.pg-ism{display:flex;align-items:center;justify-content:space-between;
+  gap:10px;flex-wrap:wrap;margin:0 18px 14px;padding:11px 14px;
+  border-radius:12px;border:1px dashed rgba(255,255,255,.14);
+  font-size:12.5px;opacity:.85}
+.pg-ism button{background:transparent;border:0;color:#FFB347;
+  font:inherit;font-size:12.5px;cursor:pointer;text-decoration:underline}
+@media (min-width:1040px){.pg-ism{margin-left:40px;margin-right:40px}}
+.pg-yoq{padding:26px 18px;text-align:center;font-size:13px;
+  opacity:.5}
+@media (min-width:640px){.pg-tor{grid-template-columns:1fr 1fr}}
+@media (min-width:1040px){
+  .pg-tor{grid-template-columns:repeat(3,1fr);padding:0 40px 8px}
+  .pg-filtr{padding-left:40px;padding-right:40px}
+}
+
+/* Matn va rasm bo'limlarini ajratib turadigan nozik belgi —
+   odam bir qarashda qaysi to'plamdan ekanini bilsin. */
+.bp-k.bp-rasm{border-color:rgba(255,179,71,.22)}
+.bp-k.bp-rasm span{color:#FFB347;opacity:.65}
+
 @media (min-width:820px){
   .bp-tor{grid-template-columns:1fr 1fr}
   .bp-tugma{max-width:340px;margin:0 auto}
@@ -2071,39 +2151,20 @@ body.namuna{padding-top:36px}
   <div class="hero" style="padding-bottom:6px">
     <div class="nur"></div><div class="nur2"></div>
     <div class="kasb">Bepul</div>
-    <div class="dava">Har kuni <em>nima yozish</em> kerak?</div>
-    <div class="dava-izoh">Biznes egalari uchun tayyor promptlar
-      to'plami. Ko'chirib olasiz, qavs ichini o'zingiznikiga
-      almashtirasiz, AI ga qo'yasiz. Ro'yxatdan o'tish yo'q,
-      to'lov yo'q.</div>
+    <div class="dava">Har kuni <em>nima qo'yish</em> kerak?</div>
+    <div class="dava-izoh">Biznes egalari uchun tayyor promptlar:
+      matn yozish uchun ham, rasm chiqarish uchun ham.
+      Ko'chirib olasiz, qavs ichini o'zingiznikiga almashtirasiz,
+      AI ga qo'yasiz. Ro'yxatdan o'tish yo'q, to'lov yo'q.</div>
   </div>
 
-  <div class="bp-quti">
-    <div class="bp-tepa">
-      <div class="bp-son">50</div>
-      <div class="bp-mat">
-        <h3>Kontent promptlari to'plami</h3>
-        <p>Post matni, storis, reels ssenariysi, mijozga javob,
-          reklama matni, bayram, tanishtiruv.</p>
-      </div>
-    </div>
-
-    <div class="bp-tor">
-      <div class="bp-k"><b>Post matni</b><span>10 ta</span></div>
-      <div class="bp-k"><b>Storis</b><span>7 ta</span></div>
-      <div class="bp-k"><b>Reels ssenariysi</b><span>7 ta</span></div>
-      <div class="bp-k"><b>Mijozga javob</b><span>8 ta</span></div>
-      <div class="bp-k"><b>Reklama matni</b><span>6 ta</span></div>
-      <div class="bp-k"><b>Bayram va mavsum</b><span>6 ta</span></div>
-      <div class="bp-k"><b>Ishonch va tanishtiruv</b><span>6 ta</span></div>
-    </div>
-
-    <a class="bp-tugma" id="bp-tugma"
-       href="https://t.me/malades_bolabot?start=pr" target="_blank"
-       rel="noopener">Telegramda olish</a>
-    <div class="bp-past">Fayl bo'lib keladi. Saqlab qo'yasiz,
-      istagan paytda ochasiz.</div>
-  </div>
+  <!-- GALEREYA. Rasm birinchi, matn keyin: odam prompt
+       o'qib nima chiqishini tasavvur qilolmaydi, natijani
+       ko'rsa darrov tushunadi. -->
+  <div class="pg-ism" id="pg-ism"></div>
+  <div class="pg-filtr" id="pg-filtr"></div>
+  <div class="pg-tor" id="pg-tor"></div>
+  <div class="pg-yoq" id="pg-yoq">Yuklanmoqda...</div>
 
   <!-- Ochiq gap. Sotuv emas, ogohlantirish - va aynan shu
        ishonch qozonadi. -->
@@ -2315,7 +2376,7 @@ var ALOQA = {"telegram": "@khamilofff", "kanal": "t.me/maladesbola", "instagram"
 var BOT_NOM = "malades_bolabot";
 var QIZIQISH = {"ADC ingliz tili kurslari posterlari": 1, "Andijon FK tayyorlov markazlari": 1, "Bek Aviakassa": 1, "Finlit.uz": 1, "Labsearch": 1};
 /* Saytdagi haqiqiy reaksiyalar: {brend: {olov: n, ulash: n}} */
-var SANOQ = {"Andijon FK": {"korish": 5, "olov": 2}, "Anysoft": {"korish": 1, "olov": 1}, "Bek Aviakassa": {"korish": 1, "olov": 1}, "Biznes Pechat": {"olov": 1}, "Chorva Foyda": {"olov": 1}, "Eleven": {"olov": 1}, "Everest Muzlari": {"olov": 1}, "Farovon Marg'ilon": {"olov": 1}, "Finlit.uz": {"korish": 1, "olov": 1, "ulash": 1}, "Instaff": {"olov": 1}, "Labsearch": {"olov": 1}, "Qizilqum": {"korish": 1}, "Salman School": {"olov": 1}, "Surkhon Termez": {"korish": 1}, "Tokatayev — xush kelibsiz": {"korish": 1}};
+var SANOQ = {"Andijon FK": {"korish": 6, "olov": 2}, "Anysoft": {"korish": 1, "olov": 1}, "Bek Aviakassa": {"korish": 1, "olov": 1}, "Biznes Pechat": {"olov": 1}, "Chorva Foyda": {"olov": 1}, "Eleven": {"olov": 1}, "Everest Muzlari": {"olov": 1}, "Farovon Marg'ilon": {"olov": 1}, "Finlit.uz": {"korish": 1, "olov": 1, "ulash": 1}, "Instaff": {"olov": 1}, "Labsearch": {"olov": 1}, "Qizilqum": {"korish": 1}, "Salman School": {"olov": 1}, "Surkhon Termez": {"korish": 1}, "Tokatayev — xush kelibsiz": {"korish": 1}};
 /* {ish nomi: havola qismi} — har ishning o'z sahifasi uchun */
 var HAVOLA = {"\"Andijon\" FK futbolchilari statistikasi": "andijon-fk-futbolchilari-statistikasi", "77 Turdimurodov Andijon FC": "77-turdimurodov-andijon-fc", "ADC ingliz tili kurslari posterlari": "adc-ingliz-tili-kurslari-posterlari", "Abduqodir Xusanov Manchester City posteri": "abduqodir-xusanov-manchester-city-posteri", "Alidoorf": "alidoorf", "Ananas Travel": "ananas-travel", "Andijon FK": "andijon-fk", "Andijon FK - Samiyev posteri": "andijon-fk-samiyev-posteri", "Andijon FK Asosiy Tarkib Posteri": "andijon-fk-asosiy-tarkib-posteri", "Andijon FK Zarbalar Statistikasi": "andijon-fk-zarbalar-statistikasi", "Andijon FK asosiy tarkib posteri": "andijon-fk-asosiy-tarkib-posteri-2", "Andijon FK matchday posteri": "andijon-fk-matchday-posteri", "Andijon Gazon SMM posterlari": "andijon-gazon-smm-posterlari", "Andijon vs Vishista Krakov Matchday Posteri": "andijon-vs-vishista-krakov-matchday-posteri", "Andijon – Turon matchday posteri": "andijon-turon-matchday-posteri", "Andijonda Bor": "andijonda-bor", "Antech Electronics": "antech-electronics", "Anysoft": "anysoft", "Artel va Shona Texnika Katalogi": "artel-va-shona-texnika-katalogi", "Auto Dallol": "auto-dallol", "Aza Dent Clinic": "aza-dent-clinic", "Bek Aviakassa": "bek-aviakassa", "Bima": "bima", "Biznes Pechat": "biznes-pechat", "Bobur Junior": "bobur-junior", "Bozor.com": "bozor-com", "Bozorvoy": "bozorvoy", "Bukhara Smile": "bukhara-smile", "Bunyodkor": "bunyodkor", "Burgut ko'zi": "burgut-kozi", "Buxoro FK": "buxoro-fk", "Buxoro Uy Bozor": "buxoro-uy-bozor", "Canopus": "canopus", "Cheran — bosh oshpaz": "cheran-bosh-oshpaz", "Chorva Foyda": "chorva-foyda", "Climat Santex": "climat-santex", "Dehkon": "dehkon", "Dilya Nur": "dilya-nur", "Dinamo Samarqand": "dinamo-samarqand", "Ebox": "ebox", "Echipta — Mavsumiy chipta sotuvda": "echipta-mavsumiy-chipta-sotuvda", "Eleven": "eleven", "Eron - O'zbekiston Matchday Posteri": "eron-ozbekiston-matchday-posteri", "Everest Muzlari": "everest-muzlari", "FC Andijon XI Tarkib Posteri": "fc-andijon-xi-tarkib-posteri", "FC Andijon statistika posteri": "fc-andijon-statistika-posteri", "FC Andijon statistika posteri (poster)": "fc-andijon-statistika-posteri-poster", "FK Andijon — XI Tarkib posteri": "fk-andijon-xi-tarkib-posteri", "Farovon Marg'ilon": "farovon-margilon", "Favvora Film": "favvora-film", "Finlit.uz": "finlit-uz", "Grand Projects": "grand-projects", "HandPay": "handpay", "Havaskor Liga": "havaskor-liga", "Hayrullo Kasimov": "hayrullo-kasimov", "HomeWare": "homeware", "Hur Fikrlar": "hur-fikrlar", "IDEA Consulting Centre posterlar to'plami": "idea-consulting-centre-posterlar-toplami", "Instaff": "instaff", "Isam Snack": "isam-snack", "Jadoo": "jadoo", "Khan Restaurant": "khan-restaurant", "Koinot School": "koinot-school", "Kvadrat": "kvadrat", "La Pizza": "la-pizza", "LaMore": "lamore", "Labsearch": "labsearch", "Lal Anaar": "lal-anaar", "Langfy": "langfy", "Lokomotiv": "lokomotiv", "Lorry.uz": "lorry-uz", "Makro Farm tibbiy posterlar to'plami": "makro-farm-tibbiy-posterlar-toplami", "Maorif": "maorif", "Marjon": "marjon", "Mash'al": "mashal", "Match Day — burgut": "match-day-burgut", "Med Texnika Andijon posterlari": "med-texnika-andijon-posterlari", "Mendeleyev": "mendeleyev", "Metallurg Bekabad": "metallurg-bekabad", "Mirzayev's Life": "mirzayevs-life", "Moliyaviy Maslahatchi": "moliyaviy-maslahatchi", "Muhandislik Markazi": "muhandislik-markazi", "Naimix": "naimix", "Nasaf": "nasaf", "Nasiyachi": "nasiyachi", "Navbahor": "navbahor", "Neftchi Farg'ona": "neftchi-fargona", "O'FF": "off", "O'quv markaz kurslari uchun posterlar": "oquv-markaz-kurslari-uchun-posterlar", "O'yin kuni bugun": "oyin-kuni-bugun", "O'zMMB": "ozmmb", "O'zbekiston Kasaba Uyushmalari": "ozbekiston-kasaba-uyushmalari", "OK MK": "ok-mk", "Obod Makon Plast": "obod-makon-plast", "Olov va burgut": "olov-va-burgut", "Oltin Sohil": "oltin-sohil", "Oltin chaqmoq": "oltin-chaqmoq", "Orient Plast": "orient-plast", "Owntrainer": "owntrainer", "PDP School": "pdp-school", "PMU": "pmu", "PRO.uz": "pro-uz", "Paxtakor": "paxtakor", "Piyola": "piyola", "Pro Advokat": "pro-advokat", "Progress": "progress", "Qassob Markazi": "qassob-markazi", "Qassob Service": "qassob-service", "Qilich va yo'lbars": "qilich-va-yolbars", "Qizilqum": "qizilqum", "Qo'qon 1912": "qoqon-1912", "Ravshan": "ravshan", "Reja MFC": "reja-mfc", "RiSchool": "rischool", "Rieltor One": "rieltor-one", "Rohat Choyxona": "rohat-choyxona", "Ruscha": "ruscha", "SXIU Samarqand": "sxiu-samarqand", "Sado": "sado", "Sahifa Books": "sahifa-books", "Salid Light": "salid-light", "Salman School": "salman-school", "Sanitariya Markazi": "sanitariya-markazi", "Sara Music Show": "sara-music-show", "Saray Plastic": "saray-plastic", "Sarbon Home": "sarbon-home", "Shaxmat taktikasi": "shaxmat-taktikasi", "Shaxzod Azmiddinov": "shaxzod-azmiddinov", "Sherdor": "sherdor", "Shox Beton reklama posterlari": "shox-beton-reklama-posterlari", "Shurtan G'uzar": "shurtan-guzar", "Skat": "skat", "Sodiqov Sayfiddin": "sodiqov-sayfiddin", "Sog'diyona Jizzax": "sogdiyona-jizzax", "SonicX MFC": "sonicx-mfc", "Spiderjan": "spiderjan", "Spoon": "spoon", "Starboys": "starboys", "Superliga 1-tur: Qo'qon - Andijon": "superliga-1-tur-qoqon-andijon", "Surkhon Termez": "surkhon-termez", "TD": "td", "Tarix yozildi": "tarix-yozildi", "Tarkib XI — Mash'al": "tarkib-xi-mashal", "Tarkib XI — Turkiya": "tarkib-xi-turkiya", "Tarkib XI — qilich": "tarkib-xi-qilich", "Teacher Asqar": "teacher-asqar", "Texnobay": "texnobay", "TezPay": "tezpay", "To'p ilgich": "top-ilgich", "Tokatayev — xush kelibsiz": "tokatayev-xush-kelibsiz", "Toshkent Bozor": "toshkent-bozor", "Tovarim.uz": "tovarim-uz", "Turna": "turna", "Umar": "umar", "UmarMD": "umarmd", "Ustozaku": "ustozaku", "Uy belgisi (nomi aniqlanmagan)": "uy-belgisi-nomi-aniqlanmagan", "Vassiliev Vladislav statistikasi posteri": "vassiliev-vladislav-statistikasi-posteri", "Welcome Vladislav Vassilyev - Andijon FK": "welcome-vladislav-vassilyev-andijon-fk", "Welcome back": "welcome-back", "Welcome — Bozorov": "welcome-bozorov", "Welcome — Mozgovoy": "welcome-mozgovoy", "Welcome — Nasrullayev": "welcome-nasrullayev", "Wellrise Animal Health": "wellrise-animal-health", "Wester School": "wester-school", "Xalq Ta'limi Info": "xalq-talimi-info", "Xalqaro Festivallar Direksiyasi": "xalqaro-festivallar-direksiyasi", "Xaridor": "xaridor", "Xontire": "xontire", "Xorazm FK": "xorazm-fk", "Xorazm PFK": "xorazm-pfk", "echipta": "echipta"};
 
@@ -3922,6 +3983,232 @@ function videoYop(){
   var y = document.getElementById("vq-yop");
   if (y) y.onclick = function(){ titra(); videoYop(); };
 })();
+
+/* ---------- PROMPT GALEREYASI ----------
+   Rasm birinchi ko'rinadi, prompt ostida turadi va bitta
+   tugma bilan buferga tushadi.
+
+   Nusxa olish ikki yo'l bilan: zamonaviy `clipboard` API va
+   eski `execCommand`. Sabab — Telegram ichidagi brauzerda
+   va HTTPS bo'lmagan holatda birinchisi ishlamaydi, o'shanda
+   tugma jim qolib odam "buzuq ekan" deb o'ylardi. */
+var BOT_NOM = "malades_bolabot";
+var PROMPTLAR = [];
+/* ---------- ISM ----------
+   Promptlarda [ISM] degan joy bor. Odam har safar uni qo'lda
+   yozishi kerak edi — bu esa eng ko'p tashlab ketiladigan
+   qadam.
+
+   Ikki manba:
+     · Telegram ichida ochilgan bo'lsa — ism O'ZIDAN keladi,
+       hech narsa so'ralmaydi.
+     · Oddiy brauzerda — bir marta so'raymiz va saqlaymiz.
+
+   Telegram Login vidjetini qo'ymadik: uni tekshirish uchun
+   server kerak, saytimiz esa statik. Ism bu yerda faqat
+   promptga yoziladi — xavfsizlik masalasi emas, shuning
+   uchun oddiy yo'l to'g'ri yo'l. */
+var PG_ISM = "";
+
+function pgIsmOl(){
+  try {
+    var tg = window.Telegram && window.Telegram.WebApp;
+    var u = tg && tg.initDataUnsafe && tg.initDataUnsafe.user;
+    if (u && u.first_name) return u.first_name;
+  } catch (e) {}
+  try { return localStorage.getItem("pg_ism") || ""; }
+  catch (e) { return ""; }
+}
+
+function pgIsmSaqla(v){
+  PG_ISM = (v || "").trim().slice(0, 40);
+  try { localStorage.setItem("pg_ism", PG_ISM); } catch (e) {}
+}
+
+function pgIsmQoy(matn){
+  if (!PG_ISM) return matn;
+  return matn.split("[ISM]").join(PG_ISM);
+}
+
+function pgPul(n){
+  var s = String(n || 0), q = "";
+  for (var i = 0; i < s.length; i++) {
+    /* Ikkilangan foiz belgisi — chunki bu matn Python ning
+       foizli formati bilan yasaladi va yakka foiz butun
+       sahifani yiqitadi. Izohda ham yozib bo'lmaydi. */
+    if (i && (s.length - i) % 3 === 0) q += " ";
+    q += s[i];
+  }
+  return q;
+}
+
+function pgIsmChiz(){
+  var j = document.getElementById("pg-ism");
+  if (!j) return;
+  if (PG_ISM) {
+    /* APOSTROFSIZ SO'ZLAR ATAYLAB TANLANGAN.
+       Bu matn ikki qavat qochiriladi: avval Python
+       TEMPLATE ichida, keyin JS qatorida. Apostrof qo'ysak
+       qochirish belgisi yo'lda yo'qoladi va sahifa
+       butunlay yiqiladi — sinovda aynan shu bo'ldi.
+       Shuning uchun "almashtirish", "yoziladi", "kiritish". */
+    j.innerHTML = '<span>Promptlarda ismingiz: <b>' + PG_ISM +
+      '</b></span><button id="pg-ism-oz">almashtirish</button>';
+    var o = document.getElementById("pg-ism-oz");
+    if (o) o.onclick = function(){ pgIsmSora(); };
+  } else {
+    j.innerHTML = '<span>Ismingizni yozsangiz, promptlarga ' +
+      'avtomat yoziladi</span><button id="pg-ism-qosh">' +
+      'Ismni kiritish</button>';
+    var b = document.getElementById("pg-ism-qosh");
+    if (b) b.onclick = function(){ pgIsmSora(); };
+  }
+}
+
+function pgIsmSora(){
+  var v = prompt("Ismingiz yoki brend nomingiz:", PG_ISM || "");
+  if (v === null) return;
+  pgIsmSaqla(v);
+  pgIsmChiz();
+  pgChiz();
+}
+
+var PG_BOLIM = "hammasi";
+
+function pgNusxa(matn, tugma){
+  function bajarildi(){
+    /* Asl yozuvni O'ZGARMAS qilib qo'yamiz. Ilgari
+       `tugma.textContent` dan olinardi — tugma bir sababdan
+       bo'sh bo'lib qolsa, "tiklash" ham bo'shni tiklardi va
+       xato ko'rinmay yashirinardi. */
+    var eski = "Promptni nusxa olish";
+    tugma.textContent = "Nusxa olindi";
+    tugma.classList.add("olindi");
+    titra("light");
+    setTimeout(function(){
+      tugma.textContent = eski;
+      tugma.classList.remove("olindi");
+    }, 1600);
+  }
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(matn).then(bajarildi, function(){
+      pgEskiNusxa(matn, bajarildi);
+    });
+  } else {
+    pgEskiNusxa(matn, bajarildi);
+  }
+}
+
+function pgEskiNusxa(matn, keyin){
+  var t = document.createElement("textarea");
+  t.value = matn;
+  t.setAttribute("readonly", "");
+  t.style.position = "fixed";
+  t.style.left = "-9999px";
+  document.body.appendChild(t);
+  t.select();
+  t.setSelectionRange(0, matn.length);
+  try { document.execCommand("copy"); keyin(); }
+  catch (e) { /* jim */ }
+  document.body.removeChild(t);
+}
+
+function pgChiz(){
+  var tor = document.getElementById("pg-tor");
+  var yoq = document.getElementById("pg-yoq");
+  if (!tor) return;
+  var q = PROMPTLAR.filter(function(x){
+    return PG_BOLIM === "hammasi" || x.bolim === PG_BOLIM;
+  });
+  if (!q.length) {
+    tor.innerHTML = "";
+    if (yoq) { yoq.style.display = "block";
+               yoq.textContent = "Bu bo'limda hozircha yo'q."; }
+    return;
+  }
+  if (yoq) yoq.style.display = "none";
+  tor.innerHTML = q.map(function(x, i){
+    var yopiq = x.yopiq && x.narx > 0;
+    var tugma = yopiq
+      ? '<a class="pg-tug pg-sotib" target="_blank" rel="noopener" ' +
+        'href="https://t.me/' + BOT_NOM + '?start=sot_' + x.kalit +
+        '">' + pgPul(x.narx) + " so'mga olish</a>"
+      : '<button class="pg-tug" data-n="' + i + '">' +
+        'Promptni nusxa olish</button>';
+    return '<div class="pg-k' + (x.top ? " top" : "") + '">' +
+      '<div class="pg-rasm">' +
+        '<img loading="lazy" src="' + x.rasm + '" alt="">' +
+        '<span class="pg-tur ' + x.tur + '">' +
+          (x.tur === "surat" ? "surat kerak" : "noldan") +
+        '</span>' +
+        (x.top ? '<span class="pg-top">TOP</span>' : "") +
+      '</div>' +
+      '<div class="pg-ich">' +
+        '<div class="pg-nom">' + x.nom + '</div>' +
+        '<div class="pg-izoh">' + x.izoh + '</div>' +
+        '<div class="pg-matn' + (yopiq ? " yopiq" : "") + '">' +
+          pgIsmQoy(x.prompt) +
+          (yopiq ? '<span class="pg-qulf">' +
+                   "Prompt yopiq</span>" : "") +
+        '</div>' +
+        tugma +
+      '</div>' +
+    '</div>';
+  }).join("");
+  tor.querySelectorAll(".pg-tug[data-n]").forEach(function(b){
+    b.onclick = function(){
+      pgNusxa(pgIsmQoy(q[+b.dataset.n].prompt), b);
+    };
+  });
+}
+
+function pgFiltr(){
+  var f = document.getElementById("pg-filtr");
+  if (!f) return;
+  var bolimlar = [];
+  PROMPTLAR.forEach(function(x){
+    if (bolimlar.indexOf(x.bolim) < 0) bolimlar.push(x.bolim);
+  });
+  var q = ['<button class="faol" data-p="hammasi">Hammasi ' +
+           PROMPTLAR.length + '</button>'];
+  bolimlar.forEach(function(b){
+    var n = PROMPTLAR.filter(function(x){ return x.bolim === b; }).length;
+    q.push('<button data-p="' + b + '">' +
+           b.charAt(0) + b.slice(1).toLowerCase() + ' ' + n +
+           '</button>');
+  });
+  f.innerHTML = q.join("");
+  f.querySelectorAll("button").forEach(function(b){
+    b.onclick = function(){
+      f.querySelectorAll("button").forEach(function(x){
+        x.classList.remove("faol"); });
+      b.classList.add("faol");
+      PG_BOLIM = b.dataset.p;
+      titra();
+      pgChiz();
+    };
+  });
+}
+
+fetch("promptlar.json?v=" + Date.now()).then(function(x){
+  return x.json();
+}).then(function(d){
+  PROMPTLAR = d || [];
+  var t = document.querySelector('[data-b="bepul"]');
+  if (t && PROMPTLAR.length) {
+    /* Nav tugmasida SON ko'rinsin - "40 ta bepul prompt"
+       "Bepul" degan quruq so'zdan ancha kuchli. */
+    t.innerHTML = t.innerHTML.replace(/Bepul.*$/, "Bepul " +
+                                      PROMPTLAR.length);
+  }
+  PG_ISM = pgIsmOl();
+  pgIsmChiz();
+  pgFiltr();
+  pgChiz();
+}).catch(function(){
+  var yoq = document.getElementById("pg-yoq");
+  if (yoq) yoq.textContent = "Promptlar yuklanmadi.";
+});
 
 fetch("videolar.json").then(function(x){ return x.json(); })
   .then(function(d){
