@@ -2,7 +2,7 @@
 <html lang="uz">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>malades.bola — brend va sport identikasi</title>
 <!-- ULASHISH KARTOCHKASI.
      Ilgari saytning havolasi Telegramga tashlansa quruq matn
@@ -16,13 +16,13 @@
 <meta property="og:title" content="malades.bola — brend va sport identikasi">
 <meta property="og:description" content="Shunchaki chiroyli emas, sababi bilan chiroyli. Har konsept ortida biznes mantiqi turadi.">
 <meta property="og:url" content="https://maladesbola.uz/">
-<meta property="og:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787803714">
+<meta property="og:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787820110">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="malades.bola — brend va sport identikasi">
 <meta name="twitter:description" content="Shunchaki chiroyli emas, sababi bilan chiroyli.">
-<meta name="twitter:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787803714">
+<meta name="twitter:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787820110">
 <link rel="canonical" href="https://maladesbola.uz/">
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>
@@ -143,7 +143,11 @@ button{font-family:inherit;cursor:pointer}
   font-weight:700;letter-spacing:-.7px;line-height:1}
 .raqam span{display:block;margin-top:6px;font-family:var(--mono);
   font-size:8.5px;color:var(--xira);
-  letter-spacing:.15em;text-transform:uppercase}
+  letter-spacing:.15em;text-transform:uppercase;
+  /* Uchta yozuvdan biri ikki qatorga tushib qatorni qiyshaytirardi.
+     Endi yozuvlar bir xil balandlikda turadi. */
+  min-height:2.2em;line-height:1.1}
+@media (max-width:400px){.raqam span{letter-spacing:.08em}}
 
 /* ---------- ISHONCH BELGILARI ----------
    Sarlavha ostidagi uch fakt: javob, ish kuni, to'lov. Mijoz shu
@@ -166,68 +170,6 @@ button{font-family:inherit;cursor:pointer}
 @media (min-width:820px){.vada b{font-size:13px}
   .vada span{font-size:11px}}
 
-/* ---------- ISHONCH ---------- */
-.ishonch{position:relative}
-.ishonch .sarl{font-size:9px;color:var(--xira);letter-spacing:2.2px;
-  text-transform:uppercase;padding:16px 18px 8px}
-/* Logolar qatori ham suriladi. Telefonda u ekran chetida shundoq
-   kesilardi — oxirgi plita yarmi ko'rinib turardi va bu "buzuq"
-   taassurot berardi. Niqob chetni yumshoq yo'qotadi: davomi
-   borligi bilinadi, kesilgan joy ko'rinmaydi. */
-.oqim{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;
-  padding:0 18px 4px;
-  -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 46px),transparent);
-  mask-image:linear-gradient(90deg,#000 calc(100% - 46px),transparent)}
-.oqim::-webkit-scrollbar{display:none}
-.oqim b{flex:0 0 auto;font-size:11.5px;font-weight:600;padding:7px 11px;
-  border-radius:9px;background:var(--qatlam);border:1px solid var(--chiziq);
-  color:#c3cad4;white-space:nowrap}
-/* ISHONCH QATORI — bu yerda logolar QAHRAMON EMAS.
-   Ular "shular ishondi" degan pichirlash bo'lishi kerak, baqirish
-   emas. Oq plitalar qatori ko'zni tortib, asosiy ishlardan diqqatni
-   olib qo'yardi. Endi rangsiz va xira: ko'z ularni ko'radi, lekin
-   ularda to'xtamaydi. Ustiga borsa — rangi qaytadi. */
-.oqim b.logo{background:rgba(255,255,255,.90);
-  border:1px solid rgba(255,255,255,.10);padding:0;
-  width:118px;height:58px;display:flex;align-items:center;
-  justify-content:center;overflow:hidden;border-radius:12px;
-  transition:background .25s,border-color .25s,transform .25s}
-/* Ilgari grayscale + brightness ishlatilardi va u faqat OCH
-   logolarda ishlardi: qora logoni yorug' qilib bo'lmaydi — nolni
-   ko'paytirsang ham nol. Natijada qora logolar qora fonda
-   ko'rinmay ketardi va qatorning yarmi bo'sh turardi.
-
-   Hammasini siluetga aylantirish ham to'g'ri javob emas: ichki
-   detal yo'qoladi, gerb shunchaki dog'ga aylanadi.
-
-   Yechim boshqa joyda edi: muammo logoda emas, PLITADA. */
-/* O'lchab tekshirilgan: ishonch qatoridagi olti logoning HAMMASI
-   to'q (yorug'ligi 54..116, ya'ni 140 dan past). Shuning uchun
-   qorong'i plitada ularning uchtasi umuman ko'rinmasdi.
-   Och plitada esa hammasi o'qiladi. brightness biroz to'qroq
-   qiladi — mayda gerb detali kulrangda yo'qolib ketmasin. */
-.oqim b.logo img{max-width:78%;max-height:66%;width:auto;height:auto;
-  object-fit:contain;
-  filter:grayscale(1) brightness(.72) contrast(1.1) opacity(.78);
-  transition:filter .25s}
-/* TESKARILASH ENDI KERAK EMAS.
-   Ilgari plita qorong'i edi, shuning uchun qora logolarni
-   teskarilash kerak bo'lardi. Lekin teskarilash gerbning ichki
-   detalini buzardi va rangli gerblar baribir fonga singib
-   ketardi — birinchi uchtasi ekranda umuman ko'rinmasdi.
-
-   Plita OCH bo'lgach muammoning ildizi yo'qoldi: qora ham,
-   rangli ham, oq ham — hammasi bir xil o'qiladi. Xiralik
-   grayscale bilan beriladi, ya'ni "pichirlash" saqlanadi,
-   lekin logo KO'RINADI. Ustiga borsa rangi qaytadi. */
-.oqim b.logo.tesk img{filter:grayscale(1) brightness(.72) contrast(1.1)
-  opacity(.78)}
-@media (pointer:fine){
-  .oqim b.logo:hover{background:#fff;border-color:rgba(255,255,255,.28);
-    transform:translateY(-2px)}
-  .oqim b.logo:hover img{filter:none}
-}
-
 /* ---------- XIZMATLAR BO'LIMI ----------
    Har xizmat bitta kartochka: nima, kimga, qancha, nima kiradi va
    ODAM NIMA OLADI. Oxirgisi eng muhimi - mijoz xizmatni emas,
@@ -241,8 +183,12 @@ button{font-family:inherit;cursor:pointer}
   font-weight:700;letter-spacing:-.4px}
 .xiz-tag{margin:4px 0 0;font-size:12.5px;color:var(--xira)}
 .xiz-narx{margin-left:auto;text-align:right;flex:0 0 auto}
+/* Narx qirqilgandan ko'ra ikki qatorga tushgani yaxshi:
+   "1 000 000" ning yarmi ko'ringan narx umuman ko'rinmagandan
+   yomonroq — mijoz noto'g'ri raqam o'qiydi. */
 .xiz-narx b{display:block;font-family:var(--sarlavha);font-size:17px;
-  font-weight:700;letter-spacing:-.5px;white-space:nowrap}
+  font-weight:700;letter-spacing:-.5px}
+@media (max-width:400px){.xiz-narx b{font-size:15px}}
 .xiz-narx span{display:block;margin-top:3px;font-family:var(--mono);
   font-size:9px;letter-spacing:.13em;text-transform:uppercase;
   color:var(--xira)}
@@ -825,6 +771,9 @@ button{font-family:inherit;cursor:pointer}
 .uslub{font-size:13.5px;line-height:1.62;color:#b4bcc8;padding:12px 0 4px}
 .uslub b{color:var(--urgu);font-weight:700;display:block;font-size:9.5px;
   letter-spacing:2.2px;text-transform:uppercase;margin-bottom:7px}
+/* Ikkinchi sarlavha ("Uslub haqida") birinchi matnga yopishib
+   qolmasin — ikki bo'lak ko'zga ikkita bo'lib ko'rinsin. */
+.uslub b ~ b{margin-top:14px}
 .amallar{display:flex;gap:8px;padding:12px 0 6px}
 .amal svg,.ikkilamchi svg,.qoshish button svg{flex:0 0 auto}
 .ikkilamchi{display:flex;align-items:center;justify-content:center;gap:8px}
@@ -911,6 +860,10 @@ button{font-family:inherit;cursor:pointer}
 .pr-ism em{font-style:normal;color:var(--urgu)}
 .pr-kasb{font-size:11.5px;letter-spacing:2.4px;text-transform:uppercase;
   color:var(--xira);margin-bottom:16px}
+/* Tasma aylantirilgan va biroz kattalashtirilgan, ya'ni uning
+   QAMROVI ekrandan chiqadi — o'zida overflow:hidden bo'lsa ham
+   sahifa yon tomonga 31px suriladigan bo'lib qolgandi. Kesish
+   yuqorida, ota-elementda bo'lishi kerak (pastdagi .bolim). */
 .pr-lenta{position:relative;z-index:2;margin:0 -18px 0;padding:10px 0;
   background:var(--urgu);transform:rotate(-2.2deg) scale(1.06);
   overflow:hidden;white-space:nowrap}
@@ -921,6 +874,9 @@ button{font-family:inherit;cursor:pointer}
 @keyframes pr-yur{from{transform:translateX(0)}
   to{transform:translateX(-33.34%)}}
 @media (prefers-reduced-motion:reduce){.pr-lenta i{animation:none}}
+/* clip, hidden EMAS: hidden yangi surilish konteyneri yasab,
+   ichidagi sticky elementlarni buzardi. */
+#b-profil{overflow-x:clip}
 .pr-raqam{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;
   padding:20px 18px 4px}
 .pr-raqam div{background:var(--qatlam);border:1px solid var(--chiziq);
@@ -1014,16 +970,19 @@ button{font-family:inherit;cursor:pointer}
   .tarif-royxat .hisob,.tarif-royxat .shart{grid-column:1 / -1}
 }
 /* Xizmatlar bo'limining oxiridagi ko'prik: narx boshqa
-   bo'limga ko'chdi, odam uni topa olishi kerak. */
-.xiz-narx{margin:16px 18px 0;padding:15px 17px;border-radius:16px;
+   bo'limga ko'chdi, odam uni topa olishi kerak.
+   NOMI ATAYLAB BOSHQA: ilgari bu ham `.xiz-narx` deb atalgan edi
+   va kartochka ichidagi narxni bosib ketgandi — narx markazga
+   surilib, `.xiz{overflow:hidden}` uni qirqib tashlardi. */
+.xiz-kopr{margin:16px 18px 0;padding:15px 17px;border-radius:16px;
   border:1px dashed rgba(255,255,255,.14);display:flex;
   flex-wrap:wrap;align-items:center;gap:12px;justify-content:center;
   text-align:center}
-.xiz-narx-m{font-size:13.5px;line-height:1.55;color:#a6aeba}
-.xiz-narx-t{padding:11px 18px;border-radius:12px;border:0;cursor:pointer;
+.xiz-kopr-m{font-size:13.5px;line-height:1.55;color:#a6aeba}
+.xiz-kopr-t{padding:11px 18px;border-radius:12px;border:0;cursor:pointer;
   font:inherit;font-size:13.5px;font-weight:700;color:#0F1115;
   background:linear-gradient(135deg,#FFB347,#FF7A18)}
-.xiz-narx-t:active{transform:scale(.985)}
+.xiz-kopr-t:active{transform:scale(.985)}
 
 /* ---------- NARX / JARAYON ----------
    Tavsiya etilgan tarif butunlay olovda yonadi - chegara emas, to'la
@@ -1475,7 +1434,7 @@ button{font-family:inherit;cursor:pointer}
   .raqam{padding:17px 20px}
   .raqam b{font-size:30px}
   .raqam span{font-size:10px;margin-top:7px}
-  .ishonch,.qidiruv,.filtr{padding-left:40px;padding-right:40px}
+  .qidiruv,.filtr{padding-left:40px;padding-right:40px}
   .filtr-o::after{right:0;width:64px}
   .tor{grid-template-columns:repeat(3,1fr);gap:18px;padding:0 40px}
   .bolim-sarl{padding-left:40px;padding-right:40px}
@@ -1488,7 +1447,13 @@ button{font-family:inherit;cursor:pointer}
     padding:11px 28px;gap:18px;align-items:center;
     background:rgba(8,9,11,.82);backdrop-filter:blur(18px) saturate(1.3)}
   .nav-mark{display:flex}
-  .nav-oqim{flex:1 1 auto;justify-content:center;gap:2px}
+  /* Markazlashtirish tor ekranda oxirgi ikki bandni ("Tariflar",
+     "Profil") ekrandan chiqarib yuborardi va surish mumkinligi
+     bilinmasdi. Endi chapdan boshlanadi, o'ng chetda esa yumshoq
+     niqob — davomi borligi ko'rinib turadi. */
+  .nav-oqim{flex:1 1 auto;justify-content:flex-start;gap:2px;
+    -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 26px),transparent);
+    mask-image:linear-gradient(90deg,#000 calc(100% - 26px),transparent)}
   .nav button{flex:0 0 auto;min-width:auto;max-width:none;padding:9px 14px;
     flex-direction:row;gap:8px;font-size:13.5px;border-radius:999px;
     transition:.15s}
@@ -1986,17 +1951,13 @@ body.namuna{padding-top:36px}
     <div class="dava-izoh">Har konsept ortida biznes mantiqi turadi.
       Shablon ishlatilmaydi — nega shunday qilinganini tushuntirib beraman.</div>
     <div class="raqamlar">
-      <div class="raqam"><b id="s-brend">0</b><span>brend</span></div>
-      <div class="raqam"><b id="s-ish">0</b><span>ish</span></div>
+      <div class="raqam"><b id="s-brend">0</b><span>tayyorlangan ish</span></div>
       <div class="raqam"><b id="s-klub">0</b><span>klub gerbi</span></div>
+      <div class="raqam"><b>5</b><span>yil tajriba</span></div>
     </div>
     <div class="vada"><div><b>Tezkor javob</b><span>yozganingizdan keyin uzoq kutmaysiz</span></div><div><b>Har kuni</b><span>dam olish kunlari ham yozsangiz bo&#x27;ladi</span></div><div><b>Avans 50%</b><span>qolgani fayllar topshirilishidan oldin</span></div></div>
   </div>
 
-  <div class="ishonch">
-    <div class="sarl">Ishonch bildirganlar</div>
-    <div class="oqim"><b class="logo" style="--lfon:#DC2228"><img loading="lazy" src="rasm/andijon-fk/logo.png" alt="Andijon FK"></b><b class="logo" style="--lfon:#0E1014"><img loading="lazy" src="rasm/sherdor/logo.png" alt="Sherdor"></b><b class="logo" style="--lfon:#0E1014"><img loading="lazy" src="rasm/sonicx-mfc/logo.png" alt="SonicX"></b><b class="logo tesk" style="--lfon:#FFFFFF"><img loading="lazy" src="rasm/pdp-school/logo.png" alt="PDP School"></b><b class="logo tesk" style="--lfon:#FFFFFF"><img loading="lazy" src="rasm/echipta/logo.png" alt="echipta"></b><b class="logo tesk" style="--lfon:#FFFFFF"><img loading="lazy" src="rasm/tovarim-uz/logo.png" alt="Tovarim.uz"></b></div>
-  </div>
 
   <div class="qidiruv" id="q-quti">
     <span class="belgi" id="i-qidiruv"></span>
@@ -2054,7 +2015,14 @@ body.namuna{padding-top:36px}
 </div>
 
 <!-- ============ PAPKADAN KELGAN BO'LIMLAR ============ -->
-
+<div class="bolim" id="b-video">
+  <div class="hero" style="padding-bottom:6px">
+    <div class="nur"></div>
+    <div class="dava" style="margin-top:6px">Video</div>
+    <div class="dava-izoh">Shu yo'nalishdagi ishlarim — jami 2 ta.</div>
+  </div>
+  <div class="tor" id="tor-video"></div>
+</div>
 
 <!-- ================= OVOZLAR ================= -->
 <div class="bolim" id="b-ovozlar">
@@ -2165,9 +2133,9 @@ body.namuna{padding-top:36px}
        ro'yxatining tepasida turardi va bo'lim "men nima
        qilaman" degan javob o'rniga darrov pul so'rashga
        o'xshab qolgandi. Endi narx alohida bo'limda. -->
-  <div class="xiz-narx">
-    <div class="xiz-narx-m">Qancha turishini bilmoqchimisiz?</div>
-    <button class="xiz-narx-t" id="xiz-tarifga">Tariflar va
+  <div class="xiz-kopr">
+    <div class="xiz-kopr-m">Qancha turishini bilmoqchimisiz?</div>
+    <button class="xiz-kopr-t" id="xiz-tarifga">Tariflar va
       hisob-kitob</button>
   </div>
   <div style="height:18px"></div>
@@ -2438,7 +2406,7 @@ body.namuna{padding-top:36px}
     <button data-b="posterlar"><s data-i="posterlar"></s>Posterlar</button>
     <button data-b="ovozlar" id="nav-ovoz" style="display:none"><s data-i="ovoz"></s>Ovozlar</button>
     <button data-b="videolar" id="nav-video" style="display:none"><s data-i="video"></s>Videolar</button>
-
+  <button data-b="video"><s data-i="papka"></s>Video</button>
     <button data-b="sotuv" id="nav-sotuv" style="display:none"><s data-i="narx"></s>Sotuvda</button>
     <button data-b="bepul" class="nav-bepul"><s data-i="yulduz"></s>Bepul</button>
     <button data-b="xizmatlar"><s data-i="xizmat"></s>Xizmatlar</button>
@@ -2462,14 +2430,14 @@ function ikon(nom, olcham, rang){
 var BITTA_KADR = true;   /* katalogda 1 ta variant */
 var TG = window.Telegram ? window.Telegram.WebApp : null;
 var ADMIN = 515902673;
-var PROFIL = {"ism": "Sardorbek", "taxallus": "malades.bola", "kasb": "brend va sport identikasi dizayneri", "shahar": "Andijon / Toshkent", "yillar": 5, "haqida": "Brend va sport identikasi bilan 5 yildan beri ishlayman. Ishim shablon tanlash emas — har konsept ortida biznes mantiqi turadi va mijozga nega shunday qilinganini tushuntirib beraman.", "raqamlar": [["110+", "tayyorlangan ish"], ["25", "klub gerbi"], ["5", "yil tajriba"]], "loyihalar": [{"nom": "echipta", "rol": "Asoschi", "izoh": "Chipta xizmati — g'oyadan brendgacha o'zim qurdim.", "turi": "asoschi", "rang": "#332688", "logo": "rasm/profil/echipta.png", "toq": true}, {"nom": "kissam", "rol": "Asoschi", "izoh": "Kontent va dizayn yo'nalishi.", "turi": "asoschi", "rang": "#1B2A6B", "logo": "rasm/profil/kissam.png", "toq": false}, {"nom": "Andijon FK", "rol": "Brend identikasi", "izoh": "Klub gerbi, forma brendingi va matchday dizayn tizimi.", "turi": "mijoz", "rang": "#DC2228", "logo": "rasm/profil/Andijon_FK.png", "toq": true}], "xizmatlar": ["Logo va brend identikasi", "Sport klublari uchun gerb va forma brendingi", "Brendbuk va qo'llanish tizimi", "Ijtimoiy tarmoq dizayn tizimi"]};
+var PROFIL = {"ism": "Sardorbek", "taxallus": "malades.bola", "kasb": "brend va sport identikasi dizayneri", "shahar": "Andijon / Toshkent", "yillar": 5, "haqida": "Brend va sport identikasi bilan 5 yildan beri ishlayman. Ishim shablon tanlash emas — har konsept ortida biznes mantiqi turadi va mijozga nega shunday qilinganini tushuntirib beraman.", "raqamlar": [["123", "tayyorlangan ish"], ["26", "klub gerbi"], ["5", "yil tajriba"]], "loyihalar": [{"nom": "echipta", "rol": "Asoschi", "izoh": "Chipta xizmati — g'oyadan brendgacha o'zim qurdim.", "turi": "asoschi", "rang": "#332688", "logo": "rasm/profil/echipta.png", "toq": true}, {"nom": "kissam", "rol": "Asoschi", "izoh": "Kontent va dizayn yo'nalishi.", "turi": "asoschi", "rang": "#1B2A6B", "logo": "rasm/profil/kissam.png", "toq": false}, {"nom": "Andijon FK", "rol": "Brend identikasi", "izoh": "Klub gerbi, forma brendingi va matchday dizayn tizimi.", "turi": "mijoz", "rang": "#DC2228", "logo": "rasm/profil/Andijon_FK.png", "toq": true}], "xizmatlar": ["Logo va brend identikasi", "Sport klublari uchun gerb va forma brendingi", "Brendbuk va qo'llanish tizimi", "Ijtimoiy tarmoq dizayn tizimi"]};
 var ALOQA = {"telegram": "@khamilofff", "kanal": "t.me/maladesbola", "instagram": "instagram.com/malades.bola", "behance": "behance.net/maladesbola", "telefon": "+998 88 472 77 72"};
 var BOT_NOM = "malades_bolabot";
 var QIZIQISH = {"ADC ingliz tili kurslari posterlari": 1, "Andijon FK tayyorlov markazlari": 1, "Bek Aviakassa": 1, "Finlit.uz": 1, "Labsearch": 1};
 /* Saytdagi haqiqiy reaksiyalar: {brend: {olov: n, ulash: n}} */
-var SANOQ = {"Andijon FK": {"korish": 7, "olov": 2}, "Anysoft": {"korish": 1, "olov": 1}, "Bek Aviakassa": {"korish": 1, "olov": 1}, "Biznes Pechat": {"olov": 1}, "Chorva Foyda": {"olov": 1}, "Eleven": {"olov": 1}, "Everest Muzlari": {"olov": 1}, "Farovon Marg'ilon": {"olov": 1}, "Finlit.uz": {"korish": 1, "olov": 1, "ulash": 1}, "Instaff": {"olov": 1}, "Labsearch": {"olov": 1}, "OK MK": {"korish": 1}, "Qizilqum": {"korish": 1}, "Salman School": {"olov": 1}, "Surkhon Termez": {"korish": 1}, "Tokatayev — xush kelibsiz": {"korish": 1}};
+var SANOQ = {"Andijon FK": {"korish": 7, "olov": 2}, "Anysoft": {"korish": 1, "olov": 1}, "Bek Aviakassa": {"korish": 2, "olov": 1}, "Biznes Pechat": {"olov": 1}, "Chorva Foyda": {"olov": 1}, "Eleven": {"olov": 1}, "Everest Muzlari": {"olov": 1}, "Farovon Marg'ilon": {"olov": 1}, "Finlit.uz": {"korish": 2, "olov": 1, "ulash": 1}, "Hayrullo Kasimov": {"korish": 1}, "Instaff": {"olov": 1}, "Labsearch": {"olov": 1}, "OK MK": {"korish": 1}, "Qizilqum": {"korish": 2}, "Salman School": {"olov": 1}, "Surkhon Termez": {"korish": 1}, "Tokatayev — xush kelibsiz": {"korish": 1}};
 /* {ish nomi: havola qismi} — har ishning o'z sahifasi uchun */
-var HAVOLA = {"\"Andijon\" FK futbolchilari statistikasi": "andijon-fk-futbolchilari-statistikasi", "77 Turdimurodov Andijon FC": "77-turdimurodov-andijon-fc", "ADC ingliz tili kurslari posterlari": "adc-ingliz-tili-kurslari-posterlari", "Abduqodir Xusanov Manchester City posteri": "abduqodir-xusanov-manchester-city-posteri", "Alidoorf": "alidoorf", "Ananas Travel": "ananas-travel", "Andijon FK": "andijon-fk", "Andijon FK - Samiyev posteri": "andijon-fk-samiyev-posteri", "Andijon FK Asosiy Tarkib Posteri": "andijon-fk-asosiy-tarkib-posteri", "Andijon FK Zarbalar Statistikasi": "andijon-fk-zarbalar-statistikasi", "Andijon FK asosiy tarkib posteri": "andijon-fk-asosiy-tarkib-posteri-2", "Andijon FK matchday posteri": "andijon-fk-matchday-posteri", "Andijon Gazon SMM posterlari": "andijon-gazon-smm-posterlari", "Andijon vs Vishista Krakov Matchday Posteri": "andijon-vs-vishista-krakov-matchday-posteri", "Andijon – Turon matchday posteri": "andijon-turon-matchday-posteri", "Andijonda Bor": "andijonda-bor", "Antech Electronics": "antech-electronics", "Anysoft": "anysoft", "Artel va Shona Texnika Katalogi": "artel-va-shona-texnika-katalogi", "Auto Dallol": "auto-dallol", "Aza Dent Clinic": "aza-dent-clinic", "Bek Aviakassa": "bek-aviakassa", "Bima": "bima", "Biznes Pechat": "biznes-pechat", "Bobur Junior": "bobur-junior", "Bozor.com": "bozor-com", "Bozorvoy": "bozorvoy", "Bukhara Smile": "bukhara-smile", "Bunyodkor": "bunyodkor", "Burgut ko'zi": "burgut-kozi", "Buxoro FK": "buxoro-fk", "Buxoro Uy Bozor": "buxoro-uy-bozor", "Canopus": "canopus", "Cheran — bosh oshpaz": "cheran-bosh-oshpaz", "Chorva Foyda": "chorva-foyda", "Climat Santex": "climat-santex", "Dehkon": "dehkon", "Dilya Nur": "dilya-nur", "Dinamo Samarqand": "dinamo-samarqand", "Ebox": "ebox", "Echipta — Mavsumiy chipta sotuvda": "echipta-mavsumiy-chipta-sotuvda", "Eleven": "eleven", "Eron - O'zbekiston Matchday Posteri": "eron-ozbekiston-matchday-posteri", "Everest Muzlari": "everest-muzlari", "FC Andijon XI Tarkib Posteri": "fc-andijon-xi-tarkib-posteri", "FC Andijon statistika posteri": "fc-andijon-statistika-posteri", "FC Andijon statistika posteri (poster)": "fc-andijon-statistika-posteri-poster", "FK Andijon — XI Tarkib posteri": "fk-andijon-xi-tarkib-posteri", "Farovon Marg'ilon": "farovon-margilon", "Favvora Film": "favvora-film", "Finlit.uz": "finlit-uz", "Grand Projects": "grand-projects", "HandPay": "handpay", "Havaskor Liga": "havaskor-liga", "Hayrullo Kasimov": "hayrullo-kasimov", "HomeWare": "homeware", "Hur Fikrlar": "hur-fikrlar", "IDEA Consulting Centre posterlar to'plami": "idea-consulting-centre-posterlar-toplami", "Instaff": "instaff", "Isam Snack": "isam-snack", "Jadoo": "jadoo", "Khan Restaurant": "khan-restaurant", "Koinot School": "koinot-school", "Kvadrat": "kvadrat", "La Pizza": "la-pizza", "LaMore": "lamore", "Labsearch": "labsearch", "Lal Anaar": "lal-anaar", "Langfy": "langfy", "Lokomotiv": "lokomotiv", "Lorry.uz": "lorry-uz", "Makro Farm tibbiy posterlar to'plami": "makro-farm-tibbiy-posterlar-toplami", "Maorif": "maorif", "Marjon": "marjon", "Mash'al": "mashal", "Match Day — burgut": "match-day-burgut", "Med Texnika Andijon posterlari": "med-texnika-andijon-posterlari", "Mendeleyev": "mendeleyev", "Metallurg Bekabad": "metallurg-bekabad", "Mirzayev's Life": "mirzayevs-life", "Moliyaviy Maslahatchi": "moliyaviy-maslahatchi", "Muhandislik Markazi": "muhandislik-markazi", "Naimix": "naimix", "Nasaf": "nasaf", "Nasiyachi": "nasiyachi", "Navbahor": "navbahor", "Neftchi Farg'ona": "neftchi-fargona", "O'FF": "off", "O'quv markaz kurslari uchun posterlar": "oquv-markaz-kurslari-uchun-posterlar", "O'yin kuni bugun": "oyin-kuni-bugun", "O'zMMB": "ozmmb", "O'zbekiston Kasaba Uyushmalari": "ozbekiston-kasaba-uyushmalari", "OK MK": "ok-mk", "Obod Makon Plast": "obod-makon-plast", "Olov va burgut": "olov-va-burgut", "Oltin Sohil": "oltin-sohil", "Oltin chaqmoq": "oltin-chaqmoq", "Orient Plast": "orient-plast", "Owntrainer": "owntrainer", "PDP School": "pdp-school", "PMU": "pmu", "PRO.uz": "pro-uz", "Paxtakor": "paxtakor", "Piyola": "piyola", "Pro Advokat": "pro-advokat", "Progress": "progress", "Qassob Markazi": "qassob-markazi", "Qassob Service": "qassob-service", "Qilich va yo'lbars": "qilich-va-yolbars", "Qizilqum": "qizilqum", "Qo'qon 1912": "qoqon-1912", "Ravshan": "ravshan", "Reja MFC": "reja-mfc", "RiSchool": "rischool", "Rieltor One": "rieltor-one", "Rohat Choyxona": "rohat-choyxona", "Ruscha": "ruscha", "SXIU Samarqand": "sxiu-samarqand", "Sado": "sado", "Sahifa Books": "sahifa-books", "Salid Light": "salid-light", "Salman School": "salman-school", "Sanitariya Markazi": "sanitariya-markazi", "Sara Music Show": "sara-music-show", "Saray Plastic": "saray-plastic", "Sarbon Home": "sarbon-home", "Shaxmat taktikasi": "shaxmat-taktikasi", "Shaxzod Azmiddinov": "shaxzod-azmiddinov", "Sherdor": "sherdor", "Shox Beton reklama posterlari": "shox-beton-reklama-posterlari", "Shurtan G'uzar": "shurtan-guzar", "Skat": "skat", "Sodiqov Sayfiddin": "sodiqov-sayfiddin", "Sog'diyona Jizzax": "sogdiyona-jizzax", "SonicX MFC": "sonicx-mfc", "Spiderjan": "spiderjan", "Spoon": "spoon", "Starboys": "starboys", "Superliga 1-tur: Qo'qon - Andijon": "superliga-1-tur-qoqon-andijon", "Surkhon Termez": "surkhon-termez", "TD": "td", "Tarix yozildi": "tarix-yozildi", "Tarkib XI — Mash'al": "tarkib-xi-mashal", "Tarkib XI — Turkiya": "tarkib-xi-turkiya", "Tarkib XI — qilich": "tarkib-xi-qilich", "Teacher Asqar": "teacher-asqar", "Texnobay": "texnobay", "TezPay": "tezpay", "To'p ilgich": "top-ilgich", "Tokatayev — xush kelibsiz": "tokatayev-xush-kelibsiz", "Toshkent Bozor": "toshkent-bozor", "Tovarim.uz": "tovarim-uz", "Turna": "turna", "Umar": "umar", "UmarMD": "umarmd", "Ustozaku": "ustozaku", "Uy belgisi (nomi aniqlanmagan)": "uy-belgisi-nomi-aniqlanmagan", "Vassiliev Vladislav statistikasi posteri": "vassiliev-vladislav-statistikasi-posteri", "Welcome Vladislav Vassilyev - Andijon FK": "welcome-vladislav-vassilyev-andijon-fk", "Welcome back": "welcome-back", "Welcome — Bozorov": "welcome-bozorov", "Welcome — Mozgovoy": "welcome-mozgovoy", "Welcome — Nasrullayev": "welcome-nasrullayev", "Wellrise Animal Health": "wellrise-animal-health", "Wester School": "wester-school", "Xalq Ta'limi Info": "xalq-talimi-info", "Xalqaro Festivallar Direksiyasi": "xalqaro-festivallar-direksiyasi", "Xaridor": "xaridor", "Xontire": "xontire", "Xorazm FK": "xorazm-fk", "Xorazm PFK": "xorazm-pfk", "echipta": "echipta"};
+var HAVOLA = {"\"Andijon\" FK futbolchilari statistikasi": "andijon-fk-futbolchilari-statistikasi", "77 Turdimurodov Andijon FC": "77-turdimurodov-andijon-fc", "ADC ingliz tili kurslari posterlari": "adc-ingliz-tili-kurslari-posterlari", "Abduqodir Xusanov Manchester City posteri": "abduqodir-xusanov-manchester-city-posteri", "Alidoorf": "alidoorf", "Ananas Travel": "ananas-travel", "Andijon FK": "andijon-fk", "Andijon FK - Samiyev posteri": "andijon-fk-samiyev-posteri", "Andijon FK Animatsiya Uslublari": "andijon-fk-animatsiya-uslublari", "Andijon FK Asosiy Tarkib Posteri": "andijon-fk-asosiy-tarkib-posteri", "Andijon FK Zarbalar Statistikasi": "andijon-fk-zarbalar-statistikasi", "Andijon FK asosiy tarkib posteri": "andijon-fk-asosiy-tarkib-posteri-2", "Andijon FK logotipi animatsiyalari": "andijon-fk-logotipi-animatsiyalari", "Andijon FK matchday posteri": "andijon-fk-matchday-posteri", "Andijon Gazon SMM posterlari": "andijon-gazon-smm-posterlari", "Andijon vs Vishista Krakov Matchday Posteri": "andijon-vs-vishista-krakov-matchday-posteri", "Andijon – Turon matchday posteri": "andijon-turon-matchday-posteri", "Andijonda Bor": "andijonda-bor", "Antech Electronics": "antech-electronics", "Anysoft": "anysoft", "Artel va Shona Texnika Katalogi": "artel-va-shona-texnika-katalogi", "Auto Dallol": "auto-dallol", "Aza Dent Clinic": "aza-dent-clinic", "Bek Aviakassa": "bek-aviakassa", "Bima": "bima", "Biznes Pechat": "biznes-pechat", "Bobur Junior": "bobur-junior", "Bozor.com": "bozor-com", "Bozorvoy": "bozorvoy", "Bukhara Smile": "bukhara-smile", "Bunyodkor": "bunyodkor", "Burgut ko'zi": "burgut-kozi", "Buxoro FK": "buxoro-fk", "Buxoro Uy Bozor": "buxoro-uy-bozor", "Canopus": "canopus", "Cheran — bosh oshpaz": "cheran-bosh-oshpaz", "Chorva Foyda": "chorva-foyda", "Climat Santex": "climat-santex", "Dehkon": "dehkon", "Dilya Nur": "dilya-nur", "Dinamo Samarqand": "dinamo-samarqand", "Ebox": "ebox", "Echipta — Mavsumiy chipta sotuvda": "echipta-mavsumiy-chipta-sotuvda", "Eleven": "eleven", "Eron - O'zbekiston Matchday Posteri": "eron-ozbekiston-matchday-posteri", "Everest Muzlari": "everest-muzlari", "FC Andijon XI Tarkib Posteri": "fc-andijon-xi-tarkib-posteri", "FC Andijon statistika posteri": "fc-andijon-statistika-posteri", "FC Andijon statistika posteri (poster)": "fc-andijon-statistika-posteri-poster", "FK Andijon — XI Tarkib posteri": "fk-andijon-xi-tarkib-posteri", "Farovon Marg'ilon": "farovon-margilon", "Favvora Film": "favvora-film", "Finlit.uz": "finlit-uz", "Grand Projects": "grand-projects", "HandPay": "handpay", "Havaskor Liga": "havaskor-liga", "Hayrullo Kasimov": "hayrullo-kasimov", "HomeWare": "homeware", "Hur Fikrlar": "hur-fikrlar", "IDEA Consulting Centre posterlar to'plami": "idea-consulting-centre-posterlar-toplami", "Instaff": "instaff", "Isam Snack": "isam-snack", "Jadoo": "jadoo", "Khan Restaurant": "khan-restaurant", "Koinot School": "koinot-school", "Kvadrat": "kvadrat", "La Pizza": "la-pizza", "LaMore": "lamore", "Labsearch": "labsearch", "Lal Anaar": "lal-anaar", "Langfy": "langfy", "Lokomotiv": "lokomotiv", "Lorry.uz": "lorry-uz", "Makro Farm tibbiy posterlar to'plami": "makro-farm-tibbiy-posterlar-toplami", "Maorif": "maorif", "Marjon": "marjon", "Mash'al": "mashal", "Match Day — burgut": "match-day-burgut", "Med Texnika Andijon posterlari": "med-texnika-andijon-posterlari", "Mendeleyev": "mendeleyev", "Metallurg Bekabad": "metallurg-bekabad", "Mirzayev's Life": "mirzayevs-life", "Moliyaviy Maslahatchi": "moliyaviy-maslahatchi", "Muhandislik Markazi": "muhandislik-markazi", "Naimix": "naimix", "Nasaf": "nasaf", "Nasiyachi": "nasiyachi", "Navbahor": "navbahor", "Neftchi Farg'ona": "neftchi-fargona", "O'FF": "off", "O'quv markaz kurslari uchun posterlar": "oquv-markaz-kurslari-uchun-posterlar", "O'yin kuni bugun": "oyin-kuni-bugun", "O'zMMB": "ozmmb", "O'zbekiston Kasaba Uyushmalari": "ozbekiston-kasaba-uyushmalari", "OK MK": "ok-mk", "Obod Makon Plast": "obod-makon-plast", "Olov va burgut": "olov-va-burgut", "Oltin Sohil": "oltin-sohil", "Oltin chaqmoq": "oltin-chaqmoq", "Orient Plast": "orient-plast", "Owntrainer": "owntrainer", "PDP School": "pdp-school", "PMU": "pmu", "PRO.uz": "pro-uz", "Paxtakor": "paxtakor", "Piyola": "piyola", "Pro Advokat": "pro-advokat", "Progress": "progress", "Qassob Markazi": "qassob-markazi", "Qassob Service": "qassob-service", "Qilich va yo'lbars": "qilich-va-yolbars", "Qizilqum": "qizilqum", "Qo'qon 1912": "qoqon-1912", "Ravshan": "ravshan", "Reja MFC": "reja-mfc", "RiSchool": "rischool", "Rieltor One": "rieltor-one", "Rohat Choyxona": "rohat-choyxona", "Ruscha": "ruscha", "SXIU Samarqand": "sxiu-samarqand", "Sado": "sado", "Sahifa Books": "sahifa-books", "Salid Light": "salid-light", "Salman School": "salman-school", "Sanitariya Markazi": "sanitariya-markazi", "Sara Music Show": "sara-music-show", "Saray Plastic": "saray-plastic", "Sarbon Home": "sarbon-home", "Shaxmat taktikasi": "shaxmat-taktikasi", "Shaxzod Azmiddinov": "shaxzod-azmiddinov", "Sherdor": "sherdor", "Shox Beton reklama posterlari": "shox-beton-reklama-posterlari", "Shurtan G'uzar": "shurtan-guzar", "Skat": "skat", "Sodiqov Sayfiddin": "sodiqov-sayfiddin", "Sog'diyona Jizzax": "sogdiyona-jizzax", "SonicX MFC": "sonicx-mfc", "Spiderjan": "spiderjan", "Spoon": "spoon", "Starboys": "starboys", "Superliga 1-tur: Qo'qon - Andijon": "superliga-1-tur-qoqon-andijon", "Surkhon Termez": "surkhon-termez", "TD": "td", "Tarix yozildi": "tarix-yozildi", "Tarkib XI — Mash'al": "tarkib-xi-mashal", "Tarkib XI — Turkiya": "tarkib-xi-turkiya", "Tarkib XI — qilich": "tarkib-xi-qilich", "Teacher Asqar": "teacher-asqar", "Texnobay": "texnobay", "TezPay": "tezpay", "To'p ilgich": "top-ilgich", "Tokatayev — xush kelibsiz": "tokatayev-xush-kelibsiz", "Toshkent Bozor": "toshkent-bozor", "Tovarim.uz": "tovarim-uz", "Turna": "turna", "Umar": "umar", "UmarMD": "umarmd", "Ustozaku": "ustozaku", "Uy belgisi (nomi aniqlanmagan)": "uy-belgisi-nomi-aniqlanmagan", "Vassiliev Vladislav statistikasi posteri": "vassiliev-vladislav-statistikasi-posteri", "Welcome Vladislav Vassilyev - Andijon FK": "welcome-vladislav-vassilyev-andijon-fk", "Welcome back": "welcome-back", "Welcome — Bozorov": "welcome-bozorov", "Welcome — Mozgovoy": "welcome-mozgovoy", "Welcome — Nasrullayev": "welcome-nasrullayev", "Wellrise Animal Health": "wellrise-animal-health", "Wester School": "wester-school", "Xalq Ta'limi Info": "xalq-talimi-info", "Xalqaro Festivallar Direksiyasi": "xalqaro-festivallar-direksiyasi", "Xaridor": "xaridor", "Xontire": "xontire", "Xorazm FK": "xorazm-fk", "Xorazm PFK": "xorazm-pfk", "echipta": "echipta"};
 
 /* ---------- NAMUNA REJIMI ----------
    Keyslar, fikrlar va sotuv yasaldi, lekin hali to'ldirilmagan.
@@ -2565,10 +2533,15 @@ function r(nom){
 var HOLATLAR = [["hammasi","Hammasi"],["buyurtma","Buyurtma"],
                 ["taklif","Taklif"],["konsept","Konsept"]];
 var TOIFALAR = [["sport", "Sport"], ["biznes", "Biznes"], ["savdo", "Savdo va do'kon"], ["ovqat", "Ovqat va ichimlik"], ["talim", "Ta'lim"], ["sogliq", "Tibbiyot"], ["gozallik", "Go'zallik"], ["moda", "Moda va kiyim"], ["qurilish", "Qurilish"], ["kochmas", "Ko'chmas mulk"], ["sanoat", "Ishlab chiqarish"], ["qishloq", "Qishloq xo'jaligi"], ["transport", "Transport"], ["texno", "IT va texnologiya"], ["moliya", "Moliya"], ["sayohat", "Sayohat"], ["media", "Media va kontent"], ["davlat", "Davlat muassasasi"], ["xizmat", "Xizmat ko'rsatish"], ["shaxsiy", "Shaxsiy brend"]];
-var QOSH_BOLIM = [];
+var QOSH_BOLIM = [{"kalit": "video", "nom": "Video", "soni": 2}];
 var QOSH_KALIT = QOSH_BOLIM.map(function(b){ return b.kalit; });
 
-function toifasi(v){ return v.toifa || (v.klub ? "sport" : "biznes"); }
+/* Toifasi belgilanmagan ish HECH QAYSI soha tugmasiga tushmaydi.
+   Ilgari u avtomatik "biznes" bo'lardi: tugmada 65 deb turardi,
+   bosilganda esa ichidan sport, ta'lim, ovqat — hammasi chiqardi.
+   Mijoz "Ovqat" deb bosib boshqa narsa ko'rsa, filtrga ishonmay
+   qo'yadi. Belgilanmagan ishlar "Hammasi" da baribir turadi. */
+function toifasi(v){ return v.toifa || (v.klub ? "sport" : ""); }
 function posterli(v){ return !!v.poster || v.bolim === "poster"; }
 function qoshBolim(v){
   return (v.bolim && QOSH_KALIT.indexOf(v.bolim) >= 0) ? v.bolim : "";
@@ -2617,6 +2590,11 @@ function filtrChiz(){
   f.innerHTML = "";
   HOLATLAR.forEach(function(t){
     var n = soni(t[0]);
+    /* Bo'sh tugma ko'rsatilmaydi. "Taklif 0" bosilganda hech
+       narsa chiqmasdi va odam saytni buzuq deb o'ylardi.
+       "Hammasi" va hozir tanlangani doim qoladi — aks holda
+       orqaga qaytish yo'li yo'qoladi. */
+    if (!n && t[0] !== "hammasi" && t[0] !== fHolat) return;
     var b = document.createElement("button");
     b.className = "tug" + (t[0] === fHolat ? " faol" : "");
     b.innerHTML = t[1] + "<i>" + n + "</i>";
@@ -2634,7 +2612,7 @@ function filtrChiz(){
     var v = malumot[n];
     if (posterli(v) || qoshBolim(v)) continue;
     var t = toifasi(v);
-    sanoq[t] = (sanoq[t] || 0) + 1;
+    if (t) sanoq[t] = (sanoq[t] || 0) + 1;
   }
   TOIFALAR.map(function(t){ return [t[0], t[1], sanoq[t[0]] || 0]; })
     .filter(function(t){ return t[2] > 0; })
@@ -3679,10 +3657,18 @@ function ochish(nom, v){
     rq.style.display = "none";
   }
 
+  /* IKKALASI ham chiqadi, tartibi ham muhim.
+     "Ish haqida" — nega shunday qilingani, ya'ni egasining asosiy
+     va'dasi. "Uslub haqida" — texnik tahlil, u ikkinchi darajali.
+     Ilgari faqat bittasi chiqardi va tahlili yo'q 8 ta ish
+     umuman izohsiz ochilardi: mijoz "nega bunday?" degan savolga
+     javob topmasdi va chiqib ketardi. */
+  var ish = v.izoh || v.art_izoh || "";
   var u = uslubi(nom);
-  var matn = u ? "<b>Uslub haqida</b>" + u : "";
-  if (!matn && v.izoh) matn = "<b>Ish haqida</b>" + v.izoh;
+  var matn = (ish ? "<b>Ish haqida</b>" + ish : "") +
+             (u ? "<b>Uslub haqida</b>" + u : "");
   document.getElementById("o-uslub").innerHTML = matn;
+  document.getElementById("o-uslub").style.display = matn ? "" : "none";
 
   var vd = document.getElementById("o-video");
   vd.style.display = v.video ? "block" : "none";
@@ -3762,7 +3748,12 @@ document.getElementById("o-shunday").onclick = function(){
 /* ---------- VARAQ BOSHQARUVI ---------- */
 var stek = [];
 function varaqOch(id){
-  document.getElementById(id).classList.add("ochiq");
+  /* Varaq topilmasa butun skript to'xtab qolardi va sahifa
+     "muzlab" qolgandek ko'rinardi. Endi shunchaki hech narsa
+     ochilmaydi — qolgani ishlayveradi. */
+  var e = document.getElementById(id);
+  if (!e) return;
+  e.classList.add("ochiq");
   stek.push(id);
   tarixQosh();
   if (TG) TG.BackButton.show();
@@ -4434,7 +4425,7 @@ function xizmatChiz(){
    Muhim qaror: ANIQ raqam emas, ORALIQ ko'rsatiladi. Aniq
    raqam aytilsa mijoz uni shartnoma deb o'ylaydi va keyingi
    har bir qo'shimcha ish janjalga aylanadi. */
-var NARX = {"paketlar": [{"kalit": "logo", "nom": "Logo", "narx": 1500000, "kun_min": 7, "kun_max": 10, "izoh": "Logo, vektor fayllar, qora-oq versiya"}, {"kalit": "brend", "nom": "Brend", "narx": 4500000, "kun_min": 14, "kun_max": 20, "izoh": "Logo + rang, shrift, mini brendbuk"}, {"kalit": "tizim", "nom": "Brend tizimi", "narx": 12000000, "kun_min": 30, "kun_max": 45, "izoh": "To'liq brendbuk, neyming, maketlar"}, {"kalit": "klub", "nom": "Klub identikasi", "narx": 18000000, "kun_min": 30, "kun_max": 60, "izoh": "Gerb, forma, matchday shablonlari"}], "qoshimcha": [{"kalit": "shosh", "nom": "Shoshilinch", "tur": "foiz", "qiymat": 40, "izoh": "Muddat yarmiga qisqaradi, boshqa ishlar kutadi"}, {"kalit": "konsept", "nom": "Qo'shimcha konsept", "tur": "foiz", "qiymat": 25, "izoh": "Standart paketdagidan tashqari yo'nalish"}, {"kalit": "neyming", "nom": "Neyming — brend nomini o'ylash", "tur": "summa", "qiymat": 1500000, "izoh": "3 ta variant, ma'nosi bilan"}, {"kalit": "mockup", "nom": "Mockup to'plami", "tur": "summa", "qiymat": 900000, "izoh": "Vizitka, peshtaxta, forma, qadoq"}, {"kalit": "smm", "nom": "Ijtimoiy tarmoq shablonlari", "tur": "summa", "qiymat": 1200000, "izoh": "10 ta post va story shabloni"}, {"kalit": "patent", "nom": "Plagiat va patent tekshiruvi", "tur": "summa", "qiymat": 800000, "izoh": "O'xshash belgilar qidiriladi"}, {"kalit": "qollab", "nom": "30 kun qo'llab-quvvatlash", "tur": "summa", "qiymat": 700000, "izoh": "Kichik tuzatishlar bepul"}], "past": 0.9, "yuqori": 1.15, "pol": 1200000};
+var NARX = {"paketlar": [{"kalit": "logo", "nom": "Logo", "narx": 1000000, "kun_min": 7, "kun_max": 10, "izoh": "Logo, vektor fayllar, qora-oq versiya"}, {"kalit": "brend", "nom": "Brend", "narx": 2800000, "kun_min": 14, "kun_max": 20, "izoh": "Logo + rang, shrift, mini brendbuk"}, {"kalit": "tizim", "nom": "Brend tizimi", "narx": 7000000, "kun_min": 30, "kun_max": 45, "izoh": "To'liq brendbuk, neyming, maketlar"}, {"kalit": "klub", "nom": "Klub identikasi", "narx": 12000000, "kun_min": 30, "kun_max": 60, "izoh": "Gerb, forma, matchday shablonlari"}], "qoshimcha": [{"kalit": "shosh", "nom": "Shoshilinch", "tur": "foiz", "qiymat": 40, "izoh": "Muddat yarmiga qisqaradi, boshqa ishlar kutadi"}, {"kalit": "konsept", "nom": "Qo'shimcha konsept", "tur": "foiz", "qiymat": 25, "izoh": "Standart paketdagidan tashqari yo'nalish"}, {"kalit": "neyming", "nom": "Neyming — brend nomini o'ylash", "tur": "summa", "qiymat": 1500000, "izoh": "3 ta variant, ma'nosi bilan"}, {"kalit": "mockup", "nom": "Mockup to'plami", "tur": "summa", "qiymat": 900000, "izoh": "Vizitka, peshtaxta, forma, qadoq"}, {"kalit": "smm", "nom": "Ijtimoiy tarmoq shablonlari", "tur": "summa", "qiymat": 1200000, "izoh": "10 ta post va story shabloni"}, {"kalit": "patent", "nom": "Plagiat va patent tekshiruvi", "tur": "summa", "qiymat": 800000, "izoh": "O'xshash belgilar qidiriladi"}, {"kalit": "qollab", "nom": "30 kun qo'llab-quvvatlash", "tur": "summa", "qiymat": 700000, "izoh": "Kichik tuzatishlar bepul"}], "past": 0.9, "yuqori": 1.15, "pol": 800000};
 var kalkPaket = "";
 var kalkQosh = {};
 var kalkKonsept = 1;
@@ -4872,22 +4863,22 @@ function filtrOch(){
 
 /* ---------- NARX / JARAYON ---------- */
 var TARIFLAR = [
-  {nom:"LOGO", baho:"1 500 000", kun:"7\u201310 kun",
+  {nom:"LOGO", baho:"1 000 000", kun:"7\u201310 kun",
    kim:"do'kon, xizmat, shaxsiy brend",
    ich:["2 ta konsept, noldan chiziladi","Rang va shrift tanlovi",
         "To'liq vektor: AI, SVG, PDF, PNG","Qora-oq va negativ versiya",
         "Ijtimoiy tarmoq formatlari","2 marta tahrir"]},
-  {nom:"BREND", baho:"4 500 000", kun:"14\u201320 kun", tavsiya:true,
+  {nom:"BREND", baho:"2 800 000", kun:"14\u201320 kun", tavsiya:true,
    kim:"startap, kichik va o'rta biznes",
    ich:["3 ta konsept, har biri boshqa g'oyada","Raqobatchilar tahlili",
         "Rang palitrasi va shrift tizimi","Mini brendbuk",
         "Izohli PDF taqdimot","3 marta tahrir"]},
-  {nom:"BREND TIZIMI", baho:"12 000 000", kun:"30\u201345 kun",
+  {nom:"BREND TIZIMI", baho:"7 000 000", kun:"30\u201345 kun",
    kim:"yirik kompaniya, tarmoq, muassasa",
    ich:["Bozor va auditoriya tahlili","Neyming (kerak bo'lsa)",
         "Plagiat va patent tekshiruvi","To'liq brendbuk",
         "Qo'llanish maketlari","30 kun qo'llab-quvvatlash"]},
-  {nom:"KLUB IDENTIKASI", baho:"18 000 000", dan:true,
+  {nom:"KLUB IDENTIKASI", baho:"12 000 000", dan:true,
    kun:"kelishuv bo'yicha", kim:"klub, akademiya, federatsiya",
    ich:["Gerb (asosiy va soddalashtirilgan)","Forma brendingi",
         "Tipografiya tizimi","Matchday va tarkib shablonlari",
@@ -4985,8 +4976,11 @@ function profilChiz(){
 
   /* Aylanma lenta */
   var l = document.getElementById("pr-lenta");
-  var soz = [PROFIL.kasb || "", "110+ ish", "25 klub gerbi", "5 yil",
-             "Andijon"].filter(Boolean);
+  /* Lentadagi raqamlar ham PROFIL.raqamlar dan — qo'lda yozilgan
+     "110+ ish" eskirib qolgan edi va sarlavhaga zid kelardi. */
+  var soz = [PROFIL.kasb || ""].concat(
+    (PROFIL.raqamlar || []).map(function(x){ return x[0] + " " + x[1]; })
+  ).concat(["Andijon"]).filter(Boolean);
   var bir = soz.map(function(x){ return "<span>" + x + "</span>"; }).join("");
   l.innerHTML = "<i>" + bir + bir + bir + "</i>";
 
@@ -5359,15 +5353,17 @@ fetch("tahlil.json?v=" + Date.now()).then(function(x){ return x.json(); })
 fetch("malumot.json?v=" + Date.now()).then(function(x){ return x.json(); })
   .then(function(j){
     malumot = j;
-    var nomlar = Object.keys(j), ish = 0, klub = 0, brend = 0;
+    var nomlar = Object.keys(j), ish = 0, klub = 0;
     nomlar.forEach(function(n){
-      if (j[n].poster) return;
-      brend++;
-      ish += j[n].kadrlar.length;
+      /* To'r bilan AYNAN bir xil sanaymiz. Ilgari bu yerda
+         j[n].poster tekshirilardi — bu maydon hech qachon
+         to'ldirilmaydi, poster `bolim` orqali belgilanadi.
+         Shu sabab sarlavhada 172, to'rda esa 123 chiqardi. */
+      if (posterli(j[n]) || qoshBolim(j[n])) return;
+      ish++;
       if (j[n].klub) klub++;
     });
-    sana(document.getElementById("s-brend"), brend);
-    sana(document.getElementById("s-ish"), ish);
+    sana(document.getElementById("s-brend"), ish);
     sana(document.getElementById("s-klub"), klub);
     filtrChiz(); torChiz(); narxChiz(); jarayonChiz(); profilChiz();
     filtrSoya();
