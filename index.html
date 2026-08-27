@@ -16,13 +16,13 @@
 <meta property="og:title" content="malades.bola — brend va sport identikasi">
 <meta property="og:description" content="Shunchaki chiroyli emas, sababi bilan chiroyli. Har konsept ortida biznes mantiqi turadi.">
 <meta property="og:url" content="https://maladesbola.uz/">
-<meta property="og:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787829073">
+<meta property="og:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787830394">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="malades.bola — brend va sport identikasi">
 <meta name="twitter:description" content="Shunchaki chiroyli emas, sababi bilan chiroyli.">
-<meta name="twitter:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787829073">
+<meta name="twitter:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787830394">
 <link rel="canonical" href="https://maladesbola.uz/">
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>
@@ -4250,8 +4250,9 @@ function pgChiz(){
       : '<button class="pg-tug" data-n="' + i + '">' +
         'Promptni nusxa olish</button>';
     return '<div class="pg-k' + (x.top ? " top" : "") + '">' +
-      '<div class="pg-rasm">' +
-        '<img loading="lazy" src="' + x.rasm + '" alt="">' +
+      '<div class="pg-rasm' + (x.rasm ? "" : " rasmsiz") + '">' +
+        (x.rasm ? '<img loading="lazy" src="' + x.rasm + '" alt="">'
+                : "") +
         '<span class="pg-tur ' + x.tur + '">' +
           (x.tur === "surat" ? "surat kerak" : "noldan") +
         '</span>' +
