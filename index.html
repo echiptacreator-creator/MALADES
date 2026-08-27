@@ -16,13 +16,13 @@
 <meta property="og:title" content="malades.bola — brend va sport identikasi">
 <meta property="og:description" content="Shunchaki chiroyli emas, sababi bilan chiroyli. Har konsept ortida biznes mantiqi turadi.">
 <meta property="og:url" content="https://maladesbola.uz/">
-<meta property="og:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787825714">
+<meta property="og:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787829073">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="malades.bola — brend va sport identikasi">
 <meta name="twitter:description" content="Shunchaki chiroyli emas, sababi bilan chiroyli.">
-<meta name="twitter:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787825714">
+<meta name="twitter:image" content="https://maladesbola.uz/rasm/ulash.jpg?v=1787829073">
 <link rel="canonical" href="https://maladesbola.uz/">
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>
@@ -1852,6 +1852,25 @@ body.namuna{padding-top:36px}
 .pg-rasm{position:relative;aspect-ratio:4/5;background:#0B0C0F;
   overflow:hidden}
 .pg-rasm img{width:100%;height:100%;object-fit:cover;display:block}
+/* Namuna rasm hali yasalmagan holat. Buzuq rasm belgisi
+   o'rniga toza to'qima qoladi — kartochka baribir butun
+   ko'rinadi va promptning o'zi o'qiladi. */
+/* Balandligi ham qisqaradi: rasm bo'lmasa 4:5 lik katta bo'sh
+   maydon kartochkani ma'nosiz cho'zib yuboradi. Promptning
+   O'ZI qimmatli — u ko'rinib tursin. */
+.pg-rasm.rasmsiz{display:flex;align-items:center;justify-content:center;
+  aspect-ratio:auto;min-height:62px;
+  background:
+    repeating-linear-gradient(135deg,rgba(255,255,255,.028) 0 10px,
+      transparent 10px 20px),#0E1015}
+.pg-rasm.rasmsiz::after{content:"namuna tayyorlanmoqda";
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:#4A505A}
+/* Rasm bo'lmasa yorliq surat ustida emas, chetda turadi —
+   tor chiziq ichida ular ustma-ust tushardi. */
+.pg-rasm.rasmsiz .pg-tur{position:static;background:none;
+  backdrop-filter:none;padding:0;margin-right:10px}
+.pg-rasm.rasmsiz::after{order:2}
 .pg-tur{position:absolute;top:10px;left:10px;padding:4px 9px;
   border-radius:8px;font-family:var(--mono);font-size:9px;
   letter-spacing:.1em;text-transform:uppercase;
@@ -4250,6 +4269,21 @@ function pgChiz(){
       '</div>' +
     '</div>';
   }).join("");
+  /* NAMUNA RASM HALI YASALMAGAN BO'LISHI MUMKIN — u AI bilan
+     chiziladi. Brauzerning "buzuq rasm" belgisi chiqsa mijoz
+     butun saytni buzuq deb o'ylaydi. Shuning uchun yuklanmagan
+     rasmni olib tashlaymiz: kartochka o'rnida toza to'qima va
+     "namuna tayyorlanmoqda" yozuvi qoladi, prompt esa o'qiladi.
+     Ishlov satr ichida emas, shu yerda — atribut ichidagi
+     qo'shtirnoq JS satrini uzib qo'yardi. */
+  tor.querySelectorAll(".pg-rasm img").forEach(function(im){
+    function yoq(){
+      if (im.parentNode) im.parentNode.classList.add("rasmsiz");
+      im.remove();
+    }
+    im.addEventListener("error", yoq);
+    if (im.complete && im.naturalWidth === 0) yoq();
+  });
   tor.querySelectorAll(".pg-tug[data-n]").forEach(function(b){
     b.onclick = function(){
       pgNusxa(pgIsmQoy(q[+b.dataset.n].prompt), b);
