@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sayt bitta sahifadan iborat (bo'limlar shu sahifa ichida
+     almashadi), shuning uchun sitemap'da bitta manzil bor.
+     Ochilishdan oldin Google Search Console ga shu fayl beriladi. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://maladesbola.uz/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
