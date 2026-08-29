@@ -176,6 +176,43 @@ label{display:block;font-family:var(--mono);font-size:9px;
   mask-image:radial-gradient(70% 60% at 50% 0%,#000,transparent 75%)}
 
 
+.grafik{position:relative}
+.grafik svg{display:block;width:100%;height:auto;overflow:visible}
+.grafik .setka{stroke:rgba(255,255,255,.06);stroke-width:1}
+.grafik .yorliq{font-family:var(--mono);font-size:8.5px;
+  letter-spacing:.1em;text-transform:uppercase;fill:#5B6373}
+.grafik .qiymat{font-family:var(--mono);font-size:9.5px;fill:var(--xira)}
+.grafik .nuqta{fill:var(--urgu)}
+.grafik .oxirgi{fill:#fff;stroke:var(--urgu);stroke-width:2.5}
+.grafik-bosh{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+  margin-bottom:12px}
+.grafik-bosh .kat{font-family:var(--sarlavha);font-weight:700;
+  font-size:26px;letter-spacing:-.02em;line-height:1}
+.grafik-bosh .farq{font-family:var(--mono);font-size:10.5px;
+  padding:3px 8px;border-radius:999px;letter-spacing:.06em}
+.grafik-bosh .farq.osdi{color:var(--ijobiy);
+  background:rgba(46,213,115,.12)}
+.grafik-bosh .farq.tushdi{color:var(--salbiy);
+  background:rgba(255,71,87,.12)}
+.grafik-bosh .farq.tinch{color:var(--xira);background:var(--qatlam2)}
+.grafik-bosh .nom{margin-left:auto;font-family:var(--mono);font-size:8.5px;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--xira)}
+.grafik-setka{display:grid;gap:14px;
+  grid-template-columns:repeat(auto-fit,minmax(400px,1fr))}
+@media(max-width:640px){.grafik-setka{grid-template-columns:minmax(0,1fr)}}
+.ustunlar{display:flex;flex-direction:column;gap:9px}
+.ustunlar .qat{display:grid;grid-template-columns:1fr 82px;gap:10px;
+  align-items:center}
+.ustunlar .nomi{font-size:12.5px;color:var(--matn);overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap}
+.ustunlar .chiziq{height:7px;border-radius:999px;background:var(--qatlam2);
+  overflow:hidden;margin-top:5px}
+.ustunlar .chiziq i{display:block;height:100%;border-radius:999px;
+  background:var(--olov)}
+.ustunlar .son{font-family:var(--mono);font-size:11px;color:var(--matn);
+  text-align:right}
+
+
 body{overflow-x:hidden}
 .ich{width:min(1140px,100% - 40px);margin-inline:auto;position:relative;
   z-index:1}
@@ -284,15 +321,149 @@ section{padding:clamp(48px,6vw,88px) 0;border-top:1px solid var(--chiziq);
   margin-bottom:26px}
 .kab-setka{display:grid;gap:16px;
   grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
-.pos{display:grid;gap:12px;
-  grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
-.pos img{width:100%;border-radius:var(--r-kichik);
-  border:1px solid var(--chiziq)}
+.pos{display:grid;gap:12px;align-items:start;
+  grid-template-columns:repeat(auto-fill,minmax(158px,1fr))}
+.pos img{width:100%;display:block;aspect-ratio:4/5;object-fit:contain;
+  background:#000}
+.pos > img{border-radius:var(--r-kichik);border:1px solid var(--chiziq)}
+.pos > a{display:block;background:var(--qatlam2);border:1px solid var(--chiziq);
+  border-radius:var(--r-kichik);overflow:hidden;text-decoration:none;
+  transition:transform .2s,border-color .2s}
+.pos > a:hover{transform:translateY(-3px);border-color:var(--urgu)}
+.pos .p-tag{padding:9px 11px;display:flex;justify-content:space-between;
+  gap:8px;align-items:center;font-family:var(--mono);font-size:9px;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--xira)}
+.pos .p-tag b{min-width:0;color:var(--matn);font-weight:400;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pos .p-tag span{flex:none;color:var(--urgu)}
+
+/* ==========================================================
+   TIZIM BO'LIMI — sotuv sahifasidagi "orqada nima ishlaydi".
+   Chapda ro'yxat, o'ngda kabinet oynasining namunasi.
+   ========================================================== */
+.tizim{display:grid;grid-template-columns:1fr 1.02fr;gap:36px;
+  align-items:start;margin-top:34px}
+@media(max-width:940px){.tizim{grid-template-columns:minmax(0,1fr);gap:26px}}
+.tizim-royxat{border-top:1px solid var(--chiziq)}
+.tizim-royxat > div{display:grid;grid-template-columns:30px 1fr;gap:15px;
+  padding:19px 0;border-bottom:1px solid var(--chiziq)}
+.tizim-royxat .bel{width:28px;height:28px;border-radius:9px;
+  display:grid;place-items:center;font-family:var(--mono);font-size:9.5px;
+  letter-spacing:.04em;color:var(--urgu);
+  background:rgba(255,90,10,.1);border:1px solid rgba(255,90,10,.28)}
+.tizim-royxat h3{font-size:16px}
+.tizim-royxat p{color:var(--xira);font-size:14.5px;margin:7px 0 0;
+  max-width:54ch;line-height:1.6}
+
+/*  Kabinet oynasi — mijoz nimani ko'rishini ko'rsatadigan namuna  */
+.oyna{position:sticky;top:92px;background:var(--qatlam);
+  border:1px solid var(--chiziq);border-radius:var(--r-katta);
+  overflow:hidden}
+@media(max-width:940px){.oyna{position:static}}
+.oyna-tepa{display:flex;align-items:center;gap:7px;padding:12px 16px;
+  border-bottom:1px solid var(--chiziq);background:var(--qatlam2)}
+.oyna-tepa i{width:8px;height:8px;border-radius:50%;flex:none;
+  background:var(--chiziq2);display:block}
+.oyna-tepa i:first-child{background:rgba(255,90,10,.65)}
+.oyna-tepa span{margin-left:8px;font-family:var(--mono);font-size:9px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--xira)}
+.oyna-ich{padding:16px}
+.oyna-setka{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+@media(max-width:355px){.oyna-setka{grid-template-columns:minmax(0,1fr)}}
+.olch-kart{background:var(--qatlam2);border:1px solid var(--chiziq);
+  border-radius:var(--r-kichik);padding:13px 14px;min-width:0}
+.olch-kart b{display:block;margin-top:8px;font-family:var(--sarlavha);
+  font-weight:700;font-size:clamp(17px,2.1vw,21px);line-height:1;
+  letter-spacing:-.02em}
+.olch-kart em{display:block;margin-top:6px;font-style:normal;
+  font-family:var(--mono);font-size:10px;letter-spacing:.04em;
+  color:var(--xira)}
+.olch-kart em.yuq{color:var(--ijobiy)}
+.olch-kart em.pas{color:var(--salbiy)}
+.olch-kart svg{display:block;width:100%;height:30px;margin-top:10px;
+  overflow:visible}
+.navbat{margin-top:11px;background:var(--qatlam2);
+  border:1px solid var(--chiziq);border-radius:var(--r-kichik);
+  padding:2px 14px}
+.navbat > div{display:flex;align-items:center;gap:10px;padding:10px 0;
+  border-bottom:1px solid var(--chiziq);font-size:13px}
+.navbat > div:last-child{border-bottom:0}
+.navbat time{font-family:var(--mono);font-size:10.5px;color:var(--xira);
+  flex:none;width:38px}
+.navbat u{text-decoration:none;flex:1;min-width:0;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap}
+
+/*  Kanal baholash jadvali — reklama tekshiruvi  */
+.kanal-jadval{margin-top:30px;background:var(--qatlam);
+  border:1px solid var(--chiziq);border-radius:var(--r);
+  padding:16px 18px 6px;overflow-x:auto}
+.kanal-jadval .er{font-family:var(--mono);font-size:12px;
+  white-space:nowrap;color:var(--matn)}
+.kanal-jadval td:last-child{color:var(--xira);font-size:13.5px}
+.kanal-jadval th:first-child,.kanal-jadval td:first-child{width:132px}
+.kanal-jadval th:nth-child(2),.kanal-jadval td:nth-child(2){width:186px}
+
+/* ==========================================================
+   TELEFON — mijoz kabineti va sotuv sahifasi.
+   Mijozlarning ko'pi telefondan kiradi, shuning uchun bu yerda
+   hech narsa yon tomonga surilib ketmasligi kerak.
+   ========================================================== */
+@media(max-width:760px){
+  /*  Keng jadval sahifani cho'zmasin — o'zi ichida sursin  */
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;
+    white-space:nowrap}
+  table td,table th{white-space:normal}
+  .ich{padding-left:16px;padding-right:16px}
+  .kart{padding:16px 15px}
+  .ish-tuzilma{grid-template-columns:minmax(0,1fr)}
+  .ong-panel{position:static}
+  .kab-setka,.kab-bosh{grid-template-columns:minmax(0,1fr)}
+  .raqamlar{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bosh .ich{gap:10px}
+  .hero h1{font-size:clamp(26px,8.5vw,38px)}
+  .pos{grid-template-columns:repeat(auto-fill,minmax(132px,1fr))}
+  input,select,textarea{font-size:16px}   /* iOS zoom qilmasin */
+
+  /*  Kontent rejasi telefonda jadval emas, karta bo'lib chiqadi:
+      sana + format + holat bir qatorda, mavzu pastda, tugma ostida  */
+  table.reja,table.reja tbody{display:block;overflow:visible;
+    white-space:normal}
+  table.reja tr{display:flex;flex-wrap:wrap;align-items:center;gap:8px;
+    padding:13px 0;border-bottom:1px solid var(--chiziq)}
+  table.reja td{border:0;padding:0;width:auto}
+  table.reja td:nth-child(1){order:0;font-family:var(--mono);font-size:11px;
+    color:var(--xira)}
+  table.reja td:nth-child(2){order:1}
+  table.reja td:nth-child(4){order:2;margin-left:auto}
+  table.reja td:nth-child(3){order:3;flex:1 0 100%}
+  table.reja td:nth-child(5){order:4;flex:1 0 100%}
+  table.reja td:nth-child(5) .tug{width:100%;justify-content:center}
+
+  /*  Nashr navbati: sarlavha o'z qatoriga tushadi, kesilmaydi  */
+  .navbat > div{flex-wrap:wrap}
+  .navbat u{flex:1 0 100%;order:3;white-space:normal;overflow:visible}
+  .navbat .belgi{margin-left:auto}
+
+  /*  Kanal shkalasi telefonda jadval emas, karta bo'lib chiqadi:
+      daraja + ER bir qatorda, qaror pastda to'liq kenglikda  */
+  .kanal-jadval{padding:4px 16px 6px;overflow:visible}
+  .kanal-jadval table,.kanal-jadval tbody{display:block;overflow:visible;
+    white-space:normal}
+  .kanal-jadval thead{display:none}
+  .kanal-jadval tr{display:flex;flex-wrap:wrap;align-items:center;gap:10px;
+    padding:14px 0;border-bottom:1px solid var(--chiziq)}
+  .kanal-jadval tr:last-child{border-bottom:0}
+  .kanal-jadval td{display:block;border:0;padding:0;width:auto}
+  /*  Stol uchun qo'yilgan ustun kengliklari bu yerda bekor qilinadi  */
+  .kanal-jadval td:first-child,.kanal-jadval td:nth-child(2){width:auto}
+  .kanal-jadval td:nth-child(2){margin-left:auto}
+  .kanal-jadval td:last-child{flex:1 0 100%}
+}
 </style></head><body>
 <header class="bosh"><div class="ich">
 <a class="logo" href="https://maladesbola.uz"><i></i>malades.bola</a>
-<nav><a href="#qanday">Qanday ishlaymiz</a><a href="#jamoa">Jamoa</a>
-<a href="#narx">Narx</a><a href="#savol">Savollar</a>
+<nav><a href="#qanday">Qanday ishlaymiz</a><a href="#tizim">Tizim</a>
+<a href="#jamoa">Jamoa</a><a href="#narx">Narx</a>
 <a href="https://maladesbola.uz" target="_blank">Portfolio</a></nav>
 <a class="tug" href="#ariza">Taklif olish</a></div></header>
 
@@ -310,7 +481,7 @@ poster va reklama bir-biriga mos tushadi.</p>
 <div class="raqamlar" style="margin-top:44px">
 <div><b>30 kun</b><span>oldindan tasdiqlanadigan kontent rejasi</span></div>
 <div><b class="olov">14</b><span>alohida xizmat — faqat kerakligi</span></div>
-<div><b>Har oy</b><span>raqam bilan hisobot</span></div>
+<div><b>Har kuni</b><span>raqamlar avtomatik yig'iladi</span></div>
 <div><b>1-oy</b><span>sayt bepul: bio'dagi havola o'z sahifangizga</span></div>
 </div></div></div>
 
@@ -351,13 +522,49 @@ va poster qoidalari yoziladi — material bir tizimga tushadi.</p></div></div>
 <p>Har kunga mavzu, matn, poster va joylash vaqti. Siz tasdiqlaysiz, kerak
 bo'lsa o'zgartirasiz.</p></div></div>
 <div class="an"><div class="no">04</div><div><h3>Nashr va javob</h3>
-<p>Postlar o'z vaqtida chiqadi, izoh va xabarlarga javob beriladi. Bot
-kechasi ham javob beradi va murakkab savolni odamga uzatadi.</p></div></div>
+<p>Tasdiqlangan post belgilangan soatda o'zi chiqadi — birov esidan
+chiqarishi mumkin emas. Chiqmasa tizim uch marta qayta uradi, keyin
+darhol xabar beradi. Izoh va xabarlarga javob beriladi; bot kechasi ham
+javob beradi va murakkab savolni odamga uzatadi.</p></div></div>
 <div class="an"><div class="no">05</div><div><h3>O'lchov va tuzatish</h3>
-<p>Har hafta qisqa, oy oxirida to'liq hisobot. Ishlagani kuchaytiriladi,
-ishlamagani almashtiriladi.</p></div></div>
+<p>Obunachi, qamrov, jalb, profil bosilishi, yozishma va murojaat har
+kuni yozib boriladi. Oy oxirida farq emas, farqning sababi ko'rsatiladi:
+qaysi post ishladi, qaysi kun tushdi, keyingi oy nima o'zgaradi.</p>
+</div></div>
+</div></div></section>
+<section id="tizim"><div class="ich">
+<div class="mikro urgu">Orqada nima ishlaydi</div>
+<h2 class="an" style="margin-top:12px">Jamoa ishlaydi, tizim esa
+unutmaydi</h2>
+<p class="lead an" style="margin-top:14px">SMMdagi eng katta yo'qotish —
+chiqmay qolgan post, o'lchanmagan natija va tekshirilmagan reklama. Ishning
+shu qismi odamning esiga emas, tizimga topshirilgan.</p>
+<div class="tizim">
+<div class="tizim-royxat an"><div><span class="bel">01</span><div><h3>Kalendar va tasdiq</h3><p>30 kunlik reja kabinetingizda turadi. Har postni telefondan ko&#x27;rib tasdiqlaysiz yoki o&#x27;zgartirish so&#x27;raysiz — chiqishdan oldin, kelishmovchilikdan keyin emas.</p></div></div><div><span class="bel">02</span><div><h3>Avval ulanish, keyin tasdiq</h3><p>Post qayerga chiqishi aniqlanmaguncha tizim tasdiqni ham so&#x27;ramaydi: Telegram kanal yoki Instagram ulanadi, yoki “o&#x27;zim joylayman” deb belgilanadi. Ikkilanish qolmaydi.</p></div></div><div><span class="bel">03</span><div><h3>Avtomatik nashr</h3><p>Tasdiqlangan post belgilangan soatda o&#x27;zi chiqadi. Xatolik bo&#x27;lsa 10 daqiqa, 1 soat va 4 soatdan keyin qayta uriniladi — keyin darhol xabar keladi. Post “esdan chiqdi” degan gap bo&#x27;lmaydi.</p></div></div><div><span class="bel">04</span><div><h3>Kunlik o&#x27;lchov</h3><p>Obunachi, qamrov, jalb, profil bosilishi va murojaat har kuni yozib boriladi va grafik bo&#x27;lib kabinetingizda ko&#x27;rinadi. Telegram uchun hech qanday kalit ham kerak emas.</p></div></div><div><span class="bel">05</span><div><h3>Bot javobsiz qoldirmaydi</h3><p>Kechasi yozgan mijoz ham javob oladi: narx, manzil, ish vaqti, bron. Bot javob bera olmasa savol operatorga uzatiladi va yo&#x27;qolmaydi.</p></div></div></div>
+<div class="oyna an"><div class="oyna-tepa"><i></i><i></i><i></i>
+<span>kabinetingiz · namuna</span></div>
+<div class="oyna-ich"><div class="oyna-setka"><div class="olch-kart"><div class="mikro">Obunachi</div><b>1 284</b><em class="yuq">+6.4% · 7 kun</em><svg viewBox="0 0 120 30" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="sp1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF5A0A" stop-opacity=".28"/><stop offset="1" stop-color="#FF5A0A" stop-opacity="0"/></linearGradient></defs><path d="M0.0 24.8 L20.0 23.0 L40.0 22.2 L60.0 19.5 L80.0 16.9 L100.0 13.4 L120.0 9.8 L120 30 L0 30 Z" fill="url(#sp1)" stroke="none"/><path d="M0.0 24.8 L20.0 23.0 L40.0 22.2 L60.0 19.5 L80.0 16.9 L100.0 13.4 L120.0 9.8" fill="none" stroke="#FF5A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="olch-kart"><div class="mikro">Qamrov</div><b>18 902</b><em class="yuq">+21% · 7 kun</em><svg viewBox="0 0 120 30" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="sp2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00E5FF" stop-opacity=".28"/><stop offset="1" stop-color="#00E5FF" stop-opacity="0"/></linearGradient></defs><path d="M0.0 22.2 L20.0 24.4 L40.0 18.2 L60.0 20.4 L80.0 14.9 L100.0 16.4 L120.0 8.5 L120 30 L0 30 Z" fill="url(#sp2)" stroke="none"/><path d="M0.0 22.2 L20.0 24.4 L40.0 18.2 L60.0 20.4 L80.0 14.9 L100.0 16.4 L120.0 8.5" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="olch-kart"><div class="mikro">Profil bosildi</div><b>612</b><em class="pas">−4% · 7 kun</em><svg viewBox="0 0 120 30" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="sp3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF4757" stop-opacity=".28"/><stop offset="1" stop-color="#FF4757" stop-opacity="0"/></linearGradient></defs><path d="M0.0 13.4 L20.0 11.6 L40.0 14.2 L60.0 12.9 L80.0 16.0 L100.0 16.9 L120.0 17.8 L120 30 L0 30 Z" fill="url(#sp3)" stroke="none"/><path d="M0.0 13.4 L20.0 11.6 L40.0 14.2 L60.0 12.9 L80.0 16.0 L100.0 16.9 L120.0 17.8" fill="none" stroke="#FF4757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="olch-kart"><div class="mikro">Murojaat</div><b>37</b><em class="yuq">+9 ta · 7 kun</em><svg viewBox="0 0 120 30" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="sp4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2ED573" stop-opacity=".28"/><stop offset="1" stop-color="#2ED573" stop-opacity="0"/></linearGradient></defs><path d="M0.0 22.6 L20.0 21.3 L40.0 21.7 L60.0 18.6 L80.0 17.3 L100.0 14.2 L120.0 11.6 L120 30 L0 30 Z" fill="url(#sp4)" stroke="none"/><path d="M0.0 22.6 L20.0 21.3 L40.0 21.7 L60.0 18.6 L80.0 17.3 L100.0 14.2 L120.0 11.6" fill="none" stroke="#2ED573" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+<div class="navbat"><div><time>09:00</time><u>Yangi menyu — karusel</u><span class="belgi yashil">chiqdi</span></div><div><time>13:00</time><u>Mijoz fikri — story</u><span class="belgi yashil">chiqdi</span></div><div><time>19:00</time><u>Kechki taklif — post</u><span class="belgi olov">navbatda</span></div><div><time>—</time><u>Reels: ish jarayoni</u><span class="belgi sariq">tasdiq kutyapti</span></div></div></div></div>
 </div></div></section>
 
+<section id="tekshir"><div class="ich">
+<div class="mikro urgu">Reklama</div>
+<h2 class="an" style="margin-top:12px">Kanalga pul berishdan oldin uni
+tekshiramiz</h2>
+<p class="lead an" style="margin-top:14px">Obunachi soni sotib olinadi,
+ko'rish soni sotib olinmaydi. Shuning uchun har Telegram kanalning ochiq
+sahifasidan oxirgi postlar ko'rishi o'qiladi va jalb darajasi hisoblanadi:
+o'rtacha ko'rish, obunachiga bo'lingan. Keyin kanallar CPM — ming
+ko'rishning narxi — bo'yicha solishtiriladi. “Obunachisi ko'p”
+degan gap qaror qilmaydi.</p>
+<div class="kanal-jadval an"><table>
+<thead><tr><th>Daraja</th><th>Jalb (ER)</th><th>Qaror</th></tr></thead>
+<tbody><tr><td><span class="belgi yashil">tirik</span></td><td class="er">30% dan yuqori</td><td>kuchli kanal — ko&#x27;rish obunachiga nisbatan yuqori</td></tr><tr><td><span class="belgi yashil">yaxshi</span></td><td class="er">18 – 30%</td><td>sog&#x27;lom kanal</td></tr><tr><td><span class="belgi ">normal</span></td><td class="er">12 – 18%</td><td>o&#x27;rtacha, ishlash mumkin</td></tr><tr><td><span class="belgi sariq">zaif</span></td><td class="er">7 – 12%</td><td>ko&#x27;rish past — narxni tushirish kerak</td></tr><tr><td><span class="belgi sariq">shubhali</span></td><td class="er">4 – 7%</td><td>obunachi ko&#x27;p, ko&#x27;rish yo&#x27;q — sotib olingan bo&#x27;lishi mumkin</td></tr><tr><td><span class="belgi qizil">o&#x27;lik</span></td><td class="er">4% dan past</td><td>reklama berilmaydi — pul havoga ketadi</td></tr></tbody></table></div>
+<p class="kichik xira an" style="margin-top:16px;max-width:72ch">Bu
+tekshiruv “Telegram kanallarda reklama” xizmatiga kiradi.
+Reklama puli sizning kartangizdan to'g'ridan-to'g'ri kanal egasiga ketadi —
+biz faqat tanlash, kelishish va natijani o'lchash uchun olamiz.</p>
+</div></section>
 <section id="jamoa"><div class="ich">
 <div class="mikro urgu">Kim ishlaydi</div>
 <h2 class="an" style="margin-top:12px">Sizning loyihangizdagi jamoa</h2>
@@ -434,6 +641,23 @@ Bizda har qism alohida — kerak bo'lmaganini o'chirasiz va narx tushadi.</p>
 <p>Bor materialingizni ishlatamiz — u eng ishonchlisi. Yetarli bo'lmasa
 poster uchun material tayyorlaymiz yoki syomka kunini taklif qilamiz.
 Nima yetishmayotganini tizim o'zi aytib turadi.</p></details>
+<details><summary>Postlarni kim va qanday joylaydi?</summary>
+<p>Siz tasdiqlaganingizdan keyin tizim o'zi joylaydi — belgilangan
+soatda. Kirish ma'lumotini bermoqchi bo'lmasangiz "o'zim joylayman"
+rejimini tanlaysiz: tayyor poster, matn va vaqt sizga yuboriladi,
+joylagach belgilaysiz — u ham hisobotga tushadi.</p></details>
+<details><summary>Telegram kanalga reklama bersam, kanal yaxshimi-yomonligini
+qanday bilaman?</summary>
+<p>Pul berishdan oldin kanalning oxirgi postlari ko'rishi o'qiladi va
+jalb darajasi hisoblanadi. 4% dan past bo'lsa — obunachisi sotib
+olingan; bunday kanalga reklama bermaymiz va sababini yozib beramiz.
+Kanallar CPM bo'yicha solishtirilib, eng arzon ko'rish beradigani
+tanlanadi.</p></details>
+<details><summary>Hisobotda aniq nima ko'rsatiladi?</summary>
+<p>Obunachi, qamrov, jalb, profil bosilishi, yozishma va murojaat —
+har kuni yozilgan raqamlar va grafik. Oy oxirida shunchaki farq emas,
+farqning sababi: qaysi post ishladi, qaysi kun tushdi va keyingi oy
+nima o'zgaradi.</p></details>
 <details><summary>Postlarni o'zim ko'rib turamanmi?</summary>
 <p>Ha. Sizga shaxsiy kabinet beriladi: kalendar, matnlar va posterlar
 ko'rinadi, tasdiqlaysiz yoki o'zgartirish so'raysiz.</p></details>
