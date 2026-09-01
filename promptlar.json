@@ -1,411 +1,309 @@
 [
  {
-  "kalit": "futbol--akademiya-mashguloti",
-  "bolim": "FUTBOL",
-  "nom": "Akademiya mashg'uloti",
+  "bolim": "BREND VA REKLAMA",
+  "nom": "Hamkorlik e'loni",
   "tur": "noldan",
-  "izoh": "Almashtiriladigan joy yo'q. Bolalar akademiyasi uchun — ota-onaga aynan shu kadr ta'sir qiladi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
-  "prompt": "Young football players training on a pitch in early morning light, seen from behind and from a distance so no face is recognisable. Cones and balls on the grass, long shadows, mist in the air, warm golden tones. Documentary photography. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "prompt": "A clean split-screen background: left half in [RANG1], right half in [RANG2], soft light gradient where they meet in the middle. Both halves empty — space for two logos. No text. No text, no letters, no watermark, no logo unless explicitly asked above.",
+  "izoh": "Ikki logo yonma-yon qo'yiladigan e'lon uchun. Ikki rangni o'zingiz tanlaysiz.",
+  "kalit": "brend-va-reklama--hamkorlik-eloni",
+  "rasm": "rasm/promptlar/brend-va-reklama--hamkorlik-eloni.jpg"
  },
  {
-  "kalit": "futbol--gerb-devorda",
-  "bolim": "FUTBOL",
-  "nom": "Gerb devorda",
+  "bolim": "BREND VA REKLAMA",
+  "nom": "Ijtimoiy tarmoq muqovasi",
   "tur": "noldan",
-  "izoh": "[DEVOR] — concrete, brick. Gerb yoki logoni shu bo'sh joyga qo'yasiz — klub \"haqiqiy\" ko'rinadi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
-  "prompt": "A large dark [DEVOR] wall at a stadium entrance, photographed slightly from below in evening light. The centre of the wall is completely empty and evenly lit — space for a crest. Subtle texture, soft shadows, realistic architecture photography. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "prompt": "An abstract horizontal banner background in [RANG]: layered depth, soft light streaks, subtle grain. Empty on the left half for a title. No objects, no text, wide 16:9. No text, no letters, no watermark, no logo unless explicitly asked above.",
+  "izoh": "[RANG] — brend rangingiz. Telegram kanal yoki YouTube muqovasi uchun.",
+  "kalit": "brend-va-reklama--ijtimoiy-tarmoq-muqovasi",
+  "rasm": "rasm/promptlar/brend-va-reklama--ijtimoiy-tarmoq-muqovasi.jpg"
  },
  {
-  "kalit": "futbol--murabbiy-chekkada",
-  "bolim": "FUTBOL",
-  "nom": "Murabbiy chekkada",
-  "tur": "surat",
-  "izoh": "Almashtiriladigan joy yo'q. Murabbiy, ustoz, rahbar uchun. Jiddiy va ishonchli ko'rinadi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
-  "prompt": "Show the person from this photo as a football coach standing on the touchline in a dark coat, arms folded, watching the pitch. Keep the exact face. Evening light, blurred pitch and dugout behind, shallow depth of field, documentary photography look. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
- },
- {
-  "kalit": "futbol--muxlis-tribunada",
-  "bolim": "FUTBOL",
-  "nom": "Muxlis tribunada",
-  "tur": "surat",
-  "izoh": "[RANG1] — sharf rangi. Muxlis kontenti uchun. Klub sahifasi odamni o'z muxlislari bilan ko'rsatsa — obuna oshadi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
-  "prompt": "Place the person from this photo in a football stand among fans, wearing a [RANG1] scarf around the neck, arms raised. Keep the exact face. Other fans blurred around, coloured smoke in the air, evening floodlights. Energetic, slightly grainy reportage look. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
- },
- {
-  "kalit": "futbol--oyin-kuni-afishasi",
-  "bolim": "FUTBOL",
-  "nom": "O'yin kuni afishasi",
+  "bolim": "BREND VA REKLAMA",
+  "nom": "Logo maketi devorda",
   "tur": "noldan",
-  "izoh": "[RANG1] va [RANG2] — ikki jamoa rangi. Har o'yindan oldin kerak bo'ladi. Matnni keyin o'zingiz qo'yasiz — shunda harflar buzilmaydi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
-  "prompt": "A matchday poster background split diagonally: left half [RANG1], right half [RANG2], a bright seam of light where they meet. Dark stadium haze, floodlight beams, particles in the air. Centre and bottom kept completely empty for a crest, team names and a date. No text, no letters. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "prompt": "A blank white sign mounted on a [DEVOR] wall, front view, clean and empty surface with no text or graphics on it. Soft daylight from the side, realistic shadow under the sign, shallow depth of field. No text, no letters, no watermark, no logo unless explicitly asked above.",
+  "izoh": "[DEVOR] — brick, concrete, wood. Bo'sh taxta chiqadi, logoni keyin ustiga qo'yasiz. AI ga logo chizdirmang — u harflarni har safar buzadi.",
+  "kalit": "brend-va-reklama--logo-maketi-devorda",
+  "rasm": "rasm/promptlar/brend-va-reklama--logo-maketi-devorda.jpg"
  },
  {
-  "kalit": "futbol--sharf-maketi",
-  "bolim": "FUTBOL",
-  "nom": "Sharf maketi",
-  "tur": "noldan",
-  "izoh": "[RANG1] va [RANG2] — klub ranglari. Muxlis mahsuloti sotadigan klub uchun. Yozuvni keyin qo'yasiz.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
-  "prompt": "A knitted football scarf mockup lying folded on a dark wooden surface, horizontal stripes in [RANG1] and [RANG2], no text and no crest woven in. Warm side light, visible wool texture, close product photography. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
- },
- {
-  "kalit": "futbol--tungi-stadion",
-  "bolim": "FUTBOL",
-  "nom": "Tungi stadion",
-  "tur": "noldan",
-  "izoh": "Almashtiriladigan joy yo'q. Universal fon — e'lon, sanoq, tarkib, natija posti uchun ishlatiladi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
-  "prompt": "An empty football stadium at night seen from the edge of the pitch. Floodlights on, light fog over the grass, mown stripes visible, empty stands in shadow. Wide cinematic frame, cool blue tones with warm floodlight glow. Lots of empty sky above for text. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
- },
- {
-  "kalit": "futbol--tunnel-yorugi",
-  "bolim": "FUTBOL",
-  "nom": "Tunnel yorug'i",
-  "tur": "noldan",
-  "izoh": "Almashtiriladigan joy yo'q. O'yin kuni, qaytish, yangi mavsum e'loni uchun kuchli fon.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
-  "prompt": "The players tunnel of a stadium seen from inside, looking out toward the bright pitch. Dark concrete walls, strong light flare at the exit, dust in the air. Symmetrical composition, the bright opening in the centre kept empty. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
- },
- {
-  "kalit": "futbol--futbolchi-posteri",
-  "bolim": "FUTBOL",
-  "nom": "Futbolchi posteri",
-  "tur": "surat",
-  "izoh": "[RANG1] — forma rangi. O'zingizni yoki futbolchini poster kadriga aylantiradi. Chap tomondagi bo'sh joyga ism va raqam yoziladi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
-  "prompt": "Turn the person in this photo into a football player. Keep the exact face. They wear a plain [RANG1] football kit with no text and no badge, arms crossed, confident stance. Stadium at night behind, heavily blurred, floodlight flare on one side. Dramatic top light, deep shadows. Vertical poster framing with empty space on the left. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
- },
- {
-  "kalit": "futbol--gol-quvonchi",
-  "bolim": "FUTBOL",
-  "nom": "Gol quvonchi",
-  "tur": "surat",
-  "izoh": "[RANG1] — forma rangi. Kuchli his beradigan kadr. G'alaba posti, yubiley, mavsum yakuni uchun.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
-  "prompt": "Turn the person in this photo into a football player celebrating a goal. Keep the exact face. Running toward the camera, arms wide open, mouth shouting, plain [RANG1] kit. Night stadium, floodlights behind creating strong backlight, motion blur in the crowd, a few sparks of light in the air. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
- },
- {
-  "kalit": "futbol--transfer-eloni",
-  "bolim": "FUTBOL",
-  "nom": "Transfer e'loni",
-  "tur": "surat",
-  "izoh": "[RANG1] va [RANG2] — klub ranglari. Yangi futbolchi, yangi murabbiy, yangi hodim e'loni uchun. Bu kadr eng ko'p ulashiladi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
-  "prompt": "Show the person from this photo as a newly signed football player holding a plain striped [RANG1] and [RANG2] scarf stretched above their head with both hands. Keep the exact face. The scarf is completely blank: no crest, no club name, no woven text. They wear a plain dark training jacket with no badge and no sponsor logo. Bright smile, empty stadium seats blurred behind, no advertising boards in frame, daylight. Waist-up framing. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
- },
- {
-  "kalit": "ozingiz--kochada-portret",
-  "bolim": "O'ZINGIZ",
-  "nom": "Ko'chada portret",
-  "tur": "surat",
-  "izoh": "Almashtiriladigan joy yo'q. Profil surati uchun eng oson prompt — telefonda olingan oddiy suratdan tayyor portret chiqadi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
-  "prompt": "Turn this photo into a street portrait. Keep the exact face and clothes. The person stands in a city street in the late afternoon, city lights blurred into round bokeh behind, warm low sun on one side of the face. Shot at 85mm, shallow depth of field. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
- },
- {
-  "kalit": "ozingiz--podkast-kadri",
-  "bolim": "O'ZINGIZ",
-  "nom": "Podkast kadri",
-  "tur": "surat",
-  "izoh": "[RANG] — brend rangingiz. Ekspert ko'rinishini beradi. Podkast qilmasangiz ham — reels muqovasi uchun ishlaydi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
-  "prompt": "Show the person from this photo sitting at a podcast table with a large microphone in front. Keep the exact face. Dark room, [RANG] accent light on the back wall, soft key light on the face, headphones on the table. Cinematic, shallow focus. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
- },
- {
-  "kalit": "ozingiz--qora-oq-portret",
-  "bolim": "O'ZINGIZ",
-  "nom": "Qora-oq portret",
-  "tur": "surat",
-  "izoh": "Almashtiriladigan joy yo'q. Jiddiy va qimmat ko'rinadi. Profil surati yoki \"biz haqimizda\" sahifasi uchun.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
-  "prompt": "Convert this photo into a high contrast black and white editorial portrait. Keep the exact face and expression. Single hard light from the side, deep black background, visible skin texture, film grain. Magazine quality. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
- },
- {
-  "kalit": "ozingiz--sahnada-gapirmoqda",
-  "bolim": "O'ZINGIZ",
-  "nom": "Sahnada gapirmoqda",
-  "tur": "surat",
-  "izoh": "[RANG] — sahna nuri rangi. Ustoz, murabbiy, trener, spiker uchun. \"Men bu ishni bilaman\" degan kadr — obuna oshiradi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
-  "prompt": "Place the person from this photo on a stage speaking to an audience. Keep the exact face. Warm spotlight from above and behind, audience heads dark and out of focus in the foreground, [RANG] light haze in the background. Shot from the crowd with a long lens. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
- },
- {
-  "kalit": "brend-va-reklama--muxlislar-uchun-kadr",
   "bolim": "BREND VA REKLAMA",
   "nom": "Muxlislar uchun kadr",
   "tur": "noldan",
-  "izoh": "[RANG] — klub rangi. Sport sahifalari uchun — muxlislar bunday kadrni ulashadi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "A stadium atmosphere at night: crowd silhouettes in the stands, floodlights and haze, deep [RANG] colour mood, dramatic backlight. No faces in focus, no text, no visible logos. Vertical 4:5. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "[RANG] — klub rangi. Sport sahifalari uchun — muxlislar bunday kadrni ulashadi.",
+  "kalit": "brend-va-reklama--muxlislar-uchun-kadr",
+  "rasm": "rasm/promptlar/brend-va-reklama--muxlislar-uchun-kadr.jpg"
  },
  {
-  "kalit": "brend-va-reklama--reklama-uchun-bosh-kadr",
   "bolim": "BREND VA REKLAMA",
   "nom": "Reklama uchun bo'sh kadr",
   "tur": "noldan",
-  "izoh": "[MUHIT] — city street at night, warm kitchen. Chap tomoni bo'sh — matn shu yerga tushadi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "A wide advertising background: [MUHIT] scene, softly out of focus, [RANG] colour mood. The left third is almost empty and darker, so text can be placed there. Cinematic light, no people facing the camera, no text. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "[MUHIT] — city street at night, warm kitchen. Chap tomoni bo'sh — matn shu yerga tushadi.",
+  "kalit": "brend-va-reklama--reklama-uchun-bosh-kadr",
+  "rasm": "rasm/promptlar/brend-va-reklama--reklama-uchun-bosh-kadr.jpg"
  },
  {
-  "kalit": "brend-va-reklama--tashrif-qogozi-maketi",
   "bolim": "BREND VA REKLAMA",
   "nom": "Tashrif qog'ozi maketi",
   "tur": "noldan",
-  "izoh": "[SIRT] — dark stone, light wood. Dizayningizni keyin ustiga qo'yib mijozga ko'rsatasiz.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "Two blank business cards on a [SIRT] surface, one face up and one face down, slightly overlapping. Completely blank, no text, no print. Soft top light, realistic paper texture and subtle shadow, top-down view. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "[SIRT] — dark stone, light wood. Dizayningizni keyin ustiga qo'yib mijozga ko'rsatasiz.",
+  "kalit": "brend-va-reklama--tashrif-qogozi-maketi",
+  "rasm": "rasm/promptlar/brend-va-reklama--tashrif-qogozi-maketi.jpg"
  },
  {
-  "kalit": "brend-va-reklama--uchta-post-bir-uslubda",
   "bolim": "BREND VA REKLAMA",
   "nom": "Uchta post bir uslubda",
   "tur": "noldan",
-  "izoh": "Sahifangiz bir butun ko'rinishi uchun. Uchtasini birdan olasiz.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "Three vertical social media backgrounds that clearly belong to the same set: same [RANG] palette, same lighting direction, same grain. Vary only the composition. All completely empty of text and objects, 4:5. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "Sahifangiz bir butun ko'rinishi uchun. Uchtasini birdan olasiz.",
+  "kalit": "brend-va-reklama--uchta-post-bir-uslubda",
+  "rasm": "rasm/promptlar/brend-va-reklama--uchta-post-bir-uslubda.jpg"
  },
  {
-  "kalit": "brend-va-reklama--yangi-mavsum-eloni",
   "bolim": "BREND VA REKLAMA",
   "nom": "Yangi mavsum e'loni",
   "tur": "noldan",
-  "izoh": "Klub va biznes uchun — yangi mavsum, ochilish, yangilanish e'loni.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "A dark dramatic background for a season announcement: [RANG] light beams cutting through haze, deep shadows, particles in the air, strong sense of depth. Centre kept empty for a crest and a date. No text. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "Klub va biznes uchun — yangi mavsum, ochilish, yangilanish e'loni.",
+  "kalit": "brend-va-reklama--yangi-mavsum-eloni",
+  "rasm": "rasm/promptlar/brend-va-reklama--yangi-mavsum-eloni.jpg"
  },
  {
-  "kalit": "joy-va-muhit--bosh-ish-joyi",
+  "bolim": "FUTBOL",
+  "nom": "Akademiya mashg'uloti",
+  "tur": "noldan",
+  "prompt": "Young football players training on a pitch in early morning light, seen from behind and from a distance so no face is recognisable. Cones and balls on the grass, long shadows, mist in the air, warm golden tones. Documentary photography. No text, no letters, no watermark, no logo unless explicitly asked above.",
+  "izoh": "Almashtiriladigan joy yo'q. Bolalar akademiyasi uchun — ota-onaga aynan shu kadr ta'sir qiladi.",
+  "kalit": "futbol--akademiya-mashguloti",
+  "rasm": "rasm/promptlar/futbol--akademiya-mashguloti.jpg"
+ },
+ {
+  "bolim": "FUTBOL",
+  "nom": "Forma maketi",
+  "tur": "noldan",
+  "prompt": "A plain football jersey mockup laid flat on a dark concrete surface, [RANG1] body with [RANG2] sleeves, no badge, no sponsor, no text. Soft even studio light from above, gentle fabric folds, shot directly from the top. No text, no letters, no watermark, no logo unless explicitly asked above.",
+  "izoh": "[RANG1] va [RANG2] — klub ranglari. Gerb va homiyni keyin ustiga qo'yasiz. Yangi forma e'loni yoki sotuv uchun.",
+  "kalit": "futbol--forma-maketi",
+  "rasm": "rasm/promptlar/futbol--forma-maketi.jpg"
+ },
+ {
+  "bolim": "FUTBOL",
+  "nom": "Futbolchi posteri",
+  "tur": "surat",
+  "prompt": "Turn the person in this photo into a football player. Keep the exact face. They wear a plain [RANG1] football kit with no text and no badge, arms crossed, confident stance. Stadium at night behind, heavily blurred, floodlight flare on one side. Dramatic top light, deep shadows. Vertical poster framing with empty space on the left. No text, no letters, no watermark, no logo unless explicitly asked above.",
+  "izoh": "[RANG1] — forma rangi. O'zingizni yoki futbolchini poster kadriga aylantiradi. Chap tomondagi bo'sh joyga ism va raqam yoziladi.",
+  "kalit": "futbol--futbolchi-posteri",
+  "rasm": "rasm/promptlar/futbol--futbolchi-posteri.jpg"
+ },
+ {
+  "bolim": "FUTBOL",
+  "nom": "Gerb devorda",
+  "tur": "noldan",
+  "prompt": "A large dark [DEVOR] wall at a stadium entrance, photographed slightly from below in evening light. The centre of the wall is completely empty and evenly lit — space for a crest. Subtle texture, soft shadows, realistic architecture photography. No text, no letters, no watermark, no logo unless explicitly asked above.",
+  "izoh": "[DEVOR] — concrete, brick. Gerb yoki logoni shu bo'sh joyga qo'yasiz — klub \"haqiqiy\" ko'rinadi.",
+  "kalit": "futbol--gerb-devorda",
+  "rasm": "rasm/promptlar/futbol--gerb-devorda.jpg"
+ },
+ {
+  "bolim": "FUTBOL",
+  "nom": "Gol quvonchi",
+  "tur": "surat",
+  "prompt": "Turn the person in this photo into a football player celebrating a goal. Keep the exact face. Running toward the camera, arms wide open, mouth shouting, plain [RANG1] kit. Night stadium, floodlights behind creating strong backlight, motion blur in the crowd, a few sparks of light in the air. No text, no letters, no watermark, no logo unless explicitly asked above.",
+  "izoh": "[RANG1] — forma rangi. Kuchli his beradigan kadr. G'alaba posti, yubiley, mavsum yakuni uchun.",
+  "kalit": "futbol--gol-quvonchi",
+  "rasm": "rasm/promptlar/futbol--gol-quvonchi.jpg"
+ },
+ {
+  "bolim": "FUTBOL",
+  "nom": "Murabbiy chekkada",
+  "tur": "surat",
+  "prompt": "Show the person from this photo as a football coach standing on the touchline in a dark coat, arms folded, watching the pitch. Keep the exact face. Evening light, blurred pitch and dugout behind, shallow depth of field, documentary photography look. No text, no letters, no watermark, no logo unless explicitly asked above.",
+  "izoh": "Almashtiriladigan joy yo'q. Murabbiy, ustoz, rahbar uchun. Jiddiy va ishonchli ko'rinadi.",
+  "kalit": "futbol--murabbiy-chekkada",
+  "rasm": "rasm/promptlar/futbol--murabbiy-chekkada.jpg"
+ },
+ {
+  "bolim": "FUTBOL",
+  "nom": "Muxlis tribunada",
+  "tur": "surat",
+  "prompt": "Place the person from this photo in a football stand among fans, wearing a [RANG1] scarf around the neck, arms raised. Keep the exact face. Other fans blurred around, coloured smoke in the air, evening floodlights. Energetic, slightly grainy reportage look. No text, no letters, no watermark, no logo unless explicitly asked above.",
+  "izoh": "[RANG1] — sharf rangi. Muxlis kontenti uchun. Klub sahifasi odamni o'z muxlislari bilan ko'rsatsa — obuna oshadi.",
+  "kalit": "futbol--muxlis-tribunada",
+  "rasm": "rasm/promptlar/futbol--muxlis-tribunada.jpg"
+ },
+ {
+  "bolim": "FUTBOL",
+  "nom": "O'yin kuni afishasi",
+  "tur": "noldan",
+  "prompt": "A matchday poster background split diagonally: left half [RANG1], right half [RANG2], a bright seam of light where they meet. Dark stadium haze, floodlight beams, particles in the air. Centre and bottom kept completely empty for a crest, team names and a date. No text, no letters. No text, no letters, no watermark, no logo unless explicitly asked above.",
+  "izoh": "[RANG1] va [RANG2] — ikki jamoa rangi. Har o'yindan oldin kerak bo'ladi. Matnni keyin o'zingiz qo'yasiz — shunda harflar buzilmaydi.",
+  "kalit": "futbol--oyin-kuni-afishasi",
+  "rasm": "rasm/promptlar/futbol--oyin-kuni-afishasi.jpg"
+ },
+ {
+  "bolim": "FUTBOL",
+  "nom": "Sharf maketi",
+  "tur": "noldan",
+  "prompt": "A knitted football scarf mockup lying folded on a dark wooden surface, horizontal stripes in [RANG1] and [RANG2], no text and no crest woven in. Warm side light, visible wool texture, close product photography. No text, no letters, no watermark, no logo unless explicitly asked above.",
+  "izoh": "[RANG1] va [RANG2] — klub ranglari. Muxlis mahsuloti sotadigan klub uchun. Yozuvni keyin qo'yasiz.",
+  "kalit": "futbol--sharf-maketi",
+  "rasm": "rasm/promptlar/futbol--sharf-maketi.jpg"
+ },
+ {
+  "bolim": "FUTBOL",
+  "nom": "Transfer e'loni",
+  "tur": "surat",
+  "prompt": "Show the person from this photo as a newly signed football player holding a plain striped [RANG1] and [RANG2] scarf stretched above their head with both hands. Keep the exact face. The scarf is completely blank: no crest, no club name, no woven text. They wear a plain dark training jacket with no badge and no sponsor logo. Bright smile, empty stadium seats blurred behind, no advertising boards in frame, daylight. Waist-up framing. No text, no letters, no watermark, no logo unless explicitly asked above.",
+  "izoh": "[RANG1] va [RANG2] — klub ranglari. Yangi futbolchi, yangi murabbiy, yangi hodim e'loni uchun. Bu kadr eng ko'p ulashiladi.",
+  "kalit": "futbol--transfer-eloni",
+  "rasm": "rasm/promptlar/futbol--transfer-eloni.jpg"
+ },
+ {
+  "bolim": "FUTBOL",
+  "nom": "Tungi stadion",
+  "tur": "noldan",
+  "prompt": "An empty football stadium at night seen from the edge of the pitch. Floodlights on, light fog over the grass, mown stripes visible, empty stands in shadow. Wide cinematic frame, cool blue tones with warm floodlight glow. Lots of empty sky above for text. No text, no letters, no watermark, no logo unless explicitly asked above.",
+  "izoh": "Almashtiriladigan joy yo'q. Universal fon — e'lon, sanoq, tarkib, natija posti uchun ishlatiladi.",
+  "kalit": "futbol--tungi-stadion",
+  "rasm": "rasm/promptlar/futbol--tungi-stadion.jpg"
+ },
+ {
+  "bolim": "FUTBOL",
+  "nom": "Tunnel yorug'i",
+  "tur": "noldan",
+  "prompt": "The players tunnel of a stadium seen from inside, looking out toward the bright pitch. Dark concrete walls, strong light flare at the exit, dust in the air. Symmetrical composition, the bright opening in the centre kept empty. No text, no letters, no watermark, no logo unless explicitly asked above.",
+  "izoh": "Almashtiriladigan joy yo'q. O'yin kuni, qaytish, yangi mavsum e'loni uchun kuchli fon.",
+  "kalit": "futbol--tunnel-yorugi",
+  "rasm": "rasm/promptlar/futbol--tunnel-yorugi.jpg"
+ },
+ {
   "bolim": "JOY VA MUHIT",
   "nom": "Bo'sh ish joyi",
   "tur": "noldan",
-  "izoh": "[JOY] — barber shop, cafe, small office. Yangi joy ochayotganda maket sifatida ishlaydi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "An empty [JOY] interior, professionally lit, shot with a wide lens from the entrance. Clean modern finish in [RANG] tones, natural light from the windows, no people, no text on the walls. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "[JOY] — barber shop, cafe, small office. Yangi joy ochayotganda maket sifatida ishlaydi.",
+  "kalit": "joy-va-muhit--bosh-ish-joyi",
+  "rasm": "rasm/promptlar/joy-va-muhit--bosh-ish-joyi.jpg"
  },
  {
-  "kalit": "joy-va-muhit--dokon-korinishi",
   "bolim": "JOY VA MUHIT",
   "nom": "Do'kon ko'rinishi",
   "tur": "surat",
-  "izoh": "Haqiqiy do'koningiz surati kerak. \"Keep the real layout unchanged\" muhim — usiz AI boshqa do'kon chizib beradi va mijoz kelganda aldangan bo'ladi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "Make this shop interior look inviting and professional. Keep the real layout and products unchanged. Improve only the lighting: warm even light, no harsh shadows, clean and tidy feel, slight wide-angle perspective. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "Haqiqiy do'koningiz surati kerak. \"Keep the real layout unchanged\" muhim — usiz AI boshqa do'kon chizib beradi va mijoz kelganda aldangan bo'ladi.",
+  "kalit": "joy-va-muhit--dokon-korinishi",
+  "rasm": "rasm/promptlar/joy-va-muhit--dokon-korinishi.jpg"
  },
  {
-  "kalit": "joy-va-muhit--ish-stoli",
   "bolim": "JOY VA MUHIT",
   "nom": "Ish stoli",
   "tur": "noldan",
-  "izoh": "[KASB] — designer, barber, baker. [BUYUMLAR] — o'z asboblaringiz. O'rtadagi bo'sh joyga matn qo'yasiz.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "A tidy [KASB] workspace seen from above: [BUYUMLAR] arranged naturally on a [SIRT]. Soft daylight from one side, warm neutral colours, generous empty space in the middle. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "[KASB] — designer, barber, baker. [BUYUMLAR] — o'z asboblaringiz. O'rtadagi bo'sh joyga matn qo'yasiz.",
+  "kalit": "joy-va-muhit--ish-stoli",
+  "rasm": "rasm/promptlar/joy-va-muhit--ish-stoli.jpg"
  },
  {
-  "kalit": "joy-va-muhit--jarayon-kadri",
   "bolim": "JOY VA MUHIT",
   "nom": "Jarayon kadri",
   "tur": "surat",
-  "izoh": "[ISH] — kneading dough, cutting hair, sewing. Yuz ko'rinmagani uchun har kim ishlatishi mumkin va ishonch beradi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "Show hands working on [ISH] in this photo. Close framing on the hands and the work, face not visible. Natural directional light, real texture and small imperfections, documentary feel, shallow depth of field. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "[ISH] — kneading dough, cutting hair, sewing. Yuz ko'rinmagani uchun har kim ishlatishi mumkin va ishonch beradi.",
+  "kalit": "joy-va-muhit--jarayon-kadri",
+  "rasm": "rasm/promptlar/joy-va-muhit--jarayon-kadri.jpg"
  },
  {
-  "kalit": "joy-va-muhit--kechki-vitrina",
   "bolim": "JOY VA MUHIT",
   "nom": "Kechki vitrina",
   "tur": "surat",
-  "izoh": "Kechki kadr issiq va jozibali chiqadi. Kafe va do'kon uchun eng yaxshi ishlaydigan vaqt.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "Reshoot this storefront at dusk. Warm light glowing from inside, blue evening sky, wet pavement reflections, a few soft bokeh lights in the background. Keep the sign and building exactly as they are. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "Kechki kadr issiq va jozibali chiqadi. Kafe va do'kon uchun eng yaxshi ishlaydigan vaqt.",
+  "kalit": "joy-va-muhit--kechki-vitrina",
+  "rasm": "rasm/promptlar/joy-va-muhit--kechki-vitrina.jpg"
  },
  {
-  "kalit": "joy-va-muhit--yetkazib-berish",
   "bolim": "JOY VA MUHIT",
   "nom": "Yetkazib berish",
   "tur": "noldan",
-  "izoh": "[QADOQ] — kraft paper bag, cardboard box. Yetkazib berish xizmatini ko'rsatadi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "A [QADOQ] parcel being handed over at a doorstep, seen from the customer's point of view. Warm daylight, blurred street background, clean and careful presentation. No faces, no text on the package. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "[QADOQ] — kraft paper bag, cardboard box. Yetkazib berish xizmatini ko'rsatadi.",
+  "kalit": "joy-va-muhit--yetkazib-berish",
+  "rasm": "rasm/promptlar/joy-va-muhit--yetkazib-berish.jpg"
  },
  {
-  "kalit": "mahsulot-fotosi--detalga-yaqin",
   "bolim": "MAHSULOT FOTOSI",
   "nom": "Detalga yaqin",
   "tur": "surat",
-  "izoh": "Sifatni ko'rsatadi. \"Qimmat\" degan e'tirozga eng yaxshi javob — gap emas, kadr.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "Extreme close-up macro shot of the texture and material of the product in this photo. Show the craftsmanship: stitching, grain, surface finish. Dramatic side light to reveal depth, very shallow focus. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "Sifatni ko'rsatadi. \"Qimmat\" degan e'tirozga eng yaxshi javob — gap emas, kadr.",
+  "kalit": "mahsulot-fotosi--detalga-yaqin",
+  "rasm": "rasm/promptlar/mahsulot-fotosi--detalga-yaqin.jpg"
  },
  {
-  "kalit": "mahsulot-fotosi--kiyimdagi-naqsh",
   "bolim": "MAHSULOT FOTOSI",
   "nom": "Kiyimdagi naqsh",
   "tur": "noldan",
-  "izoh": "[KIYIM] — t-shirt, hoodie, cap. Logongizni keyin ustiga qo'yib ko'rasiz.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "A plain [KIYIM] in [RANG] on a neutral background, front view, evenly lit, no wrinkles, no text or print on it. Product mockup style, photorealistic fabric texture. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "[KIYIM] — t-shirt, hoodie, cap. Logongizni keyin ustiga qo'yib ko'rasiz.",
+  "kalit": "mahsulot-fotosi--kiyimdagi-naqsh",
+  "rasm": "rasm/promptlar/mahsulot-fotosi--kiyimdagi-naqsh.jpg"
  },
  {
-  "kalit": "mahsulot-fotosi--mahsulot-muhitda",
   "bolim": "MAHSULOT FOTOSI",
   "nom": "Mahsulot muhitda",
   "tur": "surat",
-  "izoh": "[MUHIT] — a wooden kitchen table, a marble counter, a shop shelf. Mahsulot qanday ishlatilishini ko'rsatadi — sotuvni oshiradi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "Show the product from this photo in a real setting: [MUHIT]. The product stays in sharp focus, background softly blurred. Natural window light, warm tones, a few authentic props around but nothing covering the product. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "[MUHIT] — a wooden kitchen table, a marble counter, a shop shelf. Mahsulot qanday ishlatilishini ko'rsatadi — sotuvni oshiradi.",
+  "kalit": "mahsulot-fotosi--mahsulot-muhitda",
+  "rasm": "rasm/promptlar/mahsulot-fotosi--mahsulot-muhitda.jpg"
  },
  {
-  "kalit": "mahsulot-fotosi--mavsumiy-kadr",
   "bolim": "MAHSULOT FOTOSI",
   "nom": "Mavsumiy kadr",
   "tur": "surat",
-  "izoh": "[MAVSUM] — Ramadan, winter, Navruz. Bitta mahsulotdan yil davomida turli kadr chiqadi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "Reshoot this product for [MAVSUM]. Keep the product identical. Change only the surrounding mood: [MUHIT TAFSILOTI], matching colour temperature and seasonal props. Soft natural light. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "[MAVSUM] — Ramadan, winter, Navruz. Bitta mahsulotdan yil davomida turli kadr chiqadi.",
+  "kalit": "mahsulot-fotosi--mavsumiy-kadr",
+  "rasm": "rasm/promptlar/mahsulot-fotosi--mavsumiy-kadr.jpg"
  },
  {
-  "kalit": "mahsulot-fotosi--menyu-uchun-toplam",
   "bolim": "MAHSULOT FOTOSI",
   "nom": "Menyu uchun to'plam",
   "tur": "surat",
-  "izoh": "Bitta suratdan uchta kadr. Menyu yoki katalog uchun bir xil uslubda chiqadi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "Create a set of three consistent product shots of the item in this photo: one close-up detail, one full product, one in use. Same lighting, same background, same colour grade across all three. Clean commercial style. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "Bitta suratdan uchta kadr. Menyu yoki katalog uchun bir xil uslubda chiqadi.",
+  "kalit": "mahsulot-fotosi--menyu-uchun-toplam",
+  "rasm": "rasm/promptlar/mahsulot-fotosi--menyu-uchun-toplam.jpg"
  },
  {
-  "kalit": "mahsulot-fotosi--narx-eloni-foni",
   "bolim": "MAHSULOT FOTOSI",
   "nom": "Narx e'loni foni",
   "tur": "noldan",
-  "izoh": "[RANG] — brend rangingiz. Bo'sh fon chiqadi, narx va matnni o'zingiz qo'yasiz — shunda harflar buzilmaydi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "An empty abstract background for a social media offer post: [RANG] gradient with soft light blooms and gentle depth. Completely empty in the centre and lower half, no objects, no text. Clean modern commercial look, vertical 4:5. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "[RANG] — brend rangingiz. Bo'sh fon chiqadi, narx va matnni o'zingiz qo'yasiz — shunda harflar buzilmaydi.",
+  "kalit": "mahsulot-fotosi--narx-eloni-foni",
+  "rasm": "rasm/promptlar/mahsulot-fotosi--narx-eloni-foni.jpg"
  },
  {
-  "kalit": "mahsulot-fotosi--qadoq-maketi",
   "bolim": "MAHSULOT FOTOSI",
   "nom": "Qadoq maketi",
   "tur": "noldan",
-  "izoh": "[QADOQ TURI] — coffee bag, cosmetic tube, glass jar, cardboard box. Bo'sh maket chiqadi, logoni keyin o'zingiz qo'yasiz.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "A [QADOQ TURI] package standing on a clean [RANG] surface, front view, soft studio lighting, subtle shadow. Blank surface with no text or graphics — leave it completely empty for a label to be added later. Photorealistic product mockup. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "[QADOQ TURI] — coffee bag, cosmetic tube, glass jar, cardboard box. Bo'sh maket chiqadi, logoni keyin o'zingiz qo'yasiz.",
+  "kalit": "mahsulot-fotosi--qadoq-maketi",
+  "rasm": "rasm/promptlar/mahsulot-fotosi--qadoq-maketi.jpg"
  },
  {
-  "kalit": "mahsulot-fotosi--taom-kadri",
   "bolim": "MAHSULOT FOTOSI",
   "nom": "Taom kadri",
   "tur": "surat",
-  "izoh": "Kafe va oshxona uchun. Oxirgi jumla muhim: usiz AI taomga o'zi bilmagan narsalarni qo'shib yuboradi va mijoz aldangan bo'ladi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "Make this food photo look appetising and professional. Warm side light, visible steam, fresh texture and moisture, shallow depth of field, rustic surface underneath. Keep the food exactly as it is — do not add or remove ingredients. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "Kafe va oshxona uchun. Oxirgi jumla muhim: usiz AI taomga o'zi bilmagan narsalarni qo'shib yuboradi va mijoz aldangan bo'ladi.",
+  "kalit": "mahsulot-fotosi--taom-kadri",
+  "rasm": "rasm/promptlar/mahsulot-fotosi--taom-kadri.jpg"
  },
  {
   "kalit": "mahsulot-fotosi--toza-fonli-mahsulot",
@@ -420,207 +318,192 @@
   "yopiq": 0
  },
  {
-  "kalit": "mahsulot-fotosi--yuqoridan-kadr",
   "bolim": "MAHSULOT FOTOSI",
   "nom": "Yuqoridan kadr",
   "tur": "surat",
-  "izoh": "[SIRT] — dark wood, linen cloth. [QO'SHIMCHA] — ingredients, coffee beans, dried flowers. Bo'sh joy matn qo'yish uchun qoldiriladi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "Photograph the product from this image directly from above, flat lay style, arranged on [SIRT] with [QO'SHIMCHA] placed around it. Even soft light, no harsh shadows, balanced composition, generous empty space on one side. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "[SIRT] — dark wood, linen cloth. [QO'SHIMCHA] — ingredients, coffee beans, dried flowers. Bo'sh joy matn qo'yish uchun qoldiriladi.",
+  "kalit": "mahsulot-fotosi--yuqoridan-kadr",
+  "rasm": "rasm/promptlar/mahsulot-fotosi--yuqoridan-kadr.jpg"
  },
  {
-  "kalit": "ozingiz--90-yillar-plyonkasi",
   "bolim": "O'ZINGIZ",
   "nom": "90-yillar plyonkasi",
   "tur": "surat",
-  "izoh": "Almashtiriladigan joy yo'q. Nostalgiya kadrlari Instagramda yaxshi tarqaladi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "Reprocess this photo as a 1990s 35mm film photograph. Kodak Gold colours, visible grain, slight light leak in one corner, soft focus falloff, date stamp look in the corner. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "Almashtiriladigan joy yo'q. Nostalgiya kadrlari Instagramda yaxshi tarqaladi.",
+  "kalit": "ozingiz--90-yillar-plyonkasi",
+  "rasm": "rasm/promptlar/ozingiz--90-yillar-plyonkasi.jpg"
  },
  {
-  "kalit": "ozingiz--ikki-holat-oldin-va-keyin",
   "bolim": "O'ZINGIZ",
   "nom": "Ikki holat: oldin va keyin",
   "tur": "surat",
-  "izoh": "[OLDIN] va [KEYIN] — masalan \"tired, plain clothes\" va \"confident, sharp suit\". O'zgarish ko'rsatadigan biznes uchun kuchli.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "Create a side-by-side diptych of the person in this photo. Left side: [OLDIN]. Right side: [KEYIN]. Same face in both, same framing, consistent lighting between the two halves. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "[OLDIN] va [KEYIN] — masalan \"tired, plain clothes\" va \"confident, sharp suit\". O'zgarish ko'rsatadigan biznes uchun kuchli.",
+  "kalit": "ozingiz--ikki-holat-oldin-va-keyin",
+  "rasm": "rasm/promptlar/ozingiz--ikki-holat-oldin-va-keyin.jpg"
  },
  {
-  "kalit": "ozingiz--ish-joyida",
   "bolim": "O'ZINGIZ",
   "nom": "Ish joyida",
   "tur": "surat",
-  "izoh": "[ISH JOYI] — a bakery kitchen, a barber shop, a small office. \"not posed\" yozilgani muhim: usiz AI kameraga qarab tabassum qilgan sun'iy kadr chiqaradi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "Show the person from this photo working at [ISH JOYI]. Natural candid moment, not posed. Warm afternoon light through a window, real environment with authentic details, shallow depth of field. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "[ISH JOYI] — a bakery kitchen, a barber shop, a small office. \"not posed\" yozilgani muhim: usiz AI kameraga qarab tabassum qilgan sun'iy kadr chiqaradi.",
+  "kalit": "ozingiz--ish-joyida",
+  "rasm": "rasm/promptlar/ozingiz--ish-joyida.jpg"
  },
  {
-  "kalit": "ozingiz--jurnal-muqovasi",
   "bolim": "O'ZINGIZ",
   "nom": "Jurnal muqovasi",
   "tur": "surat",
-  "izoh": "[RANG] — fon. Yozuvni AI ga yozdirmaymiz — u harflarni buzadi. Bo'sh joy qoldiriladi, matnni keyin o'zingiz qo'yasiz.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "Place the person from this photo on a magazine cover. Confident pose, dramatic side lighting, [RANG] background. Leave empty space at the top and along the left edge for headlines. Editorial photography style. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "[RANG] — fon. Yozuvni AI ga yozdirmaymiz — u harflarni buzadi. Bo'sh joy qoldiriladi, matnni keyin o'zingiz qo'yasiz.",
+  "kalit": "ozingiz--jurnal-muqovasi",
+  "rasm": "rasm/promptlar/ozingiz--jurnal-muqovasi.jpg"
  },
  {
-  "kalit": "ozingiz--kichkina-dunyo",
   "bolim": "O'ZINGIZ",
   "nom": "Kichkina dunyo",
   "tur": "surat",
-  "izoh": "[NARSA] — kasbingizga bog'liq buyum: a stack of books, a coffee bean, a football. Kutilmagan kadr — saqlanadi va ulashiladi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "Turn the person in this photo into a tiny miniature figure standing on [NARSA], shot with a macro lens. Tilt-shift effect, dramatic scale contrast, shallow focus, soft studio light. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "[NARSA] — kasbingizga bog'liq buyum: a stack of books, a coffee bean, a football. Kutilmagan kadr — saqlanadi va ulashiladi.",
+  "kalit": "ozingiz--kichkina-dunyo",
+  "rasm": "rasm/promptlar/ozingiz--kichkina-dunyo.jpg"
  },
  {
-  "kalit": "ozingiz--kolleksion-figura-qutida",
+  "bolim": "O'ZINGIZ",
+  "nom": "Ko'chada portret",
+  "tur": "surat",
+  "prompt": "Turn this photo into a street portrait. Keep the exact face and clothes. The person stands in a city street in the late afternoon, city lights blurred into round bokeh behind, warm low sun on one side of the face. Shot at 85mm, shallow depth of field. No text, no letters, no watermark, no logo unless explicitly asked above.",
+  "izoh": "Almashtiriladigan joy yo'q. Profil surati uchun eng oson prompt — telefonda olingan oddiy suratdan tayyor portret chiqadi.",
+  "kalit": "ozingiz--kochada-portret",
+  "rasm": "rasm/promptlar/ozingiz--kochada-portret.jpg"
+ },
+ {
   "bolim": "O'ZINGIZ",
   "nom": "Kolleksion figura qutida",
   "tur": "surat",
-  "izoh": "[KIYIM] — o'z kiyimingiz (masalan: black suit). [BUYUM] — kasbingiz buyumi (laptop, coffee cup, football). [RANG] — brend rangingiz. [ISM] — ismingiz yoki brendingiz.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "Turn the person in this photo into a collectible action figure sealed in a blister pack. The figure wears [KIYIM], holds [BUYUM]. Cardboard backing in [RANG] with the name [ISM] printed at the top. Studio product photography, sharp focus, soft shadows, plain background. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "[KIYIM] — o'z kiyimingiz (masalan: black suit). [BUYUM] — kasbingiz buyumi (laptop, coffee cup, football). [RANG] — brend rangingiz. [ISM] — ismingiz yoki brendingiz.",
+  "kalit": "ozingiz--kolleksion-figura-qutida",
+  "rasm": "rasm/promptlar/ozingiz--kolleksion-figura-qutida.jpg"
  },
  {
-  "kalit": "ozingiz--mramar-haykal",
   "bolim": "O'ZINGIZ",
   "nom": "Mramar haykal",
   "tur": "surat",
-  "izoh": "Hech narsa almashtirilmaydi — suratni yuborasiz, tamom. Yuz o'zgarmasligi uchun \"keep the exact face\" ataylab yozilgan.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "Transform the person in this photo into a classical white marble statue. Keep the exact face, pose and hairstyle. Museum lighting from above, dark background, fine stone texture and subtle veining. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "Hech narsa almashtirilmaydi — suratni yuborasiz, tamom. Yuz o'zgarmasligi uchun \"keep the exact face\" ataylab yozilgan.",
+  "kalit": "ozingiz--mramar-haykal",
+  "rasm": "rasm/promptlar/ozingiz--mramar-haykal.jpg"
  },
  {
-  "kalit": "ozingiz--studiya-portreti",
+  "bolim": "O'ZINGIZ",
+  "nom": "Podkast kadri",
+  "tur": "surat",
+  "prompt": "Show the person from this photo sitting at a podcast table with a large microphone in front. Keep the exact face. Dark room, [RANG] accent light on the back wall, soft key light on the face, headphones on the table. Cinematic, shallow focus. No text, no letters, no watermark, no logo unless explicitly asked above.",
+  "izoh": "[RANG] — brend rangingiz. Ekspert ko'rinishini beradi. Podkast qilmasangiz ham — reels muqovasi uchun ishlaydi.",
+  "kalit": "ozingiz--podkast-kadri",
+  "rasm": "rasm/promptlar/ozingiz--podkast-kadri.jpg"
+ },
+ {
+  "bolim": "O'ZINGIZ",
+  "nom": "Qora-oq portret",
+  "tur": "surat",
+  "prompt": "Convert this photo into a high contrast black and white editorial portrait. Keep the exact face and expression. Single hard light from the side, deep black background, visible skin texture, film grain. Magazine quality. No text, no letters, no watermark, no logo unless explicitly asked above.",
+  "izoh": "Almashtiriladigan joy yo'q. Jiddiy va qimmat ko'rinadi. Profil surati yoki \"biz haqimizda\" sahifasi uchun.",
+  "kalit": "ozingiz--qora-oq-portret",
+  "rasm": "rasm/promptlar/ozingiz--qora-oq-portret.jpg"
+ },
+ {
+  "bolim": "O'ZINGIZ",
+  "nom": "Sahnada gapirmoqda",
+  "tur": "surat",
+  "prompt": "Place the person from this photo on a stage speaking to an audience. Keep the exact face. Warm spotlight from above and behind, audience heads dark and out of focus in the foreground, [RANG] light haze in the background. Shot from the crowd with a long lens. No text, no letters, no watermark, no logo unless explicitly asked above.",
+  "izoh": "[RANG] — sahna nuri rangi. Ustoz, murabbiy, trener, spiker uchun. \"Men bu ishni bilaman\" degan kadr — obuna oshiradi.",
+  "kalit": "ozingiz--sahnada-gapirmoqda",
+  "rasm": "rasm/promptlar/ozingiz--sahnada-gapirmoqda.jpg"
+ },
+ {
   "bolim": "O'ZINGIZ",
   "nom": "Studiya portreti",
   "tur": "surat",
-  "izoh": "[RANG] — fon rangi (dark grey, deep blue). Telefonda olingan oddiy surat profil rasmiga aylanadi. \"no plastic smoothing\" muhim — usiz AI terini mumdek qilib qo'yadi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "Retouch this photo into a professional studio portrait. Keep the face exactly the same. Soft key light from the left, subtle rim light on the right, clean [RANG] seamless background, shallow depth of field. Natural skin texture, no plastic smoothing. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "[RANG] — fon rangi (dark grey, deep blue). Telefonda olingan oddiy surat profil rasmiga aylanadi. \"no plastic smoothing\" muhim — usiz AI terini mumdek qilib qo'yadi.",
+  "kalit": "ozingiz--studiya-portreti",
+  "rasm": "rasm/promptlar/ozingiz--studiya-portreti.jpg"
  },
  {
-  "kalit": "uslub-va-kayfiyat--bitta-rang",
   "bolim": "USLUB VA KAYFIYAT",
   "nom": "Bitta rang",
   "tur": "surat",
-  "izoh": "[RANG] — brend rangingiz. Sahifangizni bir butun ko'rsatadigan eng oson usul.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "Recolour this image into a monochrome palette built entirely around [RANG]. Everything in shades of that colour, one small [URG'U RANGI] accent only. Keep shapes and composition unchanged. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "[RANG] — brend rangingiz. Sahifangizni bir butun ko'rsatadigan eng oson usul.",
+  "kalit": "uslub-va-kayfiyat--bitta-rang",
+  "rasm": "rasm/promptlar/uslub-va-kayfiyat--bitta-rang.jpg"
  },
  {
-  "kalit": "uslub-va-kayfiyat--eski-qogoz",
   "bolim": "USLUB VA KAYFIYAT",
   "nom": "Eski qog'oz",
   "tur": "noldan",
-  "izoh": "Bo'sh eski qog'oz foni. Ustiga matn qo'yasiz.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "A vintage printed poster texture in [RANG] and cream, aged paper with visible fibres, subtle ink misregistration, slight fold marks. Completely blank — no text, no illustration. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "Bo'sh eski qog'oz foni. Ustiga matn qo'yasiz.",
+  "kalit": "uslub-va-kayfiyat--eski-qogoz",
+  "rasm": "rasm/promptlar/uslub-va-kayfiyat--eski-qogoz.jpg"
  },
  {
-  "kalit": "uslub-va-kayfiyat--kinodan-kadr",
   "bolim": "USLUB VA KAYFIYAT",
   "nom": "Kinodan kadr",
   "tur": "surat",
-  "izoh": "Oddiy kadrga jiddiylik beradi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "Regrade this photo like a still from a film. Cinematic colour grading with teal shadows and warm highlights, slight letterbox crop, film grain, shallow depth of field. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "Oddiy kadrga jiddiylik beradi.",
+  "kalit": "uslub-va-kayfiyat--kinodan-kadr",
+  "rasm": "rasm/promptlar/uslub-va-kayfiyat--kinodan-kadr.jpg"
  },
  {
-  "kalit": "uslub-va-kayfiyat--kuchli-soya",
   "bolim": "USLUB VA KAYFIYAT",
   "nom": "Kuchli soya",
   "tur": "surat",
-  "izoh": "[TOMON] — left, right, above. Dramatik va esda qoladigan kadr beradi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "Relight this photo with hard directional light. Strong single light source from the [TOMON], deep black shadows, high contrast, sharp shadow edges. Keep the subject unchanged. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "[TOMON] — left, right, above. Dramatik va esda qoladigan kadr beradi.",
+  "kalit": "uslub-va-kayfiyat--kuchli-soya",
+  "rasm": "rasm/promptlar/uslub-va-kayfiyat--kuchli-soya.jpg"
  },
  {
-  "kalit": "uslub-va-kayfiyat--kuchli-va-tinch",
   "bolim": "USLUB VA KAYFIYAT",
   "nom": "Kuchli va tinch",
   "tur": "noldan",
-  "izoh": "Bitta so'rovda ikkita fon. Bittasi e'lon uchun, bittasi oddiy post uchun.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "Two versions of the same abstract background in [RANG]: one energetic with sharp diagonal light and strong contrast, one calm with soft gradients and gentle depth. Same palette in both, no text, no objects. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "Bitta so'rovda ikkita fon. Bittasi e'lon uchun, bittasi oddiy post uchun.",
+  "kalit": "uslub-va-kayfiyat--kuchli-va-tinch",
+  "rasm": "rasm/promptlar/uslub-va-kayfiyat--kuchli-va-tinch.jpg"
  },
  {
-  "kalit": "uslub-va-kayfiyat--naqsh-va-takror",
   "bolim": "USLUB VA KAYFIYAT",
   "nom": "Naqsh va takror",
   "tur": "noldan",
-  "izoh": "[ELEMENT] — mahsulotingiz shakli, milliy naqsh. Qadoq va fon uchun ishlatiladi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "A seamless repeating pattern made of [ELEMENT] on a [RANG] background. Flat vector style, even spacing, balanced composition, suitable for packaging and backgrounds. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "[ELEMENT] — mahsulotingiz shakli, milliy naqsh. Qadoq va fon uchun ishlatiladi.",
+  "kalit": "uslub-va-kayfiyat--naqsh-va-takror",
+  "rasm": "rasm/promptlar/uslub-va-kayfiyat--naqsh-va-takror.jpg"
  },
  {
-  "kalit": "uslub-va-kayfiyat--studiya-fonida-buyum",
   "bolim": "USLUB VA KAYFIYAT",
   "nom": "Studiya fonida buyum",
   "tur": "noldan",
-  "izoh": "[BUYUM] — mahsulotingiz turi. Sodda va qimmat ko'rinadi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "A single [BUYUM] floating in the centre of a seamless [RANG] studio background. Soft gradient light, subtle shadow below, minimal composition, lots of empty space around it. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "[BUYUM] — mahsulotingiz turi. Sodda va qimmat ko'rinadi.",
+  "kalit": "uslub-va-kayfiyat--studiya-fonida-buyum",
+  "rasm": "rasm/promptlar/uslub-va-kayfiyat--studiya-fonida-buyum.jpg"
  },
  {
-  "kalit": "uslub-va-kayfiyat--yumshoq-tong-yorugi",
   "bolim": "USLUB VA KAYFIYAT",
   "nom": "Yumshoq tong yorug'i",
   "tur": "surat",
-  "izoh": "Tinch, iliq kayfiyat. Nonvoyxona, choyxona, kitob do'koni uchun mos.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "Relight this photo with soft early morning light. Warm low sun through a window, long gentle shadows, dust particles visible in the air, calm and quiet mood. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "Tinch, iliq kayfiyat. Nonvoyxona, choyxona, kitob do'koni uchun mos.",
+  "kalit": "uslub-va-kayfiyat--yumshoq-tong-yorugi",
+  "rasm": "rasm/promptlar/uslub-va-kayfiyat--yumshoq-tong-yorugi.jpg"
  }
 ]

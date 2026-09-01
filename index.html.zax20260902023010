@@ -4453,17 +4453,8 @@ function xizmatChiz(){
       (x.shart ? '<div class="xiz-shart">' + x.shart + '</div>' : "") +
       fikrIchi(x.kalit) +
       (x.natija ? '<div class="xiz-natija">' + x.natija + '</div>' : "") +
-      /* HAVOLALI XIZMAT BOSHQA JOYGA OLIB BORADI.
-         Malades agentligining o'z sahifasi va kabineti bor
-         (agentlik.maladesbola.uz) - u yerda odam modullarni
-         tanlab O'Z narxini hisoblaydi. Shuning uchun bunday
-         kartochkada "buyurtma" tugmasi emas, o'sha sahifaga
-         havola turadi. */
-      (x.havola
-        ? '<a class="xiz-tug" href="' + x.havola + '" target="_blank" rel="noopener">' +
-          (x.havola_matn || "Batafsil") + '<s>\u2197</s></a>'
-        : '<button class="xiz-tug">Shu xizmatni olish<s>\u2197</s></button>');
-    if (!x.havola) el.querySelector(".xiz-tug").onclick = function(){
+      '<button class="xiz-tug">Shu xizmatni olish<s>\u2197</s></button>';
+    el.querySelector(".xiz-tug").onclick = function(){
       titra("medium"); yubor({amal:"buyurtma", xizmat:x.kalit});
     };
     ich.appendChild(el);
