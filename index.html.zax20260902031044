@@ -2044,6 +2044,15 @@ body.namuna{padding-top:36px}
 </div>
 
 <!-- ============ PAPKADAN KELGAN BO'LIMLAR ============ -->
+<div class="bolim" id="b-korinish">
+  <div class="hero" style="padding-bottom:6px">
+    <div class="nur"></div>
+    <div class="dava" style="margin-top:6px">Korinish</div>
+    <div class="dava-izoh">Shu yo'nalishdagi ishlarim — jami 19 ta.</div>
+  </div>
+  <div class="tor" id="tor-korinish"></div>
+</div>
+
 <!-- ================= OVOZLAR ================= -->
 <div class="bolim" id="b-ovozlar">
   <div class="hero" style="padding-bottom:6px">
@@ -2424,12 +2433,13 @@ body.namuna{padding-top:36px}
     <button class="faol" data-b="ishlar"><s data-i="ishlar"></s>Ishlar</button>
     <button data-b="keyslar" id="nav-keys" style="display:none"><s data-i="goya"></s>Keyslar</button>
     <button data-b="posterlar"><s data-i="posterlar"></s>Posterlar</button>
-    <button data-b="videolar" id="nav-video" style="display:none"><s data-i="video"></s>Videolar</button>
     <button data-b="ovozlar" id="nav-ovoz" style="display:none"><s data-i="ovoz"></s>Ovozlar</button>
-    <button data-b="xizmatlar"><s data-i="xizmat"></s>Xizmatlar</button>
-    <button data-b="tariflar"><s data-i="narx"></s>Tariflar</button>
+    <button data-b="videolar" id="nav-video" style="display:none"><s data-i="video"></s>Videolar</button>
+  <button data-b="korinish"><s data-i="papka"></s>Korinish</button>
     <button data-b="sotuv" id="nav-sotuv" style="display:none"><s data-i="narx"></s>Sotuvda</button>
     <button data-b="bepul" class="nav-bepul"><s data-i="yulduz"></s>Bepul</button>
+    <button data-b="xizmatlar"><s data-i="xizmat"></s>Xizmatlar</button>
+    <button data-b="tariflar"><s data-i="narx"></s>Tariflar</button>
     <button data-b="profil"><s data-i="profil"></s>Profil</button>
   </div>
   <button class="buyurtma" id="buyurtma"><s data-i="buyurtma"></s>Buyurtma</button>
