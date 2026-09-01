@@ -106,6 +106,58 @@ p{margin:0 0 12px}
 .belgi.olov{color:var(--urgu);border-color:rgba(255,90,10,.35);
   background:rgba(255,90,10,.1)}
 
+/* TARIF TANLASH VA TO'LOV (kabinet) */
+.tariflar-k{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tarif-t{border:1px solid var(--chiziq);border-radius:12px;
+  padding:18px 17px;background:var(--qatlam2);display:flex;
+  flex-direction:column}
+.tarif-t:last-child{border-color:rgba(255,90,10,.4)}
+.tarif-n{font-size:17px;font-weight:600;margin-bottom:6px}
+.tarif-p{font-size:23px;font-weight:600;margin-top:auto;
+  padding-top:12px;font-variant-numeric:tabular-nums}
+.karta-b{border:1px solid rgba(255,90,10,.35);border-radius:12px;
+  padding:18px 17px;background:rgba(255,90,10,.06)}
+.karta-s{font-size:26px;font-weight:600;color:var(--urgu);
+  font-variant-numeric:tabular-nums;line-height:1.2}
+.karta-r{font-family:var(--mono);font-size:20px;letter-spacing:.06em;
+  margin:3px 0 2px;word-break:break-all}
+.tlv-q{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;
+  padding:8px 0;border-bottom:1px solid var(--chiziq);font-size:13px}
+.tlv-q:last-child{border-bottom:none}
+.tlv-q b{margin-left:auto;font-variant-numeric:tabular-nums}
+/* MAHSULOT KATALOGI (kabinet) */
+.kat{width:100%;border-collapse:collapse;font-size:13px}
+.kat th{text-align:left;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--xira);font-weight:600;
+  padding:0 8px 8px 0;white-space:nowrap}
+.kat td{padding:4px 8px 4px 0;vertical-align:middle}
+.kat input,.kat select{margin:0;padding:8px 10px;font-size:13px}
+.kat td:first-child{min-width:170px}
+.narx-k{font-variant-numeric:tabular-nums;text-align:right;
+  max-width:130px}
+
+/* BUYURTMALAR (kabinet) */
+.buy{border:1px solid var(--chiziq);border-radius:10px;
+  padding:13px 15px;margin-bottom:10px;background:var(--qatlam2)}
+.buy-b{display:flex;gap:9px;align-items:center;flex-wrap:wrap;
+  margin-bottom:6px}
+.buy-p{margin-left:auto;font-variant-numeric:tabular-nums;
+  color:var(--urgu)}
+
+/* BIZNESLAR RO'YXATI (kabinet) */
+.bizlar{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:10px}
+.biz{display:flex;flex-direction:column;gap:3px;padding:13px 15px;
+  border:1px solid var(--chiziq);border-radius:10px;
+  background:var(--qatlam2);text-decoration:none;color:inherit}
+.biz:hover{border-color:var(--urgu)}
+.biz.joriy{border-color:var(--urgu);background:rgba(255,90,10,.08)}
+@media (max-width:720px){
+  .tariflar-k{grid-template-columns:1fr}
+  .karta-r{font-size:17px}
+  .bizlar{grid-template-columns:1fr}
+}
+
 /* RAQAMLAR PANELI — saytdagi 35 / 7 / 5 bloki */
 .raqamlar{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
   background:var(--qatlam);border:1px solid var(--chiziq);
@@ -278,6 +330,42 @@ section{padding:clamp(48px,6vw,88px) 0;border-top:1px solid var(--chiziq);
   color:var(--xira);font-size:13.5px;display:flex;gap:18px;flex-wrap:wrap;
   justify-content:space-between}
 
+/* ==========================================================
+   MIJOZ KABINETI — material yuklash va "o'rganilmoqda"
+   ========================================================== */
+
+/* uch nuqta: ma'lumot yig'ilayotganini ko'rsatadi */
+.yuklanish{display:flex;gap:7px;align-items:center;padding:6px 0}
+.yuklanish i{width:9px;height:9px;border-radius:50%;
+  background:var(--urgu);opacity:.3;animation:puls 1.25s infinite}
+.yuklanish i:nth-child(2){animation-delay:.18s}
+.yuklanish i:nth-child(3){animation-delay:.36s}
+@keyframes puls{0%,100%{opacity:.28;transform:scale(.82)}
+  45%{opacity:1;transform:scale(1)}}
+/*  Harakat bezovta qilmasin degan sozlama hurmat qilinadi.  */
+@media(prefers-reduced-motion:reduce){
+  .yuklanish i{animation:none;opacity:.7}}
+
+/* yuklash qutilari */
+.yuk-setka{display:grid;gap:12px;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.yuk{background:var(--qatlam);border:1px solid var(--chiziq);
+  border-radius:var(--r-kichik);padding:14px 15px;margin:0}
+.yuk-bosh{display:flex;align-items:center;gap:9px;
+  justify-content:space-between}
+.yuk-tanla{display:flex;flex-direction:column;align-items:center;gap:4px;
+  padding:16px 12px;border:1px dashed var(--chiziq2);border-radius:10px;
+  cursor:pointer;text-align:center;font-size:12.5px;color:var(--xira);
+  transition:border-color .18s,background .18s}
+.yuk-tanla:hover{border-color:var(--urgu);background:rgba(255,90,10,.05);
+  color:var(--matn)}
+/*  Haqiqiy input yashiriladi, lekin klaviatura bilan ham
+    ishlaydi — `display:none` qilsak fokus yo'qoladi.  */
+.yuk-tanla input{position:absolute;width:1px;height:1px;opacity:0;
+  overflow:hidden}
+.yuk-tanla:focus-within{border-color:var(--urgu);
+  box-shadow:0 0 0 3px rgba(255,90,10,.18)}
+
 /* kalkulyator */
 .kalk{display:grid;grid-template-columns:1.3fr .7fr;gap:24px;
   align-items:start;margin-top:32px}
@@ -336,6 +424,45 @@ section{padding:clamp(48px,6vw,88px) 0;border-top:1px solid var(--chiziq);
 .pos .p-tag b{min-width:0;color:var(--matn);font-weight:400;
   overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .pos .p-tag span{flex:none;color:var(--urgu)}
+
+/* FORMAT NISHONI. Reels va story bir xil 1080x1920 kadr, lekin
+   ular boshqa narsa: reels - videoning muqovasi. Mijoz rasmga
+   qarab buni ajrata olmaydi, shuning uchun yozib qo'yiladi.
+   Nisbat ham formatdan olinadi - 9:16 kadrni 4:5 romkaga
+   tiqsak ikki yonida qora yo'l qolardi. */
+.pos > a{position:relative}
+.pos > a.reels img,.pos > a.story img{aspect-ratio:9/16}
+.pos .p-fmt{position:absolute;top:8px;left:8px;padding:3px 7px;
+  border-radius:5px;font-family:var(--mono);font-size:9px;
+  letter-spacing:.1em;font-weight:600;color:#fff;
+  background:rgba(0,0,0,.62);backdrop-filter:blur(4px)}
+.pos .p-fmt.reels{background:#c81e5a}
+.pos .p-fmt.story{background:#7b3fe4}
+.pos .p-fmt.karusel{background:#0f7b6c}
+
+/* YUKLAB OLISH tugmasi. To'lovdan oldin yuklangan fayl ustida
+   NAMUNA yozuvi chiqadi - himoya `himoya.py` da. */
+.pos .p-yuk{position:absolute;right:8px;bottom:44px;padding:5px 10px;
+  border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;
+  color:#fff;background:rgba(0,0,0,.66);backdrop-filter:blur(4px);
+  opacity:0;transition:opacity .18s}
+.pos > a:hover .p-yuk,.pos > a:focus-within .p-yuk{opacity:1}
+@media(hover:none){.pos .p-yuk{opacity:1}}
+
+/* KABINETDAGI JONLI NARX. Mijoz xizmatni o'chirganda narx
+   darhol o'zgarsin - aks holda u butun summani kontent uchun
+   deb o'ylaydi. */
+.k-hisob{margin-top:16px;padding:14px 16px;border-radius:var(--r-kichik);
+  background:var(--qatlam2);border:1px solid var(--chiziq)}
+.k-hisob .qat{display:flex;justify-content:space-between;
+  align-items:center;padding:6px 0;font-size:13px}
+.k-hisob .qat span{color:var(--xira)}
+.k-hisob .qat b{font-variant-numeric:tabular-nums}
+.k-hisob .k-jami{border-top:1px solid var(--chiziq);margin-top:6px;
+  padding-top:12px}
+.k-hisob .k-jami span{color:var(--matn)}
+.k-hisob .k-jami b{font-size:20px;color:var(--urgu)}
+.k-hisob .mikro{margin-top:10px;line-height:1.5}
 
 /* ==========================================================
    TIZIM BO'LIMI — sotuv sahifasidagi "orqada nima ishlaydi".
@@ -594,7 +721,7 @@ tekshiradi — fakt, brend, til.</p></div>
 Ko'p xizmat tanlansa chegirma qo'shiladi. Istalgan oyda qo'shish yoki
 o'chirish mumkin.</p>
 <div class="toplam"><button data-toplam="kontent,poster,sayt">Boshlash</button><button data-toplam="kontent,poster,reels,sayt,community,hisobot">Biznes</button><button data-toplam="kontent,poster,reels,sayt,community,bot_telegram,target,hisobot">Sotuv</button><button data-toplam="">Tozalash</button></div>
-<div class="kalk"><div id="modullar"><label class="mod tanlangan"><input type="checkbox" value="boshlash" checked><span style="flex:1"><b>Ishga tushirish (bir martalik)</b> <span class="mikro">bir martalik</span><div class="t">Bozor va raqobat tahlili, auditoriya portreti, pozitsiya, brend uslubi va profilni to&#x27;liq tartibga solish. Bu ish bir marta qilinadi va keyingi hamma oy shu poydevor ustida ketadi.</div></span><span class="n">1 900 000 so'm</span></label><label class="mod tanlangan"><input type="checkbox" value="kontent" checked><span style="flex:1"><b>Kontent yuritish</b><div class="t">Oyiga 12 post yoki karusel + 30 story. Har biriga mavzu, matn, hashtag va joylash vaqti. Kalendar oy boshida tasdiqlanadi — nima chiqishini oldindan bilib turasiz.</div></span><span class="n">1 500 000 so'm</span></label><label class="mod tanlangan"><input type="checkbox" value="poster" checked><span style="flex:1"><b>Poster va dizayn</b><div class="t">Oyiga 12 brendlangan poster: sizning rangingiz, shriftingiz va haqiqiy mahsulot rasmingiz bilan. Har biri chiqishdan oldin sifat tekshiruvidan o&#x27;tadi.</div></span><span class="n">800 000 so'm</span></label><label class="mod "><input type="checkbox" value="reels"><span style="flex:1"><b>Reels va video</b><div class="t">Oyiga 4 reels: g&#x27;oya, skript, kadr ro&#x27;yxati, montaj va subtitr. Syomka o&#x27;zingizda bo&#x27;lsa shu narx; biz suratga olsak — syomka kuni alohida.</div></span><span class="n">1 200 000 so'm</span></label><label class="mod "><input type="checkbox" value="ovoz"><span style="flex:1"><b>Diktor ovozi</b><div class="t">Oyiga 4 ta professional diktor yozuvi — reels va reklama uchun. Matn ham, o&#x27;qish ohangi ham tayyorlanadi.</div></span><span class="n">400 000 so'm</span></label><label class="mod "><input type="checkbox" value="community"><span style="flex:1"><b>Izoh va DM javoblari</b><div class="t">Har kuni izohlar va shaxsiy xabarlarga javob beriladi, savol berganlar sotuvga yo&#x27;naltiriladi. Javobsiz qolgan mijoz — yo&#x27;qotilgan mijoz.</div></span><span class="n">600 000 so'm</span></label><label class="mod tanlangan"><input type="checkbox" value="sayt" checked><span style="flex:1"><b>Sayt (landing yoki katalog)</b><div class="t">Firma nomingiz bilan alohida sahifa: mahsulotlar, narxlar, aloqa tugmalari va ariza formasi. Bio&#x27;dagi havola shu yerga olib keladi va har bosish o&#x27;lchanadi. Birinchi oy bepul.</div></span><span class="n">350 000 so'm</span></label><label class="mod "><input type="checkbox" value="bot_telegram"><span style="flex:1"><b>Telegram avto-javob boti</b><div class="t">Kechasi soat 2 da yozgan mijozga ham javob beradi: narx, manzil, ish vaqti, bron. Javob bera olmasa — sizga uzatadi.</div></span><span class="n">500 000 so'm</span></label><label class="mod "><input type="checkbox" value="bot_instagram"><span style="flex:1"><b>Instagram DM avto-javob</b><div class="t">Instagram xabarlariga o&#x27;sha zahoti javob va sotuvga yo&#x27;naltirish. Meta ruxsati olingandan keyin ishga tushadi.</div></span><span class="n">600 000 so'm</span></label><label class="mod "><input type="checkbox" value="target"><span style="flex:1"><b>Target boshqaruvi</b><div class="t">Auditoriyalar, kreativlar, test va kunlik nazorat. Reklama puli to&#x27;g&#x27;ridan-to&#x27;g&#x27;ri sizning kartangizdan ketadi — biz faqat boshqaruv uchun olamiz.</div></span><span class="n">1 000 000 so'm</span></label><label class="mod "><input type="checkbox" value="tg_reklama"><span style="flex:1"><b>Telegram kanallarda reklama</b><div class="t">Mos kanallarni topish, o&#x27;lik obunachiga tekshirish, narxni kelishish, post tayyorlash va natijani o&#x27;lchash.</div></span><span class="n">500 000 so'm</span></label><label class="mod "><input type="checkbox" value="hisobot"><span style="flex:1"><b>Analitika va hisobot</b><div class="t">Har hafta qisqa, oy oxirida to&#x27;liq hisobot: qaysi post odam olib keldi, nechta murojaat bo&#x27;ldi, keyingi oy nima o&#x27;zgaradi.</div></span><span class="n">300 000 so'm</span></label><label class="mod "><input type="checkbox" value="brend"><span style="flex:1"><b>Brend paket (logo va brendbuk)</b> <span class="mikro">bir martalik</span><div class="t">Logo, rang palitrasi, shriftlar, qo&#x27;llash qoidalari. Logongiz bo&#x27;lsa — tartibga solamiz, bo&#x27;lmasa yangisini yasaymiz.</div></span><span class="n">2 800 000 so'm</span></label><label class="mod "><input type="checkbox" value="syomka"><span style="flex:1"><b>Foto va video syomka kuni</b> <span class="mikro">bir martalik</span><div class="t">Bir kunlik syomka: mahsulot, jamoa, ichki muhit. Barcha xom material va tahrirlangan kadrlar sizda qoladi.</div></span><span class="n">1 500 000 so'm</span></label></div>
+<div class="kalk"><div id="modullar"><label class="mod tanlangan"><input type="checkbox" value="boshlash" checked><span style="flex:1"><b>Ishga tushirish (bir martalik)</b> <span class="mikro">bir martalik</span><div class="t">Bozor va raqobat tahlili, auditoriya portreti, pozitsiya, brend uslubi va profilni to&#x27;liq tartibga solish. Bu ish bir marta qilinadi va keyingi hamma oy shu poydevor ustida ketadi.</div></span><span class="n">1 900 000 so'm</span></label><label class="mod tanlangan"><input type="checkbox" value="kontent" checked><span style="flex:1"><b>Kontent yuritish</b><div class="t">Oyiga 12 post yoki karusel + 30 story. Har biriga mavzu, matn, hashtag va joylash vaqti. Kalendar oy boshida tasdiqlanadi — nima chiqishini oldindan bilib turasiz.</div></span><span class="n">1 500 000 so'm</span></label><label class="mod tanlangan"><input type="checkbox" value="poster" checked><span style="flex:1"><b>Poster va dizayn</b><div class="t">Oyiga 12 brendlangan poster: sizning rangingiz, shriftingiz va haqiqiy mahsulot rasmingiz bilan. Har biri chiqishdan oldin sifat tekshiruvidan o&#x27;tadi.</div></span><span class="n">800 000 so'm</span></label><label class="mod tanlangan"><input type="checkbox" value="reels" checked><span style="flex:1"><b>Reels va video</b><div class="t">Oyiga 4 reels: g&#x27;oya, skript, kadr ro&#x27;yxati, montaj va subtitr. Syomka o&#x27;zingizda bo&#x27;lsa shu narx; biz suratga olsak — syomka kuni alohida.</div></span><span class="n">1 200 000 so'm</span></label><label class="mod tanlangan"><input type="checkbox" value="ovoz" checked><span style="flex:1"><b>Diktor ovozi</b><div class="t">Oyiga 4 ta professional diktor yozuvi — reels va reklama uchun. Matn ham, o&#x27;qish ohangi ham tayyorlanadi.</div></span><span class="n">400 000 so'm</span></label><label class="mod tanlangan"><input type="checkbox" value="community" checked><span style="flex:1"><b>Izoh va DM javoblari</b><div class="t">Har kuni izohlar va shaxsiy xabarlarga javob beriladi, savol berganlar sotuvga yo&#x27;naltiriladi. Javobsiz qolgan mijoz — yo&#x27;qotilgan mijoz.</div></span><span class="n">600 000 so'm</span></label><label class="mod tanlangan"><input type="checkbox" value="sayt" checked><span style="flex:1"><b>Sayt (vitrina)</b><div class="t">Firma nomingiz bilan alohida sahifa: mahsulotlar, narxlar, aloqa tugmalari va ariza formasi. Bio&#x27;dagi havola shu yerga olib keladi va har bosish o&#x27;lchanadi. Birinchi oy bepul.</div></span><span class="n">350 000 so'm</span></label><label class="mod "><input type="checkbox" value="sotuv"><span style="flex:1"><b>Sotuv sayti (savat va buyurtma)</b><div class="t">Saytda savat va buyurtma: xaridor tanlaydi, jami o&#x27;zi hisoblanadi, buyurtma darrov Telegramingizga va kabinetga tushadi. Holatini kabinetdan yuritasiz, sotuv hisoboti o&#x27;zi chiqadi. Sayt moduli bilan birga ishlaydi.</div></span><span class="n">900 000 so'm</span></label><label class="mod tanlangan"><input type="checkbox" value="bot_telegram" checked><span style="flex:1"><b>Telegram avto-javob boti</b><div class="t">Kechasi soat 2 da yozgan mijozga ham javob beradi: narx, manzil, ish vaqti, bron. Javob bera olmasa — sizga uzatadi.</div></span><span class="n">500 000 so'm</span></label><label class="mod tanlangan"><input type="checkbox" value="bot_instagram" checked><span style="flex:1"><b>Instagram DM avto-javob</b><div class="t">Instagram xabarlariga o&#x27;sha zahoti javob va sotuvga yo&#x27;naltirish. Meta ruxsati olingandan keyin ishga tushadi.</div></span><span class="n">600 000 so'm</span></label><label class="mod tanlangan"><input type="checkbox" value="target" checked><span style="flex:1"><b>Target boshqaruvi</b><div class="t">Auditoriyalar, kreativlar, test va kunlik nazorat. Reklama puli to&#x27;g&#x27;ridan-to&#x27;g&#x27;ri sizning kartangizdan ketadi — biz faqat boshqaruv uchun olamiz.</div></span><span class="n">1 000 000 so'm</span></label><label class="mod tanlangan"><input type="checkbox" value="tg_reklama" checked><span style="flex:1"><b>Telegram kanallarda reklama</b><div class="t">Mos kanallarni topish, o&#x27;lik obunachiga tekshirish, narxni kelishish, post tayyorlash va natijani o&#x27;lchash.</div></span><span class="n">500 000 so'm</span></label><label class="mod tanlangan"><input type="checkbox" value="hisobot" checked><span style="flex:1"><b>Analitika va hisobot</b><div class="t">Har hafta qisqa, oy oxirida to&#x27;liq hisobot: qaysi post odam olib keldi, nechta murojaat bo&#x27;ldi, keyingi oy nima o&#x27;zgaradi.</div></span><span class="n">300 000 so'm</span></label><label class="mod tanlangan"><input type="checkbox" value="brend" checked><span style="flex:1"><b>Brend paket (logo va brendbuk)</b> <span class="mikro">bir martalik</span><div class="t">Logo, rang palitrasi, shriftlar, qo&#x27;llash qoidalari. Logongiz bo&#x27;lsa — tartibga solamiz, bo&#x27;lmasa yangisini yasaymiz.</div></span><span class="n">2 800 000 so'm</span></label><label class="mod tanlangan"><input type="checkbox" value="syomka" checked><span style="flex:1"><b>Foto va video syomka kuni</b> <span class="mikro">bir martalik</span><div class="t">Bir kunlik syomka: mahsulot, jamoa, ichki muhit. Barcha xom material va tahrirlangan kadrlar sizda qoladi.</div></span><span class="n">1 500 000 so'm</span></label></div>
 <div class="hisob"><div class="mikro">oylik to'lov</div>
 <div class="jami" id="jami">0</div>
 <div class="qat"><span>Tanlangan xizmat</span><b id="soni">0</b></div>
@@ -683,7 +810,7 @@ href="https://instagram.com/malades.bola" target="_blank" rel="noopener">
   document.querySelectorAll('.an').forEach(function(x){kuz.observe(x);});
 })();
 </script><script>
-var MODULLAR = [{"k": "boshlash", "p": 1900000}, {"k": "kontent", "p": 1500000}, {"k": "poster", "p": 800000}, {"k": "reels", "p": 1200000}, {"k": "ovoz", "p": 400000}, {"k": "community", "p": 600000}, {"k": "sayt", "p": 350000}, {"k": "bot_telegram", "p": 500000}, {"k": "bot_instagram", "p": 600000}, {"k": "target", "p": 1000000}, {"k": "tg_reklama", "p": 500000}, {"k": "hisobot", "p": 300000}, {"k": "brend", "p": 2800000}, {"k": "syomka", "p": 1500000}];
+var MODULLAR = [{"k": "boshlash", "p": 1900000}, {"k": "kontent", "p": 1500000}, {"k": "poster", "p": 800000}, {"k": "reels", "p": 1200000}, {"k": "ovoz", "p": 400000}, {"k": "community", "p": 600000}, {"k": "sayt", "p": 350000}, {"k": "sotuv", "p": 900000}, {"k": "bot_telegram", "p": 500000}, {"k": "bot_instagram", "p": 600000}, {"k": "target", "p": 1000000}, {"k": "tg_reklama", "p": 500000}, {"k": "hisobot", "p": 300000}, {"k": "brend", "p": 2800000}, {"k": "syomka", "p": 1500000}];
 var CHEGIRMA = [[6, 18], [5, 15], [4, 11], [3, 7], [2, 4]];
 var BIR = ["boshlash", "brend", "syomka"];
 function pul(x){return x.toLocaleString('ru-RU').replace(/,/g,' ')+" so'm";}
@@ -708,6 +835,10 @@ function hisob(){
   document.getElementById('birqat').style.display=birSum?'flex':'none';
   document.getElementById('bir').textContent=pul(birSum);
   var sayt=t.indexOf('sayt')>=0;
+  //  Bepul birinchi oy summasi SERVERDAN keladi. Ilgari bu yerda
+  //  350000 raqami qotib turardi: katalogda narx o'zgarsa,
+  //  kalkulyator jim ravishda noto'g'ri raqam ko'rsatardi va buni
+  //  hech kim sezmasdi.
   document.getElementById('izoh').textContent = sayt
     ? 'Birinchi oy '+pul(Math.max(0,jami-350000))+' — sayt birinchi oy bepul.'
     : 'Reklama byudjeti alohida, u sizning kartangizdan ketadi.';
