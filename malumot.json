@@ -5257,8 +5257,10 @@
   "sotuv": 0,
   "muqova": "muqova.jpg",
   "oq": "logo.png",
-  "fon": "#0E1014",
-  "fonlar": [],
+  "fon": "#472FF9",
+  "fonlar": [
+   "#472FF9"
+  ],
   "xarakter": "tezkor, yengil, dinamik",
   "art_izoh": "Qog'oz samolyot shaklidagi belgi harakat va tezkor yetkazib berish g'oyasini aks ettiradi.",
   "kadrlar": [
