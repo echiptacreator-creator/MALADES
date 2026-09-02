@@ -5741,8 +5741,10 @@
   "sotuv": 0,
   "muqova": "muqova.jpg",
   "oq": "logo.png",
-  "fon": "#0E1014",
-  "fonlar": [],
+  "fon": "#007BFF",
+  "fonlar": [
+   "#007BFF"
+  ],
   "xarakter": "zamonaviy, ta'limiy, rasmiy",
   "art_izoh": "Logo ta'lim va ma'rifat sohasidagi axborot manbasini ifodalaydi.",
   "kadrlar": [
