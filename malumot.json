@@ -5000,8 +5000,11 @@
   "sotuv": 0,
   "muqova": "muqova.jpg",
   "oq": "logo.png",
-  "fon": "#0E1014",
-  "fonlar": [],
+  "fon": "#0F44B6",
+  "fonlar": [
+   "#0F44B6",
+   "#F4CC06"
+  ],
   "xarakter": "sportcha, dinamik, shiddatli",
   "art_izoh": "Surxon futbol klubining doiraviy gerbida qanotli tulpor ramzi hamda jamoa nomi va tashkil etilgan yili aks etgan.",
   "kadrlar": [
