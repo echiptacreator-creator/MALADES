@@ -3764,8 +3764,10 @@
   "sotuv": 0,
   "muqova": "muqova.jpg",
   "oq": "logo.png",
-  "fon": "#0E1014",
-  "fonlar": [],
+  "fon": "#4E37F4",
+  "fonlar": [
+   "#4E37F4"
+  ],
   "xarakter": "zamonaviy, ishonchli, dinamik",
   "art_izoh": "Logo brendning rivojlanish va barqarorlik g'oyasini zamonaviy muhr ko'rinishida ifodalaydi.",
   "kadrlar": [
