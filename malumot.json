@@ -2342,8 +2342,10 @@
   "sotuv": 0,
   "muqova": "muqova.jpg",
   "oq": "logo.png",
-  "fon": "#0E1014",
-  "fonlar": [],
+  "fon": "#007042",
+  "fonlar": [
+   "#007042"
+  ],
   "xarakter": "sportcha, dinamik, tezkor",
   "art_izoh": "Lokomotiv futbol klubining tezkor poyezd, futbol to'pi va qanotli g'ildirak ramzlarini o'zida jamlagan rasmiy sport gerbi.",
   "kadrlar": [
