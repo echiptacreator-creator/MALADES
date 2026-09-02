@@ -303,19 +303,16 @@
   "prompt": "Make this food photo look appetising and professional. Warm side light, visible steam, fresh texture and moisture, shallow depth of field, rustic surface underneath. Keep the food exactly as it is — do not add or remove ingredients. No text, no letters, no watermark, no logo unless explicitly asked above.",
   "izoh": "Kafe va oshxona uchun. Oxirgi jumla muhim: usiz AI taomga o'zi bilmagan narsalarni qo'shib yuboradi va mijoz aldangan bo'ladi.",
   "kalit": "mahsulot-fotosi--taom-kadri",
-  "rasm": "rasm/promptlar/mahsulot-fotosi--taom-kadri.jpg"
+  "rasm": ""
  },
  {
-  "kalit": "mahsulot-fotosi--toza-fonli-mahsulot",
   "bolim": "MAHSULOT FOTOSI",
   "nom": "Toza fonli mahsulot",
   "tur": "surat",
-  "izoh": "[RANG] — white, light grey, warm beige. Do'kon egasi uchun eng ko'p kerak bo'ladigan prompt: stoldagi surat katalog kadriga aylanadi.",
-  "rasm": "",
-  "narx": 0,
-  "top": 0,
   "prompt": "Place the product from this photo on a clean [RANG] seamless background. Soft box lighting from the top left, gentle contact shadow under the product, no reflections on the surface. E-commerce product photography, sharp focus on the whole product. No text, no letters, no watermark, no logo unless explicitly asked above.",
-  "yopiq": 0
+  "izoh": "[RANG] — white, light grey, warm beige. Do'kon egasi uchun eng ko'p kerak bo'ladigan prompt: stoldagi surat katalog kadriga aylanadi.",
+  "kalit": "mahsulot-fotosi--toza-fonli-mahsulot",
+  "rasm": "rasm/promptlar/mahsulot-fotosi--toza-fonli-mahsulot.jpg"
  },
  {
   "bolim": "MAHSULOT FOTOSI",
