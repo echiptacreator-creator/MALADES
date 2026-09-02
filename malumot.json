@@ -2938,10 +2938,10 @@
   "sotuv": 0,
   "muqova": "muqova.jpg",
   "oq": "logo.png",
-  "fon": "#260B99",
+  "fon": "#101217",
   "fonlar": [
-   "#260B99",
-   "#FFFFFF"
+   "#101217",
+   "#260B99"
   ],
   "xarakter": "sportcha, jangovar, zamonaviy",
   "art_izoh": "Ajdaho shakli va N harfi uyg'unlashgan dinamik va baquvvat futbol klubi emblemasi.",
@@ -3643,10 +3643,8 @@
   "sotuv": 0,
   "muqova": "muqova.jpg",
   "oq": "logo.png",
-  "fon": "#FFFFFF",
-  "fonlar": [
-   "#FFFFFF"
-  ],
+  "fon": "#0E1014",
+  "fonlar": [],
   "xarakter": "sanoat, texnik, zamonaviy, qat'iy",
   "art_izoh": "Logo tishli g'ildirak elementi va baquvvat shrift orqali sanoat hamda texnik professionallikni aks ettiradi.",
   "kadrlar": [
@@ -4140,10 +4138,10 @@
   "sotuv": 0,
   "muqova": "muqova.jpg",
   "oq": "logo.png",
-  "fon": "#92E300",
+  "fon": "#101217",
   "fonlar": [
-   "#92E300",
-   "#101217"
+   "#101217",
+   "#92E300"
   ],
   "xarakter": "zamonaviy, raqamli, sportcha",
   "art_izoh": "Klub gerbi va piksel uslubidagi pleyr belgisi orqali raqamli sport muhitini aks ettiradi.",
