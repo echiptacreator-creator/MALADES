@@ -5834,8 +5834,10 @@
   "sotuv": 0,
   "muqova": "muqova.jpg",
   "oq": "logo.png",
-  "fon": "#0E1014",
-  "fonlar": [],
+  "fon": "#FFFFFF",
+  "fonlar": [
+   "#FFFFFF"
+  ],
   "xarakter": "milliy, zamonaviy, ishonchli",
   "art_izoh": "An'anaviy milliy obraz va zamonaviy yozuv orqali savdoni avtomatlashtirish tizimini ifodalaydi.",
   "kadrlar": [
