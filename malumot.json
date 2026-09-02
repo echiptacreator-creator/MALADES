@@ -1846,8 +1846,10 @@
   "sotuv": 0,
   "muqova": "muqova.jpg",
   "oq": "logo.png",
-  "fon": "#0E1014",
-  "fonlar": [],
+  "fon": "#FFFFFF",
+  "fonlar": [
+   "#FFFFFF"
+  ],
   "xarakter": "quvnoq, ishtahaochar, zamonaviy",
   "art_izoh": "Toj simvoli va yorqin ranglar orqali brendning premium sifatli va sho'x snack mahsulotlarini ifodalaydi.",
   "kadrlar": [
