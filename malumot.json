@@ -3643,8 +3643,10 @@
   "sotuv": 0,
   "muqova": "muqova.jpg",
   "oq": "logo.png",
-  "fon": "#0E1014",
-  "fonlar": [],
+  "fon": "#FFFFFF",
+  "fonlar": [
+   "#FFFFFF"
+  ],
   "xarakter": "sanoat, texnik, zamonaviy, qat'iy",
   "art_izoh": "Logo tishli g'ildirak elementi va baquvvat shrift orqali sanoat hamda texnik professionallikni aks ettiradi.",
   "kadrlar": [
