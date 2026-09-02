@@ -4908,8 +4908,10 @@
   "sotuv": 0,
   "muqova": "muqova.jpg",
   "oq": "logo.png",
-  "fon": "#0E1014",
-  "fonlar": [],
+  "fon": "#D80E0E",
+  "fonlar": [
+   "#D80E0E"
+  ],
   "xarakter": "minimalistik, zamonaviy, toza",
   "art_izoh": "Minimalistik uslubdagi oq rangli logo brendning sodda va zamonaviy estetikasini namoyon etadi.",
   "kadrlar": [
